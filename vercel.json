@@ -1,0 +1,1 @@
+{<br/>  &quot;headers&quot;: [<br/>    {<br/>      &quot;source&quot;: &quot;/(.*)&quot;,<br/>      &quot;headers&quot;: [<br/>        {<br/>          &quot;key&quot;: &quot;Content-Type&quot;,<br/>          &quot;value&quot;: &quot;text/html; charset=UTF-8&quot;<br/>        }<br/>      ]<br/>    }<br/>  ]<br/>}
