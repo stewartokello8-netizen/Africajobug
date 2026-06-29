@@ -3,46 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  
-  <!-- SEO Meta Tags -->
   <title>AfricaJob - Get Paid Every Time | Turn Clicks to Cash</title>
-  <meta name="description" content="Join 187,000+ Africans earning $30–$150 daily by watching videos, surveys, chatting, and WhatsApp posts. Instant M-Pesa & MoMo withdrawals." />
-  <meta name="keywords" content="Africa jobs, online earning, get paid, M-Pesa, MoMo, work from home, African jobs, online surveys, watch videos earn money" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://your-domain.vercel.app/" />
-  
-  <!-- Open Graph Tags for Social Media -->
-  <meta property="og:title" content="AfricaJob - Get Paid Every Time | Turn Clicks to Cash" />
-  <meta property="og:description" content="Join 187,000+ Africans earning $30–$150 daily. Instant M-Pesa & MoMo withdrawals." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.vercel.app/" />
-  <meta property="og:image" content="https://your-domain.vercel.app/og-image.jpg" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AfricaJob - Get Paid Every Time" />
-  <meta name="twitter:description" content="Join 187,000+ Africans earning $30–$150 daily. Instant M-Pesa & MoMo withdrawals." />
-  
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AfricaJob",
-    "url": "https://your-domain.vercel.app/",
-    "description": "Online earning platform for Africans",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://starhela.com/register.php?ref=Myqashapp",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
-  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -70,7 +34,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px 12px;
-      padding-bottom: 14px;
+      padding-bottom: 18px;
       border-bottom: 2px solid #eef2f6;
       width: 100%;
     }
@@ -80,9 +44,9 @@
       gap: 4px;
       flex-shrink: 0;
     }
-    .brand-icon { font-size: 26px; line-height: 1; }
+    .brand-icon { font-size: 28px; line-height: 1; }
     .brand-name {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       letter-spacing: -0.3px;
       color: #0b2c26;
@@ -174,8 +138,8 @@
       background: linear-gradient(135deg, #1c7e5e, #0d4f3a);
       color: #fff;
       font-weight: 800;
-      font-size: 16px;
-      padding: 12px 28px;
+      font-size: 14px;
+      padding: 8px 18px;
       border-radius: 60px;
       text-decoration: none;
       border: 2px solid rgba(255,255,255,0.15);
@@ -204,7 +168,10 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
     }
+    .user-card:hover { background: #f0f7f4; }
     .user-card img { width: 38px; height: 38px; border-radius: 100%; object-fit: cover; border: 2px solid #10b981; flex-shrink: 0; }
     .user-card .name { font-weight: 800; font-size: 14px; color: #111; }
     .user-card .country { font-size: 12px; font-weight: 700; color: #666; }
@@ -218,6 +185,7 @@
       margin-top: 1px;
       color: #1c7e5e;
       border: 1px solid #e0e0e0;
+      transition: all 0.2s;
     }
     .user-card .actions { display: flex; gap: 3px; flex-shrink: 0; }
     .user-card .actions a {
@@ -227,6 +195,7 @@
       font-size: 9px;
       text-decoration: none;
       display: inline-block;
+      cursor: pointer;
     }
     .user-card .actions .chat { background: #1c7e5e; color: #fff; border: 1px solid rgba(255,255,255,0.2); animation: borderGlow 1.5s ease-in-out infinite; }
     .user-card .actions .watch { background: #f0f0f0; color: #555; border: 1px solid #ddd; }
@@ -309,7 +278,6 @@
       flex-shrink: 0;
       font-weight: 700;
     }
-    /* SEO Friendly - Hidden but readable */
     .sr-only {
       position: absolute;
       width: 1px;
@@ -320,16 +288,79 @@
       clip: rect(0,0,0,0);
       border: 0;
     }
+    .whatsapp-btn {
+      background: #25d366;
+      color: #fff;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: 60px;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 18px;
+      border: 2px solid rgba(255,255,255,0.2);
+      animation: borderGlow 2s ease-in-out infinite;
+    }
+    .btn-start-earning {
+      font-size: 12px !important;
+      padding: 6px 14px !important;
+    }
+    .upgrade-btn {
+      display: inline-block;
+      background: #f59e0b;
+      color: #000;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 13px;
+      margin-top: 4px;
+      border: 2px solid #d97706;
+      animation: borderGlowGold 1.2s ease-in-out infinite;
+      cursor: pointer;
+    }
+    .upgrade-btn:hover { background: #d97706; color: #fff; }
+    .chat-input-area {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .chat-input-area input {
+      flex: 1;
+      padding: 8px 14px;
+      border-radius: 40px;
+      border: 2px solid #ddd;
+      font-size: 14px;
+      outline: none;
+      min-width: 140px;
+    }
+    .chat-input-area input:focus { border-color: #1c7e5e; }
+    .chat-input-area button {
+      background: #1c7e5e;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .chat-input-area button:hover { background: #146a4e; }
+    .chat-input-area button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     @media (max-width: 480px) {
       .page-wrap { padding: 10px 10px 18px; }
-      .brand-name { font-size: 20px; }
-      .brand-icon { font-size: 20px; }
+      .brand-name { font-size: 22px; }
+      .brand-icon { font-size: 22px; }
       .online-badge { font-size: 14px; padding: 4px 10px 4px 8px; }
       .online-badge .count-number { font-size: 14px; min-width: 32px; }
       .online-badge .label { font-size: 12px; }
       .pipe-sep { font-size: 18px; }
       .signup-btn { font-size: 14px; padding: 5px 14px; }
-      .btn-primary { font-size: 14px; padding: 10px 20px; }
+      .btn-primary { font-size: 13px; padding: 6px 14px; }
+      .whatsapp-btn { font-size: 15px; padding: 10px 22px; }
       .withdraw-grid { grid-template-columns: 1fr 1fr; gap: 3px 5px; }
       .withdraw-grid .item { font-size: 11px; padding: 3px 4px; }
       .user-card { padding: 6px 8px; }
@@ -337,13 +368,14 @@
       .user-card .name { font-size: 13px; }
     }
     @media (max-width: 380px) {
-      .brand-name { font-size: 17px; }
+      .brand-name { font-size: 18px; }
       .online-badge { font-size: 12px; padding: 3px 7px; }
       .online-badge .count-number { font-size: 12px; min-width: 26px; }
       .online-badge .label { font-size: 10px; }
       .signup-btn { font-size: 12px; padding: 4px 10px; }
       .pipe-sep { font-size: 15px; }
       .header-row { gap: 4px; }
+      .whatsapp-btn { font-size: 13px; padding: 8px 16px; }
     }
     @media (max-width: 340px) {
       .brand-name { font-size: 15px; }
@@ -378,7 +410,7 @@
     <h1 style="font-size:26px; font-weight:900; margin:0 0 2px; line-height:1.2;">Get Paid Every Time</h1>
     <h2 style="font-size:22px; font-weight:900; margin:0 0 6px; color:#1c7e5e;">Turn Clicks To Cash</h2>
     <p style="font-size:14px; color:#555; line-height:1.5; max-width:440px; margin:0 auto 12px;">Join <span id="joinCounter" style="font-weight:900; color:#1c7e5e;">187,432</span>+ Africans and earn <strong style="color:#1c7e5e;">$30 – $150 daily</strong> by completing simple tasks, watching ads, chatting, and posting on WhatsApp status</p>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:17px; padding:12px 30px;">🚀 START EARNING NOW</a>
+    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 START EARNING NOW</a>
     <div style="margin-top:10px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap; font-size:12px; color:#666;">
       <span>✅ Instant withdraw</span>
       <span>⚡ Instant payouts</span>
@@ -424,7 +456,7 @@
   </div>
   
   <div class="section text-center" style="padding:12px 0;">
-    <a href="https://chat.whatsapp.com/CQt8lbqYCYoLJ5CoZsepsY" target="_blank" rel="noopener noreferrer" style="background:#25d366; color:#fff; font-weight:800; padding:10px 24px; border-radius:60px; display:inline-block; text-decoration:none; font-size:15px; border:2px solid rgba(255,255,255,0.2); animation:borderGlow 2s ease-in-out infinite;">💬 Join WhatsApp Group</a>
+    <a href="https://chat.whatsapp.com/CQt8lbqYCYoLJ5CoZsepsY" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">💬 Join WhatsApp Group</a>
     <div style="display:inline-block; background:#fef3c7; padding:3px 14px; border-radius:60px; font-size:12px; font-weight:800; margin-top:6px; color:#000;">🔴 LIVE NOW · Active members</div>
   </div>
   
@@ -450,47 +482,107 @@
     <p style="text-align:center; color:#666; font-size:13px; margin-bottom:12px;">Multiple income streams — start earning today</p>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite;">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Watch Videos to Earn Money" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🎬 Watch Videos to Earn</div><div style="font-size:11px; color:#555;">Watch, like and engage. Earn rewards per video.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Watch →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🎬 Watch Videos to Earn</div><div style="font-size:11px; color:#555;">Watch TikTok, YouTube, and ads. Like, engage and earn rewards per video. Get paid for every view!</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Watch →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.2s;">
       <img src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Paid Surveys Africa" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📋 Paid Surveys</div><div style="font-size:11px; color:#555;">Share opinions on products. 5-15 min per survey.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Take →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📋 Paid Surveys</div><div style="font-size:11px; color:#555;">Share opinions on products. 5-15 min per survey. Earn cash for your thoughts.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Take →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.4s;">
       <img src="https://cdn-icons-png.flaticon.com/512/619/619568.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Paid Ads and Spin to Win" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📢 Paid Ads & Spin</div><div style="font-size:11px; color:#555;">Click ads + daily Spin and Win for cash!</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Spin →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📢 Paid Ads & Spin</div><div style="font-size:11px; color:#555;">Click ads + daily Spin and Win for cash! Extra earnings every day.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Spin →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.6s;">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Chat with Foreigners and Earn" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🌍 Chat with Foreigners</div><div style="font-size:11px; color:#555;">Connect with USA, UK, Canada. Paid per conversation.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🌍 Chat with Foreigners</div><div style="font-size:11px; color:#555;">Connect with USA, UK, Canada. Paid per conversation. Make friends and earn.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.8s;">
       <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="WhatsApp Status Posts Earn Money" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">💬 WhatsApp Posts</div><div style="font-size:11px; color:#555;">Share sponsored content on status. Get rewarded per post.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Post →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">💬 WhatsApp Posts</div><div style="font-size:11px; color:#555;">Share sponsored content on status. Get rewarded per post. Quick and easy.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Post →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:3px solid #1c7e5e; border-radius:20px; padding:14px 12px; display:flex; align-items:center; gap:8px; margin-top:8px; animation:borderGlow 2s ease-in-out infinite;">
       <img src="https://cdn-icons-png.flaticon.com/512/1340/1340353.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Train AI and Get Paid" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:16px; color:#1c7e5e;">🤖 Train AI – Get Paid</div><div style="font-size:14px; color:#1c7e5e; font-weight:800;">$17 – $150 per hour</div><div style="font-size:11px; color:#555;">No coding. Just your opinion matters.</div><div style="margin-top:3px;"><span style="background:#fef3c7; color:#000; font-weight:800; font-size:10px; padding:2px 12px; border-radius:60px; border:1px solid #f59e0b; animation:borderGlowGold 2s ease-in-out infinite;">🔥 TOP RATE</span> <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-left:4px;">Apply →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:16px; color:#1c7e5e;">🤖 Train AI – Get Paid</div><div style="font-size:14px; color:#1c7e5e; font-weight:800;">$17 – $150 per hour</div><div style="font-size:11px; color:#555;">No coding. Just your opinion matters. Train AI models and earn big.</div><div style="margin-top:3px;"><span style="background:#fef3c7; color:#000; font-weight:800; font-size:10px; padding:2px 12px; border-radius:60px; border:1px solid #f59e0b; animation:borderGlowGold 2s ease-in-out infinite;">🔥 TOP RATE</span> <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-left:4px;">Apply →</a></div></div>
     </div>
   </div>
   
-  <div class="section">
+  <div class="section" id="liveChatSection">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
       <span style="background:#dc2626; color:#fff; font-size:10px; font-weight:800; padding:3px 12px; border-radius:40px;">● LIVE NOW</span>
       <span style="font-size:13px; font-weight:700; color:#666;">💬 <span id="activeChatters">10</span> active members online</span>
     </div>
     <h3 style="font-size:18px; font-weight:900; text-align:center; margin:0 0 10px; color:#1c7e5e;">🌍 Live Foreigners Online — Sending Nice Messages</h3>
     <div id="liveUserList">
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Emma S., 28 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇺🇸 USA <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing now...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M. profile picture" loading="lazy" width="38" height="38"><div><div class="name">James M., 34 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇬🇧 UK <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hello...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Sophie L., 26 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇨🇦 Canada <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ writing a reply...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R. profile picture" loading="lazy" width="38" height="38"><div><div class="name">David R., 41 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇦🇺 Australia <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending a message...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Maria G., 29 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇪🇸 Spain <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing a long message...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Thomas K., 37 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇩🇪 Germany <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hi there!</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Anna P., 31 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇫🇷 France <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ writing something...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Michael D., 45 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇪 Ireland <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending greetings...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Laura B., 27 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇹 Italy <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ responding...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
-      <div class="user-card"><img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S. profile picture" loading="lazy" width="38" height="38"><div><div class="name">Robert S., 39 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇳🇿 New Zealand <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 chatting away...</div></div><div class="actions"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="chat">Chat</a><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="watch">Watch</a></div></div>
+      <!-- Each profile has personalized data: name, greeting, and a unique desperate reply -->
+      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy" width="38" height="38">
+        <div><div class="name">Emma S., 28 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇺🇸 USA <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing now...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Emma\'s latest video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy" width="38" height="38">
+        <div><div class="name">James M., 34 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇬🇧 UK <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hello...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch James\'s story');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy" width="38" height="38">
+        <div><div class="name">Sophie L., 26 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇨🇦 Canada <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ writing a reply...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Sophie\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy" width="38" height="38">
+        <div><div class="name">David R., 41 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇦🇺 Australia <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending a message...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch David\'s content');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy" width="38" height="38">
+        <div><div class="name">Maria G., 29 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇪🇸 Spain <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing a long message...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Maria\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍">
+        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy" width="38" height="38">
+        <div><div class="name">Thomas K., 37 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇩🇪 Germany <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hi there!</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Thomas\'s content');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy" width="38" height="38">
+        <div><div class="name">Anna P., 31 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇫🇷 France <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ writing something...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Anna\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀">
+        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy" width="38" height="38">
+        <div><div class="name">Michael D., 45 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇪 Ireland <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending greetings...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Michael\'s story');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️">
+        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy" width="38" height="38">
+        <div><div class="name">Laura B., 27 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇹 Italy <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ responding...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Laura\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍">
+        <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy" width="38" height="38">
+        <div><div class="name">Robert S., 39 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇳🇿 New Zealand <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 chatting away...</div></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
+      </div>
+    </div>
+    <!-- dynamic chat area -->
+    <div id="dynamicChatArea" style="margin-top:12px; background:#f9f9f9; border-radius:20px; padding:10px 14px; border:2px solid #1c7e5e; display:none; animation:borderGlow 1.5s ease-in-out infinite;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-weight:800; color:#1c7e5e;" id="chatUserName">💬 Chat with Emma</span>
+        <span style="cursor:pointer; font-weight:700; font-size:18px; color:#999;" onclick="closeChatArea()">✕</span>
+      </div>
+      <div id="chatMessages" style="min-height:40px; padding:6px 0; font-size:14px; color:#333;"></div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button id="sendChatBtn" onclick="sendMessage()">Send</button>
+      </div>
+      <div id="upgradeButtonContainer" style="margin-top:6px; display:none;">
+        <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="upgrade-btn">⬆️ Upgrade to Continue Chatting</a>
+        <p style="font-size:12px; color:#888; margin-top:4px;">⛔ Chat is paused until you upgrade.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:8px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">⬆️ Upgrade to Chat More</a>
     </div>
   </div>
   
@@ -511,12 +603,12 @@
   <div class="section text-center">
     <span style="background:#f5f5f5; padding:3px 14px; border-radius:40px; font-weight:800; font-size:12px; color:#1c7e5e; display:inline-block; margin-bottom:10px; animation:borderGlow 2s ease-in-out infinite;">⭐ SUCCESS STORIES ⭐</span>
     <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite;"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin O. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kelvin O.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $2,240 last week</div><div style="font-size:11px; color:#666;">"Cleared my rent in 9 days. Legit!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.2s;"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka N. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Amaka N.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,860 this month</div><div style="font-size:11px; color:#666;">"Chatting while earning. Best side hustle!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.4s;"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame B. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kwame B.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,120 this week</div><div style="font-size:11px; color:#666;">"MoMo withdrawal in seconds. Real!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.6s;"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith W. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Faith W.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $980 this week</div><div style="font-size:11px; color:#666;">"Paid my school fees in 2 weeks!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.8s;"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Peter M. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Peter M.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,550 last month</div><div style="font-size:11px; color:#666;">"Best decision I made this year!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 1s;"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah K. success story" loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Sarah K.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,300 this month</div><div style="font-size:11px; color:#666;">"Working from home never felt this good!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite;"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin O." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kelvin O.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $2,240 last week</div><div style="font-size:11px; color:#666;">"Cleared my rent in 9 days. Legit!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.2s;"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka N." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Amaka N.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,860 this month</div><div style="font-size:11px; color:#666;">"Chatting while earning. Best side hustle!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.4s;"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame B." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kwame B.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,120 this week</div><div style="font-size:11px; color:#666;">"MoMo withdrawal in seconds. Real!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.6s;"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith W." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Faith W.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $980 this week</div><div style="font-size:11px; color:#666;">"Paid my school fees in 2 weeks!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.8s;"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Peter M." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Peter M.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,550 last month</div><div style="font-size:11px; color:#666;">"Best decision I made this year!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 1s;"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah K." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Sarah K.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,300 this month</div><div style="font-size:11px; color:#666;">"Working from home never felt this good!"</div></div></div>
     </div>
   </div>
   
@@ -528,7 +620,7 @@
       <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite 0.3s;"><span style="font-size:24px;">🎯</span><div><span style="font-weight:800; font-size:15px; color:#111;">Complete Tasks</span><div style="font-size:13px; color:#555;">Watch videos, surveys, chat, or share posts.</div></div></div>
       <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite 0.6s;"><span style="font-size:24px;">💰</span><div><span style="font-weight:800; font-size:15px; color:#111;">Withdraw Instantly</span><div style="font-size:13px; color:#555;">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
     </div>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px;">🚀 Get Started Now</a>
+    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px; font-size:14px; padding:8px 18px;">🚀 Get Started Now</a>
   </div>
   
   <div class="section text-center">
@@ -544,7 +636,7 @@
         <div style="padding:4px 0; color:#555; font-weight:600; font-size:13px;">🕒 24/7 Priority Support</div>
         <div style="padding:4px 0; color:#555; font-weight:600; font-size:13px;">📱 Mobile Money Withdrawal</div>
       </div>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:17px; padding:12px 30px;">Activate Now →</a>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">Activate Now →</a>
     </div>
   </div>
   
@@ -720,6 +812,94 @@
     setTimeout(updatePopup, 600);
     setInterval(updatePopup, 1800);
   })();
+
+  // ----- CHAT FUNCTIONALITY with upgrade lock -----
+  let currentUser = null;
+  let isChatLocked = false; // true when upgrade button shown
+
+  function handleChatClick(anchor) {
+    const card = anchor.closest('.user-card');
+    if (!card) return;
+    const userName = card.dataset.user || 'Friend';
+    const greeting = card.dataset.greeting || '👋 Hi! Let\'s chat!';
+    currentUser = userName;
+    // Reset lock state for new chat
+    isChatLocked = false;
+    const chatArea = document.getElementById('dynamicChatArea');
+    const chatName = document.getElementById('chatUserName');
+    const chatMessages = document.getElementById('chatMessages');
+    const upgradeContainer = document.getElementById('upgradeButtonContainer');
+    const inputField = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('sendChatBtn');
+    
+    chatArea.style.display = 'block';
+    chatName.textContent = '💬 Chat with ' + userName;
+    chatMessages.innerHTML = '';
+    upgradeContainer.style.display = 'none';
+    sendBtn.disabled = false;
+    inputField.disabled = false;
+    inputField.value = '';
+    // Send personalized greeting
+    setTimeout(() => {
+      chatMessages.innerHTML = '<div><strong>' + userName + ':</strong> ' + greeting + '</div>';
+    }, 100);
+    chatArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function sendMessage() {
+    if (isChatLocked) {
+      alert('⛔ Chat is paused. Please upgrade to continue.');
+      return;
+    }
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    if (!currentUser) {
+      alert('Please click on a profile first.');
+      return;
+    }
+    const chatMessages = document.getElementById('chatMessages');
+    const upgradeContainer = document.getElementById('upgradeButtonContainer');
+    const sendBtn = document.getElementById('sendChatBtn');
+    const inputField = document.getElementById('chatInput');
+    
+    // Append user message
+    chatMessages.innerHTML += '<div><strong>You:</strong> ' + msg + '</div>';
+    inputField.value = '';
+    
+    // Get the personalized desperate reply from the current user card
+    const cards = document.querySelectorAll('.user-card');
+    let desperateMsg = '😍 I\'m so interested! Please upgrade to continue!';
+    for (let card of cards) {
+      if (card.dataset.user === currentUser) {
+        desperateMsg = card.dataset.desperate || desperateMsg;
+        break;
+      }
+    }
+    
+    // Show desperate reply and lock chat
+    setTimeout(() => {
+      chatMessages.innerHTML += '<div><strong>' + currentUser + ':</strong> ' + desperateMsg + '</div>';
+      upgradeContainer.style.display = 'block';
+      isChatLocked = true;
+      sendBtn.disabled = true;
+      inputField.disabled = true;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 400);
+  }
+
+  function closeChatArea() {
+    document.getElementById('dynamicChatArea').style.display = 'none';
+    currentUser = null;
+    isChatLocked = false;
+    document.getElementById('upgradeButtonContainer').style.display = 'none';
+    document.getElementById('sendChatBtn').disabled = false;
+    document.getElementById('chatInput').disabled = false;
+  }
+
+  document.getElementById('chatInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendMessage();
+  });
 </script>
 </body>
-  </html>
+</html>
