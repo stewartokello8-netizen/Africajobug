@@ -292,17 +292,23 @@
       background: #25d366;
       color: #fff;
       font-weight: 800;
-      padding: 14px 32px;
+      padding: 18px 40px;
       border-radius: 60px;
       display: inline-block;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
       border: 2px solid rgba(255,255,255,0.2);
       animation: borderGlow 2s ease-in-out infinite;
     }
+    .whatsapp-btn .sub {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 2px;
+    }
     .btn-start-earning {
-      font-size: 12px !important;
-      padding: 6px 14px !important;
+      font-size: 14px !important;
+      padding: 8px 18px !important;
     }
     .upgrade-btn {
       display: inline-block;
@@ -350,6 +356,147 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
+
+    /* --- New Chat Page Styles --- */
+    .chat-page-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .chat-page-overlay.active { display: flex; }
+    .chat-page {
+      background: #fff;
+      border-radius: 28px;
+      max-width: 420px;
+      width: 100%;
+      height: 580px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
+      overflow: hidden;
+    }
+    .chat-page-header {
+      padding: 14px 18px;
+      background: #1c7e5e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .chat-page-header img {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+      object-fit: cover;
+    }
+    .chat-page-header .info { flex: 1; }
+    .chat-page-header .info .name { font-weight: 800; font-size: 16px; }
+    .chat-page-header .info .status { font-size: 12px; opacity: 0.8; }
+    .chat-page-header .close-btn {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .chat-page-header .close-btn:hover { background: rgba(255,255,255,0.25); }
+    .chat-messages-area {
+      flex: 1;
+      padding: 14px 16px;
+      overflow-y: auto;
+      background: #f2f5f7;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .chat-msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 18px;
+      font-size: 14px;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+    .chat-msg.received {
+      background: #fff;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .chat-msg.sent {
+      background: #1c7e5e;
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-msg .msg-name { font-weight: 700; font-size: 12px; margin-bottom: 2px; }
+    .chat-msg.received .msg-name { color: #1c7e5e; }
+    .chat-msg .time { font-size: 10px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
+    .chat-page-footer {
+      padding: 10px 14px 14px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .chat-page-footer input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 30px;
+      border: 2px solid #e0e0e0;
+      font-size: 14px;
+      outline: none;
+    }
+    .chat-page-footer input:focus { border-color: #1c7e5e; }
+    .chat-page-footer button {
+      background: #1c7e5e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .chat-page-footer button:hover { background: #146a4e; }
+    .chat-page-footer button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .chat-upgrade-banner {
+      background: #fef3c7;
+      padding: 10px 14px;
+      text-align: center;
+      border-top: 2px solid #f59e0b;
+      flex-shrink: 0;
+      display: none;
+    }
+    .chat-upgrade-banner a {
+      color: #000;
+      font-weight: 800;
+      text-decoration: none;
+      background: #f59e0b;
+      padding: 4px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 4px;
+    }
     @media (max-width: 480px) {
       .page-wrap { padding: 10px 10px 18px; }
       .brand-name { font-size: 22px; }
@@ -360,12 +507,14 @@
       .pipe-sep { font-size: 18px; }
       .signup-btn { font-size: 14px; padding: 5px 14px; }
       .btn-primary { font-size: 13px; padding: 6px 14px; }
-      .whatsapp-btn { font-size: 15px; padding: 10px 22px; }
+      .whatsapp-btn { font-size: 17px; padding: 14px 28px; }
+      .whatsapp-btn .sub { font-size: 12px; }
       .withdraw-grid { grid-template-columns: 1fr 1fr; gap: 3px 5px; }
       .withdraw-grid .item { font-size: 11px; padding: 3px 4px; }
       .user-card { padding: 6px 8px; }
       .user-card img { width: 32px; height: 32px; }
       .user-card .name { font-size: 13px; }
+      .chat-page { height: 500px; max-width: 100%; }
     }
     @media (max-width: 380px) {
       .brand-name { font-size: 18px; }
@@ -375,7 +524,8 @@
       .signup-btn { font-size: 12px; padding: 4px 10px; }
       .pipe-sep { font-size: 15px; }
       .header-row { gap: 4px; }
-      .whatsapp-btn { font-size: 13px; padding: 8px 16px; }
+      .whatsapp-btn { font-size: 14px; padding: 10px 18px; }
+      .whatsapp-btn .sub { font-size: 11px; }
     }
     @media (max-width: 340px) {
       .brand-name { font-size: 15px; }
@@ -410,12 +560,7 @@
     <h1 style="font-size:26px; font-weight:900; margin:0 0 2px; line-height:1.2;">Get Paid Every Time</h1>
     <h2 style="font-size:22px; font-weight:900; margin:0 0 6px; color:#1c7e5e;">Turn Clicks To Cash</h2>
     <p style="font-size:14px; color:#555; line-height:1.5; max-width:440px; margin:0 auto 12px;">Join <span id="joinCounter" style="font-weight:900; color:#1c7e5e;">187,432</span>+ Africans and earn <strong style="color:#1c7e5e;">$30 – $150 daily</strong> by completing simple tasks, watching ads, chatting, and posting on WhatsApp status</p>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 START EARNING NOW</a>
-    <div style="margin-top:10px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap; font-size:12px; color:#666;">
-      <span>✅ Instant withdraw</span>
-      <span>⚡ Instant payouts</span>
-      <span style="background:#f5f5f5; padding:2px 12px; border-radius:60px; color:#1c7e5e; border:1px solid #ddd;">⭐ 4.9 Trust Score</span>
-    </div>
+    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 Register Here</a>
   </div>
   
   <div style="background:#f5f5f5; border:1px solid #ddd; border-radius:60px; padding:6px 8px; margin:8px 0 0; overflow:hidden; white-space:nowrap; box-shadow:inset 0 2px 8px rgba(0,0,0,0.04);">
@@ -456,7 +601,10 @@
   </div>
   
   <div class="section text-center" style="padding:12px 0;">
-    <a href="https://chat.whatsapp.com/CQt8lbqYCYoLJ5CoZsepsY" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">💬 Join WhatsApp Group</a>
+    <a href="https://chat.whatsapp.com/CQt8lbqYCYoLJ5CoZsepsY" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+      💬 Join WhatsApp Group
+      <span class="sub">For Updates and connect with Others</span>
+    </a>
     <div style="display:inline-block; background:#fef3c7; padding:3px 14px; border-radius:60px; font-size:12px; font-weight:800; margin-top:6px; color:#000;">🔴 LIVE NOW · Active members</div>
   </div>
   
@@ -494,7 +642,7 @@
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.6s;">
       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Chat with Foreigners and Earn" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🌍 Chat with Foreigners</div><div style="font-size:11px; color:#555;">Connect with USA, UK, Canada. Paid per conversation. Make friends and earn.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat →</a></div></div>
+      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🌍 Chat with Foreigners</div><div style="font-size:11px; color:#555;">Chat with foreigners from various countries USA, UK and Canada.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat →</a></div></div>
     </div>
     <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.8s;">
       <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="WhatsApp Status Posts Earn Money" loading="lazy" width="40" height="40">
@@ -513,77 +661,58 @@
     </div>
     <h3 style="font-size:18px; font-weight:900; text-align:center; margin:0 0 10px; color:#1c7e5e;">🌍 Live Foreigners Online — Sending Nice Messages</h3>
     <div id="liveUserList">
-      <!-- Each profile has personalized data: name, greeting, and a unique desperate reply -->
-      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥">
+      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy" width="38" height="38">
         <div><div class="name">Emma S., 28 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇺🇸 USA <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing now...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Emma\'s latest video');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Emma\'s latest video');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️">
+      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy" width="38" height="38">
         <div><div class="name">James M., 34 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇬🇧 UK <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hello...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch James\'s story');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch James\'s story');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩">
+      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy" width="38" height="38">
         <div><div class="name">Sophie L., 26 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇨🇦 Canada <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ writing a reply...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Sophie\'s video');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Sophie\'s video');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏">
+      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia">
         <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy" width="38" height="38">
         <div><div class="name">David R., 41 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇦🇺 Australia <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending a message...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch David\'s content');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch David\'s content');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️">
+      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain">
         <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy" width="38" height="38">
         <div><div class="name">Maria G., 29 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇪🇸 Spain <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing a long message...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Maria\'s video');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Maria\'s video');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍">
+      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany">
         <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy" width="38" height="38">
         <div><div class="name">Thomas K., 37 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇩🇪 Germany <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hi there!</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Thomas\'s content');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Thomas\'s content');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️">
+      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France">
         <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy" width="38" height="38">
         <div><div class="name">Anna P., 31 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇫🇷 France <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ writing something...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Anna\'s video');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Anna\'s video');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀">
+      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland">
         <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy" width="38" height="38">
         <div><div class="name">Michael D., 45 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇪 Ireland <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending greetings...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Michael\'s story');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Michael\'s story');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️">
+      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy">
         <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy" width="38" height="38">
         <div><div class="name">Laura B., 27 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇮🇹 Italy <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ responding...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Laura\'s video');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Laura\'s video');">Watch</a></div>
       </div>
-      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍">
+      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand">
         <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy" width="38" height="38">
         <div><div class="name">Robert S., 39 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇳🇿 New Zealand <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 chatting away...</div></div>
-        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); handleChatClick(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
       </div>
     </div>
-    <!-- dynamic chat area -->
-    <div id="dynamicChatArea" style="margin-top:12px; background:#f9f9f9; border-radius:20px; padding:10px 14px; border:2px solid #1c7e5e; display:none; animation:borderGlow 1.5s ease-in-out infinite;">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-weight:800; color:#1c7e5e;" id="chatUserName">💬 Chat with Emma</span>
-        <span style="cursor:pointer; font-weight:700; font-size:18px; color:#999;" onclick="closeChatArea()">✕</span>
-      </div>
-      <div id="chatMessages" style="min-height:40px; padding:6px 0; font-size:14px; color:#333;"></div>
-      <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Type your message..." />
-        <button id="sendChatBtn" onclick="sendMessage()">Send</button>
-      </div>
-      <div id="upgradeButtonContainer" style="margin-top:6px; display:none;">
-        <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="upgrade-btn">⬆️ Upgrade to Continue Chatting</a>
-        <p style="font-size:12px; color:#888; margin-top:4px;">⛔ Chat is paused until you upgrade.</p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:8px;">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">⬆️ Upgrade to Chat More</a>
-    </div>
+    <!-- Removed "Upgrade to Chat More" button below live foreigners -->
   </div>
   
   <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:10px 10px; margin:10px 0; text-align:center;">
@@ -659,6 +788,30 @@
   </div>
 </div>
 
+<!-- Chat Page Overlay -->
+<div class="chat-page-overlay" id="chatOverlay">
+  <div class="chat-page">
+    <div class="chat-page-header">
+      <img id="chatPageAvatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+      <div class="info">
+        <div class="name" id="chatPageName">Emma S.</div>
+        <div class="status" id="chatPageStatus">🇺🇸 USA · Online</div>
+      </div>
+      <button class="close-btn" onclick="closeChatPage()">✕</button>
+    </div>
+    <div class="chat-messages-area" id="chatMessagesArea">
+      <!-- messages will be injected here -->
+    </div>
+    <div class="chat-upgrade-banner" id="chatUpgradeBanner">
+      ⛔ Chat is paused — <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a>
+    </div>
+    <div class="chat-page-footer">
+      <input type="text" id="chatPageInput" placeholder="Type a message..." />
+      <button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button>
+    </div>
+  </div>
+</div>
+
 <div id="withdrawalPopup">
   <div class="popup-card" id="popupCard">
     <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User withdrawal notification" loading="lazy" width="42" height="42">
@@ -672,8 +825,8 @@
 </div>
 
 <script>
+  // ---- Live counters ----
   (function() {
-    // Live counter simulation
     const counterEl = document.getElementById('liveCounter');
     const onlineNowEl = document.getElementById('onlineNow');
     let onlineCount = 3300;
@@ -692,7 +845,6 @@
       updateHeaderCount(onlineCount);
     }, 2800);
 
-    // Trust counter
     let trust = 187432;
     const trustEl = document.getElementById('trustCounter');
     const joinEl = document.getElementById('joinCounter');
@@ -705,7 +857,6 @@
     }
     setInterval(updateTrust, 2500);
 
-    // Live users
     let liveUsers = 187432;
     const liveUsersEl = document.getElementById('liveUsers');
     setInterval(() => {
@@ -714,7 +865,6 @@
       if (liveUsersEl) liveUsersEl.textContent = liveUsers.toLocaleString();
     }, 3200);
 
-    // Total paid
     let totalPaid = 2870000;
     const totalPaidEl = document.getElementById('totalPaid');
     setInterval(() => {
@@ -726,21 +876,21 @@
       }
     }, 4000);
 
-    // Active chatters
     const chatterEl = document.getElementById('activeChatters');
     setInterval(() => {
       if (chatterEl) chatterEl.textContent = Math.floor(Math.random() * 4) + 8;
     }, 5000);
 
-    // Typing status rotation
     const statuses = ['✍️ typing now...','💬 saying hello...','⌨️ writing a reply...','💬 sending a message...','✍️ typing a long message...','💬 saying hi there!','✍️ writing something...','💬 sending greetings...','⌨️ responding...','💬 chatting away...'];
     setInterval(() => {
       document.querySelectorAll('.typing-status').forEach(el => {
         el.textContent = statuses[Math.floor(Math.random() * statuses.length)];
       });
     }, 4200);
+  })();
 
-    // Withdrawal popup simulation
+  // ---- Withdrawal popup ----
+  (function() {
     const withdrawalData = [
       { flag:'🇰🇪', name:'James K.', amount:'2,580', method:'M-Pesa', gender:'male' },
       { flag:'🇬🇭', name:'Maureen A.', amount:'3,870', method:'MoMo', gender:'female' },
@@ -813,92 +963,90 @@
     setInterval(updatePopup, 1800);
   })();
 
-  // ----- CHAT FUNCTIONALITY with upgrade lock -----
-  let currentUser = null;
-  let isChatLocked = false; // true when upgrade button shown
+  // ---- New Chat Page ----
+  let chatLocked = false;
+  let chatUser = null;
+  let chatDesperate = '';
 
-  function handleChatClick(anchor) {
+  function openChatPage(anchor) {
     const card = anchor.closest('.user-card');
     if (!card) return;
-    const userName = card.dataset.user || 'Friend';
+    const name = card.dataset.user || 'Friend';
+    const img = card.dataset.img || 'https://randomuser.me/api/portraits/women/68.jpg';
+    const country = card.dataset.country || '🌍';
     const greeting = card.dataset.greeting || '👋 Hi! Let\'s chat!';
-    currentUser = userName;
-    // Reset lock state for new chat
-    isChatLocked = false;
-    const chatArea = document.getElementById('dynamicChatArea');
-    const chatName = document.getElementById('chatUserName');
-    const chatMessages = document.getElementById('chatMessages');
-    const upgradeContainer = document.getElementById('upgradeButtonContainer');
-    const inputField = document.getElementById('chatInput');
-    const sendBtn = document.getElementById('sendChatBtn');
-    
-    chatArea.style.display = 'block';
-    chatName.textContent = '💬 Chat with ' + userName;
-    chatMessages.innerHTML = '';
-    upgradeContainer.style.display = 'none';
-    sendBtn.disabled = false;
-    inputField.disabled = false;
-    inputField.value = '';
-    // Send personalized greeting
-    setTimeout(() => {
-      chatMessages.innerHTML = '<div><strong>' + userName + ':</strong> ' + greeting + '</div>';
-    }, 100);
-    chatArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    chatDesperate = card.dataset.desperate || '😍 I\'m so interested! Please upgrade to continue!';
+    chatUser = name;
+    chatLocked = false;
+
+    document.getElementById('chatPageAvatar').src = img;
+    document.getElementById('chatPageName').textContent = name;
+    document.getElementById('chatPageStatus').textContent = country + ' · Online';
+    const area = document.getElementById('chatMessagesArea');
+    area.innerHTML = '';
+    // Add greeting
+    const greetingMsg = document.createElement('div');
+    greetingMsg.className = 'chat-msg received';
+    greetingMsg.innerHTML = '<div class="msg-name">' + name + '</div>' + greeting + '<span class="time">just now</span>';
+    area.appendChild(greetingMsg);
+
+    document.getElementById('chatUpgradeBanner').style.display = 'none';
+    document.getElementById('chatPageSendBtn').disabled = false;
+    document.getElementById('chatPageInput').disabled = false;
+    document.getElementById('chatPageInput').value = '';
+
+    document.getElementById('chatOverlay').classList.add('active');
+    area.scrollTop = area.scrollHeight;
   }
 
-  function sendMessage() {
-    if (isChatLocked) {
+  function closeChatPage() {
+    document.getElementById('chatOverlay').classList.remove('active');
+    chatUser = null;
+    chatLocked = false;
+  }
+
+  function sendChatPageMessage() {
+    if (chatLocked) {
       alert('⛔ Chat is paused. Please upgrade to continue.');
       return;
     }
-    const input = document.getElementById('chatInput');
+    const input = document.getElementById('chatPageInput');
     const msg = input.value.trim();
-    if (!msg) return;
-    if (!currentUser) {
-      alert('Please click on a profile first.');
-      return;
-    }
-    const chatMessages = document.getElementById('chatMessages');
-    const upgradeContainer = document.getElementById('upgradeButtonContainer');
-    const sendBtn = document.getElementById('sendChatBtn');
-    const inputField = document.getElementById('chatInput');
-    
-    // Append user message
-    chatMessages.innerHTML += '<div><strong>You:</strong> ' + msg + '</div>';
-    inputField.value = '';
-    
-    // Get the personalized desperate reply from the current user card
-    const cards = document.querySelectorAll('.user-card');
-    let desperateMsg = '😍 I\'m so interested! Please upgrade to continue!';
-    for (let card of cards) {
-      if (card.dataset.user === currentUser) {
-        desperateMsg = card.dataset.desperate || desperateMsg;
-        break;
-      }
-    }
-    
-    // Show desperate reply and lock chat
+    if (!msg || !chatUser) return;
+    const area = document.getElementById('chatMessagesArea');
+
+    // Sent message
+    const sent = document.createElement('div');
+    sent.className = 'chat-msg sent';
+    sent.textContent = msg;
+    const time = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    sent.innerHTML += '<span class="time">' + time + '</span>';
+    area.appendChild(sent);
+    input.value = '';
+    area.scrollTop = area.scrollHeight;
+
+    // Simulate reply with desperate message
     setTimeout(() => {
-      chatMessages.innerHTML += '<div><strong>' + currentUser + ':</strong> ' + desperateMsg + '</div>';
-      upgradeContainer.style.display = 'block';
-      isChatLocked = true;
-      sendBtn.disabled = true;
-      inputField.disabled = true;
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 400);
+      const reply = document.createElement('div');
+      reply.className = 'chat-msg received';
+      reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) + '</span>';
+      area.appendChild(reply);
+      area.scrollTop = area.scrollHeight;
+      // Lock chat
+      chatLocked = true;
+      document.getElementById('chatUpgradeBanner').style.display = 'block';
+      document.getElementById('chatPageSendBtn').disabled = true;
+      document.getElementById('chatPageInput').disabled = true;
+    }, 600);
   }
 
-  function closeChatArea() {
-    document.getElementById('dynamicChatArea').style.display = 'none';
-    currentUser = null;
-    isChatLocked = false;
-    document.getElementById('upgradeButtonContainer').style.display = 'none';
-    document.getElementById('sendChatBtn').disabled = false;
-    document.getElementById('chatInput').disabled = false;
-  }
+  document.getElementById('chatPageInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') sendChatPageMessage();
+  });
 
-  document.getElementById('chatInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') sendMessage();
+  // Close overlay on background click
+  document.getElementById('chatOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeChatPage();
   });
 </script>
 </body>
