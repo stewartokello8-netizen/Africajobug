@@ -162,32 +162,31 @@
     }
     .earnings-scroll .scroll-content span { display: inline-block; padding: 0 8px; }
 
-    /* ----- DEMO OVERLAY (NEW - opens as page) ----- */
-    .demo-overlay {
+    /* DEMO PAGE (full page) */
+    .demo-page {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(6px);
+      background: radial-gradient(circle at 10% 30%, #eef2f9, #d9e1ef);
       z-index: 20000;
       display: none;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 16px;
+      justify-content: flex-start;
+      padding: 16px 16px 30px;
+      overflow-y: auto;
+      box-sizing: border-box;
     }
-    .demo-overlay.active { display: flex; }
-    .demo-card {
-      background: transparent;
-      border-radius: 48px;
+    .demo-page.active { display: flex; }
+    .demo-page .demo-card {
       max-width: 480px;
       width: 100%;
-      max-height: 95vh;
-      overflow-y: auto;
+      background: transparent;
+      border-radius: 48px;
       padding: 0;
-      position: relative;
+      margin-top: 8px;
       animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
-      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
     }
-    .demo-card .close-demo {
+    .demo-page .close-demo {
       position: sticky;
       top: 12px;
       float: right;
@@ -209,527 +208,8 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
       transition: background 0.2s;
     }
-    .demo-card .close-demo:hover { background: rgba(255,255,255,0.95); }
-
-    .user-card {
-      background: #f9f9f9;
-      border: 1px solid #eee;
-      border-radius: 20px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .user-card:hover { background: #f0f7f4; }
-    .user-card img {
-      width: 48px;
-      height: 48px;
-      border-radius: 100%;
-      object-fit: cover;
-      border: 2px solid #10b981;
-      flex-shrink: 0;
-    }
-    .user-card .user-info { flex: 1; }
-    .user-card .user-info .name { font-weight: 800; font-size: 15px; color: #000000; }
-    .user-card .user-info .country { font-size: 12px; font-weight: 700; color: #666; }
-    .user-card .user-info .status {
-      background: #f0f0f0;
-      border-radius: 50px;
-      padding: 1px 10px;
-      font-size: 10px;
-      font-weight: 700;
-      display: inline-block;
-      margin-top: 1px;
-      color: #1c7e5e;
-      border: 1px solid #e0e0e0;
-    }
-    .user-card .actions { display: flex; gap: 3px; flex-shrink: 0; }
-    .user-card .actions a {
-      padding: 4px 10px;
-      border-radius: 40px;
-      font-weight: 800;
-      font-size: 9px;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-    }
-    .user-card .actions .chat { background: #1c7e5e; color: #fff; border: 1px solid rgba(255,255,255,0.2); animation: borderGlow 1.5s ease-in-out infinite; }
-    .user-card .actions .watch { background: #f0f0f0; color: #555; border: 1px solid #ddd; }
-    .user-card .new-badge {
-      background: #dc2626;
-      color: #fff;
-      font-size: 8px;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 40px;
-      margin-left: 4px;
-      animation: pulse-dot 1.5s ease-in-out infinite;
-    }
-    .live-label {
-      background: #dc2626;
-      color: #fff;
-      font-size: 8px;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 40px;
-      margin-left: 4px;
-    }
-
-    .story-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: #f9f9f9;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 10px 14px;
-      margin-bottom: 8px;
-    }
-    .story-card img {
-      width: 52px;
-      height: 52px;
-      border-radius: 100%;
-      object-fit: cover;
-      border: 2px solid #1c7e5e;
-      flex-shrink: 0;
-    }
-    .story-card .story-info { flex: 1; }
-    .story-card .story-info .sname { font-weight: 800; font-size: 13px; color: #000000; }
-    .story-card .story-info .samount { font-weight: 800; font-size: 13px; color: #1c7e5e; }
-    .story-card .story-info .sdesc { font-size: 12px; color: #666; line-height: 1.3; margin-top: 2px; }
-
-    .stats-grid {
-      display: flex;
-      justify-content: space-around;
-      gap: 6px;
-    }
-    .stats-grid .stat-item {
-      background: #f9f9f9;
-      border: 2px solid #1c7e5e;
-      border-radius: 16px;
-      padding: 10px 2px;
-      flex: 1;
-      text-align: center;
-      animation: borderGlow 2.5s ease-in-out infinite;
-    }
-    .stats-grid .stat-item .stat-number { font-size: 20px; font-weight: 900; color: #1c7e5e; }
-    .stats-grid .stat-item .stat-label { font-size: 10px; font-weight: 600; color: #666; }
-
-    .withdraw-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4px 8px;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .withdraw-grid .item {
-      background: #f0f7f4;
-      padding: 4px 6px;
-      border-radius: 20px;
-      border: 1px solid #d4e8e0;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: #000000;
-    }
-
-    details { display: block; }
-    details summary {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 14px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 15px;
-      color: #000000;
-      list-style: none;
-      border-radius: 18px;
-      background: #f9f9f9;
-      border: 1px solid #eee;
-    }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-    details .faq-content { padding: 4px 14px 14px; background: #f9f9f9; border: 1px solid #eee; border-top: none; border-radius: 0 0 18px 18px; color: #000000; line-height: 1.5; font-size: 14px; }
-
-    .chat-page-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(6px);
-      z-index: 10000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-    .chat-page-overlay.active { display: flex; }
-    .chat-page {
-      background: #fff;
-      border-radius: 28px;
-      max-width: 420px;
-      width: 100%;
-      height: 580px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
-      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
-      overflow: hidden;
-    }
-    .chat-page-header {
-      padding: 14px 18px;
-      background: #1c7e5e;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    .chat-page-header img {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.3);
-      object-fit: cover;
-    }
-    .chat-page-header .info { flex: 1; }
-    .chat-page-header .info .name { font-weight: 800; font-size: 16px; }
-    .chat-page-header .info .status { font-size: 12px; opacity: 0.8; }
-    .chat-page-header .close-btn {
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: #fff;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-    }
-    .chat-page-header .close-btn:hover { background: rgba(255,255,255,0.25); }
-    .chat-messages-area {
-      flex: 1;
-      padding: 14px 16px;
-      overflow-y: auto;
-      background: #f2f5f7;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .chat-msg {
-      max-width: 80%;
-      padding: 10px 14px;
-      border-radius: 18px;
-      font-size: 14px;
-      line-height: 1.4;
-      word-break: break-word;
-    }
-    .chat-msg.received {
-      background: #fff;
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    }
-    .chat-msg.sent {
-      background: #1c7e5e;
-      color: #fff;
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-    }
-    .chat-msg .msg-name { font-weight: 700; font-size: 12px; margin-bottom: 2px; }
-    .chat-msg.received .msg-name { color: #1c7e5e; }
-    .chat-msg .time { font-size: 10px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
-    .chat-page-footer {
-      padding: 10px 14px 14px;
-      background: #fff;
-      border-top: 1px solid #eee;
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    .chat-page-footer input {
-      flex: 1;
-      padding: 10px 16px;
-      border-radius: 30px;
-      border: 2px solid #e0e0e0;
-      font-size: 14px;
-      outline: none;
-    }
-    .chat-page-footer input:focus { border-color: #1c7e5e; }
-    .chat-page-footer button {
-      background: #1c7e5e;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .chat-page-footer button:hover { background: #146a4e; }
-    .chat-page-footer button:disabled { opacity: 0.5; cursor: not-allowed; }
-    .chat-upgrade-banner {
-      background: #fef3c7;
-      padding: 10px 14px;
-      text-align: center;
-      border-top: 2px solid #f59e0b;
-      flex-shrink: 0;
-      display: none;
-    }
-    .chat-upgrade-banner a {
-      color: #000000;
-      font-weight: 800;
-      text-decoration: none;
-      background: #f59e0b;
-      padding: 4px 16px;
-      border-radius: 40px;
-      display: inline-block;
-      margin-top: 4px;
-    }
-
-    /* WITHDRAWAL POPUP */
-    #withdrawalPopup {
-      position: fixed;
-      bottom: 90px;
-      right: 16px;
-      z-index: 9999;
-      max-width: 320px;
-      width: 100%;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    #withdrawalPopup .popup-card {
-      background: #fff;
-      border: 2px solid #1c7e5e;
-      border-radius: 16px;
-      padding: 10px 12px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      pointer-events: auto;
-      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
-    }
-    #withdrawalPopup .popup-card img { width: 42px; height: 42px; border-radius: 60px; object-fit: cover; border: 2px solid #10b981; flex-shrink: 0; }
-    #withdrawalPopup .popup-card .info { flex: 1; min-width: 0; }
-    #withdrawalPopup .popup-card .info .title { font-weight: 800; font-size: 12px; color: #1c7e5e; }
-    #withdrawalPopup .popup-card .info .name { font-size: 13px; color: #000000; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    #withdrawalPopup .popup-card .info .method { font-size: 11px; color: #888; display: flex; align-items: center; gap: 4px; }
-    #withdrawalPopup .popup-card .close {
-      background: #f5f5f5;
-      border: none;
-      color: #888;
-      width: 24px;
-      height: 24px;
-      border-radius: 40px;
-      cursor: pointer;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-weight: 700;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9998;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-      transition: transform 0.2s;
-      cursor: pointer;
-      border: 3px solid #fff;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .whatsapp-float:hover { transform: scale(1.08); }
-    .whatsapp-float img {
-      width: 60%;
-      height: 60%;
-      object-fit: contain;
-      display: block;
-      filter: brightness(0) invert(1);
-    }
-
-    .footer-section {
-      margin-top: 20px;
-      padding-top: 18px;
-      border-top: 2px solid #d0dbd6;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px 8px;
-      margin-bottom: 14px;
-    }
-    .footer-grid .col h4 { font-size: 13px; font-weight: 800; color: #000000; margin-bottom: 6px; }
-    .footer-grid .col ul { list-style: none; padding: 0; }
-    .footer-grid .col ul li { font-size: 13px; color: #000000; padding: 3px 0; font-weight: 500; }
-    .footer-grid .col ul li a { color: #000000; text-decoration: none; }
-    .footer-grid .col ul li a:hover { color: #1c7e5e; }
-    .footer-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 12px;
-      border-top: 1px solid #eee;
-      font-size: 12px;
-      color: #000000;
-      gap: 6px;
-    }
-    .footer-bottom .brand-small { font-weight: 800; color: #000000; }
-    .footer-bottom .brand-small span { color: #1c7e5e; }
-    .footer-bottom .copy { font-size: 11px; color: #000000; }
-
-    .ways-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 6px 0 4px;
-    }
-    .way-card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 10px 12px;
-      background: #f9f9f9;
-      border: 1px solid #e8f0ec;
-      border-radius: 14px;
-      padding: 12px 14px;
-      transition: all 0.2s;
-    }
-    .way-card:hover { background: #f0f7f4; border-color: #1c7e5e; }
-    .way-card .way-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 2px solid #e0e0e0;
-    }
-    .way-card .way-content {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .way-card .way-content .way-name {
-      font-weight: 800;
-      font-size: 14px;
-      color: #000000;
-    }
-    .way-card .way-content .way-desc {
-      font-size: 11px;
-      color: #555;
-      line-height: 1.4;
-    }
-    .way-card .way-content .way-earn {
-      font-weight: 900;
-      font-size: 14px;
-      color: #1c7e5e;
-    }
-    .way-card .way-content .way-earn .sub {
-      font-size: 9px;
-      font-weight: 600;
-      color: #999;
-    }
-    .way-card .way-content .way-cta {
-      margin-top: 2px;
-    }
-    .way-card .way-content .way-cta .cta-btn {
-      display: inline-block;
-      background: #1c7e5e;
-      color: #fff;
-      padding: 5px 16px;
-      border-radius: 40px;
-      font-size: 11px;
-      font-weight: 700;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-    .way-card .way-content .way-cta .cta-btn:hover {
-      background: #146a4e;
-      transform: scale(1.05);
-    }
-    .way-card .way-content .way-cta .cta-btn.gold {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-    }
-    .way-card .way-content .way-cta .cta-btn.gold:hover {
-      background: linear-gradient(135deg, #d97706, #b45309);
-    }
-
-    .support-card {
-      background: #f0f7f4;
-      border: 2px solid #1c7e5e;
-      border-radius: 20px;
-      padding: 16px 20px;
-      margin: 10px 0;
-      text-align: center;
-      animation: borderGlow 2.5s ease-in-out infinite;
-    }
-    .support-card .support-icon {
-      font-size: 32px;
-      margin-bottom: 6px;
-    }
-    .support-card .support-number {
-      font-size: 24px;
-      font-weight: 900;
-      color: #1c7e5e;
-      letter-spacing: 0.5px;
-    }
-    .support-card .support-label {
-      font-size: 13px;
-      color: #000000;
-      font-weight: 600;
-    }
-
-    .how-step {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #f9f9f9;
-      border: 1px solid #eee;
-      border-radius: 16px;
-      padding: 14px 16px;
-      margin-bottom: 8px;
-    }
-    .how-step .step-num {
-      width: 36px;
-      height: 36px;
-      background: #1c7e5e;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .how-step .step-info { flex: 1; }
-    .how-step .step-info .step-title { font-weight: 800; font-size: 15px; color: #000000; }
-    .how-step .step-info .step-desc { font-size: 13px; color: #555; }
-
-    /* Premium Dashboard Styles inside demo card */
-    .demo-card .breadcrumb {
+    .demo-page .close-demo:hover { background: rgba(255,255,255,0.95); }
+    .demo-page .demo-card .breadcrumb {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -740,12 +220,12 @@
       margin-bottom: 18px;
       padding-left: 4px;
     }
-    .demo-card .breadcrumb span:not(:last-child)::after {
+    .demo-page .demo-card .breadcrumb span:not(:last-child)::after {
       content: "›";
       margin-left: 6px;
       color: #8a9bb8;
     }
-    .demo-card .breadcrumb .current {
+    .demo-page .demo-card .breadcrumb .current {
       color: #0f1d3a;
       font-weight: 700;
       background: rgba(255,255,255,0.4);
@@ -754,7 +234,7 @@
       backdrop-filter: blur(4px);
       border: 1px solid rgba(255,255,255,0.5);
     }
-    .demo-card .welcome-section {
+    .demo-page .demo-card .welcome-section {
       background: rgba(255, 255, 255, 0.55);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
@@ -764,27 +244,27 @@
       border: 1px solid rgba(255, 255, 255, 0.7);
       box-shadow: 0 8px 18px rgba(0, 10, 30, 0.04);
     }
-    .demo-card .welcome-row {
+    .demo-page .demo-card .welcome-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 6px 10px;
     }
-    .demo-card .welcome-row .greeting {
+    .demo-page .demo-card .welcome-row .greeting {
       font-size: 22px;
       font-weight: 700;
       color: #0f1d3a;
       letter-spacing: -0.3px;
     }
-    .demo-card .welcome-row .greeting span {
+    .demo-page .demo-card .welcome-row .greeting span {
       background: linear-gradient(135deg, #1f2f55, #2f4170);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-weight: 800;
     }
-    .demo-card .premium-badge {
+    .demo-page .demo-card .premium-badge {
       background: rgba(255, 215, 0, 0.12);
       backdrop-filter: blur(4px);
       padding: 6px 18px 6px 16px;
@@ -800,7 +280,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
       text-transform: uppercase;
     }
-    .demo-card .premium-badge i {
+    .demo-page .demo-card .premium-badge i {
       font-style: normal;
       background: #f5d65a;
       padding: 0 10px;
@@ -809,7 +289,7 @@
       font-size: 11px;
       font-weight: 800;
     }
-    .demo-card .welcome-sub {
+    .demo-page .demo-card .welcome-sub {
       margin-top: 14px;
       font-size: 14px;
       color: #1f2d4a;
@@ -824,7 +304,7 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-    .demo-card .welcome-sub .badge-new {
+    .demo-page .demo-card .welcome-sub .badge-new {
       background: #f5d65a;
       font-weight: 700;
       font-size: 11px;
@@ -833,17 +313,17 @@
       color: #1a1f2e;
       letter-spacing: 0.3px;
     }
-    .demo-card .welcome-sub strong {
+    .demo-page .demo-card .welcome-sub strong {
       color: #0f1d3a;
       font-weight: 700;
     }
-    .demo-card .stats-grid {
+    .demo-page .demo-card .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
       margin: 8px 0 20px;
     }
-    .demo-card .stat-card {
+    .demo-page .demo-card .stat-card {
       background: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -854,12 +334,12 @@
       text-align: center;
       transition: all 0.15s;
     }
-    .demo-card .stat-card:hover {
+    .demo-page .demo-card .stat-card:hover {
       background: rgba(255, 255, 255, 0.8);
       border-color: rgba(255, 215, 0, 0.2);
       transform: translateY(-2px);
     }
-    .demo-card .stat-card .stat-label {
+    .demo-page .demo-card .stat-card .stat-label {
       font-size: 12px;
       font-weight: 600;
       color: #3b4d6e;
@@ -867,20 +347,20 @@
       text-transform: uppercase;
       opacity: 0.8;
     }
-    .demo-card .stat-card .stat-value {
+    .demo-page .demo-card .stat-card .stat-value {
       font-size: 26px;
       font-weight: 800;
       color: #0b162e;
       margin-top: 6px;
       letter-spacing: -0.3px;
     }
-    .demo-card .stat-card .stat-value small {
+    .demo-page .demo-card .stat-card .stat-value small {
       font-size: 13px;
       font-weight: 500;
       color: #4f6385;
       margin-left: 3px;
     }
-    .demo-card .stat-card .stat-sub {
+    .demo-page .demo-card .stat-card .stat-sub {
       font-size: 12px;
       color: #4f6385;
       font-weight: 500;
@@ -888,11 +368,11 @@
       letter-spacing: 0.2px;
       opacity: 0.7;
     }
-    .demo-card .stat-card.expense .stat-value { color: #b45a3a; }
-    .demo-card .stat-card.earnings .stat-value { color: #0f3d7a; }
-    .demo-card .stat-card.balance .stat-value { color: #1f7a4a; }
-    .demo-card .stat-card.withdrawn .stat-value { color: #1f3a7a; }
-    .demo-card .balance-extra {
+    .demo-page .demo-card .stat-card.expense .stat-value { color: #b45a3a; }
+    .demo-page .demo-card .stat-card.earnings .stat-value { color: #0f3d7a; }
+    .demo-page .demo-card .stat-card.balance .stat-value { color: #1f7a4a; }
+    .demo-page .demo-card .stat-card.withdrawn .stat-value { color: #1f3a7a; }
+    .demo-page .demo-card .balance-extra {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -902,7 +382,7 @@
       border-top: 1px solid rgba(0,0,0,0.04);
       padding-top: 10px;
     }
-    .demo-card .balance-extra .all-time {
+    .demo-page .demo-card .balance-extra .all-time {
       font-weight: 700;
       color: #0b1a34;
       letter-spacing: 0.2px;
@@ -910,7 +390,7 @@
       padding: 2px 14px;
       border-radius: 40px;
     }
-    .demo-card .balance-extra .show-link {
+    .demo-page .demo-card .balance-extra .show-link {
       font-weight: 700;
       color: #1f3a7a;
       background: rgba(255, 255, 255, 0.4);
@@ -921,7 +401,7 @@
       cursor: default;
       backdrop-filter: blur(2px);
     }
-    .demo-card .withdrawn-chip {
+    .demo-page .demo-card .withdrawn-chip {
       background: rgba(255, 215, 0, 0.12);
       backdrop-filter: blur(4px);
       border-radius: 60px;
@@ -933,24 +413,24 @@
       border: 1px solid rgba(255, 215, 0, 0.2);
       margin-top: 4px;
     }
-    .demo-card .withdrawn-chip small {
+    .demo-page .demo-card .withdrawn-chip small {
       font-weight: 500;
       font-size: 14px;
       color: #3a4f72;
       margin-left: 4px;
     }
-    .demo-card .divider-light {
+    .demo-page .demo-card .divider-light {
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255,215,0,0.15), transparent);
       margin: 14px 0 18px;
     }
-    .demo-card .earn-grid {
+    .demo-page .demo-card .earn-grid {
       display: flex;
       flex-direction: column;
       gap: 14px;
       margin: 18px 0 20px;
     }
-    .demo-card .earn-card {
+    .demo-page .demo-card .earn-card {
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(6px);
       border-radius: 32px;
@@ -963,30 +443,30 @@
       transition: all 0.15s;
       cursor: pointer;
     }
-    .demo-card .earn-card:hover {
+    .demo-page .demo-card .earn-card:hover {
       background: rgba(255, 255, 255, 0.75);
       border-color: rgba(255, 215, 0, 0.15);
       transform: scale(1.01);
     }
-    .demo-card .earn-left .label {
+    .demo-page .demo-card .earn-left .label {
       font-weight: 600;
       font-size: 16px;
       color: #0f1d3a;
       letter-spacing: -0.2px;
     }
-    .demo-card .earn-left .amount {
+    .demo-page .demo-card .earn-left .amount {
       font-weight: 800;
       font-size: 20px;
       color: #0b1a34;
       margin-top: 2px;
     }
-    .demo-card .earn-left .usd {
+    .demo-page .demo-card .earn-left .usd {
       font-size: 13px;
       color: #4f6385;
       font-weight: 500;
       margin-left: 6px;
     }
-    .demo-card .earn-right {
+    .demo-page .demo-card .earn-right {
       background: rgba(255, 215, 0, 0.08);
       backdrop-filter: blur(4px);
       padding: 8px 24px;
@@ -996,11 +476,11 @@
       color: #1f2f5a;
       border: 1px solid rgba(255, 215, 0, 0.1);
     }
-    .demo-card .activate-btn-wrapper {
+    .demo-page .demo-card .activate-btn-wrapper {
       margin: 8px 0 18px;
       text-align: center;
     }
-    .demo-card .activate-btn {
+    .demo-page .demo-card .activate-btn {
       display: inline-block;
       background: linear-gradient(135deg, #f5d65a, #f0c94a);
       border: none;
@@ -1018,20 +498,20 @@
       border: 1px solid rgba(255,255,255,0.4);
       text-decoration: none;
     }
-    .demo-card .activate-btn:active {
+    .demo-page .demo-card .activate-btn:active {
       transform: scale(0.97);
     }
-    .demo-card .activate-btn:hover {
+    .demo-page .demo-card .activate-btn:hover {
       background: linear-gradient(135deg, #fade5a, #f0c94a);
       box-shadow: 0 8px 0 #b89a3a, 0 12px 32px rgba(245, 214, 90, 0.3);
     }
-    .demo-card .nav-chips {
+    .demo-page .demo-card .nav-chips {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin: 8px 0 18px;
     }
-    .demo-card .nav-chip {
+    .demo-page .demo-card .nav-chip {
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(4px);
       padding: 10px 24px;
@@ -1043,12 +523,12 @@
       cursor: pointer;
       transition: 0.1s;
     }
-    .demo-card .nav-chip:hover {
+    .demo-page .demo-card .nav-chip:hover {
       background: rgba(255, 215, 0, 0.08);
       border-color: rgba(255, 215, 0, 0.2);
     }
-    .demo-card .profile-list { margin: 12px 0 22px; }
-    .demo-card .profile-item {
+    .demo-page .demo-card .profile-list { margin: 12px 0 22px; }
+    .demo-page .demo-card .profile-item {
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(6px);
       border-radius: 28px;
@@ -1060,20 +540,20 @@
       margin-bottom: 10px;
       transition: 0.1s;
     }
-    .demo-card .profile-item:hover {
+    .demo-page .demo-card .profile-item:hover {
       background: rgba(255, 255, 255, 0.7);
     }
-    .demo-card .profile-item .avatar {
+    .demo-page .demo-card .profile-item .avatar {
       width: 48px; height: 48px; border-radius: 40px; margin-right: 14px;
       overflow: hidden; background: rgba(255,215,0,0.08); display: flex; align-items: center; justify-content: center;
       border: 1px solid rgba(255,255,255,0.3);
     }
-    .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .demo-card .profile-info .name { font-weight: 700; font-size: 17px; color: #0b1a34; }
-    .demo-card .profile-info .location { font-size: 13px; color: #3b4d6e; font-weight: 500; }
-    .demo-card .profile-amount { font-weight: 700; color: #0f1d3a; font-size: 16px; text-align: right; }
-    .demo-card .profile-amount small { font-weight: 500; color: #4f6385; font-size: 12px; display: block; }
-    .demo-card .footer-note {
+    .demo-page .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .demo-page .demo-card .profile-info .name { font-weight: 700; font-size: 17px; color: #0b1a34; }
+    .demo-page .demo-card .profile-info .location { font-size: 13px; color: #3b4d6e; font-weight: 500; }
+    .demo-page .demo-card .profile-amount { font-weight: 700; color: #0f1d3a; font-size: 16px; text-align: right; }
+    .demo-page .demo-card .profile-amount small { font-weight: 500; color: #4f6385; font-size: 12px; display: block; }
+    .demo-page .demo-card .footer-note {
       margin-top: 28px;
       text-align: center;
       font-size: 14px;
@@ -1087,7 +567,7 @@
       border-radius: 60px;
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
-    .demo-card .footer-note span {
+    .demo-page .demo-card .footer-note span {
       font-weight: 700;
       background: linear-gradient(135deg, #1f2f55, #2f4170);
       -webkit-background-clip: text;
@@ -1095,68 +575,31 @@
       background-clip: text;
     }
 
-    /* Demo popup for music/challenge */
-    .demo-action-popup {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      z-index: 30000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    /* deep black text on whole page */
+    body, .page-wrap, .header-row, .brand-name, .online-badge, .online-badge .count-number, .online-badge .label,
+    .earnings-scroll, .earnings-scroll .scroll-content, .section, .stat-item .stat-number, .stat-item .stat-label,
+    .story-card .story-info .sname, .story-card .story-info .samount, .story-card .story-info .sdesc,
+    .way-card .way-content .way-name, .way-card .way-content .way-desc, .way-card .way-content .way-earn,
+    .footer-grid .col h4, .footer-grid .col ul li, .footer-grid .col ul li a, .footer-bottom .brand-small,
+    .footer-bottom .copy, .support-card .support-label, .how-step .step-info .step-title, .how-step .step-info .step-desc,
+    details summary, details .faq-content, .demo-page .demo-card .breadcrumb .current, .demo-page .demo-card .welcome-row .greeting,
+    .demo-page .demo-card .stat-card .stat-value, .demo-page .demo-card .stat-card .stat-label, .demo-page .demo-card .balance-extra .all-time,
+    .demo-page .demo-card .balance-extra .show-link, .demo-page .demo-card .earn-left .label, .demo-page .demo-card .earn-left .amount,
+    .demo-page .demo-card .earn-left .usd, .demo-page .demo-card .earn-right, .demo-page .demo-card .nav-chip,
+    .demo-page .demo-card .profile-info .name, .demo-page .demo-card .profile-info .location, .demo-page .demo-card .profile-amount,
+    .demo-page .demo-card .footer-note, .demo-page .demo-card .footer-note span {
+      color: #000000 !important;
     }
-    .demo-action-popup.active { display: flex; }
-    .demo-action-popup .popup-content {
-      background: #fff;
-      border-radius: 32px;
-      padding: 32px 28px 28px;
-      max-width: 380px;
-      width: 100%;
-      text-align: center;
-      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    /* override for buttons/links that need white text */
+    .signup-btn, .btn-primary, .btn-primary a, .chat-page-header .info .name, .chat-page-header .info .status,
+    .chat-msg.sent, .chat-page-footer button, .demo-page .demo-card .activate-btn {
+      color: #fff !important;
     }
-    .demo-action-popup .popup-content .icon {
-      font-size: 48px;
-      margin-bottom: 12px;
-    }
-    .demo-action-popup .popup-content h3 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #0f1d3a;
-      margin-bottom: 8px;
-    }
-    .demo-action-popup .popup-content p {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .demo-action-popup .popup-content .earn-amount {
-      font-size: 28px;
-      font-weight: 900;
-      color: #1c7e5e;
-      margin: 8px 0 16px;
-    }
-    .demo-action-popup .popup-content .btn-close-popup {
-      background: #1c7e5e;
-      color: #fff;
-      border: none;
-      padding: 12px 32px;
-      border-radius: 60px;
-      font-weight: 700;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .demo-action-popup .popup-content .btn-close-popup:hover {
-      background: #146a4e;
-    }
+    .demo-page .demo-card .activate-btn { color: #0f1d3a !important; }
+    .demo-page .demo-card .premium-badge i { color: #1a1f2e !important; }
 
+    /* mobile friendly adjustments */
     @media (max-width: 480px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
       .page-wrap { padding: 10px 10px 18px; padding-top: 80px; }
       .brand-name { font-size: 22px; }
       .brand-icon { font-size: 22px; }
@@ -1165,21 +608,14 @@
       .online-badge .label { font-size: 12px; }
       .pipe-sep { font-size: 18px; }
       .signup-btn { font-size: 14px; padding: 5px 14px; }
-      .demo-card { padding: 0; }
-      .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .demo-card .stat-card .stat-value { font-size: 22px; }
-      .demo-card .welcome-row .greeting { font-size: 20px; }
-      .demo-card .earn-card { padding: 14px 16px; }
-      .demo-card .earn-left .label { font-size: 14px; }
-      .demo-card .earn-left .amount { font-size: 17px; }
-      .chat-page { height: 500px; max-width: 100%; }
-      .story-card img { width: 44px; height: 44px; }
-      .way-card .way-icon { width: 42px; height: 42px; }
-      .way-card { padding: 10px 12px; }
-      .support-card .support-number { font-size: 20px; }
-      .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
-      #withdrawalPopup { bottom: 80px; right: 12px; max-width: 260px; }
-      .demo-card { max-width: 100%; }
+      .demo-page .demo-card { padding: 0; }
+      .demo-page .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .demo-page .demo-card .stat-card .stat-value { font-size: 22px; }
+      .demo-page .demo-card .welcome-row .greeting { font-size: 20px; }
+      .demo-page .demo-card .earn-card { padding: 14px 16px; }
+      .demo-page .demo-card .earn-left .label { font-size: 14px; }
+      .demo-page .demo-card .earn-left .amount { font-size: 17px; }
+      .demo-page { padding: 10px 10px 20px; }
     }
   </style>
 </head>
@@ -1221,7 +657,7 @@
     </div>
   </div>
 
-  <!-- LIVE EARNINGS SCROLL - only amount, no task -->
+  <!-- LIVE EARNINGS SCROLL -->
   <div class="earnings-scroll">
     <span class="scroll-label">💰 EARNING</span>
     <span class="scroll-content" id="earningsScroll" style="animation-duration: 70s;">
@@ -1267,7 +703,7 @@
     </div>
   </div>
 
-  <!-- WAYS TO EARN (ALL UGX AMOUNTS REMOVED) -->
+  <!-- WAYS TO EARN -->
   <div class="section" style="border-bottom: 2px solid #1c7e5e;">
     <div style="text-align:center; margin-bottom:10px;">
       <span style="background:#1c7e5e; color:#fff; padding:3px 16px; border-radius:60px; font-size:11px; font-weight:800; display:inline-block; letter-spacing:0.5px;">EARNING METHODS</span>
@@ -1533,9 +969,9 @@
 </div>
 
 <!-- ========================================================= -->
-<!-- DEMO OVERLAY – stats cards only, amounts removed          -->
+<!-- DEMO PAGE – full page, not overlay -->
 <!-- ========================================================= -->
-<div class="demo-overlay" id="demoOverlay">
+<div class="demo-page" id="demoPage">
   <div class="demo-card">
     <button class="close-demo" onclick="closeDemo()">✕</button>
     
@@ -1563,21 +999,21 @@
         </div>
       </div>
 
-      <!-- stats grid – only graph cards, no amounts -->
+      <!-- stats grid – with amounts as requested -->
       <div class="stats-grid">
         <div class="stat-card expense">
           <div class="stat-label">Expense</div>
-          <div class="stat-value">—</div>
+          <div class="stat-value">UGX 19,000</div>
           <div class="stat-sub">&#8226; this month</div>
         </div>
         <div class="stat-card earnings">
           <div class="stat-label">Total Earnings</div>
-          <div class="stat-value">—</div>
+          <div class="stat-value">UGX 4,620,000</div>
           <div class="stat-sub">&#8226; all time</div>
         </div>
         <div class="stat-card balance" style="grid-column: span 1;">
           <div class="stat-label">Balance</div>
-          <div class="stat-value">—</div>
+          <div class="stat-value">UGX 3,000,000</div>
           <div class="balance-extra" style="border-top: none; padding-top: 2px; margin-top: 2px;">
             <span class="all-time">ALL TIME</span>
             <span class="show-link">Show full stats ›</span>
@@ -1586,7 +1022,7 @@
         <div class="stat-card withdrawn">
           <div class="stat-label">Withdrawn</div>
           <div class="stat-value" style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
-            <span>—</span>
+            <span>UGX 2,600,000</span>
             <span class="withdrawn-chip">12% <small>+</small></span>
           </div>
           <div class="stat-sub">&#8226; 30 days</div>
@@ -1595,26 +1031,26 @@
 
       <div class="divider-light"></div>
 
-      <!-- earn cards – amounts removed -->
+      <!-- earn cards – amounts in UGX -->
       <div class="earn-grid">
-        <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">
+        <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', 'UGX 4,600', '$4.60', '💬')">
           <div class="earn-left">
             <span class="label">Chat with Foreigners</span>
-            <span class="amount"><span class="usd">≈ $4.60</span></span>
+            <span class="amount">UGX 4,600 <span class="usd">≈ $4.60</span></span>
           </div>
           <div class="earn-right">Chat</div>
         </div>
-        <div class="earn-card" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">
+        <div class="earn-card" onclick="openDemoAction('Earn with Music', 'UGX 1,350', '$1.35', '🎵')">
           <div class="earn-left">
             <span class="label">Per Music Track</span>
-            <span class="amount"><span class="usd">≈ $1.35</span></span>
+            <span class="amount">UGX 1,350 <span class="usd">≈ $1.35</span></span>
           </div>
           <div class="earn-right">Music</div>
         </div>
-        <div class="earn-card" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">
+        <div class="earn-card" onclick="openDemoAction('Color Challenge', 'UGX 3,240', '$3.24', '🎨')">
           <div class="earn-left">
             <span class="label">Color Challenge Win</span>
-            <span class="amount"><span class="usd">≈ $3.24</span></span>
+            <span class="amount">UGX 3,240 <span class="usd">≈ $3.24</span></span>
           </div>
           <div class="earn-right">Challenge</div>
         </div>
@@ -1629,37 +1065,37 @@
 
       <!-- NAV CHIPS -->
       <div class="nav-chips">
-        <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">💬 Chat</span>
-        <span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">🎵 Music</span>
-        <span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">🎨 Challenge</span>
+        <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', 'UGX 4,600', '$4.60', '💬')">💬 Chat</span>
+        <span class="nav-chip" onclick="openDemoAction('Earn with Music', 'UGX 1,350', '$1.35', '🎵')">🎵 Music</span>
+        <span class="nav-chip" onclick="openDemoAction('Color Challenge', 'UGX 3,240', '$3.24', '🎨')">🎨 Challenge</span>
       </div>
 
-      <!-- Live Members – amounts removed -->
+      <!-- Live Members – amounts in UGX -->
       <div style="margin-top: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
           <span style="font-weight: 700; font-size: 17px; color: #0b1a34;">Live Members</span>
-          <span style="color: #1f2d4a; font-weight: 600;">—</span>
+          <span style="color: #1f2d4a; font-weight: 600;">UGX 4,600</span>
         </div>
         <div class="profile-list">
           <div class="profile-item">
             <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div>
             <div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div>
-            <div class="profile-amount">— <small>~$4.60</small></div>
+            <div class="profile-amount">UGX 4,600 <small>~$4.60</small></div>
           </div>
           <div class="profile-item">
             <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div>
             <div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div>
-            <div class="profile-amount">— <small>~$4.60</small></div>
+            <div class="profile-amount">UGX 4,600 <small>~$4.60</small></div>
           </div>
           <div class="profile-item">
             <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div>
             <div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div>
-            <div class="profile-amount">— <small>~$4.60</small></div>
+            <div class="profile-amount">UGX 4,600 <small>~$4.60</small></div>
           </div>
           <div class="profile-item">
             <div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div>
             <div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div>
-            <div class="profile-amount">— <small>~$4.60</small></div>
+            <div class="profile-amount">UGX 4,600 <small>~$4.60</small></div>
           </div>
         </div>
       </div>
@@ -1673,63 +1109,65 @@
   </div>
 </div>
 
-<!-- DEMO ACTION POPUP - shows when Music or Challenge is clicked -->
-<div class="demo-action-popup" id="demoActionPopup">
-  <div class="popup-content">
-    <div class="icon" id="actionIcon">🎵</div>
-    <h3 id="actionTitle">Earn with Music</h3>
-    <p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p>
-    <div class="earn-amount" id="actionAmount">—</div>
+<!-- DEMO ACTION POPUP -->
+<div class="demo-action-popup" id="demoActionPopup" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(4px); z-index:30000; display:none; align-items:center; justify-content:center; padding:20px;">
+  <div class="popup-content" style="background:#fff; border-radius:32px; padding:32px 28px 28px; max-width:380px; width:100%; text-align:center; animation:slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1); box-shadow:0 24px 60px rgba(0,0,0,0.3);">
+    <div class="icon" id="actionIcon" style="font-size:48px; margin-bottom:12px;">🎵</div>
+    <h3 id="actionTitle" style="font-size:22px; font-weight:800; color:#0f1d3a; margin-bottom:8px;">Earn with Music</h3>
+    <p id="actionDesc" style="font-size:14px; color:#555; line-height:1.5; margin-bottom:16px;">You're about to earn real money by listening to trending tracks!</p>
+    <div class="earn-amount" id="actionAmount" style="font-size:28px; font-weight:900; color:#1c7e5e; margin:8px 0 16px;">UGX 1,350</div>
     <p style="font-size:13px; color:#888; margin-bottom:12px;" id="actionUsd">≈ $1.35 per track</p>
-    <button class="btn-close-popup" onclick="closeDemoAction()">👍 Got it!</button>
+    <button class="btn-close-popup" onclick="closeDemoAction()" style="background:#1c7e5e; color:#fff; border:none; padding:12px 32px; border-radius:60px; font-weight:700; font-size:16px; cursor:pointer; transition:background 0.2s;">👍 Got it!</button>
   </div>
 </div>
 
 <!-- CHAT OVERLAY -->
-<div class="chat-page-overlay" id="chatOverlay">
-  <div class="chat-page">
-    <div class="chat-page-header">
-      <img id="chatPageAvatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
-      <div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div>
-      <button class="close-btn" onclick="closeChatPage()">✕</button>
+<div class="chat-page-overlay" id="chatOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); backdrop-filter:blur(6px); z-index:10000; display:none; align-items:center; justify-content:center; padding:16px;">
+  <div class="chat-page" style="background:#fff; border-radius:28px; max-width:420px; width:100%; height:580px; display:flex; flex-direction:column; box-shadow:0 24px 60px rgba(0,0,0,0.3); animation:slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1); overflow:hidden;">
+    <div class="chat-page-header" style="padding:14px 18px; background:#1c7e5e; color:#fff; display:flex; align-items:center; gap:12px; flex-shrink:0;">
+      <img id="chatPageAvatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" style="width:40px; height:40px; border-radius:50%; border:2px solid rgba(255,255,255,0.3); object-fit:cover;">
+      <div class="info" style="flex:1;"><div class="name" id="chatPageName" style="font-weight:800; font-size:16px;">Emma S.</div><div class="status" id="chatPageStatus" style="font-size:12px; opacity:0.8;">🇺🇸 USA · Online</div></div>
+      <button class="close-btn" onclick="closeChatPage()" style="background:rgba(255,255,255,0.15); border:none; color:#fff; width:32px; height:32px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s;">✕</button>
     </div>
-    <div class="chat-messages-area" id="chatMessagesArea"></div>
-    <div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div>
-    <div class="chat-page-footer">
-      <input type="text" id="chatPageInput" placeholder="Type a message..." />
-      <button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button>
+    <div class="chat-messages-area" id="chatMessagesArea" style="flex:1; padding:14px 16px; overflow-y:auto; background:#f2f5f7; display:flex; flex-direction:column; gap:6px;"></div>
+    <div class="chat-upgrade-banner" id="chatUpgradeBanner" style="background:#fef3c7; padding:10px 14px; text-align:center; border-top:2px solid #f59e0b; flex-shrink:0; display:none;">⛔ Chat is paused — <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" style="color:#000000; font-weight:800; text-decoration:none; background:#f59e0b; padding:4px 16px; border-radius:40px; display:inline-block; margin-top:4px;">Upgrade to continue</a></div>
+    <div class="chat-page-footer" style="padding:10px 14px 14px; background:#fff; border-top:1px solid #eee; display:flex; gap:8px; flex-shrink:0;">
+      <input type="text" id="chatPageInput" placeholder="Type a message..." style="flex:1; padding:10px 16px; border-radius:30px; border:2px solid #e0e0e0; font-size:14px; outline:none;">
+      <button id="chatPageSendBtn" onclick="sendChatPageMessage()" style="background:#1c7e5e; color:#fff; border:none; padding:10px 20px; border-radius:30px; font-weight:700; cursor:pointer; transition:background 0.2s;">Send</button>
     </div>
   </div>
 </div>
 
-<!-- WITHDRAWAL POPUP - amounts restored -->
-<div id="withdrawalPopup">
-  <div class="popup-card" id="popupCard">
-    <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy">
-    <div class="info">
-      <div class="title">💸 Live Withdrawal</div>
-      <div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div>
-      <div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:10px;">just now</span></div>
+<!-- WITHDRAWAL POPUP -->
+<div id="withdrawalPopup" style="position:fixed; bottom:90px; right:16px; z-index:9999; max-width:320px; width:100%; pointer-events:none; display:flex; flex-direction:column; gap:8px;">
+  <div class="popup-card" id="popupCard" style="background:#fff; border:2px solid #1c7e5e; border-radius:16px; padding:10px 12px; box-shadow:0 12px 32px rgba(0,0,0,0.12); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1) forwards;">
+    <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" style="width:42px; height:42px; border-radius:60px; object-fit:cover; border:2px solid #10b981; flex-shrink:0;" loading="lazy">
+    <div class="info" style="flex:1; min-width:0;">
+      <div class="title" style="font-weight:800; font-size:12px; color:#1c7e5e;">💸 Live Withdrawal</div>
+      <div class="name" id="popupUserName" style="font-size:13px; color:#000000; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">🇰🇪 James K. withdrew KSh 2,580</div>
+      <div class="method" style="font-size:11px; color:#888; display:flex; align-items:center; gap:4px;"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:10px;">just now</span></div>
     </div>
-    <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
+    <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close" style="background:#f5f5f5; border:none; color:#888; width:24px; height:24px; border-radius:40px; cursor:pointer; font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700;">✕</button>
   </div>
 </div>
 
 <!-- FLOATING WHATSAPP WIDGET -->
-<a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
-  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" />
+<a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp" style="position:fixed; bottom:20px; right:20px; z-index:9998; width:60px; height:60px; border-radius:50%; box-shadow:0 8px 24px rgba(0,0,0,0.25); transition:transform 0.2s; cursor:pointer; border:3px solid #fff; background:#25D366; display:flex; align-items:center; justify-content:center;">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" style="width:60%; height:60%; object-fit:contain; display:block; filter:brightness(0) invert(1);" />
 </a>
 
 <script>
+  // Open demo as full page
   function openDemo() {
-    document.getElementById('demoOverlay').classList.add('active');
+    document.getElementById('demoPage').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
   function closeDemo() {
-    document.getElementById('demoOverlay').classList.remove('active');
+    document.getElementById('demoPage').classList.remove('active');
     document.body.style.overflow = '';
   }
-  document.getElementById('demoOverlay').addEventListener('click', function(e) {
+  // Close on backdrop click
+  document.getElementById('demoPage').addEventListener('click', function(e) {
     if (e.target === this) closeDemo();
   });
 
@@ -1739,10 +1177,10 @@
     document.getElementById('actionTitle').textContent = title;
     document.getElementById('actionAmount').textContent = amount || '—';
     document.getElementById('actionUsd').textContent = '≈ ' + usd + ' per action';
-    document.getElementById('demoActionPopup').classList.add('active');
+    document.getElementById('demoActionPopup').style.display = 'flex';
   }
   function closeDemoAction() {
-    document.getElementById('demoActionPopup').classList.remove('active');
+    document.getElementById('demoActionPopup').style.display = 'none';
   }
   document.getElementById('demoActionPopup').addEventListener('click', function(e) {
     if (e.target === this) closeDemoAction();
@@ -1792,7 +1230,7 @@
     }, 4200);
   })();
 
-  // Withdrawal popup - fully restored with amounts
+  // Withdrawal popup
   (function() {
     const withdrawalData = [
       { flag:'🇰🇪', name:'James K.', amount:'2,580', method:'M-Pesa', gender:'male' },
@@ -1879,12 +1317,12 @@
     document.getElementById('chatPageInput').disabled = false;
     document.getElementById('chatPageInput').value = '';
 
-    document.getElementById('chatOverlay').classList.add('active');
+    document.getElementById('chatOverlay').style.display = 'flex';
     area.scrollTop = area.scrollHeight;
   }
 
   function closeChatPage() {
-    document.getElementById('chatOverlay').classList.remove('active');
+    document.getElementById('chatOverlay').style.display = 'none';
     chatUser = null;
     chatLocked = false;
   }
@@ -1929,7 +1367,7 @@
     if (e.target === this) closeChatPage();
   });
 
-  // Live counters for stats
+  // Live stats counters
   (function() {
     let liveUsers = 187432;
     let totalPaid = 2.87;
