@@ -1022,13 +1022,13 @@
     </div>
   </div>
 
-  <!-- JOIN 187,000+ SECTION -->
+  <!-- JOIN 187,000+ SECTION (with the exact text requested) -->
   <div class="section" style="border-bottom: 2px solid #1c7e5e; background: #f0faf6; border-radius: 24px; padding: 16px 14px; margin: 12px 0;">
     <div style="text-align: center;">
       <span style="background: #1c7e5e; color: #fff; padding: 4px 16px; border-radius: 60px; font-size: 13px; font-weight: 800; display: inline-block;">🔥 JOIN 187,000+</span>
       <h3 style="font-size: 20px; font-weight: 900; color: #0b2c26; margin: 8px 0 4px;">Start Earning in Minutes</h3>
       <p style="font-size: 14px; color: #444; max-width: 400px; margin: 0 auto 12px; line-height: 1.5;">
-        Complete simple tasks like <strong>watching videos, chatting, playing daily challenges,</strong> and <strong>building a team</strong>. Create one account and earn <strong>daily income</strong>!
+        <strong>Join 187,000</strong> to complete simple tasks like <strong>watching, chatting, playing daily challenges,</strong> and <strong>building a team</strong>. Create one account and earn <strong>daily income</strong>!
       </p>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 12px; font-size: 13px; font-weight: 600; color: #1c7e5e; margin-bottom: 12px;">
         <span>📹 Watch & Earn</span>
@@ -1590,6 +1590,30 @@
   document.getElementById('chatOverlay').addEventListener('click', function(e) {
     if (e.target === this) closeChatPage();
   });
+
+  // Live counters for stats
+  (function() {
+    let liveUsers = 187432;
+    let totalPaid = 2.87;
+    let onlineNow = 3300;
+    const liveEl = document.getElementById('liveUsers');
+    const totalEl = document.getElementById('totalPaid');
+    const onlineEl = document.getElementById('onlineNow');
+
+    setInterval(() => {
+      liveUsers += Math.floor(Math.random() * 6) + 1;
+      if (liveUsers > 189500) liveUsers = 187000;
+      liveEl.textContent = liveUsers.toLocaleString();
+
+      totalPaid += (Math.random() * 0.03 + 0.01);
+      totalEl.textContent = '$' + totalPaid.toFixed(2) + 'M';
+
+      onlineNow += Math.floor(Math.random() * 8) - 3;
+      if (onlineNow < 3240) onlineNow = 3240 + Math.floor(Math.random() * 30);
+      if (onlineNow > 3600) onlineNow = 3600 - Math.floor(Math.random() * 30);
+      onlineEl.textContent = onlineNow.toLocaleString();
+    }, 3000);
+  })();
 </script>
 </body>
 </html>
