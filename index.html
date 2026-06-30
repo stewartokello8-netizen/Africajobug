@@ -1217,6 +1217,29 @@
     .popup-card .info .method { color: #0b1a2f; }
     .footer-bottom .brand-small { color: #0b1a2f; }
     .footer-bottom .copy { color: #0b1a2f; }
+
+    /* NEW: green highlight for numbers and "Turn Clicks to Cash" */
+    .green-highlight,
+    .stat-number,
+    .count-number,
+    .earnings-scroll .scroll-content span,
+    .demo-card .stat-card .stat-value,
+    .demo-card .earn-left .amount,
+    .demo-card .profile-amount,
+    .withdrawn-chip,
+    .way-card .way-earn,
+    .support-card .support-number,
+    .stats-grid .stat-item .stat-number {
+      color: #1a9e6a !important;
+    }
+    .hero-highlight {
+      color: #1a9e6a !important;
+      font-weight: 900;
+    }
+    .turn-clicks-cash {
+      color: #1a9e6a !important;
+      font-weight: 900;
+    }
   </style>
 </head>
 <body>
@@ -1240,20 +1263,25 @@
 
   <!-- TRUST BADGE -->
   <div class="text-center" style="padding:12px 0 4px;">
-    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:3px 16px; border-radius:60px; font-size:14px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter">187,432</span>+ AFRICANS</span>
+    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:3px 16px; border-radius:60px; font-size:14px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
   </div>
 
   <!-- HERO -->
   <div class="text-center section" style="border-bottom-color:rgba(0,0,0,0.04);">
     <h1 style="font-size:28px; font-weight:900; margin:0 0 2px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
-    <h2 style="font-size:24px; font-weight:900; margin:0 0 6px; color:#1a4f8a;">Turn Clicks to Cash</h2>
+    <h2 style="font-size:24px; font-weight:900; margin:0 0 6px;" class="turn-clicks-cash">Turn Clicks to Cash</h2>
     <p style="font-size:16px; color:#0b1a2f; line-height:1.5; max-width:440px; margin:0 auto 12px;">
-      Join <span id="heroCounter" style="font-weight:900; color:#0b1a2f;">187,450</span>+ Africans earning <strong style="color:#0b1a2f;">$30 – $150 daily</strong> via chat, music & challenges. <strong>Fast withdraw</strong>, daily payouts via Mobile Money, Mpesa..
+      Join <span id="heroCounter" class="green-highlight">187,450</span>+ Africans earning <strong class="green-highlight">$30 – $150 daily</strong> via chat, music & challenges. <strong>Fast withdraw</strong>, daily payouts via Mobile Money, Mpesa..
     </p>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">Create Free Account</a>
-      <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo First</a>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
+      <!-- Create Free Account slightly on top of Try Demo, side by side below -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+        <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a9e6a,#0f7b5a);">Create Free Account</a>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+          <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo</a>
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
+        </div>
+      </div>
     </div>
   </div>
 
