@@ -961,7 +961,7 @@
       border: 1px solid rgba(255, 255, 255, 0.6);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
       transition: all 0.15s;
-      cursor: default;
+      cursor: pointer;
     }
     .demo-card .earn-card:hover {
       background: rgba(255, 255, 255, 0.75);
@@ -1040,7 +1040,7 @@
       font-weight: 600;
       color: #0f1d3a;
       border: 1px solid rgba(255, 255, 255, 0.5);
-      cursor: default;
+      cursor: pointer;
       transition: 0.1s;
     }
     .demo-card .nav-chip:hover {
@@ -1093,6 +1093,66 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+    }
+
+    /* Demo popup for music/challenge */
+    .demo-action-popup {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 30000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .demo-action-popup.active { display: flex; }
+    .demo-action-popup .popup-content {
+      background: #fff;
+      border-radius: 32px;
+      padding: 32px 28px 28px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+    .demo-action-popup .popup-content .icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .demo-action-popup .popup-content h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0f1d3a;
+      margin-bottom: 8px;
+    }
+    .demo-action-popup .popup-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .demo-action-popup .popup-content .earn-amount {
+      font-size: 28px;
+      font-weight: 900;
+      color: #1c7e5e;
+      margin: 8px 0 16px;
+    }
+    .demo-action-popup .popup-content .btn-close-popup {
+      background: #1c7e5e;
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .demo-action-popup .popup-content .btn-close-popup:hover {
+      background: #146a4e;
     }
 
     @media (max-width: 480px) {
@@ -1535,23 +1595,23 @@
 
       <div class="divider-light"></div>
 
-      <!-- earn cards -->
+      <!-- earn cards - NOW CLICKABLE -->
       <div class="earn-grid">
-        <div class="earn-card">
+        <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', 'UGX 17,000', '$4.60', '💬')">
           <div class="earn-left">
             <span class="label">Chat with Foreigners</span>
             <span class="amount">UGX 17,000 <span class="usd">≈ $4.60</span></span>
           </div>
           <div class="earn-right">Chat</div>
         </div>
-        <div class="earn-card">
+        <div class="earn-card" onclick="openDemoAction('Earn with Music', 'UGX 5,000', '$1.35', '🎵')">
           <div class="earn-left">
             <span class="label">Per Music Track</span>
             <span class="amount">UGX 5,000 <span class="usd">≈ $1.35</span></span>
           </div>
           <div class="earn-right">Music</div>
         </div>
-        <div class="earn-card">
+        <div class="earn-card" onclick="openDemoAction('Color Challenge', 'UGX 12,000', '$3.24', '🎨')">
           <div class="earn-left">
             <span class="label">Color Challenge Win</span>
             <span class="amount">UGX 12,000 <span class="usd">≈ $3.24</span></span>
@@ -1567,12 +1627,14 @@
         </a>
       </div>
 
+      <!-- NAV CHIPS - NOW CLICKABLE -->
       <div class="nav-chips">
-        <span class="nav-chip">💬 Chat</span>
-        <span class="nav-chip">🎵 Music</span>
-        <span class="nav-chip">🎨 Challenge</span>
+        <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', 'UGX 17,000', '$4.60', '💬')">💬 Chat</span>
+        <span class="nav-chip" onclick="openDemoAction('Earn with Music', 'UGX 5,000', '$1.35', '🎵')">🎵 Music</span>
+        <span class="nav-chip" onclick="openDemoAction('Color Challenge', 'UGX 12,000', '$3.24', '🎨')">🎨 Challenge</span>
       </div>
 
+      <!-- Live Members -->
       <div style="margin-top: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
           <span style="font-weight: 700; font-size: 17px; color: #0b1a34;">Live Members</span>
@@ -1608,6 +1670,18 @@
       </div>
 
     </div>
+  </div>
+</div>
+
+<!-- DEMO ACTION POPUP - shows when Music or Challenge is clicked -->
+<div class="demo-action-popup" id="demoActionPopup">
+  <div class="popup-content">
+    <div class="icon" id="actionIcon">🎵</div>
+    <h3 id="actionTitle">Earn with Music</h3>
+    <p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p>
+    <div class="earn-amount" id="actionAmount">UGX 5,000</div>
+    <p style="font-size:13px; color:#888; margin-bottom:12px;" id="actionUsd">≈ $1.35 per track</p>
+    <button class="btn-close-popup" onclick="closeDemoAction()">👍 Got it!</button>
   </div>
 </div>
 
@@ -1657,6 +1731,21 @@
   }
   document.getElementById('demoOverlay').addEventListener('click', function(e) {
     if (e.target === this) closeDemo();
+  });
+
+  // Demo Action Popup
+  function openDemoAction(title, amount, usd, icon) {
+    document.getElementById('actionIcon').textContent = icon || '💰';
+    document.getElementById('actionTitle').textContent = title;
+    document.getElementById('actionAmount').textContent = amount;
+    document.getElementById('actionUsd').textContent = '≈ ' + usd + ' per action';
+    document.getElementById('demoActionPopup').classList.add('active');
+  }
+  function closeDemoAction() {
+    document.getElementById('demoActionPopup').classList.remove('active');
+  }
+  document.getElementById('demoActionPopup').addEventListener('click', function(e) {
+    if (e.target === this) closeDemoAction();
   });
 
   // Live counters
