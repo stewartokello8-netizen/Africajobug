@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>AfricaJob - Get Paid Every Time | Turn Clicks to Cash</title>
+  <title>AfricaJob - Get Paid Every Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
@@ -104,7 +104,7 @@
       color: #2d4a40;
       font-size: 15px;
     }
-    .signup-btn {
+    .signup-btn, .signup-btn-alt {
       background: #1c7e5e;
       color: #fff;
       border: none;
@@ -278,16 +278,6 @@
       flex-shrink: 0;
       font-weight: 700;
     }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
     .whatsapp-btn {
       background: #25d366;
       color: #fff;
@@ -357,7 +347,7 @@
       cursor: not-allowed;
     }
 
-    /* --- New Chat Page Styles --- */
+    /* Chat Page Overlay */
     .chat-page-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -497,7 +487,102 @@
       display: inline-block;
       margin-top: 4px;
     }
+
+    /* Ways to earn cards */
+    .earn-card {
+      background: #f9f9f9;
+      border: 1px solid #e8ecea;
+      border-radius: 24px;
+      padding: 16px 16px 14px;
+      margin-bottom: 12px;
+      transition: border 0.2s;
+    }
+    .earn-card:hover { border-color: #1c7e5e; }
+    .earn-card .title {
+      font-weight: 800;
+      font-size: 18px;
+      color: #0b2c26;
+      margin-bottom: 4px;
+    }
+    .earn-card .desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .earn-card .action {
+      font-weight: 700;
+      color: #1c7e5e;
+      font-size: 14px;
+      display: inline-block;
+      border-bottom: 2px solid #1c7e5e;
+      padding-bottom: 2px;
+      cursor: default;
+    }
+
+    /* Footer */
+    .footer-section {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 2px solid #eef2f6;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px 8px;
+      margin-bottom: 14px;
+    }
+    .footer-grid .col h4 {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0b2c26;
+      margin-bottom: 6px;
+      letter-spacing: 0.3px;
+    }
+    .footer-grid .col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-grid .col ul li {
+      font-size: 13px;
+      color: #555;
+      padding: 3px 0;
+      font-weight: 500;
+    }
+    .footer-grid .col ul li a {
+      color: #555;
+      text-decoration: none;
+    }
+    .footer-grid .col ul li a:hover { color: #1c7e5e; }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      font-size: 12px;
+      color: #888;
+      gap: 6px;
+    }
+    .footer-bottom .brand-small {
+      font-weight: 800;
+      color: #0b2c26;
+    }
+    .footer-bottom .brand-small span { color: #1c7e5e; }
+    .footer-bottom .links a {
+      color: #888;
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+    .footer-bottom .links a:hover { color: #1c7e5e; }
+    .footer-bottom .copy {
+      font-size: 11px;
+      color: #aaa;
+    }
     @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
       .page-wrap { padding: 10px 10px 18px; }
       .brand-name { font-size: 22px; }
       .brand-icon { font-size: 22px; }
@@ -515,6 +600,10 @@
       .user-card img { width: 32px; height: 32px; }
       .user-card .name { font-size: 13px; }
       .chat-page { height: 500px; max-width: 100%; }
+      .earn-card .title { font-size: 16px; }
+      .earn-card .desc { font-size: 13px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom .links a { margin: 0 6px; }
     }
     @media (max-width: 380px) {
       .brand-name { font-size: 18px; }
@@ -526,16 +615,19 @@
       .header-row { gap: 4px; }
       .whatsapp-btn { font-size: 14px; padding: 10px 18px; }
       .whatsapp-btn .sub { font-size: 11px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 340px) {
       .brand-name { font-size: 15px; }
       .online-badge .label { display: none; }
       .signup-btn { font-size: 11px; padding: 3px 8px; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 <div class="page-wrap" id="appContainer">
+  <!-- Header -->
   <div class="header-row">
     <div class="brand">
       <span class="brand-icon">🌍</span>
@@ -552,17 +644,24 @@
     <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="signup-btn">✚ Sign Up</a>
   </div>
   
+  <!-- Trust Badge -->
   <div class="text-center" style="padding:12px 0 4px;">
     <span style="display:inline-block; background:#f5f5f5; border:1px solid #ddd; padding:3px 16px; border-radius:60px; font-size:12px; font-weight:700; color:#555;">⭐ TRUSTED BY <span id="trustCounter">187,432</span>+ AFRICANS</span>
   </div>
   
+  <!-- Hero -->
   <div class="text-center section" style="border-bottom-color:#e8f0ec;">
     <h1 style="font-size:26px; font-weight:900; margin:0 0 2px; line-height:1.2;">Get Paid Every Time</h1>
     <h2 style="font-size:22px; font-weight:900; margin:0 0 6px; color:#1c7e5e;">Turn Clicks To Cash</h2>
     <p style="font-size:14px; color:#555; line-height:1.5; max-width:440px; margin:0 auto 12px;">Join <span id="joinCounter" style="font-weight:900; color:#1c7e5e;">187,432</span>+ Africans and earn <strong style="color:#1c7e5e;">$30 – $150 daily</strong> by completing simple tasks, watching ads, chatting, and posting on WhatsApp status</p>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 Register Here</a>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 Create Free Account</a>
+      <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f59e0b,#d97706);" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'}); return false;">👀 Try Demo First</a>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);">🔑 Login</a>
+    </div>
   </div>
   
+  <!-- Earnings Scroll -->
   <div style="background:#f5f5f5; border:1px solid #ddd; border-radius:60px; padding:6px 8px; margin:8px 0 0; overflow:hidden; white-space:nowrap; box-shadow:inset 0 2px 8px rgba(0,0,0,0.04);">
     <span style="background:#1c7e5e; color:#fff; padding:2px 10px; border-radius:40px; font-size:9px; font-weight:800; display:inline-block; margin-right:4px;">💰 EARNING</span>
     <span id="earningsScroll" style="display:inline-block; font-weight:700; color:#333; font-size:12px; animation:scrollText 45s linear infinite; white-space:nowrap;">
@@ -600,6 +699,7 @@
     </span>
   </div>
   
+  <!-- WhatsApp Group -->
   <div class="section text-center" style="padding:12px 0;">
     <a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
       💬 Join WhatsApp Group
@@ -608,6 +708,7 @@
     <div style="display:inline-block; background:#fef3c7; padding:3px 14px; border-radius:60px; font-size:12px; font-weight:800; margin-top:6px; color:#000;">🔴 LIVE NOW · Active members</div>
   </div>
   
+  <!-- Stats -->
   <div class="section" style="padding:14px 0;">
     <div style="display:flex; justify-content:space-around; gap:6px;">
       <div style="background:#f9f9f9; border:2px solid #1c7e5e; border-radius:16px; padding:10px 2px; flex:1; text-align:center; animation:borderGlow 2.5s ease-in-out infinite;">
@@ -625,35 +726,64 @@
     </div>
   </div>
   
-  <div class="section">
-    <h2 style="text-align:center; font-size:24px; font-weight:900; margin-bottom:2px; color:#1c7e5e;">💎 Ways to Earn</h2>
-    <p style="text-align:center; color:#666; font-size:13px; margin-bottom:12px;">Multiple income streams — start earning today</p>
-    <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Watch Videos to Earn Money" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🎬 Watch Videos to Earn</div><div style="font-size:11px; color:#555;">Watch TikTok, YouTube, and ads. Like, engage and earn rewards per video. Get paid for every view!</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Watch →</a></div></div>
+  <!-- Ways to Earn Section - COMPLETE with ALL methods -->
+  <div class="section" style="padding-bottom: 10px;">
+    <h2 style="text-align:center; font-size:24px; font-weight:900; margin-bottom:14px; color:#0b2c26;">💎 Ways to Earn</h2>
+    
+    <div class="earn-card">
+      <div class="title">📺 Watch YouTube Videos</div>
+      <div class="desc">Watch up to 6 curated YouTube videos every day. Each video you complete adds money to your YouTube earnings balance.</div>
+      <span class="action">Earn per video watched</span>
     </div>
-    <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.2s;">
-      <img src="https://cdn-icons-png.flaticon.com/512/2906/2906274.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Paid Surveys Africa" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📋 Paid Surveys</div><div style="font-size:11px; color:#555;">Share opinions on products. 5-15 min per survey. Earn cash for your thoughts.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Take →</a></div></div>
+    
+    <div class="earn-card">
+      <div class="title">🎵 Watch TikTok Videos</div>
+      <div class="desc">Browse and watch up to 5 TikTok video highlights daily. Easy, fun, and each view earns you real money.</div>
+      <span class="action">Earn per video watched</span>
     </div>
-    <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.4s;">
-      <img src="https://cdn-icons-png.flaticon.com/512/619/619568.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Paid Ads and Spin to Win" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">📢 Paid Ads & Spin</div><div style="font-size:11px; color:#555;">Click ads + daily Spin and Win for cash! Extra earnings every day.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Spin →</a></div></div>
+    
+    <div class="earn-card">
+      <div class="title">🖱️ Fix Tap Game</div>
+      <div class="desc">Tap as fast as you can in a 10-second session. Earn cash for every tap — the faster you tap, the more you earn!</div>
+      <span class="action">Earn per tap</span>
     </div>
-    <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.6s;">
-      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Chat with Foreigners and Earn" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">🌍 Chat with Foreigners</div><div style="font-size:11px; color:#555;">Chat with foreigners from various countries USA, UK and Canada.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Chat →</a></div></div>
+    
+    <div class="earn-card" style="border-color:#1c7e5e; background:#f0faf5;">
+      <div class="title">🌍 Chat with Foreigners</div>
+      <div class="desc">Chat with people from USA, UK, Canada, and more. Get paid <strong style="color:#1c7e5e;">UGX 19,500 (~$5.30)</strong> per person you chat with.</div>
+      <span class="action" style="border-bottom-color:#1c7e5e;">Earn per chat</span>
     </div>
-    <div style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:20px; padding:12px 12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; animation:borderGlow 3s ease-in-out infinite 0.8s;">
-      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="WhatsApp Status Posts Earn Money" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:15px; color:#1c7e5e;">💬 WhatsApp Posts</div><div style="font-size:11px; color:#555;">Share sponsored content on status. Get rewarded per post. Quick and easy.</div><div style="margin-top:3px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline">Post →</a></div></div>
+    
+    <div class="earn-card">
+      <div class="title">🎵 Listen to Music</div>
+      <div class="desc">Listen to trending tracks and earn <strong style="color:#1c7e5e;">UGX 5,000 (~$1.35)</strong> per track, <strong style="color:#1c7e5e;">UGX 25,000/session</strong>.</div>
+      <span class="action">Earn per track</span>
     </div>
-    <div style="background:#f0f7f4; border:3px solid #1c7e5e; border-radius:20px; padding:14px 12px; display:flex; align-items:center; gap:8px; margin-top:8px; animation:borderGlow 2s ease-in-out infinite;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1340/1340353.png" style="width:40px; height:40px; border-radius:12px; object-fit:contain; flex-shrink:0; background:#fff; padding:4px; border:1px solid #e0e0e0;" alt="Train AI and Get Paid" loading="lazy" width="40" height="40">
-      <div style="flex:1;"><div style="font-weight:900; font-size:16px; color:#1c7e5e;">🤖 Train AI – Get Paid</div><div style="font-size:14px; color:#1c7e5e; font-weight:800;">$17 – $150 per hour</div><div style="font-size:11px; color:#555;">No coding. Just your opinion matters. Train AI models and earn big.</div><div style="margin-top:3px;"><span style="background:#fef3c7; color:#000; font-weight:800; font-size:10px; padding:2px 12px; border-radius:60px; border:1px solid #f59e0b; animation:borderGlowGold 2s ease-in-out infinite;">🔥 TOP RATE</span> <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-outline" style="margin-left:4px;">Apply →</a></div></div>
+    
+    <div class="earn-card">
+      <div class="title">🎨 Color Challenge</div>
+      <div class="desc">Play the Stroop Color Challenge and win <strong style="color:#1c7e5e;">UGX 12,000 (~$3.24)</strong> per round.</div>
+      <span class="action">Earn per win</span>
+    </div>
+    
+    <div class="earn-card">
+      <div class="title">💬 WhatsApp Status Posts</div>
+      <div class="desc">Share sponsored content on your WhatsApp status. Get rewarded per post — quick and easy!</div>
+      <span class="action">Earn per post</span>
+    </div>
+    
+    <div class="earn-card" style="border-color:#1c7e5e; background:#f0faf5;">
+      <div class="title">🤖 Train AI – Get Paid</div>
+      <div class="desc">No coding needed. Just your opinion matters! Train AI models and earn <strong style="color:#1c7e5e;">$17 – $150 per hour</strong>. Simple tasks that pay big.</div>
+      <span class="action" style="border-bottom-color:#1c7e5e;">🔥 TOP RATE</span>
+    </div>
+    
+    <div style="text-align:center; margin-top:8px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">🚀 Create Free Account</a>
     </div>
   </div>
   
+  <!-- Live Foreigners Chat Section -->
   <div class="section" id="liveChatSection">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
       <span style="background:#dc2626; color:#fff; font-size:10px; font-weight:800; padding:3px 12px; border-radius:40px;">● LIVE NOW</span>
@@ -712,9 +842,9 @@
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
       </div>
     </div>
-    <!-- Removed "Upgrade to Chat More" button below live foreigners -->
   </div>
   
+  <!-- Withdrawal Methods -->
   <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:10px 10px; margin:10px 0; text-align:center;">
     <span style="color:#1c7e5e; display:block; font-size:11px; font-weight:700; margin-bottom:6px;">📍 WITHDRAWAL METHODS BY COUNTRY</span>
     <div class="withdraw-grid">
@@ -729,29 +859,74 @@
     </div>
   </div>
   
+  <!-- Success Stories -->
   <div class="section text-center">
     <span style="background:#f5f5f5; padding:3px 14px; border-radius:40px; font-weight:800; font-size:12px; color:#1c7e5e; display:inline-block; margin-bottom:10px; animation:borderGlow 2s ease-in-out infinite;">⭐ SUCCESS STORIES ⭐</span>
     <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite;"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin O." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kelvin O.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $2,240 last week</div><div style="font-size:11px; color:#666;">"Cleared my rent in 9 days. Legit!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.2s;"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka N." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Amaka N.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,860 this month</div><div style="font-size:11px; color:#666;">"Chatting while earning. Best side hustle!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.4s;"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame B." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Kwame B.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,120 this week</div><div style="font-size:11px; color:#666;">"MoMo withdrawal in seconds. Real!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.6s;"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith W." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Faith W.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $980 this week</div><div style="font-size:11px; color:#666;">"Paid my school fees in 2 weeks!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.8s;"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Peter M." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Peter M.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,550 last month</div><div style="font-size:11px; color:#666;">"Best decision I made this year!"</div></div></div>
-      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 1s;"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah K." loading="lazy" width="38" height="38"><div><div style="font-weight:800; font-size:14px; color:#111;">Sarah K.</div><div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,300 this month</div><div style="font-size:11px; color:#666;">"Working from home never felt this good!"</div></div></div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite;">
+        <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin O." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Kelvin O. from Lagos, Nigeria</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $2,240 earned last week</div>
+          <div style="font-size:11px; color:#666;">"Cleared my rent in just 9 days. This platform is absolutely legit and life-changing! I never knew making money online could be this simple and fun. The daily payments keep me motivated and I've already referred 5 friends who are also earning big!"</div>
+        </div>
+      </div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.2s;">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka N." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Amaka N. from Enugu, Nigeria</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,860 earned this month</div>
+          <div style="font-size:11px; color:#666;">"Chatting with foreigners while earning money is the best side hustle I've ever found! I've been able to support my family and save for my business because of this platform. The money comes in daily and I can withdraw anytime I want!"</div>
+        </div>
+      </div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.4s;">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame B." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Kwame B. from Accra, Ghana</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,120 earned this week</div>
+          <div style="font-size:11px; color:#666;">"I receive my MoMo withdrawal in seconds. It's so reliable and trustworthy! I've recommended this to all my friends and they're now earning too. The YouTube and TikTok tasks are my favorite because they're fun and I get paid for watching videos I already enjoy!"</div>
+        </div>
+      </div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.6s;">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith W." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Faith W. from Nairobi, Kenya</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $980 earned this week</div>
+          <div style="font-size:11px; color:#666;">"This platform paid my school fees in just 2 weeks! I'm a university student and now I don't have to stress about money anymore. The M-Pesa withdrawals are instant and reliable. I'm so grateful for this opportunity that helps me focus on my studies without financial worries."</div>
+        </div>
+      </div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 0.8s;">
+        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Peter M." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Peter M. from Kampala, Uganda</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,550 earned last month</div>
+          <div style="font-size:11px; color:#666;">"Best decision I made this year! I've been able to start my own small business using the money I earned here. The daily payments give me financial freedom I never had before. I'm now earning more than my regular job and I work from home!"</div>
+        </div>
+      </div>
+      <div class="user-card" style="animation:borderGlow 3s ease-in-out infinite 1s;">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah K." loading="lazy" width="38" height="38">
+        <div>
+          <div style="font-weight:800; font-size:14px; color:#111;">Sarah K. from Kigali, Rwanda</div>
+          <div style="font-size:12px; font-weight:800; color:#1c7e5e;">💰 $1,300 earned this month</div>
+          <div style="font-size:11px; color:#666;">"Working from home has never felt this good! I can earn money while taking care of my kids. The Mobile Wallet withdrawals are super fast and I'm grateful for this opportunity. The Color Challenge game is my favorite and I've won so many rounds!"</div>
+        </div>
+      </div>
     </div>
   </div>
   
+  <!-- How It Works -->
   <div class="section text-center">
     <h2 style="font-size:24px; font-weight:900; color:#1c7e5e; margin-bottom:4px;">⚙️ How It Works</h2>
     <p style="color:#666; font-size:13px; margin-bottom:12px;">Start earning in 3 simple steps</p>
     <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
       <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite;"><span style="font-size:24px;">📝</span><div><span style="font-weight:800; font-size:15px; color:#111;">Sign Up Free</span><div style="font-size:13px; color:#555;">Create account in 30 seconds — no card needed.</div></div></div>
-      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite 0.3s;"><span style="font-size:24px;">🎯</span><div><span style="font-weight:800; font-size:15px; color:#111;">Complete Tasks</span><div style="font-size:13px; color:#555;">Watch videos, surveys, chat, or share posts.</div></div></div>
+      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite 0.3s;"><span style="font-size:24px;">🎯</span><div><span style="font-weight:800; font-size:15px; color:#111;">Complete Tasks</span><div style="font-size:13px; color:#555;">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
       <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px; animation:borderGlow 3s ease-in-out infinite 0.6s;"><span style="font-size:24px;">💰</span><div><span style="font-weight:800; font-size:15px; color:#111;">Withdraw Instantly</span><div style="font-size:13px; color:#555;">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
     </div>
     <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px; font-size:14px; padding:8px 18px;">🚀 Get Started Now</a>
   </div>
   
+  <!-- Lifetime Access -->
   <div class="section text-center">
     <div style="background:#f9f9f9; border:1px solid #eee; border-radius:32px; padding:18px 14px; animation:borderGlow 2.5s ease-in-out infinite;">
       <div style="font-size:24px; font-weight:900; color:#1c7e5e;">✨ Lifetime Access ✨</div>
@@ -769,10 +944,11 @@
     </div>
   </div>
   
+  <!-- FAQ -->
   <div class="section" style="padding-bottom:10px;">
     <h2 style="text-align:center; font-size:24px; font-weight:900; margin-bottom:12px; color:#1c7e5e;">📌 Frequent Questions</h2>
     <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite;"><summary>How much can I earn per day? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
-    <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite 0.2s;"><summary>Do I need any experience? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, and more. Anyone can start earning immediately.</div></details>
+    <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite 0.2s;"><summary>Do I need any experience? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
     <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite 0.4s;"><summary>How do I withdraw? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
     <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite 0.6s;"><summary>Is it really free to join? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
     <details style="margin-bottom:6px; animation:borderGlow 4s ease-in-out infinite 0.8s;"><summary>How long does it take to get paid? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Payments are processed instantly! Once you request a withdrawal, money hits your account within minutes via M-Pesa, MoMo, or Bank Transfer.</div></details>
@@ -781,10 +957,44 @@
     <details style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:18px; animation:borderGlow 4s ease-in-out infinite 1.4s;"><summary style="background:#f0f7f4; border:2px solid #1c7e5e; border-radius:18px;">📞 Contact Support Center <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div style="padding:0 14px 14px; text-align:center; background:#f0f7f4; border-radius:0 0 18px 18px;"><div style="font-size:20px; font-weight:900; color:#1c7e5e; padding:10px 0; background:#fff; border-radius:12px; border:2px dashed #1c7e5e;">📱 +256 757 359 391</div><div style="font-size:12px; color:#666; margin-top:6px;">Tap to copy: <span style="font-weight:700; color:#1c7e5e; cursor:pointer;" onclick="navigator.clipboard.writeText('+256757359391')">📋 Copy number</span></div></div></details>
   </div>
   
-  <div style="padding:14px 0 2px; text-align:center; border-top:1px solid #eee; margin-top:6px;">
-    <p style="font-weight:700; color:#333; font-size:16px;">AfricaJob</p>
-    <p style="color:#666; font-size:13px;">Get paid for your time</p>
-    <div style="color:#999; font-size:11px;">© 2026 AfricaJob. All rights reserved.</div>
+  <!-- Footer -->
+  <div class="footer-section">
+    <div class="footer-grid">
+      <div class="col">
+        <h4>EARN</h4>
+        <ul>
+          <li>Chat with Foreigners</li>
+          <li>Earn with Music</li>
+          <li>Color Challenge</li>
+          <li>YouTube &amp; TikTok</li>
+          <li>WhatsApp Posts</li>
+          <li>Train AI</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>ACCOUNT</h4>
+        <ul>
+          <li><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Create Account</a></li>
+          <li><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Sign In</a></li>
+          <li><a href="#" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'}); return false;">Try Demo</a></li>
+          <li><a href="#">Forgot Password</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>COUNTRIES</h4>
+        <ul>
+          <li>Uganda</li>
+          <li>Kenya</li>
+          <li>Tanzania</li>
+          <li>Zambia</li>
+          <li>Rwanda</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="brand-small">© 2026 Africa<span>Job</span>. All rights reserved.</div>
+      <div class="copy">Built for Africa · <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" style="color:#1c7e5e; text-decoration:none; font-weight:700;">Login</a> · <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" style="color:#1c7e5e; text-decoration:none; font-weight:700;">Register</a></div>
+    </div>
   </div>
 </div>
 
@@ -799,9 +1009,7 @@
       </div>
       <button class="close-btn" onclick="closeChatPage()">✕</button>
     </div>
-    <div class="chat-messages-area" id="chatMessagesArea">
-      <!-- messages will be injected here -->
-    </div>
+    <div class="chat-messages-area" id="chatMessagesArea"></div>
     <div class="chat-upgrade-banner" id="chatUpgradeBanner">
       ⛔ Chat is paused — <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a>
     </div>
@@ -812,6 +1020,7 @@
   </div>
 </div>
 
+<!-- Withdrawal Popup -->
 <div id="withdrawalPopup">
   <div class="popup-card" id="popupCard">
     <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User withdrawal notification" loading="lazy" width="42" height="42">
@@ -825,7 +1034,7 @@
 </div>
 
 <script>
-  // ---- Live counters ----
+  // Live counters
   (function() {
     const counterEl = document.getElementById('liveCounter');
     const onlineNowEl = document.getElementById('onlineNow');
@@ -889,7 +1098,7 @@
     }, 4200);
   })();
 
-  // ---- Withdrawal popup ----
+  // Withdrawal popup
   (function() {
     const withdrawalData = [
       { flag:'🇰🇪', name:'James K.', amount:'2,580', method:'M-Pesa', gender:'male' },
@@ -963,7 +1172,7 @@
     setInterval(updatePopup, 1800);
   })();
 
-  // ---- New Chat Page ----
+  // Chat Page functions
   let chatLocked = false;
   let chatUser = null;
   let chatDesperate = '';
@@ -984,7 +1193,6 @@
     document.getElementById('chatPageStatus').textContent = country + ' · Online';
     const area = document.getElementById('chatMessagesArea');
     area.innerHTML = '';
-    // Add greeting
     const greetingMsg = document.createElement('div');
     greetingMsg.className = 'chat-msg received';
     greetingMsg.innerHTML = '<div class="msg-name">' + name + '</div>' + greeting + '<span class="time">just now</span>';
@@ -1015,7 +1223,6 @@
     if (!msg || !chatUser) return;
     const area = document.getElementById('chatMessagesArea');
 
-    // Sent message
     const sent = document.createElement('div');
     sent.className = 'chat-msg sent';
     sent.textContent = msg;
@@ -1025,14 +1232,12 @@
     input.value = '';
     area.scrollTop = area.scrollHeight;
 
-    // Simulate reply with desperate message
     setTimeout(() => {
       const reply = document.createElement('div');
       reply.className = 'chat-msg received';
       reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) + '</span>';
       area.appendChild(reply);
       area.scrollTop = area.scrollHeight;
-      // Lock chat
       chatLocked = true;
       document.getElementById('chatUpgradeBanner').style.display = 'block';
       document.getElementById('chatPageSendBtn').disabled = true;
@@ -1044,7 +1249,6 @@
     if (e.key === 'Enter') sendChatPageMessage();
   });
 
-  // Close overlay on background click
   document.getElementById('chatOverlay').addEventListener('click', function(e) {
     if (e.target === this) closeChatPage();
   });
