@@ -706,9 +706,10 @@
       margin-top: 4px;
     }
 
+    /* WITHDRAWAL POPUP - positioned bottom right */
     #withdrawalPopup {
       position: fixed;
-      bottom: 16px;
+      bottom: 90px;  /* moved up to avoid overlap with WhatsApp widget */
       right: 16px;
       z-index: 9999;
       max-width: 320px;
@@ -749,6 +750,29 @@
       justify-content: center;
       flex-shrink: 0;
       font-weight: 700;
+    }
+
+    /* FLOATING WHATSAPP WIDGET - with real image */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9998;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform 0.2s;
+      cursor: pointer;
+      border: 3px solid #fff;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
     }
 
     .footer-section {
@@ -932,6 +956,8 @@
       .way-card .way-icon { width: 42px; height: 42px; }
       .way-card { padding: 10px 12px; }
       .support-card .support-number { font-size: 20px; }
+      .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
+      #withdrawalPopup { bottom: 80px; right: 12px; max-width: 260px; }
     }
   </style>
 </head>
@@ -959,12 +985,12 @@
     <span style="display:inline-block; background:#f5f5f5; border:1px solid #ddd; padding:3px 16px; border-radius:60px; font-size:12px; font-weight:700; color:#333;">⭐ TRUSTED BY <span id="trustCounter">187,432</span>+ AFRICANS</span>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO: Changed "Free account" to "Fast withdraw" -->
   <div class="text-center section" style="border-bottom-color:#d0dbd6;">
     <h1 style="font-size:26px; font-weight:900; margin:0 0 2px; line-height:1.2; color:#0b2c26;">💰 Get Paid Every Time</h1>
     <h2 style="font-size:22px; font-weight:900; margin:0 0 6px; color:#1c7e5e;">💸 Turn Clicks to Cash</h2>
     <p style="font-size:14px; color:#222; line-height:1.5; max-width:440px; margin:0 auto 12px;">
-      Join <span id="heroCounter" style="font-weight:900; color:#1c7e5e;">187,450</span>+ Africans earning <strong style="color:#1c7e5e;">$30 – $150 daily</strong> via chat, music, challenges & referrals. Free account, daily payouts!
+      Join <span id="heroCounter" style="font-weight:900; color:#1c7e5e;">187,450</span>+ Africans earning <strong style="color:#1c7e5e;">$30 – $150 daily</strong> via chat, music, challenges & referrals. <strong>Fast withdraw</strong>, daily payouts!
     </p>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
       <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 Create Free Account</a>
@@ -973,10 +999,10 @@
     </div>
   </div>
 
-  <!-- LIVE EARNINGS SCROLL -->
+  <!-- LIVE EARNINGS SCROLL: Reduced speed (slower animation) -->
   <div class="earnings-scroll">
     <span class="scroll-label">💰 EARNING</span>
-    <span class="scroll-content" id="earningsScroll">
+    <span class="scroll-content" id="earningsScroll" style="animation-duration: 70s;">
       <span>🇰🇪 James K. earned KSh 1,612 from Watching Videos &nbsp;|&nbsp; </span>
       <span>🇬🇭 Maureen A. earned GH₵ 1,129 from Paid Survey &nbsp;|&nbsp; </span>
       <span>🇺🇬 Sarah N. earned UGX 56,240 from Chatting &nbsp;|&nbsp; </span>
@@ -1001,7 +1027,7 @@
     </span>
   </div>
 
-  <!-- STATS -->
+  <!-- STATS: Total paid out moving slower -->
   <div class="section" style="padding:14px 0;">
     <div class="stats-grid">
       <div class="stat-item">
@@ -1244,7 +1270,7 @@
     </div>
   </div>
 
-  <!-- LIFETIME ACCESS -->
+  <!-- LIFETIME ACCESS (removed contact support below it) -->
   <div class="section text-center">
     <div style="background:linear-gradient(135deg, #f0f7f4, #e8f0ec); border:2px solid #1c7e5e; border-radius:32px; padding:20px 18px; animation: borderGlow 2.5s ease-in-out infinite;">
       <div style="font-size:26px; font-weight:900; color:#1c7e5e;">✨ Lifetime Access ✨</div>
@@ -1259,16 +1285,6 @@
     </div>
   </div>
 
-  <!-- CONTACT SUPPORT -->
-  <div class="section">
-    <div class="support-card">
-      <div class="support-icon">📞</div>
-      <div class="support-label">📱 Contact Support 24/7</div>
-      <div class="support-number">+256 753 738 856</div>
-      <p style="font-size:12px; color:#555; margin:4px 0 8px;">Call us — We're here to help!</p>
-    </div>
-  </div>
-
   <!-- FAQ -->
   <div class="section" style="padding-bottom:10px;">
     <h2 style="text-align:center; font-size:24px; font-weight:900; margin-bottom:12px; color:#1c7e5e;">📌 Frequent Questions</h2>
@@ -1278,7 +1294,6 @@
     <details style="margin-bottom:6px;"><summary>Is it really free to join? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
     <details style="margin-bottom:6px;"><summary>How long does it take to get paid? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
     <details style="margin-bottom:6px;"><summary>Can I use this on my phone? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
-    <details style="margin-bottom:6px;"><summary>How do I contact support? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Reach us 24/7 via phone at <strong>+256 753 738 856</strong>. We're always ready to assist!</div></details>
   </div>
 
   <!-- FOOTER -->
@@ -1469,7 +1484,7 @@
   </div>
 </div>
 
-<!-- WITHDRAWAL POPUP -->
+<!-- WITHDRAWAL POPUP (positioned above WhatsApp widget) -->
 <div id="withdrawalPopup">
   <div class="popup-card" id="popupCard">
     <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy">
@@ -1481,6 +1496,11 @@
     <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
   </div>
 </div>
+
+<!-- FLOATING WHATSAPP WIDGET with real image and link -->
+<a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+  <img src="https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqXBaUFG6.png" alt="WhatsApp" />
+</a>
 
 <script>
   function openDemo() {
@@ -1538,7 +1558,6 @@
       });
     }, 4200);
 
-    // Also update demo statuses
     const demoStatuses = ['✍️ typing now...','💬 saying hello...','⌨️ writing a reply...','💬 sending a message...','✍️ typing a long message...','✍️ writing something...'];
     setInterval(() => {
       document.querySelectorAll('.typing-status-demo').forEach(el => {
@@ -1547,7 +1566,7 @@
     }, 4500);
   })();
 
-  // Withdrawal popup
+  // Withdrawal popup with more profiles
   (function() {
     const withdrawalData = [
       { flag:'🇰🇪', name:'James K.', amount:'2,580', method:'M-Pesa', gender:'male' },
@@ -1558,11 +1577,17 @@
       { flag:'🇰🇪', name:'Omar H.', amount:'4,193', method:'M-Pesa', gender:'male' },
       { flag:'🇷🇼', name:'Diane U.', amount:'28,000', method:'Mobile Wallet', gender:'female' },
       { flag:'🇨🇲', name:'Samuel B.', amount:'25,700', method:'MoMo', gender:'male' },
+      { flag:'🇬🇭', name:'Kwame A.', amount:'4,500', method:'MoMo', gender:'male' },
+      { flag:'🇺🇬', name:'Grace T.', amount:'189,000', method:'Mobile Money', gender:'female' },
+      { flag:'🇳🇬', name:'Bola K.', amount:'56,200', method:'MoMo', gender:'female' },
+      { flag:'🇰🇪', name:'Peter M.', amount:'3,200', method:'M-Pesa', gender:'male' },
+      { flag:'🇿🇦', name:'Thabo N.', amount:'890', method:'Bank Transfer', gender:'male' },
+      { flag:'🇷🇼', name:'Alice U.', amount:'35,500', method:'Mobile Wallet', gender:'female' },
     ];
     const currencyMap = { '🇰🇪':'KSh ','🇬🇭':'GH₵ ','🇺🇬':'UGX ','🇳🇬':'₦ ','🇿🇦':'R ','🇷🇼':'RWF ','🇨🇲':'XAF ' };
     function getSymbol(f) { return currencyMap[f] || '$'; }
-    const femaleImages = ['https://randomuser.me/api/portraits/women/1.jpg','https://randomuser.me/api/portraits/women/2.jpg','https://randomuser.me/api/portraits/women/3.jpg','https://randomuser.me/api/portraits/women/4.jpg','https://randomuser.me/api/portraits/women/5.jpg'];
-    const maleImages = ['https://randomuser.me/api/portraits/men/1.jpg','https://randomuser.me/api/portraits/men/2.jpg','https://randomuser.me/api/portraits/men/3.jpg','https://randomuser.me/api/portraits/men/4.jpg','https://randomuser.me/api/portraits/men/5.jpg'];
+    const femaleImages = ['https://randomuser.me/api/portraits/women/1.jpg','https://randomuser.me/api/portraits/women/2.jpg','https://randomuser.me/api/portraits/women/3.jpg','https://randomuser.me/api/portraits/women/4.jpg','https://randomuser.me/api/portraits/women/5.jpg','https://randomuser.me/api/portraits/women/6.jpg','https://randomuser.me/api/portraits/women/7.jpg'];
+    const maleImages = ['https://randomuser.me/api/portraits/men/1.jpg','https://randomuser.me/api/portraits/men/2.jpg','https://randomuser.me/api/portraits/men/3.jpg','https://randomuser.me/api/portraits/men/4.jpg','https://randomuser.me/api/portraits/men/5.jpg','https://randomuser.me/api/portraits/men/6.jpg','https://randomuser.me/api/portraits/men/7.jpg'];
     const popupCard = document.getElementById('popupCard');
     const popupImg = document.getElementById('popupUserImage');
     const popupName = document.getElementById('popupUserName');
@@ -1678,7 +1703,7 @@
     if (e.target === this) closeChatPage();
   });
 
-  // Live counters for stats
+  // Live counters for stats with slower total paid update
   (function() {
     let liveUsers = 187432;
     let totalPaid = 2.87;
@@ -1692,14 +1717,15 @@
       if (liveUsers > 189500) liveUsers = 187000;
       liveEl.textContent = liveUsers.toLocaleString();
 
-      totalPaid += (Math.random() * 0.03 + 0.01);
+      // Slower total paid increase
+      totalPaid += (Math.random() * 0.008 + 0.002);
       totalEl.textContent = '$' + totalPaid.toFixed(2) + 'M';
 
       onlineNow += Math.floor(Math.random() * 8) - 3;
       if (onlineNow < 3240) onlineNow = 3240 + Math.floor(Math.random() * 30);
       if (onlineNow > 3600) onlineNow = 3600 - Math.floor(Math.random() * 30);
       onlineEl.textContent = onlineNow.toLocaleString();
-    }, 3000);
+    }, 5000); // slower interval for total paid
   })();
 </script>
 </body>
