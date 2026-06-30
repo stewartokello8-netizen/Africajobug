@@ -165,18 +165,17 @@
     .whatsapp-btn {
       background: #25d366;
       color: #fff;
-      font-weight: 800;
-      padding: 18px 40px;
+      font-weight: 700;
+      padding: 10px 24px;
       border-radius: 60px;
       display: inline-block;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 15px;
       border: 2px solid rgba(255,255,255,0.2);
       animation: borderGlow 2s ease-in-out infinite;
     }
-    .whatsapp-btn .sub { display: block; font-size: 14px; font-weight: 500; margin-top: 2px; }
+    .whatsapp-btn .sub { display: block; font-size: 11px; font-weight: 500; margin-top: 1px; }
 
-    /* DEMO OVERLAY - EXACTLY FROM SCREENSHOT */
     .demo-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -655,6 +654,124 @@
     .footer-bottom .links a:hover { color: #1c7e5e; }
     .footer-bottom .copy { font-size: 11px; color: #aaa; }
 
+    /* Ways to Earn section styles */
+    .ways-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 6px 0 4px;
+    }
+    .way-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #f9f9f9;
+      border: 1px solid #e8f0ec;
+      border-radius: 16px;
+      padding: 12px 14px;
+      transition: all 0.2s;
+    }
+    .way-card:hover { background: #f0f7f4; border-color: #1c7e5e; }
+    .way-card .way-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #e0e0e0;
+    }
+    .way-card .way-info { flex: 1; }
+    .way-card .way-info .way-name {
+      font-weight: 800;
+      font-size: 14px;
+      color: #0b2c26;
+    }
+    .way-card .way-info .way-desc {
+      font-size: 12px;
+      color: #777;
+      margin-top: 1px;
+      line-height: 1.3;
+    }
+    .way-card .way-earn {
+      font-weight: 900;
+      font-size: 15px;
+      color: #1c7e5e;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .way-card .way-earn .sub {
+      font-size: 10px;
+      font-weight: 600;
+      color: #999;
+      display: block;
+    }
+    .way-card .way-cta {
+      flex-shrink: 0;
+    }
+    .way-card .way-cta .cta-btn {
+      display: inline-block;
+      background: #1c7e5e;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .way-card .way-cta .cta-btn:hover {
+      background: #146a4e;
+      transform: scale(1.05);
+    }
+    .way-card .way-cta .cta-btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+    .way-card .way-cta .cta-btn.gold:hover {
+      background: linear-gradient(135deg, #d97706, #b45309);
+    }
+
+    /* Contact Support */
+    .support-card {
+      background: #f0f7f4;
+      border: 2px solid #1c7e5e;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin: 10px 0;
+      text-align: center;
+      animation: borderGlow 2.5s ease-in-out infinite;
+    }
+    .support-card .support-icon {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+    .support-card .support-number {
+      font-size: 24px;
+      font-weight: 900;
+      color: #1c7e5e;
+      letter-spacing: 0.5px;
+    }
+    .support-card .support-label {
+      font-size: 13px;
+      color: #555;
+      font-weight: 600;
+    }
+    .support-card .support-btn {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 8px 24px;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 8px;
+      transition: transform 0.2s;
+    }
+    .support-card .support-btn:hover { transform: scale(1.05); }
+
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .page-wrap { padding: 10px 10px 18px; padding-top: 80px; }
@@ -669,6 +786,10 @@
       .demo-item .demo-icon { width: 44px; height: 44px; }
       .chat-page { height: 500px; max-width: 100%; }
       .story-card img { width: 44px; height: 44px; }
+      .way-card .way-icon { width: 44px; height: 44px; }
+      .way-card { flex-wrap: wrap; }
+      .way-card .way-cta { width: 100%; text-align: center; margin-top: 4px; }
+      .support-card .support-number { font-size: 20px; }
     }
   </style>
 </head>
@@ -736,13 +857,13 @@
     </span>
   </div>
 
-  <!-- WHATSAPP GROUP -->
-  <div class="section text-center" style="padding:12px 0;">
+  <!-- WHATSAPP GROUP (Reduced Size) -->
+  <div class="section text-center" style="padding:10px 0;">
     <a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
       💬 Join WhatsApp Group
       <span class="sub">For Updates and connect with Others</span>
     </a>
-    <div style="display:inline-block; background:#fef3c7; padding:3px 14px; border-radius:60px; font-size:12px; font-weight:800; margin-top:6px; color:#000;">🔴 LIVE NOW · Active members</div>
+    <div style="display:inline-block; background:#fef3c7; padding:2px 12px; border-radius:60px; font-size:11px; font-weight:800; margin-top:4px; color:#000;">🔴 LIVE NOW · Active members</div>
   </div>
 
   <!-- STATS -->
@@ -763,6 +884,139 @@
     </div>
   </div>
 
+  <!-- HOW IT WORKS -->
+  <div class="section text-center">
+    <h2 style="font-size:24px; font-weight:900; color:#1c7e5e; margin-bottom:4px;">⚙️ How It Works</h2>
+    <p style="color:#666; font-size:13px; margin-bottom:12px;">Start earning in 3 simple steps</p>
+    <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
+      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">📝</span><div><span style="font-weight:800; font-size:15px; color:#111;">Sign Up Free</span><div style="font-size:13px; color:#555;">Create account in 30 seconds — no card needed.</div></div></div>
+      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">🎯</span><div><span style="font-weight:800; font-size:15px; color:#111;">Complete Tasks</span><div style="font-size:13px; color:#555;">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
+      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">💰</span><div><span style="font-weight:800; font-size:15px; color:#111;">Withdraw Instantly</span><div style="font-size:13px; color:#555;">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
+    </div>
+    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px; font-size:14px; padding:8px 18px;">🚀 Get Started Now</a>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- WAYS TO EARN SECTION - WITH REAL IMAGES & CTA BUTTONS        -->
+  <!-- ============================================================ -->
+  <div class="section" style="border-bottom: 2px solid #1c7e5e;">
+    <div style="text-align:center; margin-bottom:10px;">
+      <span style="background:#1c7e5e; color:#fff; padding:4px 18px; border-radius:60px; font-size:12px; font-weight:800; display:inline-block;">💎 WAYS TO EARN</span>
+      <h2 style="font-size:22px; font-weight:900; color:#0b2c26; margin-top:6px;">Choose Your Earning Method</h2>
+      <p style="font-size:13px; color:#666;">Each task pays instantly — start earning today!</p>
+    </div>
+
+    <div class="ways-grid">
+      <!-- 1. Chat with Foreigners -->
+      <div class="way-card">
+        <img class="way-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat with Foreigners" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">💬 Chat with Foreigners</div>
+          <div class="way-desc">Earn per person you chat with — real conversations, real money!</div>
+        </div>
+        <div class="way-earn">$4.60 <span class="sub">per chat</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn">Start Chatting</a>
+        </div>
+      </div>
+
+      <!-- 2. Listen to Trending Music -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&h=100&fit=crop&crop=center" alt="Listen to Music" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">🎵 Listen to Trending Music</div>
+          <div class="way-desc">Earn per track played — enjoy music and get paid!</div>
+        </div>
+        <div class="way-earn">$1.35 <span class="sub">per track</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn">Start Listening</a>
+        </div>
+      </div>
+
+      <!-- 3. Stroop Challenge -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop&crop=center" alt="Stroop Challenge" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">🎨 Stroop Challenge</div>
+          <div class="way-desc">Win & earn per round — test your reflexes and earn cash!</div>
+        </div>
+        <div class="way-earn">$3.24 <span class="sub">per round</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn gold">Play Now</a>
+        </div>
+      </div>
+
+      <!-- 4. Refer Friends -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=100&h=100&fit=crop&crop=center" alt="Refer Friends" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">🤝 Refer Friends</div>
+          <div class="way-desc">Earn commissions across 3 levels — unlimited earning potential!</div>
+        </div>
+        <div class="way-earn">🔥 BONUS</div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn gold">Start Referring</a>
+        </div>
+      </div>
+
+      <!-- 5. WhatsApp Posts -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&crop=center" alt="WhatsApp Posts" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">📱 WhatsApp Posts</div>
+          <div class="way-desc">Share content on WhatsApp and earn per post shared!</div>
+        </div>
+        <div class="way-earn">$2.50 <span class="sub">per post</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn">Start Posting</a>
+        </div>
+      </div>
+
+      <!-- 6. Daily Challenges -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1533093818119-ac1fa5ef1ee6?w=100&h=100&fit=crop&crop=center" alt="Daily Challenges" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">🎯 Daily Challenges</div>
+          <div class="way-desc">Complete daily tasks and missions — stack rewards daily!</div>
+        </div>
+        <div class="way-earn">$5.00 <span class="sub">per day</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn gold">Start Challenges</a>
+        </div>
+      </div>
+
+      <!-- 7. Paid Surveys -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Paid Surveys" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">📝 Paid Surveys</div>
+          <div class="way-desc">Answer surveys from global brands — share your opinion, get paid!</div>
+        </div>
+        <div class="way-earn">$3.00 <span class="sub">per survey</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn">Start Surveys</a>
+        </div>
+      </div>
+
+      <!-- 8. Watch Videos -->
+      <div class="way-card">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=100&h=100&fit=crop&crop=center" alt="Watch Videos" loading="lazy">
+        <div class="way-info">
+          <div class="way-name">🎬 Watch Videos</div>
+          <div class="way-desc">Watch short, engaging videos and earn per video watched!</div>
+        </div>
+        <div class="way-earn">$2.00 <span class="sub">per video</span></div>
+        <div class="way-cta">
+          <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn">Start Watching</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:12px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" class="btn-primary" style="font-size:15px; padding:10px 28px;">🚀 Start Earning Now</a>
+    </div>
+  </div>
+
   <!-- LIVE FOREIGNERS CHAT SECTION -->
   <div class="section" id="liveChatSection">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
@@ -771,7 +1025,6 @@
     </div>
     <h3 style="font-size:18px; font-weight:900; text-align:center; margin:0 0 10px; color:#1c7e5e;">🌍 Live Foreigners Online — Sending Nice Messages</h3>
     <div id="liveUserList">
-      <!-- 11 Profiles with NEW badge on last one -->
       <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
         <div class="user-info">
@@ -862,7 +1115,6 @@
         </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
       </div>
-      <!-- Profile 11 - NEW -->
       <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia">
         <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
         <div class="user-info">
@@ -937,28 +1189,31 @@
     </div>
   </div>
 
-  <!-- HOW IT WORKS -->
+  <!-- LIFETIME ACCESS with Description -->
   <div class="section text-center">
-    <h2 style="font-size:24px; font-weight:900; color:#1c7e5e; margin-bottom:4px;">⚙️ How It Works</h2>
-    <p style="color:#666; font-size:13px; margin-bottom:12px;">Start earning in 3 simple steps</p>
-    <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
-      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">📝</span><div><span style="font-weight:800; font-size:15px; color:#111;">Sign Up Free</span><div style="font-size:13px; color:#555;">Create account in 30 seconds — no card needed.</div></div></div>
-      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">🎯</span><div><span style="font-weight:800; font-size:15px; color:#111;">Complete Tasks</span><div style="font-size:13px; color:#555;">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
-      <div style="background:#f9f9f9; border:1px solid #eee; border-radius:16px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><span style="font-size:24px;">💰</span><div><span style="font-weight:800; font-size:15px; color:#111;">Withdraw Instantly</span><div style="font-size:13px; color:#555;">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
+    <div style="background:linear-gradient(135deg, #f0f7f4, #e8f0ec); border:2px solid #1c7e5e; border-radius:32px; padding:20px 18px; animation: borderGlow 2.5s ease-in-out infinite;">
+      <div style="font-size:26px; font-weight:900; color:#1c7e5e;">✨ Lifetime Access ✨</div>
+      <p style="font-size:14px; color:#444; max-width:400px; margin:8px auto 10px; line-height:1.5;">
+        Get <strong>unlimited access</strong> to all earning methods, premium chat features, and daily bonus rewards — <strong>one-time payment, lifetime earnings!</strong>
+      </p>
+      <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:6px 0 14px; flex-wrap:wrap;">
+        <span style="font-size:18px; font-weight:700; color:#999; text-decoration:line-through;">$10</span>
+        <span style="font-size:34px; font-weight:900; color:#1c7e5e;">$5</span>
+        <span style="background:#fef3c7; padding:4px 14px; border-radius:60px; font-weight:700; font-size:12px; color:#000;">🔥 LIMITED OFFER</span>
+      </div>
+      <p style="font-size:12px; color:#777; margin-bottom:12px;">✅ No monthly fees · ✅ Instant access · ✅ Withdraw anytime</p>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:15px; padding:10px 28px;">🚀 Activate Lifetime Access</a>
     </div>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px; font-size:14px; padding:8px 18px;">🚀 Get Started Now</a>
   </div>
 
-  <!-- LIFETIME ACCESS -->
-  <div class="section text-center">
-    <div style="background:#f9f9f9; border:1px solid #eee; border-radius:32px; padding:18px 14px;">
-      <div style="font-size:24px; font-weight:900; color:#1c7e5e;">✨ Lifetime Access ✨</div>
-      <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:6px 0 12px; flex-wrap:wrap;">
-        <span style="font-size:18px; font-weight:700; color:#999; text-decoration:line-through;">$10</span>
-        <span style="font-size:30px; font-weight:900; color:#1c7e5e;">$5</span>
-        <span style="background:#fef3c7; padding:3px 12px; border-radius:60px; font-weight:700; font-size:12px; color:#000;">🔥 LIMITED</span>
-      </div>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">Activate Now →</a>
+  <!-- CONTACT SUPPORT -->
+  <div class="section">
+    <div class="support-card">
+      <div class="support-icon">📞</div>
+      <div class="support-label">📱 Contact Support 24/7</div>
+      <div class="support-number">+256 753 738 856</div>
+      <p style="font-size:12px; color:#666; margin:4px 0 8px;">Call or WhatsApp — We're here to help!</p>
+      <a href="https://wa.me/256753738856" target="_blank" class="support-btn">💬 Chat on WhatsApp</a>
     </div>
   </div>
 
@@ -970,6 +1225,8 @@
     <details style="margin-bottom:6px;"><summary>How do I withdraw? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
     <details style="margin-bottom:6px;"><summary>Is it really free to join? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
     <details style="margin-bottom:6px;"><summary>How long does it take to get paid? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
+    <details style="margin-bottom:6px;"><summary>Can I use this on my phone? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
+    <details style="margin-bottom:6px;"><summary>How do I contact support? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Reach us 24/7 via WhatsApp or call <strong>+256 753 738 856</strong>. We're always ready to assist!</div></details>
   </div>
 
   <!-- FOOTER -->
@@ -1011,17 +1268,15 @@
   </div>
 </div>
 
-<!-- DEMO OVERLAY - EXACTLY FROM SCREENSHOT -->
+<!-- DEMO OVERLAY -->
 <div class="demo-overlay" id="demoOverlay">
   <div class="demo-card">
     <button class="close-demo" onclick="closeDemo()">✕</button>
     <div class="demo-title">🔓 Unlock This Feature</div>
     <div class="demo-subtitle">Chat with Foreigners</div>
     <p style="font-size:14px; color:#555; text-align:center; margin-bottom:18px; line-height:1.5;">
-      Activate your <strong style="color:#1c7e5e;">Mulaprime</strong> account to access <strong>Chat with Foreigners</strong> and start earning real money every day!
+      Activate your <strong style="color:#1c7e5e;">AfricaJob</strong> account to access <strong>Chat with Foreigners</strong> and start earning real money every day!
     </p>
-
-    <!-- Demo Items with REAL IMAGES -->
     <div class="demo-item">
       <img class="demo-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy">
       <div class="demo-info">
@@ -1030,7 +1285,6 @@
       </div>
       <div class="demo-earn">UGX 17,000 <span class="sub">~$4.60</span></div>
     </div>
-
     <div class="demo-item">
       <img class="demo-icon" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&h=100&fit=crop&crop=center" alt="Music" loading="lazy">
       <div class="demo-info">
@@ -1039,7 +1293,6 @@
       </div>
       <div class="demo-earn">UGX 5,000 <span class="sub">~$1.35</span></div>
     </div>
-
     <div class="demo-item">
       <img class="demo-icon" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop&crop=center" alt="Stroop" loading="lazy">
       <div class="demo-info">
@@ -1048,7 +1301,6 @@
       </div>
       <div class="demo-earn">UGX 12,000 <span class="sub">~$3.24</span></div>
     </div>
-
     <div class="demo-item">
       <img class="demo-icon" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=100&h=100&fit=crop&crop=center" alt="Referrals" loading="lazy">
       <div class="demo-info">
@@ -1057,7 +1309,6 @@
       </div>
       <div class="demo-earn">🔥 BONUS</div>
     </div>
-
     <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="demo-btn">🚀 Create Free Account</a>
     <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">No credit card required · Start earning today</p>
   </div>
