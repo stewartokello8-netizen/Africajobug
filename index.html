@@ -27,7 +27,6 @@
       margin: 0 auto;
       padding-top: 80px;
     }
-    /* STICKY HEADER */
     .header-row {
       position: fixed;
       top: 0;
@@ -50,13 +49,7 @@
     }
     .brand { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
     .brand-icon { font-size: 28px; line-height: 1; }
-    .brand-name {
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: -0.3px;
-      color: #0b2c26;
-      white-space: nowrap;
-    }
+    .brand-name { font-size: 26px; font-weight: 900; letter-spacing: -0.3px; color: #0b2c26; white-space: nowrap; }
     .brand-name span { color: #1c7e5e; }
     .header-center { display: flex; align-items: center; gap: 6px 10px; flex-shrink: 0; }
     .pipe-sep { color: #b6c9c2; font-weight: 300; font-size: 22px; user-select: none; flex-shrink: 0; }
@@ -119,7 +112,6 @@
     @keyframes slideUpFast { 0%{transform:translateY(80%) scale(0.95);opacity:0} 100%{transform:translateY(0) scale(1);opacity:1} }
     @keyframes slideDownFast { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(80%) scale(0.95);opacity:0} }
     @keyframes borderGlow { 0%,100%{box-shadow:0 0 5px rgba(28,126,94,0.2),0 0 10px rgba(28,126,94,0.05)} 50%{box-shadow:0 0 15px rgba(28,126,94,0.4),0 0 30px rgba(28,126,94,0.1)} }
-    @keyframes borderGlowGold { 0%,100%{box-shadow:0 0 5px rgba(245,158,11,0.2)} 50%{box-shadow:0 0 15px rgba(245,158,11,0.5)} }
     .section { padding: 14px 0; border-bottom: 1px solid #eee; }
     .section:last-of-type { border-bottom: none; }
     .text-center { text-align: center; }
@@ -138,27 +130,113 @@
       text-align: center;
     }
     .btn-primary:hover { transform: scale(1.02); transition: transform 0.2s; }
+    .btn-start-earning { font-size: 14px !important; padding: 8px 18px !important; }
 
-    /* EARNING METHODS - STYLE MATCHING SCREENSHOT */
-    .earn-methods-header {
-      background: #f8faf9;
-      border-radius: 16px;
-      padding: 16px 14px;
-      margin-bottom: 16px;
-      text-align: center;
-      border: 1px solid #e8ecea;
+    .earnings-scroll {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 60px;
+      padding: 6px 8px;
+      margin: 8px 0 0;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
     }
-    .earn-methods-header h1 {
-      font-size: 22px;
+    .earnings-scroll .scroll-label {
+      background: #1c7e5e;
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 40px;
+      font-size: 9px;
+      font-weight: 800;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .earnings-scroll .scroll-content {
+      display: inline-block;
+      font-weight: 700;
+      color: #333;
+      font-size: 12px;
+      animation: scrollText 45s linear infinite;
+      white-space: nowrap;
+    }
+    .earnings-scroll .scroll-content span { display: inline-block; padding: 0 8px; }
+
+    .whatsapp-btn {
+      background: #25d366;
+      color: #fff;
+      font-weight: 800;
+      padding: 18px 40px;
+      border-radius: 60px;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 20px;
+      border: 2px solid rgba(255,255,255,0.2);
+      animation: borderGlow 2s ease-in-out infinite;
+    }
+    .whatsapp-btn .sub { display: block; font-size: 14px; font-weight: 500; margin-top: 2px; }
+
+    /* DEMO OVERLAY - EXACTLY FROM SCREENSHOT */
+    .demo-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      z-index: 20000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .demo-overlay.active { display: flex; }
+    .demo-card {
+      background: #fff;
+      border-radius: 32px;
+      max-width: 420px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px 24px 24px;
+      position: relative;
+      animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+    }
+    .demo-card .close-demo {
+      position: sticky;
+      top: 0;
+      float: right;
+      background: #f5f5f5;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #555;
+      z-index: 5;
+      margin-bottom: 8px;
+      transition: background 0.2s;
+    }
+    .demo-card .close-demo:hover { background: #e0e0e0; }
+    .demo-card .demo-title {
+      font-size: 24px;
       font-weight: 900;
       color: #0b2c26;
+      text-align: center;
+      margin-bottom: 4px;
     }
-    .earn-methods-header p {
+    .demo-card .demo-subtitle {
+      text-align: center;
       font-size: 14px;
-      color: #555;
-      margin-top: 4px;
+      color: #666;
+      margin-bottom: 20px;
     }
-    .earn-method-item {
+    .demo-card .demo-subtitle strong { color: #1c7e5e; }
+    .demo-item {
       display: flex;
       align-items: center;
       gap: 14px;
@@ -167,10 +245,8 @@
       border-radius: 16px;
       padding: 12px 14px;
       margin-bottom: 10px;
-      transition: border 0.2s;
     }
-    .earn-method-item:hover { border-color: #1c7e5e; }
-    .earn-method-item .method-icon {
+    .demo-item .demo-icon {
       width: 52px;
       height: 52px;
       border-radius: 12px;
@@ -178,33 +254,48 @@
       flex-shrink: 0;
       border: 1px solid #e0e0e0;
     }
-    .earn-method-item .method-info { flex: 1; }
-    .earn-method-item .method-info .title {
+    .demo-item .demo-info { flex: 1; }
+    .demo-item .demo-info .demo-label {
       font-weight: 800;
-      font-size: 15px;
+      font-size: 14px;
       color: #0b2c26;
     }
-    .earn-method-item .method-info .desc {
+    .demo-item .demo-info .demo-desc {
       font-size: 12px;
-      color: #777;
-      margin-top: 2px;
-      line-height: 1.4;
+      color: #888;
+      margin-top: 1px;
     }
-    .earn-method-item .method-amount {
+    .demo-item .demo-earn {
       font-weight: 900;
       font-size: 16px;
       color: #1c7e5e;
       text-align: right;
       flex-shrink: 0;
     }
-    .earn-method-item .method-amount .sub {
-      font-size: 11px;
+    .demo-item .demo-earn .sub {
+      font-size: 10px;
       font-weight: 600;
       color: #888;
       display: block;
     }
+    .demo-card .demo-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #1c7e5e, #0d4f3a);
+      color: #fff;
+      font-weight: 800;
+      font-size: 16px;
+      border: none;
+      border-radius: 60px;
+      margin-top: 12px;
+      cursor: pointer;
+      animation: borderGlow 2s ease-in-out infinite;
+      text-decoration: none;
+      text-align: center;
+    }
+    .demo-card .demo-btn:hover { transform: scale(1.02); transition: transform 0.2s; }
 
-    /* USER CARDS - LARGER PROFILE */
     .user-card {
       background: #f9f9f9;
       border: 1px solid #eee;
@@ -226,9 +317,10 @@
       border: 2px solid #10b981;
       flex-shrink: 0;
     }
-    .user-card .name { font-weight: 800; font-size: 15px; color: #111; }
-    .user-card .country { font-size: 12px; font-weight: 700; color: #666; }
-    .user-card .status {
+    .user-card .user-info { flex: 1; }
+    .user-card .user-info .name { font-weight: 800; font-size: 15px; color: #111; }
+    .user-card .user-info .country { font-size: 12px; font-weight: 700; color: #666; }
+    .user-card .user-info .status {
       background: #f0f0f0;
       border-radius: 50px;
       padding: 1px 10px;
@@ -251,8 +343,26 @@
     }
     .user-card .actions .chat { background: #1c7e5e; color: #fff; border: 1px solid rgba(255,255,255,0.2); animation: borderGlow 1.5s ease-in-out infinite; }
     .user-card .actions .watch { background: #f0f0f0; color: #555; border: 1px solid #ddd; }
+    .user-card .new-badge {
+      background: #dc2626;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 40px;
+      margin-left: 4px;
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    .live-label {
+      background: #dc2626;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 40px;
+      margin-left: 4px;
+    }
 
-    /* SUCCESS STORIES - SHORTER TEXT, LARGER IMAGES */
     .story-card {
       display: flex;
       align-items: center;
@@ -272,24 +382,64 @@
       flex-shrink: 0;
     }
     .story-card .story-info { flex: 1; }
-    .story-card .story-info .sname {
-      font-weight: 800;
-      font-size: 13px;
-      color: #111;
+    .story-card .story-info .sname { font-weight: 800; font-size: 13px; color: #111; }
+    .story-card .story-info .samount { font-weight: 800; font-size: 13px; color: #1c7e5e; }
+    .story-card .story-info .sdesc { font-size: 12px; color: #666; line-height: 1.3; margin-top: 2px; }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+      gap: 6px;
     }
-    .story-card .story-info .samount {
-      font-weight: 800;
-      font-size: 13px;
-      color: #1c7e5e;
+    .stats-grid .stat-item {
+      background: #f9f9f9;
+      border: 2px solid #1c7e5e;
+      border-radius: 16px;
+      padding: 10px 2px;
+      flex: 1;
+      text-align: center;
+      animation: borderGlow 2.5s ease-in-out infinite;
     }
-    .story-card .story-info .sdesc {
+    .stats-grid .stat-item .stat-number { font-size: 20px; font-weight: 900; color: #1c7e5e; }
+    .stats-grid .stat-item .stat-label { font-size: 10px; font-weight: 600; color: #666; }
+
+    .withdraw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 8px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .withdraw-grid .item {
+      background: #f0f7f4;
+      padding: 4px 6px;
+      border-radius: 20px;
+      border: 1px solid #d4e8e0;
+      text-align: center;
       font-size: 12px;
-      color: #666;
-      line-height: 1.3;
-      margin-top: 2px;
+      font-weight: 600;
+      color: #2d4a40;
     }
 
-    /* CHAT OVERLAY */
+    details { display: block; }
+    details summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 15px;
+      color: #111;
+      list-style: none;
+      border-radius: 18px;
+      background: #f9f9f9;
+      border: 1px solid #eee;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+    details .faq-content { padding: 4px 14px 14px; background: #f9f9f9; border: 1px solid #eee; border-top: none; border-radius: 0 0 18px 18px; color: #555; line-height: 1.5; font-size: 14px; }
+
     .chat-page-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -407,10 +557,7 @@
       transition: background 0.2s;
     }
     .chat-page-footer button:hover { background: #146a4e; }
-    .chat-page-footer button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    .chat-page-footer button:disabled { opacity: 0.5; cursor: not-allowed; }
     .chat-upgrade-banner {
       background: #fef3c7;
       padding: 10px 14px;
@@ -474,37 +621,7 @@
       flex-shrink: 0;
       font-weight: 700;
     }
-    .whatsapp-btn {
-      background: #25d366;
-      color: #fff;
-      font-weight: 800;
-      padding: 18px 40px;
-      border-radius: 60px;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 20px;
-      border: 2px solid rgba(255,255,255,0.2);
-      animation: borderGlow 2s ease-in-out infinite;
-    }
-    .whatsapp-btn .sub { display: block; font-size: 14px; font-weight: 500; margin-top: 2px; }
-    .btn-start-earning { font-size: 14px !important; padding: 8px 18px !important; }
-    .withdraw-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4px 8px;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .withdraw-grid .item {
-      background: #f0f7f4;
-      padding: 4px 6px;
-      border-radius: 20px;
-      border: 1px solid #d4e8e0;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      color: #2d4a40;
-    }
+
     .footer-section {
       margin-top: 20px;
       padding-top: 18px;
@@ -548,19 +665,10 @@
       .online-badge .label { font-size: 12px; }
       .pipe-sep { font-size: 18px; }
       .signup-btn { font-size: 14px; padding: 5px 14px; }
-      .earn-method-item .method-icon { width: 44px; height: 44px; }
-      .earn-method-item .method-info .title { font-size: 14px; }
-      .earn-method-item .method-amount { font-size: 14px; }
+      .demo-card { padding: 20px 16px; }
+      .demo-item .demo-icon { width: 44px; height: 44px; }
       .chat-page { height: 500px; max-width: 100%; }
       .story-card img { width: 44px; height: 44px; }
-    }
-    @media (max-width: 380px) {
-      .brand-name { font-size: 18px; }
-      .online-badge { font-size: 12px; padding: 3px 7px; }
-      .online-badge .count-number { font-size: 12px; min-width: 26px; }
-      .online-badge .label { font-size: 10px; }
-      .signup-btn { font-size: 12px; padding: 4px 10px; }
-      .pipe-sep { font-size: 15px; }
     }
   </style>
 </head>
@@ -595,101 +703,37 @@
     <p style="font-size:14px; color:#555; line-height:1.5; max-width:440px; margin:0 auto 12px;">Join <span id="joinCounter" style="font-weight:900; color:#1c7e5e;">187,432</span>+ Africans and earn <strong style="color:#1c7e5e;">$30 – $150 daily</strong> by completing simple tasks</p>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
       <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning">🚀 Create Free Account</a>
-      <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f59e0b,#d97706);" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'}); return false;">👀 Try Demo First</a>
+      <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f59e0b,#d97706);" onclick="openDemo(); return false;">👀 Try Demo First</a>
       <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#2563eb,#1d4ed8);">🔑 Login</a>
     </div>
   </div>
 
-  <!-- EARNING METHODS - EXACT STYLE FROM SCREENSHOT -->
-  <div class="section" style="padding-bottom: 10px;">
-    <div class="earn-methods-header">
-      <h1>💎 7 Ways to Earn Daily</h1>
-      <p>Every feature pays real money. Do them all every day and stack your earnings.</p>
-    </div>
-
-    <!-- Method 1: Chat with Foreigners -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy">
-      <div class="method-info">
-        <div class="title">🌍 Chat with Foreigners</div>
-        <div class="desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
-      </div>
-      <div class="method-amount">UGX 17,000 <span class="sub">per person</span></div>
-    </div>
-
-    <!-- Method 2: Earn with Music -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&h=100&fit=crop&crop=center" alt="Music" loading="lazy">
-      <div class="method-info">
-        <div class="title">🎵 Earn with Music</div>
-        <div class="desc">Listen to 10 trending global tracks — The Weeknd, Harry Styles, Dua Lipa and more. Earn for every track you play.</div>
-      </div>
-      <div class="method-amount">UGX 5,000 <span class="sub">per track</span></div>
-    </div>
-
-    <!-- Method 3: Color Challenge -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop&crop=center" alt="Color Challenge" loading="lazy">
-      <div class="method-info">
-        <div class="title">🎨 Color Challenge</div>
-        <div class="desc">Play the Stroop Color Challenge — test your speed and accuracy. Win real money per round.</div>
-      </div>
-      <div class="method-amount">UGX 12,000 <span class="sub">per win</span></div>
-    </div>
-
-    <!-- Method 4: Watch YouTube -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=100&h=100&fit=crop&crop=center" alt="YouTube" loading="lazy">
-      <div class="method-info">
-        <div class="title">📺 Watch YouTube Videos</div>
-        <div class="desc">Watch up to 6 curated YouTube videos every day. Each video adds money to your balance.</div>
-      </div>
-      <div class="method-amount">UGX 3,000 <span class="sub">per video</span></div>
-    </div>
-
-    <!-- Method 5: Watch TikTok -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=100&h=100&fit=crop&crop=center" alt="TikTok" loading="lazy">
-      <div class="method-info">
-        <div class="title">🎵 Watch TikTok Videos</div>
-        <div class="desc">Browse and watch up to 5 TikTok video highlights daily. Easy, fun, and each view earns you real money.</div>
-      </div>
-      <div class="method-amount">UGX 2,500 <span class="sub">per video</span></div>
-    </div>
-
-    <!-- Method 6: Fix Tap Game -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop&crop=center" alt="Tap Game" loading="lazy">
-      <div class="method-info">
-        <div class="title">🖱️ Fix Tap Game</div>
-        <div class="desc">Tap as fast as you can in a 10-second session. Earn cash for every tap — the faster you tap, the more you earn!</div>
-      </div>
-      <div class="method-amount">UGX 500 <span class="sub">per tap</span></div>
-    </div>
-
-    <!-- Method 7: Train AI -->
-    <div class="earn-method-item" style="border-color:#1c7e5e; background:#f0faf5;">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=100&h=100&fit=crop&crop=center" alt="Train AI" loading="lazy">
-      <div class="method-info">
-        <div class="title">🤖 Train AI – Get Paid</div>
-        <div class="desc">No coding needed. Just your opinion matters! Train AI models and earn <strong style="color:#1c7e5e;">$17 – $150 per hour</strong>.</div>
-      </div>
-      <div class="method-amount">🔥 TOP RATE</div>
-    </div>
-
-    <!-- Method 8: WhatsApp Status -->
-    <div class="earn-method-item">
-      <img class="method-icon" src="https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=100&h=100&fit=crop&crop=center" alt="WhatsApp" loading="lazy">
-      <div class="method-info">
-        <div class="title">💬 WhatsApp Status Posts</div>
-        <div class="desc">Share sponsored content on your WhatsApp status. Get rewarded per post — quick and easy!</div>
-      </div>
-      <div class="method-amount">UGX 8,000 <span class="sub">per post</span></div>
-    </div>
-
-    <div style="text-align:center; margin-top:8px;">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 18px;">🚀 Create Free Account</a>
-    </div>
+  <!-- LIVE EARNINGS SCROLL -->
+  <div class="earnings-scroll">
+    <span class="scroll-label">💰 EARNING</span>
+    <span class="scroll-content" id="earningsScroll">
+      <span>🇰🇪 James K. earned KSh 1,612 from Watching Videos &nbsp;|&nbsp; </span>
+      <span>🇬🇭 Maureen A. earned GH₵ 1,129 from Paid Survey &nbsp;|&nbsp; </span>
+      <span>🇺🇬 Sarah N. earned UGX 56,240 from Chatting &nbsp;|&nbsp; </span>
+      <span>🇳🇬 Chidi O. earned ₦ 16,800 from WhatsApp Post &nbsp;|&nbsp; </span>
+      <span>🇿🇦 Lindiwe M. earned R 258 from Train AI &nbsp;|&nbsp; </span>
+      <span>🇰🇪 Omar H. earned KSh 1,200 from Spin & Win &nbsp;|&nbsp; </span>
+      <span>🇷🇼 Diane U. earned RWF 14,800 from Watching Videos &nbsp;|&nbsp; </span>
+      <span>🇨🇲 Samuel B. earned XAF 6,200 from Paid Survey &nbsp;|&nbsp; </span>
+      <span>🇧🇼 Kabelo S. earned BWP 19,400 from Chatting &nbsp;|&nbsp; </span>
+      <span>🇬🇭 Akosua K. earned GH₵ 2,150 from Train AI &nbsp;|&nbsp; </span>
+      <span>🇺🇬 Robert T. earned UGX 51,430 from WhatsApp Post &nbsp;|&nbsp; </span>
+      <span>🇳🇬 Amara E. earned ₦ 32,500 from Chatting &nbsp;|&nbsp; </span>
+      <span>🇰🇪 Grace W. earned KSh 1,445 from Watching Videos &nbsp;|&nbsp; </span>
+      <span>🇳🇬 Tunde A. earned ₦ 25,500 from Paid Survey &nbsp;|&nbsp; </span>
+      <span>🇺🇬 Moses O. earned UGX 189,810 from Chatting &nbsp;|&nbsp; </span>
+      <span>🇿🇦 Zanele D. earned R 948 from Watching Videos &nbsp;|&nbsp; </span>
+      <span>🇰🇪 Faith N. earned KSh 5,121 from Train AI &nbsp;|&nbsp; </span>
+      <span>🇷🇼 Jean P. earned RWF 23,400 from Paid Survey &nbsp;|&nbsp; </span>
+      <span>🇨🇲 Marie B. earned XAF 23,900 from WhatsApp Post &nbsp;|&nbsp; </span>
+      <span>🇬🇭 Yaw A. earned GH₵ 4,850 from Spin & Win &nbsp;|&nbsp; </span>
+      <span>🇺🇬 Esther K. earned UGX 215,340 from Chatting &nbsp;|&nbsp; </span>
+    </span>
   </div>
 
   <!-- WHATSAPP GROUP -->
@@ -698,45 +742,140 @@
       💬 Join WhatsApp Group
       <span class="sub">For Updates and connect with Others</span>
     </a>
+    <div style="display:inline-block; background:#fef3c7; padding:3px 14px; border-radius:60px; font-size:12px; font-weight:800; margin-top:6px; color:#000;">🔴 LIVE NOW · Active members</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="section" style="padding:14px 0;">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="liveUsers">187,432</div>
+        <div class="stat-label">👥 LIVE USERS</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="totalPaid">$2.87M</div>
+        <div class="stat-label">💰 TOTAL PAID</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="onlineNow">3,300</div>
+        <div class="stat-label">🟢 ONLINE NOW</div>
+      </div>
+    </div>
   </div>
 
   <!-- LIVE FOREIGNERS CHAT SECTION -->
   <div class="section" id="liveChatSection">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
       <span style="background:#dc2626; color:#fff; font-size:10px; font-weight:800; padding:3px 12px; border-radius:40px;">● LIVE NOW</span>
-      <span style="font-size:13px; font-weight:700; color:#666;">💬 <span id="activeChatters">10</span> active members online</span>
+      <span style="font-size:13px; font-weight:700; color:#666;">💬 <span id="activeChatters">11</span> active members online</span>
     </div>
-    <h3 style="font-size:18px; font-weight:900; text-align:center; margin:0 0 10px; color:#1c7e5e;">🌍 Live Foreigners Online</h3>
+    <h3 style="font-size:18px; font-weight:900; text-align:center; margin:0 0 10px; color:#1c7e5e;">🌍 Live Foreigners Online — Sending Nice Messages</h3>
     <div id="liveUserList">
+      <!-- 11 Profiles with NEW badge on last one -->
       <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
-        <div><div class="name">Emma S., 28 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇺🇸 USA <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing now...</div></div>
+        <div class="user-info">
+          <div class="name">Emma S., 28 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">✍️ typing now...</div>
+        </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Emma\'s latest video');">Watch</a></div>
       </div>
       <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy">
-        <div><div class="name">James M., 34 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇬🇧 UK <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 saying hello...</div></div>
+        <div class="user-info">
+          <div class="name">James M., 34 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">💬 saying hello...</div>
+        </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch James\'s story');">Watch</a></div>
       </div>
       <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy">
-        <div><div class="name">Sophie L., 26 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇨🇦 Canada <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">⌨️ writing a reply...</div></div>
+        <div class="user-info">
+          <div class="name">Sophie L., 26 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">⌨️ writing a reply...</div>
+        </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Sophie\'s video');">Watch</a></div>
       </div>
       <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia">
         <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy">
-        <div><div class="name">David R., 41 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇦🇺 Australia <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">💬 sending a message...</div></div>
+        <div class="user-info">
+          <div class="name">David R., 41 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">💬 sending a message...</div>
+        </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch David\'s content');">Watch</a></div>
       </div>
       <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain">
         <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy">
-        <div><div class="name">Maria G., 29 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div><div class="country">🇪🇸 Spain <span style="background:rgba(220,38,38,0.15); color:#dc2626; font-size:8px; font-weight:800; padding:2px 8px; border-radius:40px; margin-left:4px;">🔴 LIVE</span></div><div class="status typing-status">✍️ typing a long message...</div></div>
+        <div class="user-info">
+          <div class="name">Maria G., 29 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">✍️ typing a long message...</div>
+        </div>
         <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Maria\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany">
+        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy">
+        <div class="user-info">
+          <div class="name">Thomas K., 37 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">💬 saying hi there!</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Thomas\'s content');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy">
+        <div class="user-info">
+          <div class="name">Anna P., 31 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">✍️ writing something...</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Anna\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland">
+        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy">
+        <div class="user-info">
+          <div class="name">Michael D., 45 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">💬 sending greetings...</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Michael\'s story');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy">
+        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy">
+        <div class="user-info">
+          <div class="name">Laura B., 27 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">⌨️ responding...</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Laura\'s video');">Watch</a></div>
+      </div>
+      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand">
+        <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy">
+        <div class="user-info">
+          <div class="name">Robert S., 39 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div>
+          <div class="status typing-status">💬 chatting away...</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Robert\'s content');">Watch</a></div>
+      </div>
+      <!-- Profile 11 - NEW -->
+      <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia">
+        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
+        <div class="user-info">
+          <div class="name">Sarah M., 24 <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; margin-left:3px;"></span></div>
+          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div>
+          <div class="status typing-status">✍️ typing a reply...</div>
+        </div>
+        <div class="actions"><a href="#" class="chat" onclick="event.stopPropagation(); openChatPage(this); return false;">Chat</a><a href="#" class="watch" onclick="event.stopPropagation(); alert('Watch Sarah\'s video');">Watch</a></div>
       </div>
     </div>
   </div>
 
-  <!-- SUCCESS STORIES - SHORTER TEXT, LARGER IMAGES -->
+  <!-- SUCCESS STORIES -->
   <div class="section text-center">
     <span style="background:#f5f5f5; padding:3px 14px; border-radius:40px; font-weight:800; font-size:12px; color:#1c7e5e; display:inline-block; margin-bottom:10px;">⭐ SUCCESS STORIES ⭐</span>
     <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
@@ -745,7 +884,7 @@
         <div class="story-info">
           <div class="sname">Kelvin O. · Lagos</div>
           <div class="samount">💰 $2,240 earned last week</div>
-          <div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div>
+          <div class="sdesc">"Cleared my rent in 9 days. Absolutely legit!"</div>
         </div>
       </div>
       <div class="story-card">
@@ -753,7 +892,7 @@
         <div class="story-info">
           <div class="sname">Amaka N. · Enugu</div>
           <div class="samount">💰 $1,860 earned this month</div>
-          <div class="sdesc">"Chatting with foreigners while earning is the best side hustle!"</div>
+          <div class="sdesc">"Chatting with foreigners while earning is the best!"</div>
         </div>
       </div>
       <div class="story-card">
@@ -761,7 +900,7 @@
         <div class="story-info">
           <div class="sname">Kwame B. · Accra</div>
           <div class="samount">💰 $1,120 earned this week</div>
-          <div class="sdesc">"I receive my MoMo withdrawal in seconds. So reliable!"</div>
+          <div class="sdesc">"MoMo withdrawal in seconds. So reliable!"</div>
         </div>
       </div>
       <div class="story-card">
@@ -769,7 +908,7 @@
         <div class="story-info">
           <div class="sname">Faith W. · Nairobi</div>
           <div class="samount">💰 $980 earned this week</div>
-          <div class="sdesc">"This platform paid my school fees in just 2 weeks!"</div>
+          <div class="sdesc">"Paid my school fees in just 2 weeks!"</div>
         </div>
       </div>
       <div class="story-card">
@@ -777,7 +916,7 @@
         <div class="story-info">
           <div class="sname">Peter M. · Kampala</div>
           <div class="samount">💰 $1,550 earned last month</div>
-          <div class="sdesc">"Best decision I made this year! I earn more than my regular job."</div>
+          <div class="sdesc">"Best decision! I earn more than my regular job."</div>
         </div>
       </div>
     </div>
@@ -823,6 +962,16 @@
     </div>
   </div>
 
+  <!-- FAQ -->
+  <div class="section" style="padding-bottom:10px;">
+    <h2 style="text-align:center; font-size:24px; font-weight:900; margin-bottom:12px; color:#1c7e5e;">📌 Frequent Questions</h2>
+    <details style="margin-bottom:6px;"><summary>How much can I earn per day? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
+    <details style="margin-bottom:6px;"><summary>Do I need any experience? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
+    <details style="margin-bottom:6px;"><summary>How do I withdraw? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
+    <details style="margin-bottom:6px;"><summary>Is it really free to join? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
+    <details style="margin-bottom:6px;"><summary>How long does it take to get paid? <span style="font-size:17px; color:#1c7e5e;">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
+  </div>
+
   <!-- FOOTER -->
   <div class="footer-section">
     <div class="footer-grid">
@@ -862,6 +1011,58 @@
   </div>
 </div>
 
+<!-- DEMO OVERLAY - EXACTLY FROM SCREENSHOT -->
+<div class="demo-overlay" id="demoOverlay">
+  <div class="demo-card">
+    <button class="close-demo" onclick="closeDemo()">✕</button>
+    <div class="demo-title">🔓 Unlock This Feature</div>
+    <div class="demo-subtitle">Chat with Foreigners</div>
+    <p style="font-size:14px; color:#555; text-align:center; margin-bottom:18px; line-height:1.5;">
+      Activate your <strong style="color:#1c7e5e;">Mulaprime</strong> account to access <strong>Chat with Foreigners</strong> and start earning real money every day!
+    </p>
+
+    <!-- Demo Items with REAL IMAGES -->
+    <div class="demo-item">
+      <img class="demo-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy">
+      <div class="demo-info">
+        <div class="demo-label">💬 Chat with foreigners</div>
+        <div class="demo-desc">Earn per person you chat with</div>
+      </div>
+      <div class="demo-earn">UGX 17,000 <span class="sub">~$4.60</span></div>
+    </div>
+
+    <div class="demo-item">
+      <img class="demo-icon" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&h=100&fit=crop&crop=center" alt="Music" loading="lazy">
+      <div class="demo-info">
+        <div class="demo-label">🎵 Listen to trending music</div>
+        <div class="demo-desc">Earn per track played</div>
+      </div>
+      <div class="demo-earn">UGX 5,000 <span class="sub">~$1.35</span></div>
+    </div>
+
+    <div class="demo-item">
+      <img class="demo-icon" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=100&h=100&fit=crop&crop=center" alt="Stroop" loading="lazy">
+      <div class="demo-info">
+        <div class="demo-label">🎨 Stroop Challenge</div>
+        <div class="demo-desc">Win & earn per round</div>
+      </div>
+      <div class="demo-earn">UGX 12,000 <span class="sub">~$3.24</span></div>
+    </div>
+
+    <div class="demo-item">
+      <img class="demo-icon" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=100&h=100&fit=crop&crop=center" alt="Referrals" loading="lazy">
+      <div class="demo-info">
+        <div class="demo-label">🤝 Refer friends</div>
+        <div class="demo-desc">Earn commissions across 3 levels</div>
+      </div>
+      <div class="demo-earn">🔥 BONUS</div>
+    </div>
+
+    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="demo-btn">🚀 Create Free Account</a>
+    <p style="text-align:center; font-size:12px; color:#999; margin-top:10px;">No credit card required · Start earning today</p>
+  </div>
+</div>
+
 <!-- CHAT OVERLAY -->
 <div class="chat-page-overlay" id="chatOverlay">
   <div class="chat-page">
@@ -898,6 +1099,19 @@
 </div>
 
 <script>
+  // OPEN DEMO
+  function openDemo() {
+    document.getElementById('demoOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDemo() {
+    document.getElementById('demoOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('demoOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeDemo();
+  });
+
   // Live counters
   (function() {
     const counterEl = document.getElementById('liveCounter');
@@ -1072,4 +1286,4 @@
   });
 </script>
 </body>
-        </html>
+</html>
