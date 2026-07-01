@@ -784,6 +784,8 @@
     .how-step .step-info { flex: 1; }
     .how-step .step-info .step-title { font-weight: 800; font-size: 14px; color: #0b1a2f; }
     .how-step .step-info .step-desc { font-size: 12px; color: #0b1a2f; }
+
+    /* ===== DEMO PAGE STYLES - ENHANCED WITH BETTER SEPARATION ===== */
     .demo-card {
       background: radial-gradient(circle at 10% 20%, #f0f6fc, #dce6f0);
       border-radius: 48px;
@@ -799,7 +801,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       color: #3b4f6b;
       letter-spacing: 0.2px;
@@ -837,7 +839,7 @@
       gap: 6px 10px;
     }
     .demo-card .welcome-row .greeting {
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 700;
       color: #0b1a2f;
       letter-spacing: -0.3px;
@@ -854,7 +856,7 @@
       backdrop-filter: blur(4px);
       padding: 4px 14px 4px 12px;
       border-radius: 60px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.12);
@@ -876,9 +878,9 @@
     }
     .demo-card .welcome-sub {
       margin-top: 12px;
-      font-size: 13px;
+      font-size: 14px;
       color: #1a2f4a;
-      line-height: 1.5;
+      line-height: 1.6;
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
       padding: 10px 14px;
@@ -892,13 +894,15 @@
     .demo-card .welcome-sub .badge-new {
       background: #f5d65a;
       font-weight: 700;
-      font-size: 10px;
+      font-size: 11px;
       padding: 2px 14px;
       border-radius: 40px;
       color: #1a1f2e;
       letter-spacing: 0.3px;
     }
     .demo-card .welcome-sub strong { color: #0b1a2f; font-weight: 700; }
+
+    /* Stats section with better separation */
     .demo-card .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -914,6 +918,7 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.01);
       text-align: center;
       transition: all 0.15s;
+      position: relative;
     }
     .demo-card .stat-card:hover {
       background: rgba(255,255,255,0.6);
@@ -921,7 +926,7 @@
       transform: translateY(-2px);
     }
     .demo-card .stat-card .stat-label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       color: #2f4568;
       letter-spacing: 0.5px;
@@ -929,20 +934,20 @@
       opacity: 0.7;
     }
     .demo-card .stat-card .stat-value {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
       color: #1fbb7a !important;
       margin-top: 4px;
       letter-spacing: -0.3px;
     }
     .demo-card .stat-card .stat-value small {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       color: #3a5072;
       margin-left: 3px;
     }
     .demo-card .stat-card .stat-sub {
-      font-size: 11px;
+      font-size: 12px;
       color: #3a5072;
       font-weight: 500;
       margin-top: 4px;
@@ -958,7 +963,7 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 6px;
-      font-size: 10px;
+      font-size: 11px;
       color: #3a5072;
       border-top: 1px solid rgba(0,0,0,0.02);
       padding-top: 8px;
@@ -978,7 +983,7 @@
       padding: 2px 14px;
       border-radius: 40px;
       border: 1px solid rgba(255,255,255,0.3);
-      font-size: 10px;
+      font-size: 11px;
       cursor: default;
       backdrop-filter: blur(2px);
     }
@@ -988,7 +993,7 @@
       border-radius: 60px;
       padding: 2px 12px;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 19px;
       color: #1fbb7a !important;
       display: inline-block;
       border: 1px solid rgba(255,215,0,0.1);
@@ -996,15 +1001,18 @@
     }
     .demo-card .withdrawn-chip small {
       font-weight: 500;
-      font-size: 12px;
+      font-size: 13px;
       color: #3a4f72;
       margin-left: 4px;
     }
     .demo-card .divider-light {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.12), transparent);
       margin: 12px 0 16px;
+      border-radius: 4px;
     }
+
+    /* Earn grid with better separation */
     .demo-card .earn-grid {
       display: flex;
       flex-direction: column;
@@ -1023,26 +1031,36 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.01);
       transition: all 0.15s;
       cursor: pointer;
+      position: relative;
     }
     .demo-card .earn-card:hover {
       background: rgba(255,255,255,0.5);
       border-color: rgba(255,215,0,0.08);
       transform: scale(1.01);
     }
+    .demo-card .earn-card::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
+    }
     .demo-card .earn-left .label {
       font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
       color: #0b1a2f;
       letter-spacing: -0.2px;
     }
     .demo-card .earn-left .amount {
       font-weight: 800;
-      font-size: 17px;
+      font-size: 18px;
       color: #1fbb7a !important;
       margin-top: 2px;
     }
     .demo-card .earn-left .usd {
-      font-size: 12px;
+      font-size: 13px;
       color: #3a5072;
       font-weight: 500;
       margin-left: 4px;
@@ -1052,7 +1070,7 @@
       backdrop-filter: blur(4px);
       padding: 6px 18px;
       border-radius: 60px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.04);
@@ -1067,7 +1085,7 @@
       border: none;
       color: #0b1a2f;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 17px;
       padding: 14px 28px;
       border-radius: 80px;
       width: 100%;
@@ -1089,13 +1107,16 @@
       gap: 10px;
       flex-wrap: wrap;
       margin: 6px 0 16px;
+      padding: 4px 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 14px;
     }
     .demo-card .nav-chip {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
       padding: 8px 18px;
       border-radius: 60px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       color: #0b1a2f;
       border: 1px solid rgba(255,255,255,0.3);
@@ -1106,7 +1127,12 @@
       background: rgba(255,215,0,0.04);
       border-color: rgba(255,215,0,0.08);
     }
-    .demo-card .profile-list { margin: 10px 0 18px; }
+    .demo-card .profile-list { 
+      margin: 10px 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
     .demo-card .profile-item {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(6px);
@@ -1116,7 +1142,6 @@
       align-items: center;
       justify-content: space-between;
       border: 1px solid rgba(255,255,255,0.3);
-      margin-bottom: 8px;
       transition: 0.1s;
     }
     .demo-card .profile-item:hover {
@@ -1126,21 +1151,22 @@
       width: 40px; height: 40px; border-radius: 40px; margin-right: 12px;
       overflow: hidden; background: rgba(255,215,0,0.04); display: flex; align-items: center; justify-content: center;
       border: 1px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
     }
     .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .demo-card .profile-info .name { font-weight: 700; font-size: 15px; color: #0b1a2f; }
-    .demo-card .profile-info .location { font-size: 12px; color: #2f4568; font-weight: 500; }
-    .demo-card .profile-amount { font-weight: 700; color: #1fbb7a !important; font-size: 14px; text-align: right; }
-    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 11px; display: block; }
+    .demo-card .profile-info .name { font-weight: 700; font-size: 16px; color: #0b1a2f; }
+    .demo-card .profile-info .location { font-size: 13px; color: #2f4568; font-weight: 500; }
+    .demo-card .profile-amount { font-weight: 700; color: #1fbb7a !important; font-size: 15px; text-align: right; }
+    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 12px; display: block; }
     .demo-card .footer-note {
       margin-top: 24px;
       text-align: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       color: #1a2f4f;
       letter-spacing: 0.2px;
       padding: 12px 8px 4px;
-      border-top: 1px solid rgba(255,215,0,0.04);
+      border-top: 2px solid rgba(255,215,0,0.06);
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(4px);
       border-radius: 60px;
@@ -1223,11 +1249,11 @@
       .signup-btn { font-size: 11px; padding: 4px 10px; }
       .demo-card { padding: 0; }
       .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .demo-card .stat-card .stat-value { font-size: 18px; }
-      .demo-card .welcome-row .greeting { font-size: 17px; }
+      .demo-card .stat-card .stat-value { font-size: 20px; }
+      .demo-card .welcome-row .greeting { font-size: 18px; }
       .demo-card .earn-card { padding: 12px 14px; }
-      .demo-card .earn-left .label { font-size: 13px; }
-      .demo-card .earn-left .amount { font-size: 15px; }
+      .demo-card .earn-left .label { font-size: 14px; }
+      .demo-card .earn-left .amount { font-size: 16px; }
       .chat-page { height: 450px; max-width: 100%; }
       .story-card img { width: 38px; height: 38px; }
       .way-card .way-icon { width: 36px; height: 36px; }
