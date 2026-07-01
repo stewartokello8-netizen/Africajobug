@@ -35,7 +35,7 @@
       right: 0;
       max-width: 600px;
       margin: 0 auto;
-      background: #0b1a2f; /* black/dark background */
+      background: #0b1a2f;
       z-index: 999;
       display: flex;
       flex-wrap: nowrap;
@@ -48,29 +48,29 @@
       border-radius: 0 0 24px 24px;
     }
     .brand { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
-    .brand-icon { font-size: 28px; line-height: 1; }
-    .brand-name { font-size: 26px; font-weight: 900; letter-spacing: -0.3px; color: #fff; white-space: nowrap; }
+    .brand-icon { font-size: 24px; line-height: 1; }
+    .brand-name { font-size: 22px; font-weight: 900; letter-spacing: -0.3px; color: #fff; white-space: nowrap; }
     .brand-name span { color: #1fbb7a; }
     .header-center { display: flex; align-items: center; gap: 6px 10px; flex-shrink: 0; }
-    .pipe-sep { color: #6a8a8a; font-weight: 300; font-size: 22px; user-select: none; flex-shrink: 0; }
+    .pipe-sep { color: #6a8a8a; font-weight: 300; font-size: 18px; user-select: none; flex-shrink: 0; }
     .online-badge {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: rgba(255,255,255,0.06);
-      padding: 6px 14px 6px 10px;
+      padding: 4px 12px 4px 8px;
       border-radius: 60px;
       border: 1px solid rgba(255,255,255,0.08);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 13px;
       color: #fff;
       white-space: nowrap;
       flex-shrink: 0;
     }
     .online-badge .live-dot {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       background: #1fbb7a;
       border-radius: 50%;
       box-shadow: 0 0 0 2px rgba(31,187,122,0.2);
@@ -80,21 +80,21 @@
     .online-badge .count-number {
       font-weight: 800;
       color: #fff;
-      min-width: 40px;
+      min-width: 35px;
       display: inline-block;
       text-align: center;
       font-feature-settings: "tnum";
-      font-size: 16px;
+      font-size: 14px;
     }
-    .online-badge .label { font-weight: 500; color: #c0d0d0; font-size: 13px; }
+    .online-badge .label { font-weight: 500; color: #c0d0d0; font-size: 11px; }
     .signup-btn {
       background: #1fbb7a;
       color: #fff;
       border: none;
-      padding: 8px 18px;
+      padding: 6px 14px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 13px;
       cursor: pointer;
       transition: background 0.2s, transform 0.15s;
       display: flex;
@@ -112,7 +112,75 @@
     @keyframes slideUpFast { 0%{transform:translateY(80%) scale(0.95);opacity:0} 100%{transform:translateY(0) scale(1);opacity:1} }
     @keyframes slideDownFast { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(80%) scale(0.95);opacity:0} }
     @keyframes borderGlow { 0%,100%{box-shadow:0 0 6px rgba(31,187,122,0.15),0 0 12px rgba(31,187,122,0.03)} 50%{box-shadow:0 0 18px rgba(31,187,122,0.25),0 0 36px rgba(31,187,122,0.06)} }
-    .section { padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.04); }
+
+    /* ===== SECTION SEPARATION STYLES ===== */
+    .section {
+      padding: 16px 0 20px;
+      margin-bottom: 6px;
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      padding: 18px 16px 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: all 0.2s;
+    }
+    .section:hover {
+      box-shadow: 0 4px 20px rgba(31,187,122,0.06);
+      border-color: rgba(31,187,122,0.08);
+    }
+    .section:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #1fbb7a, transparent);
+      opacity: 0.3;
+      border-radius: 4px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .section-header .icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1fbb7a, #0f7b5a);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0b1a2f;
+      letter-spacing: -0.3px;
+    }
+    .section-header .badge {
+      margin-left: auto;
+      background: #f0f5f3;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #1fbb7a;
+      border: 1px solid rgba(31,187,122,0.1);
+    }
+    .section-subtitle {
+      font-size: 13px;
+      color: #5a6f68;
+      margin-top: -6px;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
     .section:last-of-type { border-bottom: none; }
     .text-center { text-align: center; }
     .btn-primary {
@@ -120,8 +188,8 @@
       background: linear-gradient(135deg, #1fbb7a, #0f7b5a);
       color: #fff;
       font-weight: 800;
-      font-size: 14px;
-      padding: 8px 18px;
+      font-size: 13px;
+      padding: 6px 16px;
       border-radius: 60px;
       text-decoration: none;
       border: 2px solid rgba(255,255,255,0.08);
@@ -131,13 +199,13 @@
       transition: all 0.2s;
     }
     .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(31,187,122,0.25); }
-    .btn-start-earning { font-size: 14px !important; padding: 8px 18px !important; }
+    .btn-start-earning { font-size: 12px !important; padding: 6px 14px !important; }
     .earnings-scroll {
       background: #f0f5f3;
       border: 1px solid rgba(0,0,0,0.04);
       border-radius: 60px;
-      padding: 6px 8px;
-      margin: 8px 0 0;
+      padding: 5px 8px;
+      margin: 6px 0 0;
       overflow: hidden;
       white-space: nowrap;
       box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
@@ -145,9 +213,9 @@
     .earnings-scroll .scroll-label {
       background: #1fbb7a;
       color: #fff;
-      padding: 2px 10px;
+      padding: 2px 8px;
       border-radius: 40px;
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 800;
       display: inline-block;
       margin-right: 4px;
@@ -156,11 +224,15 @@
       display: inline-block;
       font-weight: 700;
       color: #0b1a2f;
-      font-size: 12px;
+      font-size: 11px;
       animation: scrollText 70s linear infinite;
       white-space: nowrap;
     }
-    .earnings-scroll .scroll-content span { display: inline-block; padding: 0 8px; }
+    .earnings-scroll .scroll-content span { 
+      display: inline-block; 
+      padding: 0 6px; 
+      color: #1fbb7a !important;
+    }
 
     .demo-page {
       position: fixed;
@@ -185,10 +257,10 @@
       background: rgba(255,255,255,0.6);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,0.3);
-      padding: 8px 20px;
+      padding: 6px 16px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       color: #0b1a2f;
       cursor: pointer;
       transition: 0.2s;
@@ -196,7 +268,7 @@
     .demo-page .demo-header .back-btn:hover { background: rgba(255,255,255,0.9); }
     .demo-page .demo-header .page-title {
       font-weight: 800;
-      font-size: 20px;
+      font-size: 18px;
       color: #0b1a2f;
       letter-spacing: -0.3px;
     }
@@ -204,31 +276,31 @@
       background: #f9fcfb;
       border: 1px solid rgba(0,0,0,0.03);
       border-radius: 20px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 6px;
       cursor: pointer;
       transition: background 0.15s, box-shadow 0.15s;
     }
     .user-card:hover { background: #f0f7f4; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
     .user-card img {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       border-radius: 100%;
       object-fit: cover;
       border: 2px solid #1fbb7a;
       flex-shrink: 0;
     }
     .user-card .user-info { flex: 1; }
-    .user-card .user-info .name { font-weight: 800; font-size: 15px; color: #0b1a2f; }
-    .user-card .user-info .country { font-size: 12px; font-weight: 700; color: #0b1a2f; }
+    .user-card .user-info .name { font-weight: 800; font-size: 14px; color: #0b1a2f; }
+    .user-card .user-info .country { font-size: 11px; font-weight: 700; color: #0b1a2f; }
     .user-card .user-info .status {
       background: #f0f5f3;
       border-radius: 50px;
-      padding: 1px 10px;
-      font-size: 10px;
+      padding: 1px 8px;
+      font-size: 9px;
       font-weight: 700;
       display: inline-block;
       margin-top: 1px;
@@ -237,10 +309,10 @@
     }
     .user-card .actions { display: flex; gap: 3px; flex-shrink: 0; }
     .user-card .actions a {
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 40px;
       font-weight: 800;
-      font-size: 9px;
+      font-size: 8px;
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
@@ -250,9 +322,9 @@
     .user-card .new-badge {
       background: #dc2626;
       color: #fff;
-      font-size: 8px;
+      font-size: 7px;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 1px 6px;
       border-radius: 40px;
       margin-left: 4px;
       animation: pulse-dot 1.5s ease-in-out infinite;
@@ -260,36 +332,36 @@
     .live-label {
       background: #dc2626;
       color: #fff;
-      font-size: 8px;
+      font-size: 7px;
       font-weight: 800;
-      padding: 2px 8px;
+      padding: 1px 6px;
       border-radius: 40px;
       margin-left: 4px;
     }
     .story-card {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: #f9fcfb;
       border: 1px solid rgba(0,0,0,0.03);
       border-radius: 16px;
-      padding: 10px 14px;
-      margin-bottom: 8px;
+      padding: 8px 12px;
+      margin-bottom: 6px;
       transition: 0.15s;
     }
     .story-card:hover { background: #f0f7f4; }
     .story-card img {
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       border-radius: 100%;
       object-fit: cover;
       border: 2px solid #1fbb7a;
       flex-shrink: 0;
     }
     .story-card .story-info { flex: 1; }
-    .story-card .story-info .sname { font-weight: 800; font-size: 14px; color: #0b1a2f; }
-    .story-card .story-info .samount { font-weight: 800; font-size: 14px; color: #0b1a2f; }
-    .story-card .story-info .sdesc { font-size: 13px; color: #0b1a2f; line-height: 1.3; margin-top: 2px; }
+    .story-card .story-info .sname { font-weight: 800; font-size: 13px; color: #0b1a2f; }
+    .story-card .story-info .samount { font-weight: 800; font-size: 13px; color: #1fbb7a !important; }
+    .story-card .story-info .sdesc { font-size: 12px; color: #0b1a2f; line-height: 1.3; margin-top: 2px; }
     .stats-grid {
       display: flex;
       justify-content: space-around;
@@ -299,13 +371,13 @@
       background: #f9fcfb;
       border: 2px solid rgba(31,187,122,0.12);
       border-radius: 16px;
-      padding: 10px 2px;
+      padding: 8px 2px;
       flex: 1;
       text-align: center;
       animation: borderGlow 2.8s ease-in-out infinite;
     }
-    .stats-grid .stat-item .stat-number { font-size: 20px; font-weight: 900; color: #0b1a2f; }
-    .stats-grid .stat-item .stat-label { font-size: 10px; font-weight: 600; color: #0b1a2f; }
+    .stats-grid .stat-item .stat-number { font-size: 18px; font-weight: 900; color: #1fbb7a !important; }
+    .stats-grid .stat-item .stat-label { font-size: 9px; font-weight: 600; color: #0b1a2f; }
     .withdraw-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -319,7 +391,7 @@
       border-radius: 20px;
       border: 1px solid #d4e8e0;
       text-align: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: #0b1a2f;
     }
@@ -328,13 +400,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 14px;
+      padding: 10px 12px;
       cursor: pointer;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       color: #0b1a2f;
       list-style: none;
-      border-radius: 18px;
+      border-radius: 16px;
       background: #f9fcfb;
       border: 1px solid rgba(0,0,0,0.03);
       transition: 0.15s;
@@ -342,7 +414,7 @@
     details summary:hover { background: #f0f7f4; }
     details summary::-webkit-details-marker { display: none; }
     details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-    details .faq-content { padding: 4px 14px 14px; background: #f9fcfb; border: 1px solid rgba(0,0,0,0.03); border-top: none; border-radius: 0 0 18px 18px; color: #0b1a2f; line-height: 1.5; font-size: 14px; }
+    details .faq-content { padding: 4px 14px 14px; background: #f9fcfb; border: 1px solid rgba(0,0,0,0.03); border-top: none; border-radius: 0 0 18px 18px; color: #0b1a2f; line-height: 1.5; font-size: 13px; }
     .chat-page-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -368,31 +440,31 @@
       overflow: hidden;
     }
     .chat-page-header {
-      padding: 14px 18px;
+      padding: 12px 16px;
       background: #0f7b5a;
       color: #fff;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
     }
     .chat-page-header img {
-      width: 40px; height: 40px;
+      width: 36px; height: 36px;
       border-radius: 50%;
       border: 2px solid rgba(255,255,255,0.2);
       object-fit: cover;
     }
     .chat-page-header .info { flex: 1; }
-    .chat-page-header .info .name { font-weight: 800; font-size: 16px; }
-    .chat-page-header .info .status { font-size: 12px; opacity: 0.8; }
+    .chat-page-header .info .name { font-weight: 800; font-size: 15px; }
+    .chat-page-header .info .status { font-size: 11px; opacity: 0.8; }
     .chat-page-header .close-btn {
       background: rgba(255,255,255,0.1);
       border: none;
       color: #fff;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -402,18 +474,18 @@
     .chat-page-header .close-btn:hover { background: rgba(255,255,255,0.2); }
     .chat-messages-area {
       flex: 1;
-      padding: 14px 16px;
+      padding: 12px 14px;
       overflow-y: auto;
       background: #f2f6f9;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
     .chat-msg {
       max-width: 80%;
-      padding: 10px 14px;
+      padding: 8px 12px;
       border-radius: 18px;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.4;
       word-break: break-word;
     }
@@ -429,11 +501,11 @@
       align-self: flex-end;
       border-bottom-right-radius: 4px;
     }
-    .chat-msg .msg-name { font-weight: 700; font-size: 12px; margin-bottom: 2px; }
+    .chat-msg .msg-name { font-weight: 700; font-size: 11px; margin-bottom: 2px; }
     .chat-msg.received .msg-name { color: #1fbb7a; }
-    .chat-msg .time { font-size: 10px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
+    .chat-msg .time { font-size: 9px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
     .chat-page-footer {
-      padding: 10px 14px 14px;
+      padding: 8px 12px 12px;
       background: #fff;
       border-top: 1px solid rgba(0,0,0,0.04);
       display: flex;
@@ -442,10 +514,10 @@
     }
     .chat-page-footer input {
       flex: 1;
-      padding: 10px 16px;
+      padding: 8px 14px;
       border-radius: 30px;
       border: 2px solid #e0e8e4;
-      font-size: 14px;
+      font-size: 13px;
       outline: none;
     }
     .chat-page-footer input:focus { border-color: #1fbb7a; }
@@ -453,37 +525,40 @@
       background: #1fbb7a;
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 30px;
       font-weight: 700;
+      font-size: 13px;
       cursor: pointer;
       transition: background 0.2s;
     }
     .chat-page-footer button:hover { background: #17a86a; }
     .chat-upgrade-banner {
       background: #fef9e7;
-      padding: 10px 14px;
+      padding: 8px 12px;
       text-align: center;
       border-top: 2px solid #f5b342;
       flex-shrink: 0;
       display: none;
+      font-size: 12px;
     }
     .chat-upgrade-banner a {
       color: #0b1a2f;
       font-weight: 800;
       text-decoration: none;
       background: #f5b342;
-      padding: 4px 16px;
+      padding: 2px 14px;
       border-radius: 40px;
       display: inline-block;
-      margin-top: 4px;
+      margin-top: 2px;
+      font-size: 12px;
     }
     #withdrawalPopup {
       position: fixed;
       bottom: 90px;
       right: 16px;
       z-index: 9999;
-      max-width: 320px;
+      max-width: 300px;
       width: 100%;
       pointer-events: none;
       display: flex;
@@ -494,28 +569,28 @@
       background: #fff;
       border: 2px solid rgba(31,187,122,0.2);
       border-radius: 16px;
-      padding: 10px 12px;
+      padding: 8px 10px;
       box-shadow: 0 16px 40px rgba(0,0,0,0.06);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       pointer-events: auto;
       animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
     }
-    #withdrawalPopup .popup-card img { width: 42px; height: 42px; border-radius: 60px; object-fit: cover; border: 2px solid #1fbb7a; flex-shrink: 0; }
+    #withdrawalPopup .popup-card img { width: 36px; height: 36px; border-radius: 60px; object-fit: cover; border: 2px solid #1fbb7a; flex-shrink: 0; }
     #withdrawalPopup .popup-card .info { flex: 1; min-width: 0; }
-    #withdrawalPopup .popup-card .info .title { font-weight: 800; font-size: 12px; color: #0b1a2f; }
-    #withdrawalPopup .popup-card .info .name { font-size: 13px; color: #0b1a2f; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    #withdrawalPopup .popup-card .info .method { font-size: 11px; color: #0b1a2f; display: flex; align-items: center; gap: 4px; }
+    #withdrawalPopup .popup-card .info .title { font-weight: 800; font-size: 11px; color: #0b1a2f; }
+    #withdrawalPopup .popup-card .info .name { font-size: 12px; color: #0b1a2f; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #withdrawalPopup .popup-card .info .method { font-size: 10px; color: #0b1a2f; display: flex; align-items: center; gap: 4px; }
     #withdrawalPopup .popup-card .close {
       background: #f0f5f3;
       border: none;
       color: #6a7a73;
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 40px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -527,8 +602,8 @@
       bottom: 20px;
       right: 20px;
       z-index: 9998;
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       box-shadow: 0 8px 28px rgba(0,0,0,0.08);
       transition: transform 0.2s;
@@ -548,26 +623,26 @@
       filter: brightness(0) invert(1);
     }
     .footer-section {
-      margin-top: 20px;
-      padding-top: 18px;
+      margin-top: 16px;
+      padding-top: 16px;
       border-top: 2px solid rgba(0,0,0,0.04);
-      background: #0b1a2f; /* same dark background as header */
+      background: #0b1a2f;
       margin-left: -14px;
       margin-right: -14px;
       padding-left: 14px;
       padding-right: 14px;
-      padding-bottom: 16px;
+      padding-bottom: 14px;
       border-radius: 24px 24px 0 0;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px 8px;
-      margin-bottom: 14px;
+      gap: 10px 8px;
+      margin-bottom: 12px;
     }
-    .footer-grid .col h4 { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .footer-grid .col h4 { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 4px; }
     .footer-grid .col ul { list-style: none; padding: 0; }
-    .footer-grid .col ul li { font-size: 14px; color: #c0d0d0; padding: 3px 0; font-weight: 500; }
+    .footer-grid .col ul li { font-size: 13px; color: #c0d0d0; padding: 2px 0; font-weight: 500; }
     .footer-grid .col ul li a { color: #c0d0d0; text-decoration: none; }
     .footer-grid .col ul li a:hover { color: #1fbb7a; }
     .footer-bottom {
@@ -575,38 +650,38 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding-top: 12px;
+      padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 13px;
+      font-size: 12px;
       color: #c0d0d0;
       gap: 6px;
     }
     .footer-bottom .brand-small { font-weight: 800; color: #fff; }
     .footer-bottom .brand-small span { color: #1fbb7a; }
-    .footer-bottom .copy { font-size: 12px; color: #a0b0b0; }
+    .footer-bottom .copy { font-size: 11px; color: #a0b0b0; }
     .footer-bottom .copy a { color: #a0b0b0; text-decoration: none; font-weight: 700; }
     .footer-bottom .copy a:hover { color: #1fbb7a; }
     .ways-grid {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin: 6px 0 4px;
+      gap: 8px;
+      margin: 4px 0 2px;
     }
     .way-card {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
-      gap: 10px 12px;
+      gap: 8px 10px;
       background: #f9fcfb;
       border: 1px solid rgba(0,0,0,0.03);
       border-radius: 14px;
-      padding: 12px 14px;
+      padding: 10px 12px;
       transition: all 0.2s;
     }
     .way-card:hover { background: #f0f7f4; border-color: #1fbb7a; }
     .way-card .way-icon {
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
       object-fit: cover;
       flex-shrink: 0;
@@ -617,7 +692,7 @@
       min-width: 0;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
     .way-card .way-content .way-name {
       font-weight: 800;
@@ -625,17 +700,17 @@
       color: #0b1a2f;
     }
     .way-card .way-content .way-desc {
-      font-size: 11px;
+      font-size: 12px;
       color: #0b1a2f;
       line-height: 1.4;
     }
     .way-card .way-content .way-earn {
       font-weight: 900;
       font-size: 14px;
-      color: #0b1a2f;
+      color: #1fbb7a !important;
     }
     .way-card .way-content .way-earn .sub {
-      font-size: 9px;
+      font-size: 8px;
       font-weight: 600;
       color: #5a6f68;
     }
@@ -644,9 +719,9 @@
       display: inline-block;
       background: #1fbb7a;
       color: #fff;
-      padding: 5px 16px;
+      padding: 4px 14px;
       border-radius: 40px;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-decoration: none;
       border: none;
@@ -668,32 +743,32 @@
       background: #f0f7f4;
       border: 2px solid rgba(31,187,122,0.15);
       border-radius: 20px;
-      padding: 16px 20px;
-      margin: 10px 0;
+      padding: 14px 18px;
+      margin: 8px 0;
       text-align: center;
       animation: borderGlow 2.5s ease-in-out infinite;
     }
-    .support-card .support-icon { font-size: 32px; margin-bottom: 6px; }
+    .support-card .support-icon { font-size: 28px; margin-bottom: 4px; }
     .support-card .support-number {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
-      color: #0b1a2f;
+      color: #1fbb7a !important;
       letter-spacing: 0.5px;
     }
-    .support-card .support-label { font-size: 13px; color: #0b1a2f; font-weight: 600; }
+    .support-card .support-label { font-size: 12px; color: #0b1a2f; font-weight: 600; }
     .how-step {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       background: #f9fcfb;
       border: 1px solid rgba(0,0,0,0.03);
       border-radius: 16px;
-      padding: 14px 16px;
-      margin-bottom: 8px;
+      padding: 10px 14px;
+      margin-bottom: 6px;
     }
     .how-step .step-num {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       background: #1fbb7a;
       color: #fff;
       border-radius: 50%;
@@ -701,16 +776,16 @@
       align-items: center;
       justify-content: center;
       font-weight: 900;
-      font-size: 16px;
+      font-size: 14px;
       flex-shrink: 0;
     }
     .how-step .step-info { flex: 1; }
-    .how-step .step-info .step-title { font-weight: 800; font-size: 15px; color: #0b1a2f; }
-    .how-step .step-info .step-desc { font-size: 13px; color: #0b1a2f; }
+    .how-step .step-info .step-title { font-weight: 800; font-size: 14px; color: #0b1a2f; }
+    .how-step .step-info .step-desc { font-size: 12px; color: #0b1a2f; }
     .demo-card {
       background: radial-gradient(circle at 10% 20%, #f0f6fc, #dce6f0);
       border-radius: 48px;
-      padding: 28px 22px 34px;
+      padding: 24px 20px 30px;
       border: 1px solid rgba(255,255,255,0.4);
       max-width: 520px;
       width: 100%;
@@ -722,11 +797,11 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       color: #3b4f6b;
       letter-spacing: 0.2px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       padding-left: 4px;
     }
     .demo-card .breadcrumb span:not(:last-child)::after {
@@ -738,7 +813,7 @@
       color: #0b1a2f;
       font-weight: 700;
       background: rgba(255,255,255,0.3);
-      padding: 2px 16px 2px 14px;
+      padding: 2px 14px 2px 12px;
       border-radius: 40px;
       backdrop-filter: blur(4px);
       border: 1px solid rgba(255,255,255,0.3);
@@ -746,9 +821,9 @@
     .demo-card .welcome-section {
       background: rgba(255,255,255,0.4);
       backdrop-filter: blur(8px);
-      border-radius: 32px;
-      padding: 20px 20px 22px;
-      margin-bottom: 24px;
+      border-radius: 28px;
+      padding: 16px 18px 18px;
+      margin-bottom: 20px;
       border: 1px solid rgba(255,255,255,0.5);
       box-shadow: 0 8px 18px rgba(0,0,0,0.02);
     }
@@ -760,7 +835,7 @@
       gap: 6px 10px;
     }
     .demo-card .welcome-row .greeting {
-      font-size: 22px;
+      font-size: 18px;
       font-weight: 700;
       color: #0b1a2f;
       letter-spacing: -0.3px;
@@ -775,9 +850,9 @@
     .demo-card .premium-badge {
       background: rgba(255,215,0,0.08);
       backdrop-filter: blur(4px);
-      padding: 6px 18px 6px 16px;
+      padding: 4px 14px 4px 12px;
       border-radius: 60px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.12);
@@ -791,20 +866,20 @@
     .demo-card .premium-badge i {
       font-style: normal;
       background: #f5d65a;
-      padding: 0 10px;
+      padding: 0 8px;
       border-radius: 40px;
       color: #1a1f2e;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
     }
     .demo-card .welcome-sub {
-      margin-top: 14px;
-      font-size: 14px;
+      margin-top: 12px;
+      font-size: 13px;
       color: #1a2f4a;
       line-height: 1.5;
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
-      padding: 12px 18px;
+      padding: 10px 14px;
       border-radius: 80px;
       border: 1px solid rgba(255,255,255,0.4);
       display: flex;
@@ -815,8 +890,8 @@
     .demo-card .welcome-sub .badge-new {
       background: #f5d65a;
       font-weight: 700;
-      font-size: 11px;
-      padding: 2px 16px;
+      font-size: 10px;
+      padding: 2px 14px;
       border-radius: 40px;
       color: #1a1f2e;
       letter-spacing: 0.3px;
@@ -825,14 +900,14 @@
     .demo-card .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 8px 0 20px;
+      gap: 12px;
+      margin: 6px 0 16px;
     }
     .demo-card .stat-card {
       background: rgba(255,255,255,0.4);
       backdrop-filter: blur(8px);
-      border-radius: 28px;
-      padding: 18px 10px 16px;
+      border-radius: 24px;
+      padding: 14px 8px 12px;
       border: 1px solid rgba(255,255,255,0.4);
       box-shadow: 0 6px 14px rgba(0,0,0,0.01);
       text-align: center;
@@ -844,7 +919,7 @@
       transform: translateY(-2px);
     }
     .demo-card .stat-card .stat-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: #2f4568;
       letter-spacing: 0.5px;
@@ -852,56 +927,56 @@
       opacity: 0.7;
     }
     .demo-card .stat-card .stat-value {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
-      color: #0b1a2f;
-      margin-top: 6px;
+      color: #1fbb7a !important;
+      margin-top: 4px;
       letter-spacing: -0.3px;
     }
     .demo-card .stat-card .stat-value small {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       color: #3a5072;
       margin-left: 3px;
     }
     .demo-card .stat-card .stat-sub {
-      font-size: 12px;
+      font-size: 11px;
       color: #3a5072;
       font-weight: 500;
-      margin-top: 6px;
+      margin-top: 4px;
       letter-spacing: 0.2px;
       opacity: 0.6;
     }
-    .demo-card .stat-card.expense .stat-value { color: #b45a3a; }
-    .demo-card .stat-card.earnings .stat-value { color: #0f3d7a; }
-    .demo-card .stat-card.balance .stat-value { color: #1a7a4a; }
-    .demo-card .stat-card.withdrawn .stat-value { color: #1a3a7a; }
+    .demo-card .stat-card.expense .stat-value { color: #b45a3a !important; }
+    .demo-card .stat-card.earnings .stat-value { color: #0f3d7a !important; }
+    .demo-card .stat-card.balance .stat-value { color: #1a7a4a !important; }
+    .demo-card .stat-card.withdrawn .stat-value { color: #1a3a7a !important; }
     .demo-card .balance-extra {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 8px;
-      font-size: 11px;
+      margin-top: 6px;
+      font-size: 10px;
       color: #3a5072;
       border-top: 1px solid rgba(0,0,0,0.02);
-      padding-top: 10px;
+      padding-top: 8px;
     }
     .demo-card .balance-extra .all-time {
       font-weight: 700;
       color: #0b1a2f;
       letter-spacing: 0.2px;
       background: rgba(255,255,255,0.2);
-      padding: 2px 14px;
+      padding: 2px 12px;
       border-radius: 40px;
     }
     .demo-card .balance-extra .show-link {
       font-weight: 700;
       color: #1a3a7a;
       background: rgba(255,255,255,0.2);
-      padding: 4px 18px;
+      padding: 2px 14px;
       border-radius: 40px;
       border: 1px solid rgba(255,255,255,0.3);
-      font-size: 11px;
+      font-size: 10px;
       cursor: default;
       backdrop-filter: blur(2px);
     }
@@ -909,36 +984,36 @@
       background: rgba(255,215,0,0.08);
       backdrop-filter: blur(4px);
       border-radius: 60px;
-      padding: 4px 16px;
+      padding: 2px 12px;
       font-weight: 800;
-      font-size: 22px;
-      color: #1a3a7a;
+      font-size: 18px;
+      color: #1fbb7a !important;
       display: inline-block;
       border: 1px solid rgba(255,215,0,0.1);
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .demo-card .withdrawn-chip small {
       font-weight: 500;
-      font-size: 14px;
+      font-size: 12px;
       color: #3a4f72;
       margin-left: 4px;
     }
     .demo-card .divider-light {
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
-      margin: 14px 0 18px;
+      margin: 12px 0 16px;
     }
     .demo-card .earn-grid {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin: 18px 0 20px;
+      gap: 10px;
+      margin: 14px 0 16px;
     }
     .demo-card .earn-card {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(6px);
-      border-radius: 32px;
-      padding: 18px 20px;
+      border-radius: 28px;
+      padding: 14px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -954,34 +1029,34 @@
     }
     .demo-card .earn-left .label {
       font-weight: 600;
-      font-size: 16px;
+      font-size: 14px;
       color: #0b1a2f;
       letter-spacing: -0.2px;
     }
     .demo-card .earn-left .amount {
       font-weight: 800;
-      font-size: 20px;
-      color: #0b1a2f;
+      font-size: 17px;
+      color: #1fbb7a !important;
       margin-top: 2px;
     }
     .demo-card .earn-left .usd {
-      font-size: 13px;
+      font-size: 12px;
       color: #3a5072;
       font-weight: 500;
-      margin-left: 6px;
+      margin-left: 4px;
     }
     .demo-card .earn-right {
       background: rgba(255,215,0,0.04);
       backdrop-filter: blur(4px);
-      padding: 8px 24px;
+      padding: 6px 18px;
       border-radius: 60px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.04);
     }
     .demo-card .activate-btn-wrapper {
-      margin: 8px 0 18px;
+      margin: 6px 0 16px;
       text-align: center;
     }
     .demo-card .activate-btn {
@@ -990,8 +1065,8 @@
       border: none;
       color: #0b1a2f;
       font-weight: 800;
-      font-size: 18px;
-      padding: 18px 32px;
+      font-size: 16px;
+      padding: 14px 28px;
       border-radius: 80px;
       width: 100%;
       text-align: center;
@@ -1009,16 +1084,16 @@
     }
     .demo-card .nav-chips {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin: 8px 0 18px;
+      margin: 6px 0 16px;
     }
     .demo-card .nav-chip {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
-      padding: 10px 24px;
+      padding: 8px 18px;
       border-radius: 60px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: #0b1a2f;
       border: 1px solid rgba(255,255,255,0.3);
@@ -1029,40 +1104,40 @@
       background: rgba(255,215,0,0.04);
       border-color: rgba(255,215,0,0.08);
     }
-    .demo-card .profile-list { margin: 12px 0 22px; }
+    .demo-card .profile-list { margin: 10px 0 18px; }
     .demo-card .profile-item {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(6px);
-      border-radius: 28px;
-      padding: 12px 16px;
+      border-radius: 24px;
+      padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border: 1px solid rgba(255,255,255,0.3);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       transition: 0.1s;
     }
     .demo-card .profile-item:hover {
       background: rgba(255,255,255,0.5);
     }
     .demo-card .profile-item .avatar {
-      width: 48px; height: 48px; border-radius: 40px; margin-right: 14px;
+      width: 40px; height: 40px; border-radius: 40px; margin-right: 12px;
       overflow: hidden; background: rgba(255,215,0,0.04); display: flex; align-items: center; justify-content: center;
       border: 1px solid rgba(255,255,255,0.2);
     }
     .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .demo-card .profile-info .name { font-weight: 700; font-size: 17px; color: #0b1a2f; }
-    .demo-card .profile-info .location { font-size: 13px; color: #2f4568; font-weight: 500; }
-    .demo-card .profile-amount { font-weight: 700; color: #0b1a2f; font-size: 16px; text-align: right; }
-    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 12px; display: block; }
+    .demo-card .profile-info .name { font-weight: 700; font-size: 15px; color: #0b1a2f; }
+    .demo-card .profile-info .location { font-size: 12px; color: #2f4568; font-weight: 500; }
+    .demo-card .profile-amount { font-weight: 700; color: #1fbb7a !important; font-size: 14px; text-align: right; }
+    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 11px; display: block; }
     .demo-card .footer-note {
-      margin-top: 28px;
+      margin-top: 24px;
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       color: #1a2f4f;
       letter-spacing: 0.2px;
-      padding: 14px 10px 6px;
+      padding: 12px 8px 4px;
       border-top: 1px solid rgba(255,215,0,0.04);
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(4px);
@@ -1091,43 +1166,43 @@
     .demo-action-popup .popup-content {
       background: #fff;
       border-radius: 32px;
-      padding: 32px 28px 28px;
-      max-width: 380px;
+      padding: 28px 24px 24px;
+      max-width: 360px;
       width: 100%;
       text-align: center;
       animation: slideUpFast 0.3s cubic-bezier(0.16,1,0.3,1);
       box-shadow: 0 30px 80px rgba(0,0,0,0.1);
     }
     .demo-action-popup .popup-content .icon {
-      font-size: 48px;
-      margin-bottom: 12px;
+      font-size: 40px;
+      margin-bottom: 10px;
     }
     .demo-action-popup .popup-content h3 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       color: #0b1a2f;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .demo-action-popup .popup-content p {
-      font-size: 14px;
+      font-size: 13px;
       color: #3a4f5a;
       line-height: 1.5;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .demo-action-popup .popup-content .earn-amount {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 900;
-      color: #1fbb7a;
-      margin: 8px 0 16px;
+      color: #1fbb7a !important;
+      margin: 6px 0 12px;
     }
     .demo-action-popup .popup-content .btn-close-popup {
       background: #1fbb7a;
       color: #fff;
       border: none;
-      padding: 12px 32px;
+      padding: 10px 28px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -1137,95 +1212,31 @@
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .page-wrap { padding: 10px 10px 18px; padding-top: 80px; }
-      .brand-name { font-size: 22px; }
-      .brand-icon { font-size: 22px; }
-      .online-badge { font-size: 14px; padding: 4px 10px 4px 8px; }
-      .online-badge .count-number { font-size: 14px; min-width: 32px; }
-      .online-badge .label { font-size: 12px; }
-      .pipe-sep { font-size: 18px; }
-      .signup-btn { font-size: 14px; padding: 5px 14px; }
+      .brand-name { font-size: 20px; }
+      .brand-icon { font-size: 20px; }
+      .online-badge { font-size: 12px; padding: 3px 8px 3px 6px; }
+      .online-badge .count-number { font-size: 12px; min-width: 28px; }
+      .online-badge .label { font-size: 10px; }
+      .pipe-sep { font-size: 16px; }
+      .signup-btn { font-size: 12px; padding: 4px 12px; }
       .demo-card { padding: 0; }
-      .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .demo-card .stat-card .stat-value { font-size: 22px; }
-      .demo-card .welcome-row .greeting { font-size: 20px; }
-      .demo-card .earn-card { padding: 14px 16px; }
-      .demo-card .earn-left .label { font-size: 14px; }
-      .demo-card .earn-left .amount { font-size: 17px; }
-      .chat-page { height: 500px; max-width: 100%; }
-      .story-card img { width: 44px; height: 44px; }
-      .way-card .way-icon { width: 42px; height: 42px; }
-      .way-card { padding: 10px 12px; }
-      .support-card .support-number { font-size: 20px; }
-      .whatsapp-float { width: 52px; height: 52px; bottom: 16px; right: 16px; }
-      #withdrawalPopup { bottom: 80px; right: 12px; max-width: 260px; }
+      .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .demo-card .stat-card .stat-value { font-size: 18px; }
+      .demo-card .welcome-row .greeting { font-size: 17px; }
+      .demo-card .earn-card { padding: 12px 14px; }
+      .demo-card .earn-left .label { font-size: 13px; }
+      .demo-card .earn-left .amount { font-size: 15px; }
+      .chat-page { height: 450px; max-width: 100%; }
+      .story-card img { width: 38px; height: 38px; }
+      .way-card .way-icon { width: 36px; height: 36px; }
+      .way-card { padding: 8px 10px; }
+      .support-card .support-number { font-size: 18px; }
+      .whatsapp-float { width: 46px; height: 46px; bottom: 14px; right: 14px; }
+      #withdrawalPopup { bottom: 70px; right: 10px; max-width: 220px; }
       .demo-card { max-width: 100%; }
       .footer-section { margin-left: -10px; margin-right: -10px; padding-left: 10px; padding-right: 10px; }
+      .section { padding: 12px 12px 16px; }
     }
-    .way-card .way-content .way-desc { font-size: 14px; line-height: 1.5; color: #0b1a2f; }
-    .way-card .way-content .way-name { font-size: 17px; color: #0b1a2f; }
-    .way-card .way-content .way-earn { font-size: 17px; color: #0b1a2f; }
-    .way-card .way-content .way-cta .cta-btn { font-size: 14px; padding: 8px 20px; }
-    .story-card .story-info .sname { font-size: 16px; color: #0b1a2f; }
-    .story-card .story-info .samount { font-size: 16px; color: #0b1a2f; }
-    .story-card .story-info .sdesc { font-size: 15px; color: #0b1a2f; }
-    .how-step .step-info .step-title { font-size: 18px; color: #0b1a2f; }
-    .how-step .step-info .step-desc { font-size: 16px; color: #0b1a2f; }
-    .footer-grid .col h4 { font-size: 16px; color: #fff; }
-    .footer-grid .col ul li { font-size: 16px; color: #c0d0d0; }
-    .footer-bottom { font-size: 15px; color: #c0d0d0; }
-    .footer-bottom .copy { font-size: 14px; color: #a0b0b0; }
-    .support-card .support-number { font-size: 28px; color: #0b1a2f; }
-    .support-card .support-label { font-size: 16px; color: #0b1a2f; }
-    .support-card .support-icon { font-size: 38px; }
-    details summary { font-size: 18px; color: #0b1a2f; }
-    details .faq-content { font-size: 17px; color: #0b1a2f; }
-    .section .text-center h2, .section .text-center h1, .section .text-center p { color: #0b1a2f; }
-    .stats-grid .stat-item .stat-number { color: #1fbb7a !important; }
-    .stats-grid .stat-item .stat-label { color: #0b1a2f; }
-    .earnings-scroll .scroll-content { color: #0b1a2f; font-size: 14px; }
-    .online-badge .count-number { color: #fff; }
-    .online-badge .label { color: #c0d0d0; }
-    .brand-name { color: #fff; }
-    .header-row .brand-name { color: #fff; }
-    .online-badge { color: #fff; }
-    .withdraw-grid .item { color: #0b1a2f; }
-    .user-card .user-info .name { color: #0b1a2f; }
-    .user-card .user-info .country { color: #0b1a2f; }
-    .user-card .user-info .status { color: #1fbb7a; }
-    .demo-card .stat-card .stat-value { color: #0b1a2f; }
-    .demo-card .stat-card .stat-label { color: #0b1a2f; }
-    .demo-card .stat-card .stat-sub { color: #0b1a2f; }
-    .demo-card .earn-left .label { color: #0b1a2f; }
-    .demo-card .earn-left .amount { color: #0b1a2f; }
-    .demo-card .earn-left .usd { color: #0b1a2f; }
-    .demo-card .earn-right { color: #0b1a2f; }
-    .demo-card .profile-info .name { color: #0b1a2f; }
-    .demo-card .profile-info .location { color: #0b1a2f; }
-    .demo-card .profile-amount { color: #0b1a2f; }
-    .demo-card .profile-amount small { color: #0b1a2f; }
-    .demo-card .footer-note { color: #0b1a2f; }
-    .demo-card .footer-note span { color: #0b1a2f; }
-    .demo-card .welcome-row .greeting { color: #0b1a2f; }
-    .demo-card .welcome-sub { color: #0b1a2f; }
-    .demo-card .welcome-sub strong { color: #0b1a2f; }
-    .demo-card .premium-badge { color: #0b1a2f; }
-    .demo-card .breadcrumb .current { color: #0b1a2f; }
-    .demo-card .balance-extra .all-time { color: #0b1a2f; }
-    .demo-card .balance-extra .show-link { color: #0b1a2f; }
-    .demo-card .withdrawn-chip { color: #0b1a2f; }
-    .demo-card .withdrawn-chip small { color: #0b1a2f; }
-    .demo-card .nav-chip { color: #0b1a2f; }
-    .demo-page .demo-header .page-title { color: #0b1a2f; }
-    .demo-action-popup .popup-content h3 { color: #0b1a2f; }
-    .demo-action-popup .popup-content p { color: #0b1a2f; }
-    .demo-action-popup .popup-content .earn-amount { color: #1fbb7a; }
-    .popup-card .info .title { color: #0b1a2f; }
-    .popup-card .info .name { color: #0b1a2f; }
-    .popup-card .info .method { color: #0b1a2f; }
-    .footer-bottom .brand-small { color: #fff; }
-    .footer-bottom .copy { color: #a0b0b0; }
-
-    /* GREEN HIGHLIGHTS for numbers & amounts */
     .green-highlight,
     .stat-number,
     .count-number,
@@ -1248,6 +1259,13 @@
     .hero-highlight {
       font-weight: 900;
     }
+    /* Section header icons */
+    .section-icon-earn { background: linear-gradient(135deg, #1fbb7a, #0f7b5a); }
+    .section-icon-chat { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .section-icon-stats { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .section-icon-how { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .section-icon-stories { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .section-icon-faq { background: linear-gradient(135deg, #14b8a6, #0d9488); }
   </style>
 </head>
 <body>
@@ -1270,21 +1288,26 @@
   </div>
 
   <!-- TRUST BADGE -->
-  <div class="text-center" style="padding:12px 0 4px;">
-    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:3px 16px; border-radius:60px; font-size:14px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
+  <div class="text-center" style="padding:10px 0 2px;">
+    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:2px 14px; border-radius:60px; font-size:12px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
   </div>
 
-  <!-- HERO -->
-  <div class="text-center section" style="border-bottom-color:rgba(0,0,0,0.04);">
-    <h1 style="font-size:28px; font-weight:900; margin:0 0 2px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
-    <h2 style="font-size:24px; font-weight:900; margin:0 0 6px;" class="turn-clicks-cash">Turn Clicks to Cash</h2>
-    <p style="font-size:16px; color:#0b1a2f; line-height:1.5; max-width:440px; margin:0 auto 12px;">
+  <!-- HERO SECTION -->
+  <div class="section" style="background: linear-gradient(135deg, #f0f7f4, #e5f0ec); border: 2px solid rgba(31,187,122,0.1);">
+    <div class="section-header">
+      <div class="icon section-icon-earn">💰</div>
+      <h2>Earn Every Time</h2>
+      <span class="badge">🔥 HOT</span>
+    </div>
+    <h1 style="font-size:22px; font-weight:900; margin:0 0 2px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
+    <h2 style="font-size:20px; font-weight:900; margin:0 0 4px;" class="turn-clicks-cash">Turn Clicks to Cash</h2>
+    <p style="font-size:13px; color:#0b1a2f; line-height:1.5; max-width:400px; margin:0 auto 10px;">
       Join <span id="heroCounter" class="green-highlight">187,450</span>+ Africans earning <strong class="green-highlight">$30 – $150 daily</strong> via chat, music & challenges. <strong>Fast withdraw</strong>, daily payouts via Mobile Money, Mpesa..
     </p>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px;">
       <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
         <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1fbb7a,#0f7b5a);">Create Free Account</a>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+        <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:center;">
           <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo First</a>
           <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
         </div>
@@ -1320,8 +1343,13 @@
     </span>
   </div>
 
-  <!-- STATS -->
-  <div class="section" style="padding:14px 0;">
+  <!-- STATS SECTION -->
+  <div class="section">
+    <div class="section-header">
+      <div class="icon section-icon-stats">📊</div>
+      <h2>Live Stats</h2>
+      <span class="badge">LIVE</span>
+    </div>
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-number" id="liveUsers">187,432</div>
@@ -1338,13 +1366,14 @@
     </div>
   </div>
 
-  <!-- WAYS TO EARN -->
-  <div class="section" style="border-bottom: 2px solid rgba(31,187,122,0.2);">
-    <div style="text-align:center; margin-bottom:10px;">
-      <span style="background:#1fbb7a; color:#fff; padding:3px 16px; border-radius:60px; font-size:13px; font-weight:800; display:inline-block; letter-spacing:0.5px;">EARNING METHODS</span>
-      <h2 style="font-size:22px; font-weight:900; color:#0b1a2f; margin-top:4px;">7 Ways to Earn Daily</h2>
-      <p style="font-size:15px; color:#0b1a2f; max-width:380px; margin:2px auto 0;">Every feature pays real money. Do them all every day and stack your earnings.</p>
+  <!-- WAYS TO EARN SECTION -->
+  <div class="section" style="border: 2px solid rgba(31,187,122,0.08);">
+    <div class="section-header">
+      <div class="icon section-icon-earn">🎯</div>
+      <h2>7 Ways to Earn Daily</h2>
+      <span class="badge">💰 EARN</span>
     </div>
+    <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
     <div class="ways-grid">
       <div class="way-card">
         <img class="way-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy">
@@ -1413,12 +1442,13 @@
   </div>
 
   <!-- LIVE FOREIGNERS CHAT SECTION -->
-  <div class="section" id="liveChatSection">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-      <span style="background:#dc2626; color:#fff; font-size:12px; font-weight:800; padding:3px 12px; border-radius:40px;">● LIVE NOW</span>
-      <span style="font-size:15px; font-weight:700; color:#0b1a2f;">💬 <span id="activeChatters">11</span> active members online</span>
+  <div class="section" id="liveChatSection" style="border: 2px solid rgba(59,130,246,0.1);">
+    <div class="section-header">
+      <div class="icon section-icon-chat">💬</div>
+      <h2>Live Foreigners Online</h2>
+      <span class="badge" style="background:#dc2626; color:#fff; border-color:#dc2626;">🔴 LIVE</span>
     </div>
-    <h3 style="font-size:20px; font-weight:900; text-align:center; margin:0 0 10px; color:#0b1a2f;">Live Foreigners Online — Sending Nice Messages</h3>
+    <p class="section-subtitle"><span id="activeChatters">11</span> active members online — sending nice messages</p>
     <div id="liveUserList">
       <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
@@ -1523,9 +1553,14 @@
   </div>
 
   <!-- WITHDRAWAL METHODS -->
-  <div class="section" style="padding:12px 0;">
-    <div style="background:#f9fcfb; border:1px solid rgba(0,0,0,0.03); border-radius:16px; padding:10px 10px; text-align:center;">
-      <span style="color:#0b1a2f; display:block; font-size:13px; font-weight:700; margin-bottom:6px;">WITHDRAWAL METHODS BY COUNTRY</span>
+  <div class="section" style="border: 2px solid rgba(245,179,66,0.15);">
+    <div class="section-header">
+      <div class="icon" style="background:linear-gradient(135deg,#f5b342,#e09d2e);">🏦</div>
+      <h2>Withdrawal Methods</h2>
+      <span class="badge" style="background:#f5b342; color:#fff; border-color:#f5b342;">💸 FAST</span>
+    </div>
+    <p class="section-subtitle">By country — instant payouts</p>
+    <div style="background:#f9fcfb; border:1px solid rgba(0,0,0,0.03); border-radius:16px; padding:8px 8px; text-align:center;">
       <div class="withdraw-grid">
         <div class="item">🇰🇪 Kenya → M-Pesa</div>
         <div class="item">🇨🇲 Cameroon → MoMo</div>
@@ -1540,21 +1575,31 @@
   </div>
 
   <!-- HOW IT WORKS -->
-  <div class="section text-center" style="border-bottom: 2px solid rgba(31,187,122,0.2);">
-    <h2 style="font-size:26px; font-weight:900; color:#0b1a2f; margin-bottom:4px;">How It Works</h2>
-    <p style="color:#0b1a2f; font-size:15px; margin-bottom:12px;">Start earning in 3 simple steps</p>
-    <div style="display:flex; flex-direction:column; gap:8px; text-align:left;">
+  <div class="section" style="border: 2px solid rgba(139,92,246,0.12);">
+    <div class="section-header">
+      <div class="icon section-icon-how">🚀</div>
+      <h2>How It Works</h2>
+      <span class="badge">3 STEPS</span>
+    </div>
+    <p class="section-subtitle">Start earning in 3 simple steps</p>
+    <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
       <div class="how-step"><div class="step-num">1</div><div class="step-info"><div class="step-title">Sign Up Free</div><div class="step-desc">Create account in 30 seconds — no card needed.</div></div></div>
       <div class="how-step"><div class="step-num">2</div><div class="step-info"><div class="step-title">Complete Tasks</div><div class="step-desc">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
       <div class="how-step"><div class="step-num">3</div><div class="step-info"><div class="step-title">Withdraw Instantly</div><div class="step-desc">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
     </div>
-    <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:12px; font-size:16px; padding:10px 22px;">Get Started Now</a>
+    <div style="text-align:center; margin-top:10px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:14px; padding:8px 20px;">Get Started Now</a>
+    </div>
   </div>
 
   <!-- SUCCESS STORIES -->
-  <div class="section text-center">
-    <span style="background:#f0f5f3; padding:3px 14px; border-radius:40px; font-weight:800; font-size:14px; color:#0b1a2f; display:inline-block; margin-bottom:10px;">SUCCESS STORIES</span>
-    <div style="display:flex; flex-direction:column; gap:6px; text-align:left;">
+  <div class="section" style="border: 2px solid rgba(236,72,153,0.12);">
+    <div class="section-header">
+      <div class="icon section-icon-stories">⭐</div>
+      <h2>Success Stories</h2>
+      <span class="badge">REAL PEOPLE</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:4px; text-align:left;">
       <div class="story-card"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos</div><div class="samount">$2,240 earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit!"</div></div></div>
       <div class="story-card"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu</div><div class="samount">$1,860 earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best!"</div></div></div>
       <div class="story-card"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra</div><div class="samount">$1,120 earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable!"</div></div></div>
@@ -1564,29 +1609,33 @@
   </div>
 
   <!-- LIFETIME ACCESS -->
-  <div class="section text-center">
-    <div style="background:linear-gradient(135deg, #f0f7f4, #e5f0ec); border:2px solid rgba(31,187,122,0.15); border-radius:32px; padding:20px 18px; animation: borderGlow 2.5s ease-in-out infinite;">
-      <div style="font-size:28px; font-weight:900; color:#0b1a2f;">Lifetime Access</div>
-      <p style="font-size:16px; color:#0b1a2f; max-width:400px; margin:8px auto 10px; line-height:1.4;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
-      <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:6px 0 14px; flex-wrap:wrap;">
-        <span style="font-size:20px; font-weight:700; color:#6a7f73; text-decoration:line-through;">$10</span>
-        <span style="font-size:36px; font-weight:900; color:#0b1a2f;">$5</span>
-        <span style="background:#fef9e7; padding:4px 14px; border-radius:60px; font-weight:700; font-size:14px; color:#0b1a2f;">LIMITED OFFER</span>
+  <div class="section" style="border: 2px solid rgba(31,187,122,0.15); background: linear-gradient(135deg, #f0f7f4, #e5f0ec);">
+    <div style="text-align:center;">
+      <div style="font-size:24px; font-weight:900; color:#0b1a2f;">Lifetime Access</div>
+      <p style="font-size:13px; color:#0b1a2f; max-width:380px; margin:6px auto 8px; line-height:1.4;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
+      <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:4px 0 10px; flex-wrap:wrap;">
+        <span style="font-size:18px; font-weight:700; color:#6a7f73; text-decoration:line-through;">$10</span>
+        <span style="font-size:32px; font-weight:900; color:#1fbb7a !important;">$5</span>
+        <span style="background:#fef9e7; padding:2px 12px; border-radius:60px; font-weight:700; font-size:12px; color:#0b1a2f;">LIMITED OFFER</span>
       </div>
-      <p style="font-size:14px; color:#0b1a2f; margin-bottom:12px;">No monthly fees · Instant access</p>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:17px; padding:12px 32px;">Activate Lifetime Access</a>
+      <p style="font-size:12px; color:#0b1a2f; margin-bottom:10px;">No monthly fees · Instant access</p>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:15px; padding:10px 28px;">Activate Lifetime Access</a>
     </div>
   </div>
 
-  <!-- FAQ -->
-  <div class="section" style="padding-bottom:10px;">
-    <h2 style="text-align:center; font-size:26px; font-weight:900; margin-bottom:12px; color:#0b1a2f;">Frequent Questions</h2>
-    <details style="margin-bottom:6px;"><summary>How much can I earn per day? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
-    <details style="margin-bottom:6px;"><summary>Do I need any experience? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
-    <details style="margin-bottom:6px;"><summary>How do I withdraw? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
-    <details style="margin-bottom:6px;"><summary>Is it really free to join? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
-    <details style="margin-bottom:6px;"><summary>How long does it take to get paid? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
-    <details style="margin-bottom:6px;"><summary>Can I use this on my phone? <span style="font-size:17px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
+  <!-- FAQ SECTION -->
+  <div class="section" style="border: 2px solid rgba(20,184,166,0.12);">
+    <div class="section-header">
+      <div class="icon section-icon-faq">❓</div>
+      <h2>Frequent Questions</h2>
+      <span class="badge">FAQ</span>
+    </div>
+    <details style="margin-bottom:4px;"><summary>How much can I earn per day? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
+    <details style="margin-bottom:4px;"><summary>Do I need any experience? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
+    <details style="margin-bottom:4px;"><summary>How do I withdraw? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
+    <details style="margin-bottom:4px;"><summary>Is it really free to join? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
+    <details style="margin-bottom:4px;"><summary>How long does it take to get paid? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
+    <details style="margin-bottom:4px;"><summary>Can I use this on my phone? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
   </div>
 
   <!-- FOOTER -->
@@ -1603,9 +1652,7 @@
   </div>
 </div>
 
-<!-- ========================================================= -->
-<!-- DEMO PAGE – opens as separate page                        -->
-<!-- ========================================================= -->
+<!-- DEMO PAGE -->
 <div class="demo-page" id="demoPage">
   <div class="demo-header">
     <button class="back-btn" onclick="closeDemoPage()">← Back</button>
@@ -1694,9 +1741,9 @@
       <span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">🎵 Music</span>
       <span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">🎨 Challenge</span>
     </div>
-    <div style="margin-top: 6px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <span style="font-weight: 700; font-size: 17px; color: #0b1a2f;">Live Members</span>
+    <div style="margin-top: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <span style="font-weight: 700; font-size: 15px; color: #0b1a2f;">Live Members</span>
         <span style="color: #1a2f4a; font-weight: 600;">—</span>
       </div>
       <div class="profile-list">
@@ -1735,7 +1782,7 @@
     <h3 id="actionTitle">Earn with Music</h3>
     <p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p>
     <div class="earn-amount" id="actionAmount">—</div>
-    <p style="font-size:13px; color:#5a6f73; margin-bottom:12px;" id="actionUsd">≈ $1.35 per track</p>
+    <p style="font-size:12px; color:#5a6f73; margin-bottom:10px;" id="actionUsd">≈ $1.35 per track</p>
     <button class="btn-close-popup" onclick="closeDemoAction()">Got it!</button>
   </div>
 </div>
@@ -1764,7 +1811,7 @@
     <div class="info">
       <div class="title">Live Withdrawal</div>
       <div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div>
-      <div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:10px;">just now</span></div>
+      <div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:9px;">just now</span></div>
     </div>
     <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
   </div>
