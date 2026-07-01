@@ -28,6 +28,7 @@
       padding-top: 80px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.02);
     }
+    /* HEADER — NO BORDER CURVES */
     .header-row {
       position: fixed;
       top: 0;
@@ -45,7 +46,8 @@
       padding: 12px 14px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       width: 100%;
-      border-radius: 0 0 24px 24px;
+      /* No border-radius */
+      border-radius: 0;
     }
     .brand { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
     .brand-icon { font-size: 24px; line-height: 1; }
@@ -113,7 +115,6 @@
     @keyframes slideDownFast { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(80%) scale(0.95);opacity:0} }
     @keyframes borderGlow { 0%,100%{box-shadow:0 0 6px rgba(31,187,122,0.15),0 0 12px rgba(31,187,122,0.03)} 50%{box-shadow:0 0 18px rgba(31,187,122,0.25),0 0 36px rgba(31,187,122,0.06)} }
 
-    /* ===== SECTION SEPARATION STYLES ===== */
     .section {
       padding: 16px 0 20px;
       margin-bottom: 6px;
@@ -223,7 +224,7 @@
     .earnings-scroll .scroll-content {
       display: inline-block;
       font-weight: 700;
-      color: #0b1a2f !important; /* BLACK text */
+      color: #0b1a2f !important;
       font-size: 11px;
       animation: scrollText 70s linear infinite;
       white-space: nowrap;
@@ -231,7 +232,7 @@
     .earnings-scroll .scroll-content span { 
       display: inline-block; 
       padding: 0 6px; 
-      color: #1fbb7a !important; /* GREEN amounts only */
+      color: #1fbb7a !important;
     }
 
     .demo-page {
@@ -622,6 +623,7 @@
       display: block;
       filter: brightness(0) invert(1);
     }
+    /* FOOTER — NO BORDER CURVES */
     .footer-section {
       margin-top: 16px;
       padding-top: 16px;
@@ -632,7 +634,7 @@
       padding-left: 14px;
       padding-right: 14px;
       padding-bottom: 14px;
-      border-radius: 24px 24px 0 0;
+      border-radius: 0;
     }
     .footer-grid {
       display: grid;
@@ -1261,7 +1263,6 @@
     .hero-highlight {
       font-weight: 900;
     }
-    /* Section header icons */
     .section-icon-earn { background: linear-gradient(135deg, #1fbb7a, #0f7b5a); }
     .section-icon-chat { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
     .section-icon-stats { background: linear-gradient(135deg, #f59e0b, #d97706); }
@@ -1272,7 +1273,7 @@
 </head>
 <body>
 <div class="page-wrap" id="appContainer">
-  <!-- STICKY HEADER -->
+  <!-- HEADER - NO BORDER CURVES -->
   <div class="header-row">
     <div class="brand">
       <span class="brand-icon">🌍</span>
@@ -1294,21 +1295,25 @@
     <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:2px 14px; border-radius:60px; font-size:12px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
   </div>
 
-  <!-- HERO SECTION - FIXED: Removed "Earn Every Time" and "HOT" badge, centered text -->
+  <!-- HERO: "Create Free Account" on top, then "Try Demo First" and "Login" side by side -->
   <div class="section" style="background: linear-gradient(135deg, #f0f7f4, #e5f0ec); border: 2px solid rgba(31,187,122,0.1); text-align: center;">
     <h1 style="font-size:24px; font-weight:900; margin:0 0 4px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
     <h2 style="font-size:22px; font-weight:900; margin:0 0 8px; color:#1fbb7a;">Turn Clicks to Cash</h2>
     <p style="font-size:13px; color:#0b1a2f; line-height:1.5; max-width:400px; margin:0 auto 12px;">
       Join <span id="heroCounter" class="green-highlight">187,450</span>+ Africans earning <strong class="green-highlight">$30 – $150 daily</strong> via chat, music & challenges. <strong>Fast withdraw</strong>, daily payouts via Mobile Money, Mpesa..
     </p>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1fbb7a,#0f7b5a);">Create Free Account</a>
-      <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo First</a>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
+    <!-- "Create Free Account" on top -->
+    <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1fbb7a,#0f7b5a); width:auto;">Create Free Account</a>
+      <!-- "Try Demo First" and "Login" side by side -->
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+        <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo First</a>
+        <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
+      </div>
     </div>
   </div>
 
-  <!-- LIVE EARNINGS SCROLL - FIXED: Black text, green amounts only -->
+  <!-- LIVE EARNINGS SCROLL -->
   <div class="earnings-scroll">
     <span class="scroll-label">EARNING</span>
     <span class="scroll-content" id="earningsScroll" style="animation-duration: 70s; color: #0b1a2f !important;">
@@ -1631,7 +1636,7 @@
     <details style="margin-bottom:4px;"><summary>Can I use this on my phone? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER - NO BORDER CURVES -->
   <div class="footer-section">
     <div class="footer-grid">
       <div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Earn with Music</li><li>Color Challenge</li><li>YouTube &amp; TikTok</li><li>WhatsApp Posts</li><li>Train AI</li></ul></div>
@@ -1652,119 +1657,31 @@
     <span class="page-title">Dashboard</span>
     <span style="width:80px;"></span>
   </div>
-  
   <div class="demo-card">
-    <div class="breadcrumb">
-      <span>Home</span>
-      <span>Dashboard</span>
-      <span class="current">English</span>
-    </div>
+    <div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current">English</span></div>
     <div class="welcome-section">
       <div class="welcome-row">
         <div class="greeting">Welcome: <span>africajobug</span></div>
-        <div class="premium-badge">
-          <i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span>
-          <span style="font-weight:500; color:#1a2f4a;">dashboard</span>
-        </div>
+        <div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500; color:#1a2f4a;">dashboard</span></div>
       </div>
-      <div class="welcome-sub">
-        <span class="badge-new">🚀</span>
-        Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏
-      </div>
+      <div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏</div>
     </div>
     <div class="stats-grid">
-      <div class="stat-card expense">
-        <div class="stat-label">Expense</div>
-        <div class="stat-value">19,500 <small>UGX</small></div>
-        <div class="stat-sub">&#8226; this month</div>
-      </div>
-      <div class="stat-card earnings">
-        <div class="stat-label">Total Profits</div>
-        <div class="stat-value">5,600,000 <small>UGX</small></div>
-        <div class="stat-sub">&#8226; all time</div>
-      </div>
-      <div class="stat-card balance" style="grid-column: span 1;">
-        <div class="stat-label">Balance</div>
-        <div class="stat-value">3,000,000 <small>UGX</small></div>
-        <div class="balance-extra" style="border-top: none; padding-top: 2px; margin-top: 2px;">
-          <span class="all-time">ALL TIME</span>
-          <span class="show-link">Show full stats ›</span>
-        </div>
-      </div>
-      <div class="stat-card withdrawn">
-        <div class="stat-label">Withdrawn</div>
-        <div class="stat-value" style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
-          <span>2,600,000 <small>UGX</small></span>
-          <span class="withdrawn-chip">12% <small>+</small></span>
-        </div>
-        <div class="stat-sub">&#8226; 30 days</div>
-      </div>
+      <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">19,500 <small>UGX</small></div><div class="stat-sub">&#8226; this month</div></div>
+      <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">5,600,000 <small>UGX</small></div><div class="stat-sub">&#8226; all time</div></div>
+      <div class="stat-card balance" style="grid-column: span 1;"><div class="stat-label">Balance</div><div class="stat-value">3,000,000 <small>UGX</small></div><div class="balance-extra" style="border-top: none; padding-top: 2px; margin-top: 2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div>
+      <div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;"><span>2,600,000 <small>UGX</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">&#8226; 30 days</div></div>
     </div>
     <div class="divider-light"></div>
     <div class="earn-grid">
-      <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">
-        <div class="earn-left">
-          <span class="label">Chat with Foreigners</span>
-          <span class="amount"><span class="usd">≈ $4.60</span></span>
-        </div>
-        <div class="earn-right">Chat</div>
-      </div>
-      <div class="earn-card" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">
-        <div class="earn-left">
-          <span class="label">Per Music Track</span>
-          <span class="amount"><span class="usd">≈ $1.35</span></span>
-        </div>
-        <div class="earn-right">Music</div>
-      </div>
-      <div class="earn-card" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">
-        <div class="earn-left">
-          <span class="label">Color Challenge Win</span>
-          <span class="amount"><span class="usd">≈ $3.24</span></span>
-        </div>
-        <div class="earn-right">Challenge</div>
-      </div>
+      <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')"><div class="earn-left"><span class="label">Chat with Foreigners</span><span class="amount"><span class="usd">≈ $4.60</span></span></div><div class="earn-right">Chat</div></div>
+      <div class="earn-card" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')"><div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div><div class="earn-right">Music</div></div>
+      <div class="earn-card" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')"><div class="earn-left"><span class="label">Color Challenge Win</span><span class="amount"><span class="usd">≈ $3.24</span></span></div><div class="earn-right">Challenge</div></div>
     </div>
-    <div class="activate-btn-wrapper">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">
-        🔓 Activate Account
-      </a>
-    </div>
-    <div class="nav-chips">
-      <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">💬 Chat</span>
-      <span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">🎵 Music</span>
-      <span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">🎨 Challenge</span>
-    </div>
-    <div style="margin-top: 4px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-        <span style="font-weight: 700; font-size: 15px; color: #0b1a2f;">Live Members</span>
-        <span style="color: #1a2f4a; font-weight: 600;">—</span>
-      </div>
-      <div class="profile-list">
-        <div class="profile-item">
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div>
-          <div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div>
-          <div class="profile-amount">— <small>~$4.60</small></div>
-        </div>
-        <div class="profile-item">
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div>
-          <div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div>
-          <div class="profile-amount">— <small>~$4.60</small></div>
-        </div>
-        <div class="profile-item">
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div>
-          <div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div>
-          <div class="profile-amount">— <small>~$4.60</small></div>
-        </div>
-        <div class="profile-item">
-          <div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div>
-          <div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div>
-          <div class="profile-amount">— <small>~$4.60</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-note">
-      ✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦
-    </div>
+    <div class="activate-btn-wrapper"><a href="https://starhela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
+    <div class="nav-chips"><span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">💬 Chat</span><span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">🎵 Music</span><span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">🎨 Challenge</span></div>
+    <div style="margin-top: 4px;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><span style="font-weight: 700; font-size: 15px; color: #0b1a2f;">Live Members</span><span style="color: #1a2f4a; font-weight: 600;">—</span></div><div class="profile-list"><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">— <small>~$4.60</small></div></div></div></div>
+    <div class="footer-note">✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
   </div>
 </div>
 
@@ -1816,7 +1733,6 @@
 </a>
 
 <script>
-  // DEMO PAGE FUNCTIONS
   function openDemoPage() {
     document.getElementById('demoPage').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1825,13 +1741,6 @@
     document.getElementById('demoPage').classList.remove('active');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      if (document.getElementById('demoPage').classList.contains('active')) closeDemoPage();
-      if (document.getElementById('demoActionPopup').classList.contains('active')) closeDemoAction();
-    }
-  });
-
   function openDemoAction(title, amount, usd, icon) {
     document.getElementById('actionIcon').textContent = icon || '💰';
     document.getElementById('actionTitle').textContent = title;
@@ -1970,7 +1879,6 @@
     setInterval(updatePopup, 1800);
   })();
 
-  // Chat functions
   let chatLocked = false;
   let chatUser = null;
   let chatDesperate = '';
