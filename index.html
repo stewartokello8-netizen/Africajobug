@@ -26,7 +26,14 @@
       padding: 0 14px 24px;
       margin: 0 auto;
       padding-top: 80px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+      /* Border glow on the entire page */
+      box-shadow: 0 0 15px rgba(31,187,122,0.3), 0 0 30px rgba(31,187,122,0.1);
+      border: 1px solid rgba(31,187,122,0.15);
+      animation: borderGlow 2.8s ease-in-out infinite;
+    }
+    @keyframes borderGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(31,187,122,0.2), 0 0 30px rgba(31,187,122,0.05); }
+      50% { box-shadow: 0 0 25px rgba(31,187,122,0.4), 0 0 50px rgba(31,187,122,0.1); }
     }
     .header-row {
       position: fixed;
@@ -111,7 +118,6 @@
     @keyframes scrollText { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     @keyframes slideUpFast { 0%{transform:translateY(80%) scale(0.95);opacity:0} 100%{transform:translateY(0) scale(1);opacity:1} }
     @keyframes slideDownFast { 0%{transform:translateY(0) scale(1);opacity:1} 100%{transform:translateY(80%) scale(0.95);opacity:0} }
-    @keyframes borderGlow { 0%,100%{box-shadow:0 0 6px rgba(31,187,122,0.15),0 0 12px rgba(31,187,122,0.03)} 50%{box-shadow:0 0 18px rgba(31,187,122,0.25),0 0 36px rgba(31,187,122,0.06)} }
 
     .section {
       padding: 16px 0 20px;
@@ -192,7 +198,6 @@
       border-radius: 60px;
       text-decoration: none;
       border: 2px solid rgba(255,255,255,0.08);
-      animation: borderGlow 2.2s ease-in-out infinite;
       cursor: pointer;
       text-align: center;
       transition: all 0.2s;
@@ -317,7 +322,7 @@
       display: inline-block;
       cursor: pointer;
     }
-    .user-card .actions .chat { background: #1fbb7a; color: #fff; border: 1px solid rgba(255,255,255,0.1); animation: borderGlow 1.8s ease-in-out infinite; }
+    .user-card .actions .chat { background: #1fbb7a; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
     .user-card .actions .watch { background: #f0f5f3; color: #3a4f4a; border: 1px solid #e0e8e4; }
     .user-card .new-badge {
       background: #dc2626;
@@ -360,7 +365,11 @@
     }
     .story-card .story-info { flex: 1; }
     .story-card .story-info .sname { font-weight: 800; font-size: 13px; color: #0b1a2f; }
-    .story-card .story-info .samount { font-weight: 800; font-size: 13px; color: #0b1a2f !important; }
+    .story-card .story-info .samount { 
+      font-weight: 800; 
+      font-size: 13px; 
+      color: #1fbb7a !important; /* Green */ 
+    }
     .story-card .story-info .sdesc { font-size: 12px; color: #0b1a2f; line-height: 1.3; margin-top: 2px; }
     .stats-grid {
       display: flex;
@@ -374,9 +383,12 @@
       padding: 8px 2px;
       flex: 1;
       text-align: center;
-      animation: borderGlow 2.8s ease-in-out infinite;
     }
-    .stats-grid .stat-item .stat-number { font-size: 18px; font-weight: 900; color: #0b1a2f !important; }
+    .stats-grid .stat-item .stat-number { 
+      font-size: 18px; 
+      font-weight: 900; 
+      color: #1fbb7a !important; /* Green */ 
+    }
     .stats-grid .stat-item .stat-label { font-size: 9px; font-weight: 600; color: #0b1a2f; }
     .withdraw-grid {
       display: grid;
@@ -746,7 +758,6 @@
       padding: 14px 18px;
       margin: 8px 0;
       text-align: center;
-      animation: borderGlow 2.5s ease-in-out infinite;
     }
     .support-card .support-icon { font-size: 28px; margin-bottom: 4px; }
     .support-card .support-number {
@@ -947,10 +958,11 @@
       letter-spacing: 0.2px;
       opacity: 0.6;
     }
-    .demo-card .stat-card.expense .stat-value { color: #0b1a2f !important; }
-    .demo-card .stat-card.earnings .stat-value { color: #0b1a2f !important; }
-    .demo-card .stat-card.balance .stat-value { color: #0b1a2f !important; }
-    .demo-card .stat-card.withdrawn .stat-value { color: #0b1a2f !important; }
+    /* Different colors for demo page stats */
+    .demo-card .stat-card.expense .stat-value { color: #e74c3c !important; }
+    .demo-card .stat-card.earnings .stat-value { color: #2ecc71 !important; }
+    .demo-card .stat-card.balance .stat-value { color: #3498db !important; }
+    .demo-card .stat-card.withdrawn .stat-value { color: #f39c12 !important; }
     .demo-card .balance-extra {
       display: flex;
       justify-content: space-between;
@@ -1036,7 +1048,7 @@
     .demo-card .earn-left .amount {
       font-weight: 800;
       font-size: 17px;
-      color: #0b1a2f !important;
+      color: #1fbb7a !important; /* Green */
       margin-top: 2px;
     }
     .demo-card .earn-left .usd {
@@ -1128,7 +1140,7 @@
     .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
     .demo-card .profile-info .name { font-weight: 700; font-size: 15px; color: #0b1a2f; }
     .demo-card .profile-info .location { font-size: 12px; color: #2f4568; font-weight: 500; }
-    .demo-card .profile-amount { font-weight: 700; color: #0b1a2f !important; font-size: 14px; text-align: right; }
+    .demo-card .profile-amount { font-weight: 700; color: #1fbb7a !important; font-size: 14px; text-align: right; }
     .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 11px; display: block; }
     .demo-card .footer-note {
       margin-top: 24px;
@@ -1192,7 +1204,7 @@
     .demo-action-popup .popup-content .earn-amount {
       font-size: 24px;
       font-weight: 900;
-      color: #0b1a2f !important;
+      color: #1fbb7a !important;
       margin: 6px 0 12px;
     }
     .demo-action-popup .popup-content .btn-close-popup {
@@ -1239,88 +1251,17 @@
       .btn-primary { font-size: 14px; padding: 10px 22px; }
       .btn-start-earning { font-size: 13px !important; padding: 8px 16px !important; }
     }
-    .green-highlight,
-    .stat-number,
-    .count-number,
-    .earnings-scroll .scroll-content span,
-    .demo-card .stat-card .stat-value,
-    .demo-card .earn-left .amount,
-    .demo-card .profile-amount,
-    .withdrawn-chip,
-    .way-card .way-earn,
-    .support-card .support-number,
-    .stats-grid .stat-item .stat-number,
-    .story-card .story-info .samount,
-    .hero-highlight,
-    .turn-clicks-cash {
-      color: #0b1a2f !important;
-    }
-    .turn-clicks-cash {
-      font-weight: 900;
-    }
-    .hero-highlight {
-      font-weight: 900;
-    }
-    .section-icon-earn { background: linear-gradient(135deg, #1fbb7a, #0f7b5a); }
-    .section-icon-chat { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-    .section-icon-stats { background: linear-gradient(135deg, #f59e0b, #d97706); }
-    .section-icon-how { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-    .section-icon-stories { background: linear-gradient(135deg, #ec4899, #db2777); }
-    .section-icon-faq { background: linear-gradient(135deg, #14b8a6, #0d9488); }
 
-    /* Music Playlist inside demo page */
-    .music-playlist {
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(8px);
-      border-radius: 20px;
-      padding: 16px;
-      margin: 12px 0;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-    .music-playlist .track {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-      font-size: 13px;
-      color: #0b1a2f;
-    }
-    .music-playlist .track:last-child { border-bottom: none; }
-    .music-playlist .track .play-btn {
-      background: #1fbb7a;
-      border: none;
-      color: #fff;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 12px;
-      transition: 0.15s;
-    }
-    .music-playlist .track .play-btn:hover { background: #17a86a; transform: scale(1.05); }
-
-    /* Color challenge explanation image */
-    .challenge-explanation {
-      margin: 12px 0;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid rgba(31,187,122,0.15);
-      background: #fff;
-      text-align: center;
-    }
-    .challenge-explanation img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .challenge-explanation .caption {
-      padding: 10px 14px;
-      font-size: 13px;
-      color: #0b1a2f;
-      background: #f9fcfb;
-      font-weight: 500;
-    }
+    /* Green highlights for specific elements */
+    .green-highlight { color: #1fbb7a !important; }
+    .turn-clicks-cash { color: #1fbb7a !important; font-weight: 900; }
+    .hero-highlight { color: #1fbb7a !important; font-weight: 900; }
+    .stats-grid .stat-item .stat-number { color: #1fbb7a !important; }
+    .story-card .story-info .samount { color: #1fbb7a !important; }
+    .online-badge .live-dot { background: #1fbb7a; }
+    .demo-card .earn-left .amount { color: #1fbb7a !important; }
+    .demo-card .profile-amount { color: #1fbb7a !important; }
+    .demo-action-popup .popup-content .earn-amount { color: #1fbb7a !important; }
   </style>
 </head>
 <body>
@@ -1451,7 +1392,8 @@
         </div>
       </div>
       <div class="way-card">
-        <img class="way-icon" src="https://images.unsplash.com/photo-1521791136064-7986c0212926?w=100&h=100&fit=crop&crop=center" alt="Refer" loading="lazy">
+        <!-- Fixed Refer & Earn image -->
+        <img class="way-icon" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Refer" loading="lazy">
         <div class="way-content">
           <div class="way-name">Refer & Earn</div>
           <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share and earn!</div>
@@ -1469,7 +1411,8 @@
         </div>
       </div>
       <div class="way-card">
-        <img class="way-icon" src="https://images.unsplash.com/photo-1533093818119-ac1fa5ef1ee6?w=100&h=100&fit=crop&crop=center" alt="Challenges" loading="lazy">
+        <!-- Fixed Daily Challenge image -->
+        <img class="way-icon" src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=100&h=100&fit=crop&crop=center" alt="Challenges" loading="lazy">
         <div class="way-content">
           <div class="way-name">Daily Challenges</div>
           <div class="way-desc">Complete daily missions and tasks. Stack rewards every day and earn consistent income.</div>
@@ -1663,7 +1606,7 @@
       <p style="font-size:13px; color:#0b1a2f; max-width:380px; margin:6px auto 8px; line-height:1.4;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
       <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:4px 0 10px; flex-wrap:wrap;">
         <span style="font-size:18px; font-weight:700; color:#6a7f73; text-decoration:line-through;">$10</span>
-        <span style="font-size:32px; font-weight:900; color:#0b1a2f !important;">$5</span>
+        <span style="font-size:32px; font-weight:900; color:#1fbb7a !important;">$5</span>
         <span style="background:#fef9e7; padding:2px 12px; border-radius:60px; font-weight:700; font-size:12px; color:#0b1a2f;">LIMITED OFFER</span>
       </div>
       <p style="font-size:12px; color:#0b1a2f; margin-bottom:10px;">No monthly fees · Instant access</p>
@@ -1814,22 +1757,18 @@
     const el = document.getElementById('musicPlaylist');
     if (el) {
       el.style.display = el.style.display === 'none' ? 'block' : 'none';
-      // Hide challenge if showing
       document.getElementById('challengeExplanation').style.display = 'none';
     }
   }
 
-  // Toggle Challenge Explanation in demo page
   function toggleChallengeExplanation() {
     const el = document.getElementById('challengeExplanation');
     if (el) {
       el.style.display = el.style.display === 'none' ? 'block' : 'none';
-      // Hide music if showing
       document.getElementById('musicPlaylist').style.display = 'none';
     }
   }
 
-  // Open demo page with music playlist visible
   function openDemoPageWithMusic() {
     openDemoPage();
     setTimeout(() => {
@@ -1838,7 +1777,6 @@
     }, 100);
   }
 
-  // Open demo page with challenge explanation visible
   function openDemoPageWithChallenge() {
     openDemoPage();
     setTimeout(() => {
@@ -1869,19 +1807,24 @@
     if (e.target === this) closeDemoAction();
   });
 
-  // Live counters
+  // Live counters - synchronized
   (function() {
     const counterEl = document.getElementById('liveCounter');
+    const onlineNowEl = document.getElementById('onlineNow');
     let onlineCount = 3300;
-    function updateHeaderCount(v) { if (counterEl) counterEl.textContent = v.toLocaleString(); }
-    updateHeaderCount(onlineCount);
+    function updateCounters(v) {
+      const formatted = v.toLocaleString();
+      if (counterEl) counterEl.textContent = formatted;
+      if (onlineNowEl) onlineNowEl.textContent = formatted;
+    }
+    updateCounters(onlineCount);
     setInterval(() => {
       let delta = Math.floor(Math.random() * 14) - 3;
       let nv = onlineCount + delta;
       if (nv < 3240) nv = 3240 + Math.floor(Math.random() * 30);
       if (nv > 3600) nv = 3600 - Math.floor(Math.random() * 30);
       onlineCount = nv;
-      updateHeaderCount(onlineCount);
+      updateCounters(onlineCount);
     }, 2800);
 
     let trust = 187432;
@@ -1902,6 +1845,14 @@
     }
     setInterval(updateHeroCounter, 3000);
 
+    let liveUsers = 187432;
+    const liveEl = document.getElementById('liveUsers');
+    setInterval(() => {
+      liveUsers += Math.floor(Math.random() * 6) + 1;
+      if (liveUsers > 189500) liveUsers = 187000;
+      liveEl.textContent = liveUsers.toLocaleString();
+    }, 5000);
+
     const chatterEl = document.getElementById('activeChatters');
     setInterval(() => { if (chatterEl) chatterEl.textContent = Math.floor(Math.random() * 4) + 8; }, 5000);
 
@@ -1911,30 +1862,6 @@
         el.textContent = statuses[Math.floor(Math.random() * statuses.length)];
       });
     }, 4200);
-  })();
-
-  // Live stats
-  (function() {
-    let liveUsers = 187432;
-    let totalPaid = 2.87;
-    let onlineNow = 3300;
-    const liveEl = document.getElementById('liveUsers');
-    const totalEl = document.getElementById('totalPaid');
-    const onlineEl = document.getElementById('onlineNow');
-
-    setInterval(() => {
-      liveUsers += Math.floor(Math.random() * 6) + 1;
-      if (liveUsers > 189500) liveUsers = 187000;
-      liveEl.textContent = liveUsers.toLocaleString();
-
-      totalPaid += (Math.random() * 0.008 + 0.002);
-      totalEl.textContent = '$' + totalPaid.toFixed(2) + 'M';
-
-      onlineNow += Math.floor(Math.random() * 8) - 3;
-      if (onlineNow < 3240) onlineNow = 3240 + Math.floor(Math.random() * 30);
-      if (onlineNow > 3600) onlineNow = 3600 - Math.floor(Math.random() * 30);
-      onlineEl.textContent = onlineNow.toLocaleString();
-    }, 5000);
   })();
 
   // Withdrawal popup
