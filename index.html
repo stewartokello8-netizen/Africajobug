@@ -28,7 +28,6 @@
       padding-top: 80px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.02);
     }
-    /* HEADER — NO BORDER CURVES */
     .header-row {
       position: fixed;
       top: 0;
@@ -46,7 +45,6 @@
       padding: 12px 14px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       width: 100%;
-      /* No border-radius */
       border-radius: 0;
     }
     .brand { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
@@ -64,7 +62,7 @@
       border-radius: 60px;
       border: 1px solid rgba(255,255,255,0.08);
       font-weight: 700;
-      font-size: 15px;
+      font-size: 13px;
       color: #fff;
       white-space: nowrap;
       flex-shrink: 0;
@@ -86,9 +84,9 @@
       display: inline-block;
       text-align: center;
       font-feature-settings: "tnum";
-      font-size: 16px;
+      font-size: 14px;
     }
-    .online-badge .label { font-weight: 500; color: #c0d0d0; font-size: 13px; }
+    .online-badge .label { font-weight: 500; color: #c0d0d0; font-size: 11px; }
     .signup-btn {
       background: #1fbb7a;
       color: #fff;
@@ -96,7 +94,7 @@
       padding: 5px 12px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 12px;
       cursor: pointer;
       transition: background 0.2s, transform 0.15s;
       display: flex;
@@ -160,7 +158,7 @@
       flex-shrink: 0;
     }
     .section-header h2 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: #0b1a2f;
       letter-spacing: -0.3px;
@@ -170,13 +168,13 @@
       background: #f0f5f3;
       padding: 2px 12px;
       border-radius: 40px;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 700;
       color: #1fbb7a;
       border: 1px solid rgba(31,187,122,0.1);
     }
     .section-subtitle {
-      font-size: 15px;
+      font-size: 13px;
       color: #5a6f68;
       margin-top: -6px;
       margin-bottom: 12px;
@@ -189,7 +187,7 @@
       background: linear-gradient(135deg, #1fbb7a, #0f7b5a);
       color: #fff;
       font-weight: 800;
-      font-size: 17px;
+      font-size: 15px;
       padding: 10px 22px;
       border-radius: 60px;
       text-decoration: none;
@@ -200,7 +198,7 @@
       transition: all 0.2s;
     }
     .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(31,187,122,0.25); }
-    .btn-start-earning { font-size: 16px !important; padding: 8px 18px !important; }
+    .btn-start-earning { font-size: 14px !important; padding: 8px 18px !important; }
     .earnings-scroll {
       background: #f0f5f3;
       border: 1px solid rgba(0,0,0,0.04);
@@ -216,7 +214,7 @@
       color: #fff;
       padding: 2px 8px;
       border-radius: 40px;
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 800;
       display: inline-block;
       margin-right: 4px;
@@ -225,14 +223,15 @@
       display: inline-block;
       font-weight: 700;
       color: #0b1a2f !important;
-      font-size: 13px;
+      font-size: 11px;
       animation: scrollText 70s linear infinite;
       white-space: nowrap;
     }
+    /* AMOUNTS IN SCROLL ARE BLACK */
     .earnings-scroll .scroll-content span { 
       display: inline-block; 
       padding: 0 6px; 
-      color: #1fbb7a !important;
+      color: #0b1a2f !important; /* BLACK, not green */
     }
 
     .demo-page {
@@ -261,7 +260,7 @@
       padding: 6px 16px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 13px;
       color: #0b1a2f;
       cursor: pointer;
       transition: 0.2s;
@@ -269,7 +268,7 @@
     .demo-page .demo-header .back-btn:hover { background: rgba(255,255,255,0.9); }
     .demo-page .demo-header .page-title {
       font-weight: 800;
-      font-size: 20px;
+      font-size: 18px;
       color: #0b1a2f;
       letter-spacing: -0.3px;
     }
@@ -295,13 +294,13 @@
       flex-shrink: 0;
     }
     .user-card .user-info { flex: 1; }
-    .user-card .user-info .name { font-weight: 800; font-size: 16px; color: #0b1a2f; }
-    .user-card .user-info .country { font-size: 13px; font-weight: 700; color: #0b1a2f; }
+    .user-card .user-info .name { font-weight: 800; font-size: 14px; color: #0b1a2f; }
+    .user-card .user-info .country { font-size: 11px; font-weight: 700; color: #0b1a2f; }
     .user-card .user-info .status {
       background: #f0f5f3;
       border-radius: 50px;
       padding: 1px 8px;
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 700;
       display: inline-block;
       margin-top: 1px;
@@ -313,7 +312,7 @@
       padding: 3px 8px;
       border-radius: 40px;
       font-weight: 800;
-      font-size: 10px;
+      font-size: 8px;
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
@@ -323,7 +322,7 @@
     .user-card .new-badge {
       background: #dc2626;
       color: #fff;
-      font-size: 9px;
+      font-size: 7px;
       font-weight: 800;
       padding: 1px 6px;
       border-radius: 40px;
@@ -333,7 +332,7 @@
     .live-label {
       background: #dc2626;
       color: #fff;
-      font-size: 9px;
+      font-size: 7px;
       font-weight: 800;
       padding: 1px 6px;
       border-radius: 40px;
@@ -360,9 +359,9 @@
       flex-shrink: 0;
     }
     .story-card .story-info { flex: 1; }
-    .story-card .story-info .sname { font-weight: 800; font-size: 15px; color: #0b1a2f; }
-    .story-card .story-info .samount { font-weight: 800; font-size: 15px; color: #1fbb7a !important; }
-    .story-card .story-info .sdesc { font-size: 14px; color: #0b1a2f; line-height: 1.3; margin-top: 2px; }
+    .story-card .story-info .sname { font-weight: 800; font-size: 13px; color: #0b1a2f; }
+    .story-card .story-info .samount { font-weight: 800; font-size: 13px; color: #0b1a2f !important; }
+    .story-card .story-info .sdesc { font-size: 12px; color: #0b1a2f; line-height: 1.3; margin-top: 2px; }
     .stats-grid {
       display: flex;
       justify-content: space-around;
@@ -377,8 +376,8 @@
       text-align: center;
       animation: borderGlow 2.8s ease-in-out infinite;
     }
-    .stats-grid .stat-item .stat-number { font-size: 20px; font-weight: 900; color: #1fbb7a !important; }
-    .stats-grid .stat-item .stat-label { font-size: 11px; font-weight: 600; color: #0b1a2f; }
+    .stats-grid .stat-item .stat-number { font-size: 18px; font-weight: 900; color: #0b1a2f !important; }
+    .stats-grid .stat-item .stat-label { font-size: 9px; font-weight: 600; color: #0b1a2f; }
     .withdraw-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -392,7 +391,7 @@
       border-radius: 20px;
       border: 1px solid #d4e8e0;
       text-align: center;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
       color: #0b1a2f;
     }
@@ -404,7 +403,7 @@
       padding: 10px 12px;
       cursor: pointer;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       color: #0b1a2f;
       list-style: none;
       border-radius: 16px;
@@ -415,7 +414,7 @@
     details summary:hover { background: #f0f7f4; }
     details summary::-webkit-details-marker { display: none; }
     details[open] summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-    details .faq-content { padding: 4px 14px 14px; background: #f9fcfb; border: 1px solid rgba(0,0,0,0.03); border-top: none; border-radius: 0 0 18px 18px; color: #0b1a2f; line-height: 1.5; font-size: 15px; }
+    details .faq-content { padding: 4px 14px 14px; background: #f9fcfb; border: 1px solid rgba(0,0,0,0.03); border-top: none; border-radius: 0 0 18px 18px; color: #0b1a2f; line-height: 1.5; font-size: 13px; }
     .chat-page-overlay {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -456,8 +455,8 @@
       object-fit: cover;
     }
     .chat-page-header .info { flex: 1; }
-    .chat-page-header .info .name { font-weight: 800; font-size: 17px; }
-    .chat-page-header .info .status { font-size: 13px; opacity: 0.8; }
+    .chat-page-header .info .name { font-weight: 800; font-size: 15px; }
+    .chat-page-header .info .status { font-size: 11px; opacity: 0.8; }
     .chat-page-header .close-btn {
       background: rgba(255,255,255,0.1);
       border: none;
@@ -486,7 +485,7 @@
       max-width: 80%;
       padding: 8px 12px;
       border-radius: 18px;
-      font-size: 15px;
+      font-size: 13px;
       line-height: 1.4;
       word-break: break-word;
     }
@@ -502,9 +501,9 @@
       align-self: flex-end;
       border-bottom-right-radius: 4px;
     }
-    .chat-msg .msg-name { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+    .chat-msg .msg-name { font-weight: 700; font-size: 11px; margin-bottom: 2px; }
     .chat-msg.received .msg-name { color: #1fbb7a; }
-    .chat-msg .time { font-size: 11px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
+    .chat-msg .time { font-size: 9px; opacity: 0.6; margin-top: 4px; display: block; text-align: right; }
     .chat-page-footer {
       padding: 8px 12px 12px;
       background: #fff;
@@ -518,7 +517,7 @@
       padding: 8px 14px;
       border-radius: 30px;
       border: 2px solid #e0e8e4;
-      font-size: 15px;
+      font-size: 13px;
       outline: none;
     }
     .chat-page-footer input:focus { border-color: #1fbb7a; }
@@ -529,7 +528,7 @@
       padding: 8px 16px;
       border-radius: 30px;
       font-weight: 700;
-      font-size: 15px;
+      font-size: 13px;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -541,7 +540,7 @@
       border-top: 2px solid #f5b342;
       flex-shrink: 0;
       display: none;
-      font-size: 14px;
+      font-size: 12px;
     }
     .chat-upgrade-banner a {
       color: #0b1a2f;
@@ -552,7 +551,7 @@
       border-radius: 40px;
       display: inline-block;
       margin-top: 2px;
-      font-size: 14px;
+      font-size: 12px;
     }
     #withdrawalPopup {
       position: fixed;
@@ -580,9 +579,9 @@
     }
     #withdrawalPopup .popup-card img { width: 36px; height: 36px; border-radius: 60px; object-fit: cover; border: 2px solid #1fbb7a; flex-shrink: 0; }
     #withdrawalPopup .popup-card .info { flex: 1; min-width: 0; }
-    #withdrawalPopup .popup-card .info .title { font-weight: 800; font-size: 13px; color: #0b1a2f; }
-    #withdrawalPopup .popup-card .info .name { font-size: 14px; color: #0b1a2f; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    #withdrawalPopup .popup-card .info .method { font-size: 12px; color: #0b1a2f; display: flex; align-items: center; gap: 4px; }
+    #withdrawalPopup .popup-card .info .title { font-weight: 800; font-size: 11px; color: #0b1a2f; }
+    #withdrawalPopup .popup-card .info .name { font-size: 12px; color: #0b1a2f; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #withdrawalPopup .popup-card .info .method { font-size: 10px; color: #0b1a2f; display: flex; align-items: center; gap: 4px; }
     #withdrawalPopup .popup-card .close {
       background: #f0f5f3;
       border: none;
@@ -623,7 +622,6 @@
       display: block;
       filter: brightness(0) invert(1);
     }
-    /* FOOTER — NO BORDER CURVES */
     .footer-section {
       margin-top: 16px;
       padding-top: 16px;
@@ -642,9 +640,9 @@
       gap: 10px 8px;
       margin-bottom: 12px;
     }
-    .footer-grid .col h4 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .footer-grid .col h4 { font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 4px; }
     .footer-grid .col ul { list-style: none; padding: 0; }
-    .footer-grid .col ul li { font-size: 15px; color: #c0d0d0; padding: 2px 0; font-weight: 500; }
+    .footer-grid .col ul li { font-size: 13px; color: #c0d0d0; padding: 2px 0; font-weight: 500; }
     .footer-grid .col ul li a { color: #c0d0d0; text-decoration: none; }
     .footer-grid .col ul li a:hover { color: #1fbb7a; }
     .footer-bottom {
@@ -654,13 +652,13 @@
       align-items: center;
       padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.06);
-      font-size: 14px;
+      font-size: 12px;
       color: #c0d0d0;
       gap: 6px;
     }
     .footer-bottom .brand-small { font-weight: 800; color: #fff; }
     .footer-bottom .brand-small span { color: #1fbb7a; }
-    .footer-bottom .copy { font-size: 13px; color: #a0b0b0; }
+    .footer-bottom .copy { font-size: 11px; color: #a0b0b0; }
     .footer-bottom .copy a { color: #a0b0b0; text-decoration: none; font-weight: 700; }
     .footer-bottom .copy a:hover { color: #1fbb7a; }
     .ways-grid {
@@ -698,21 +696,21 @@
     }
     .way-card .way-content .way-name {
       font-weight: 800;
-      font-size: 16px;
+      font-size: 14px;
       color: #0b1a2f;
     }
     .way-card .way-content .way-desc {
-      font-size: 14px;
+      font-size: 12px;
       color: #0b1a2f;
       line-height: 1.4;
     }
     .way-card .way-content .way-earn {
       font-weight: 900;
-      font-size: 16px;
-      color: #1fbb7a !important;
+      font-size: 14px;
+      color: #0b1a2f !important;
     }
     .way-card .way-content .way-earn .sub {
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 600;
       color: #5a6f68;
     }
@@ -723,7 +721,7 @@
       color: #fff;
       padding: 4px 14px;
       border-radius: 40px;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 700;
       text-decoration: none;
       border: none;
@@ -752,12 +750,12 @@
     }
     .support-card .support-icon { font-size: 28px; margin-bottom: 4px; }
     .support-card .support-number {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
-      color: #1fbb7a !important;
+      color: #0b1a2f !important;
       letter-spacing: 0.5px;
     }
-    .support-card .support-label { font-size: 14px; color: #0b1a2f; font-weight: 600; }
+    .support-card .support-label { font-size: 12px; color: #0b1a2f; font-weight: 600; }
     .how-step {
       display: flex;
       align-items: center;
@@ -782,10 +780,8 @@
       flex-shrink: 0;
     }
     .how-step .step-info { flex: 1; }
-    .how-step .step-info .step-title { font-weight: 800; font-size: 16px; color: #0b1a2f; }
-    .how-step .step-info .step-desc { font-size: 14px; color: #0b1a2f; }
-
-    /* ===== DEMO PAGE STYLES - ENHANCED WITH BETTER SEPARATION ===== */
+    .how-step .step-info .step-title { font-weight: 800; font-size: 14px; color: #0b1a2f; }
+    .how-step .step-info .step-desc { font-size: 12px; color: #0b1a2f; }
     .demo-card {
       background: radial-gradient(circle at 10% 20%, #f0f6fc, #dce6f0);
       border-radius: 48px;
@@ -801,7 +797,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 500;
       color: #3b4f6b;
       letter-spacing: 0.2px;
@@ -839,7 +835,7 @@
       gap: 6px 10px;
     }
     .demo-card .welcome-row .greeting {
-      font-size: 21px;
+      font-size: 18px;
       font-weight: 700;
       color: #0b1a2f;
       letter-spacing: -0.3px;
@@ -856,7 +852,7 @@
       backdrop-filter: blur(4px);
       padding: 4px 14px 4px 12px;
       border-radius: 60px;
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.12);
@@ -873,14 +869,14 @@
       padding: 0 8px;
       border-radius: 40px;
       color: #1a1f2e;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 800;
     }
     .demo-card .welcome-sub {
       margin-top: 12px;
-      font-size: 16px;
+      font-size: 13px;
       color: #1a2f4a;
-      line-height: 1.6;
+      line-height: 1.5;
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
       padding: 10px 14px;
@@ -894,15 +890,13 @@
     .demo-card .welcome-sub .badge-new {
       background: #f5d65a;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 10px;
       padding: 2px 14px;
       border-radius: 40px;
       color: #1a1f2e;
       letter-spacing: 0.3px;
     }
     .demo-card .welcome-sub strong { color: #0b1a2f; font-weight: 700; }
-
-    /* Stats section with better separation */
     .demo-card .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -918,7 +912,6 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.01);
       text-align: center;
       transition: all 0.15s;
-      position: relative;
     }
     .demo-card .stat-card:hover {
       background: rgba(255,255,255,0.6);
@@ -926,7 +919,7 @@
       transform: translateY(-2px);
     }
     .demo-card .stat-card .stat-label {
-      font-size: 14px;
+      font-size: 11px;
       font-weight: 600;
       color: #2f4568;
       letter-spacing: 0.5px;
@@ -934,36 +927,36 @@
       opacity: 0.7;
     }
     .demo-card .stat-card .stat-value {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
-      color: #1fbb7a !important;
+      color: #0b1a2f !important;
       margin-top: 4px;
       letter-spacing: -0.3px;
     }
     .demo-card .stat-card .stat-value small {
-      font-size: 15px;
+      font-size: 12px;
       font-weight: 500;
       color: #3a5072;
       margin-left: 3px;
     }
     .demo-card .stat-card .stat-sub {
-      font-size: 14px;
+      font-size: 11px;
       color: #3a5072;
       font-weight: 500;
       margin-top: 4px;
       letter-spacing: 0.2px;
       opacity: 0.6;
     }
-    .demo-card .stat-card.expense .stat-value { color: #b45a3a !important; }
-    .demo-card .stat-card.earnings .stat-value { color: #0f3d7a !important; }
-    .demo-card .stat-card.balance .stat-value { color: #1a7a4a !important; }
-    .demo-card .stat-card.withdrawn .stat-value { color: #1a3a7a !important; }
+    .demo-card .stat-card.expense .stat-value { color: #0b1a2f !important; }
+    .demo-card .stat-card.earnings .stat-value { color: #0b1a2f !important; }
+    .demo-card .stat-card.balance .stat-value { color: #0b1a2f !important; }
+    .demo-card .stat-card.withdrawn .stat-value { color: #0b1a2f !important; }
     .demo-card .balance-extra {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 6px;
-      font-size: 13px;
+      font-size: 10px;
       color: #3a5072;
       border-top: 1px solid rgba(0,0,0,0.02);
       padding-top: 8px;
@@ -983,7 +976,7 @@
       padding: 2px 14px;
       border-radius: 40px;
       border: 1px solid rgba(255,255,255,0.3);
-      font-size: 13px;
+      font-size: 10px;
       cursor: default;
       backdrop-filter: blur(2px);
     }
@@ -993,26 +986,23 @@
       border-radius: 60px;
       padding: 2px 12px;
       font-weight: 800;
-      font-size: 21px;
-      color: #1fbb7a !important;
+      font-size: 18px;
+      color: #0b1a2f !important;
       display: inline-block;
       border: 1px solid rgba(255,215,0,0.1);
       margin-top: 2px;
     }
     .demo-card .withdrawn-chip small {
       font-weight: 500;
-      font-size: 15px;
+      font-size: 12px;
       color: #3a4f72;
       margin-left: 4px;
     }
     .demo-card .divider-light {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.12), transparent);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
       margin: 12px 0 16px;
-      border-radius: 4px;
     }
-
-    /* Earn grid with better separation */
     .demo-card .earn-grid {
       display: flex;
       flex-direction: column;
@@ -1031,36 +1021,26 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.01);
       transition: all 0.15s;
       cursor: pointer;
-      position: relative;
     }
     .demo-card .earn-card:hover {
       background: rgba(255,255,255,0.5);
       border-color: rgba(255,215,0,0.08);
       transform: scale(1.01);
     }
-    .demo-card .earn-card::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 10%;
-      right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.08), transparent);
-    }
     .demo-card .earn-left .label {
       font-weight: 600;
-      font-size: 17px;
+      font-size: 14px;
       color: #0b1a2f;
       letter-spacing: -0.2px;
     }
     .demo-card .earn-left .amount {
       font-weight: 800;
-      font-size: 20px;
-      color: #1fbb7a !important;
+      font-size: 17px;
+      color: #0b1a2f !important;
       margin-top: 2px;
     }
     .demo-card .earn-left .usd {
-      font-size: 15px;
+      font-size: 12px;
       color: #3a5072;
       font-weight: 500;
       margin-left: 4px;
@@ -1070,7 +1050,7 @@
       backdrop-filter: blur(4px);
       padding: 6px 18px;
       border-radius: 60px;
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 700;
       color: #1a2f4f;
       border: 1px solid rgba(255,215,0,0.04);
@@ -1085,7 +1065,7 @@
       border: none;
       color: #0b1a2f;
       font-weight: 800;
-      font-size: 19px;
+      font-size: 16px;
       padding: 14px 28px;
       border-radius: 80px;
       width: 100%;
@@ -1107,16 +1087,13 @@
       gap: 10px;
       flex-wrap: wrap;
       margin: 6px 0 16px;
-      padding: 4px 0;
-      border-top: 1px solid rgba(255,255,255,0.15);
-      padding-top: 14px;
     }
     .demo-card .nav-chip {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(4px);
       padding: 8px 18px;
       border-radius: 60px;
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 600;
       color: #0b1a2f;
       border: 1px solid rgba(255,255,255,0.3);
@@ -1127,12 +1104,7 @@
       background: rgba(255,215,0,0.04);
       border-color: rgba(255,215,0,0.08);
     }
-    .demo-card .profile-list { 
-      margin: 10px 0 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .demo-card .profile-list { margin: 10px 0 18px; }
     .demo-card .profile-item {
       background: rgba(255,255,255,0.3);
       backdrop-filter: blur(6px);
@@ -1142,6 +1114,7 @@
       align-items: center;
       justify-content: space-between;
       border: 1px solid rgba(255,255,255,0.3);
+      margin-bottom: 8px;
       transition: 0.1s;
     }
     .demo-card .profile-item:hover {
@@ -1151,22 +1124,21 @@
       width: 40px; height: 40px; border-radius: 40px; margin-right: 12px;
       overflow: hidden; background: rgba(255,215,0,0.04); display: flex; align-items: center; justify-content: center;
       border: 1px solid rgba(255,255,255,0.2);
-      flex-shrink: 0;
     }
     .demo-card .profile-item .avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .demo-card .profile-info .name { font-weight: 700; font-size: 18px; color: #0b1a2f; }
-    .demo-card .profile-info .location { font-size: 15px; color: #2f4568; font-weight: 500; }
-    .demo-card .profile-amount { font-weight: 700; color: #1fbb7a !important; font-size: 17px; text-align: right; }
-    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 14px; display: block; }
+    .demo-card .profile-info .name { font-weight: 700; font-size: 15px; color: #0b1a2f; }
+    .demo-card .profile-info .location { font-size: 12px; color: #2f4568; font-weight: 500; }
+    .demo-card .profile-amount { font-weight: 700; color: #0b1a2f !important; font-size: 14px; text-align: right; }
+    .demo-card .profile-amount small { font-weight: 500; color: #3a5072; font-size: 11px; display: block; }
     .demo-card .footer-note {
       margin-top: 24px;
       text-align: center;
-      font-size: 16px;
+      font-size: 13px;
       font-weight: 500;
       color: #1a2f4f;
       letter-spacing: 0.2px;
       padding: 12px 8px 4px;
-      border-top: 2px solid rgba(255,215,0,0.06);
+      border-top: 1px solid rgba(255,215,0,0.04);
       background: rgba(255,255,255,0.1);
       backdrop-filter: blur(4px);
       border-radius: 60px;
@@ -1206,21 +1178,21 @@
       margin-bottom: 10px;
     }
     .demo-action-popup .popup-content h3 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       color: #0b1a2f;
       margin-bottom: 6px;
     }
     .demo-action-popup .popup-content p {
-      font-size: 15px;
+      font-size: 13px;
       color: #3a4f5a;
       line-height: 1.5;
       margin-bottom: 12px;
     }
     .demo-action-popup .popup-content .earn-amount {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 900;
-      color: #1fbb7a !important;
+      color: #0b1a2f !important;
       margin: 6px 0 12px;
     }
     .demo-action-popup .popup-content .btn-close-popup {
@@ -1230,7 +1202,7 @@
       padding: 10px 28px;
       border-radius: 60px;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
       transition: background 0.2s;
     }
@@ -1242,30 +1214,30 @@
       .page-wrap { padding: 10px 10px 18px; padding-top: 80px; }
       .brand-name { font-size: 20px; }
       .brand-icon { font-size: 20px; }
-      .online-badge { font-size: 14px; padding: 3px 8px 3px 6px; }
-      .online-badge .count-number { font-size: 14px; min-width: 28px; }
-      .online-badge .label { font-size: 12px; }
+      .online-badge { font-size: 12px; padding: 3px 8px 3px 6px; }
+      .online-badge .count-number { font-size: 12px; min-width: 28px; }
+      .online-badge .label { font-size: 10px; }
       .pipe-sep { font-size: 16px; }
-      .signup-btn { font-size: 13px; padding: 4px 10px; }
+      .signup-btn { font-size: 11px; padding: 4px 10px; }
       .demo-card { padding: 0; }
       .demo-card .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .demo-card .stat-card .stat-value { font-size: 22px; }
-      .demo-card .welcome-row .greeting { font-size: 20px; }
+      .demo-card .stat-card .stat-value { font-size: 18px; }
+      .demo-card .welcome-row .greeting { font-size: 17px; }
       .demo-card .earn-card { padding: 12px 14px; }
-      .demo-card .earn-left .label { font-size: 16px; }
-      .demo-card .earn-left .amount { font-size: 18px; }
+      .demo-card .earn-left .label { font-size: 13px; }
+      .demo-card .earn-left .amount { font-size: 15px; }
       .chat-page { height: 450px; max-width: 100%; }
       .story-card img { width: 38px; height: 38px; }
       .way-card .way-icon { width: 36px; height: 36px; }
       .way-card { padding: 8px 10px; }
-      .support-card .support-number { font-size: 20px; }
+      .support-card .support-number { font-size: 18px; }
       .whatsapp-float { width: 46px; height: 46px; bottom: 14px; right: 14px; }
       #withdrawalPopup { bottom: 70px; right: 10px; max-width: 220px; }
       .demo-card { max-width: 100%; }
       .footer-section { margin-left: -10px; margin-right: -10px; padding-left: 10px; padding-right: 10px; }
       .section { padding: 12px 12px 16px; }
-      .btn-primary { font-size: 16px; padding: 10px 22px; }
-      .btn-start-earning { font-size: 15px !important; padding: 8px 16px !important; }
+      .btn-primary { font-size: 14px; padding: 10px 22px; }
+      .btn-start-earning { font-size: 13px !important; padding: 8px 16px !important; }
     }
     .green-highlight,
     .stat-number,
@@ -1281,7 +1253,7 @@
     .story-card .story-info .samount,
     .hero-highlight,
     .turn-clicks-cash {
-      color: #1fbb7a !important;
+      color: #0b1a2f !important;
     }
     .turn-clicks-cash {
       font-weight: 900;
@@ -1295,11 +1267,65 @@
     .section-icon-how { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
     .section-icon-stories { background: linear-gradient(135deg, #ec4899, #db2777); }
     .section-icon-faq { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+
+    /* Music Playlist inside demo page */
+    .music-playlist {
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 16px;
+      margin: 12px 0;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .music-playlist .track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      font-size: 13px;
+      color: #0b1a2f;
+    }
+    .music-playlist .track:last-child { border-bottom: none; }
+    .music-playlist .track .play-btn {
+      background: #1fbb7a;
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.15s;
+    }
+    .music-playlist .track .play-btn:hover { background: #17a86a; transform: scale(1.05); }
+
+    /* Color challenge explanation image */
+    .challenge-explanation {
+      margin: 12px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(31,187,122,0.15);
+      background: #fff;
+      text-align: center;
+    }
+    .challenge-explanation img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .challenge-explanation .caption {
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #0b1a2f;
+      background: #f9fcfb;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
 <div class="page-wrap" id="appContainer">
-  <!-- HEADER - NO BORDER CURVES -->
+  <!-- HEADER -->
   <div class="header-row">
     <div class="brand">
       <span class="brand-icon">🌍</span>
@@ -1318,20 +1344,18 @@
 
   <!-- TRUST BADGE -->
   <div class="text-center" style="padding:10px 0 2px;">
-    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:2px 14px; border-radius:60px; font-size:14px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
+    <span style="display:inline-block; background:#f0f5f3; border:1px solid rgba(0,0,0,0.04); padding:2px 14px; border-radius:60px; font-size:12px; font-weight:700; color:#0b1a2f;">TRUSTED BY <span id="trustCounter" class="green-highlight">187,432</span>+ AFRICANS</span>
   </div>
 
-  <!-- HERO: "Create Free Account" on top, then "Try Demo First" and "Login" side by side -->
+  <!-- HERO -->
   <div class="section" style="background: linear-gradient(135deg, #f0f7f4, #e5f0ec); border: 2px solid rgba(31,187,122,0.1); text-align: center;">
-    <h1 style="font-size:26px; font-weight:900; margin:0 0 4px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
-    <h2 style="font-size:24px; font-weight:900; margin:0 0 8px; color:#1fbb7a;">Turn Clicks to Cash</h2>
-    <p style="font-size:15px; color:#0b1a2f; line-height:1.5; max-width:400px; margin:0 auto 12px;">
+    <h1 style="font-size:24px; font-weight:900; margin:0 0 4px; line-height:1.2; color:#0b1a2f;">Get Paid Every Time</h1>
+    <h2 style="font-size:22px; font-weight:900; margin:0 0 8px; color:#0b1a2f;">Turn Clicks to Cash</h2>
+    <p style="font-size:13px; color:#0b1a2f; line-height:1.5; max-width:400px; margin:0 auto 12px;">
       Join <span id="heroCounter" class="green-highlight">187,450</span>+ Africans earning <strong class="green-highlight">$30 – $150 daily</strong> via chat, music & challenges. <strong>Fast withdraw</strong>, daily payouts via Mobile Money, Mpesa..
     </p>
-    <!-- "Create Free Account" on top -->
     <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
       <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1fbb7a,#0f7b5a); width:auto;">Create Free Account</a>
-      <!-- "Try Demo First" and "Login" side by side -->
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
         <a href="#" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#f5b342,#e09d2e);" onclick="openDemoPage(); return false;">Try Demo First</a>
         <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary btn-start-earning" style="background:linear-gradient(135deg,#1a4f8a,#143a66);">Login</a>
@@ -1339,7 +1363,7 @@
     </div>
   </div>
 
-  <!-- LIVE EARNINGS SCROLL -->
+  <!-- LIVE EARNINGS SCROLL — amounts are BLACK -->
   <div class="earnings-scroll">
     <span class="scroll-label">EARNING</span>
     <span class="scroll-content" id="earningsScroll" style="animation-duration: 70s; color: #0b1a2f !important;">
@@ -1414,7 +1438,7 @@
           <div class="way-name">Earn with Music</div>
           <div class="way-desc">Listen to 10 trending global tracks — The Weeknd, Harry Styles, Dua Lipa and more. Earn for every track you play.</div>
           <div class="way-earn"><span class="sub">per month</span></div>
-          <div class="way-cta"><button class="cta-btn" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Listening</button></div>
+          <div class="way-cta"><button class="cta-btn" onclick="openDemoPageWithMusic(); return false;">Start Listening</button></div>
         </div>
       </div>
       <div class="way-card">
@@ -1423,11 +1447,11 @@
           <div class="way-name">Stroop Color Challenge</div>
           <div class="way-desc">Test your reflexes and earn per round. Fun and addictive — the more you play, the more you earn!</div>
           <div class="way-earn"><span class="sub">per round</span></div>
-          <div class="way-cta"><button class="cta-btn gold" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Play Now</button></div>
+          <div class="way-cta"><button class="cta-btn gold" onclick="openDemoPageWithChallenge(); return false;">Play Now</button></div>
         </div>
       </div>
       <div class="way-card">
-        <img class="way-icon" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=100&h=100&fit=crop&crop=center" alt="Refer" loading="lazy">
+        <img class="way-icon" src="https://images.unsplash.com/photo-1521791136064-7986c0212926?w=100&h=100&fit=crop&crop=center" alt="Refer" loading="lazy">
         <div class="way-content">
           <div class="way-name">Refer & Earn</div>
           <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share and earn!</div>
@@ -1612,7 +1636,7 @@
       <div class="how-step"><div class="step-num">3</div><div class="step-info"><div class="step-title">Withdraw Instantly</div><div class="step-desc">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
     </div>
     <div style="text-align:center; margin-top:10px;">
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:18px; padding:12px 28px;">Get Started Now</a>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px; padding:12px 28px;">Get Started Now</a>
     </div>
   </div>
 
@@ -1635,15 +1659,15 @@
   <!-- LIFETIME ACCESS -->
   <div class="section" style="border: 2px solid rgba(31,187,122,0.15); background: linear-gradient(135deg, #f0f7f4, #e5f0ec);">
     <div style="text-align:center;">
-      <div style="font-size:26px; font-weight:900; color:#0b1a2f;">Lifetime Access</div>
-      <p style="font-size:15px; color:#0b1a2f; max-width:380px; margin:6px auto 8px; line-height:1.4;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
+      <div style="font-size:24px; font-weight:900; color:#0b1a2f;">Lifetime Access</div>
+      <p style="font-size:13px; color:#0b1a2f; max-width:380px; margin:6px auto 8px; line-height:1.4;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
       <div style="display:flex; align-items:baseline; justify-content:center; gap:6px; margin:4px 0 10px; flex-wrap:wrap;">
-        <span style="font-size:20px; font-weight:700; color:#6a7f73; text-decoration:line-through;">$10</span>
-        <span style="font-size:34px; font-weight:900; color:#1fbb7a !important;">$5</span>
-        <span style="background:#fef9e7; padding:2px 12px; border-radius:60px; font-weight:700; font-size:14px; color:#0b1a2f;">LIMITED OFFER</span>
+        <span style="font-size:18px; font-weight:700; color:#6a7f73; text-decoration:line-through;">$10</span>
+        <span style="font-size:32px; font-weight:900; color:#0b1a2f !important;">$5</span>
+        <span style="background:#fef9e7; padding:2px 12px; border-radius:60px; font-weight:700; font-size:12px; color:#0b1a2f;">LIMITED OFFER</span>
       </div>
-      <p style="font-size:14px; color:#0b1a2f; margin-bottom:10px;">No monthly fees · Instant access</p>
-      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:18px; padding:12px 28px;">Activate Lifetime Access</a>
+      <p style="font-size:12px; color:#0b1a2f; margin-bottom:10px;">No monthly fees · Instant access</p>
+      <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px; padding:12px 28px;">Activate Lifetime Access</a>
     </div>
   </div>
 
@@ -1662,7 +1686,7 @@
     <details style="margin-bottom:4px;"><summary>Can I use this on my phone? <span style="font-size:15px; color:#0b1a2f;">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
   </div>
 
-  <!-- FOOTER - NO BORDER CURVES -->
+  <!-- FOOTER -->
   <div class="footer-section">
     <div class="footer-grid">
       <div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Earn with Music</li><li>Color Challenge</li><li>YouTube &amp; TikTok</li><li>WhatsApp Posts</li><li>Train AI</li></ul></div>
@@ -1692,6 +1716,28 @@
       </div>
       <div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏</div>
     </div>
+
+    <!-- MUSIC PLAYLIST (hidden by default, shown when "Music" is clicked) -->
+    <div id="musicPlaylist" style="display:none;" class="music-playlist">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span style="font-weight:800; font-size:16px; color:#0b1a2f;">🎵 Trending Tracks</span>
+        <span style="font-size:11px; color:#3a5072; font-weight:500;">Earn $0.15/track</span>
+      </div>
+      <div class="track"><span>Blinding Lights - The Weeknd</span><button class="play-btn" onclick="alert('▶️ Playing: Blinding Lights\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Watermelon Sugar - Harry Styles</span><button class="play-btn" onclick="alert('▶️ Playing: Watermelon Sugar\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Levitating - Dua Lipa</span><button class="play-btn" onclick="alert('▶️ Playing: Levitating\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Montero - Lil Nas X</span><button class="play-btn" onclick="alert('▶️ Playing: Montero\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Stay - The Kid LAROI</span><button class="play-btn" onclick="alert('▶️ Playing: Stay\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Good 4 U - Olivia Rodrigo</span><button class="play-btn" onclick="alert('▶️ Playing: Good 4 U\nEarn $0.15')">▶</button></div>
+      <div style="margin-top:8px; font-size:12px; color:#3a5072; text-align:center;">🎧 Listen to all tracks and earn up to $1.05 daily</div>
+    </div>
+
+    <!-- COLOR CHALLENGE EXPLANATION IMAGE (hidden by default, shown when "Challenge" is clicked) -->
+    <div id="challengeExplanation" style="display:none;" class="challenge-explanation">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23f0f4f8' rx='12'/%3E%3Ctext x='200' y='45' font-family='Inter, sans-serif' font-size='16' font-weight='700' fill='%230b1a2f' text-anchor='middle'%3E🎨 Stroop Color Challenge%3C/text%3E%3Ctext x='200' y='75' font-family='Inter, sans-serif' font-size='12' fill='%233a5072' text-anchor='middle'%3ESay the COLOR of the word, NOT the word itself!%3C/text%3E%3Crect x='60' y='100' width='60' height='40' fill='%23e74c3c' rx='6'/%3E%3Ctext x='90' y='126' font-family='Inter, sans-serif' font-size='16' font-weight='800' fill='%23ffffff' text-anchor='middle'%3ERED%3C/text%3E%3Crect x='170' y='100' width='60' height='40' fill='%232ecc71' rx='6'/%3E%3Ctext x='200' y='126' font-family='Inter, sans-serif' font-size='16' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EGREEN%3C/text%3E%3Crect x='280' y='100' width='60' height='40' fill='%233498db' rx='6'/%3E%3Ctext x='310' y='126' font-family='Inter, sans-serif' font-size='16' font-weight='800' fill='%23ffffff' text-anchor='middle'%3EBLUE%3C/text%3E%3Ctext x='200' y='175' font-family='Inter, sans-serif' font-size='11' fill='%233a5072' text-anchor='middle'%3E⚡ Quick reflexes = more earnings! Earn $0.20 per correct answer%3C/text%3E%3C/svg%3E" alt="Color Challenge Explanation" />
+      <div class="caption">🎯 Say the color, not the word! Earn $0.20 per correct answer. Speed = more earnings!</div>
+    </div>
+
     <div class="stats-grid">
       <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">19,500 <small>UGX</small></div><div class="stat-sub">&#8226; this month</div></div>
       <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">5,600,000 <small>UGX</small></div><div class="stat-sub">&#8226; all time</div></div>
@@ -1701,12 +1747,16 @@
     <div class="divider-light"></div>
     <div class="earn-grid">
       <div class="earn-card" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')"><div class="earn-left"><span class="label">Chat with Foreigners</span><span class="amount"><span class="usd">≈ $4.60</span></span></div><div class="earn-right">Chat</div></div>
-      <div class="earn-card" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')"><div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div><div class="earn-right">Music</div></div>
-      <div class="earn-card" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')"><div class="earn-left"><span class="label">Color Challenge Win</span><span class="amount"><span class="usd">≈ $3.24</span></span></div><div class="earn-right">Challenge</div></div>
+      <div class="earn-card" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵'); toggleMusicPlaylist();"><div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div><div class="earn-right">Music</div></div>
+      <div class="earn-card" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨'); toggleChallengeExplanation();"><div class="earn-left"><span class="label">Color Challenge Win</span><span class="amount"><span class="usd">≈ $3.24</span></span></div><div class="earn-right">Challenge</div></div>
     </div>
     <div class="activate-btn-wrapper"><a href="https://starhela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
-    <div class="nav-chips"><span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">💬 Chat</span><span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵')">🎵 Music</span><span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨')">🎨 Challenge</span></div>
-    <div style="margin-top: 4px;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><span style="font-weight: 700; font-size: 17px; color: #0b1a2f;">Live Members</span><span style="color: #1a2f4a; font-weight: 600;">—</span></div><div class="profile-list"><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">— <small>~$4.60</small></div></div></div></div>
+    <div class="nav-chips">
+      <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners', '', '$4.60', '💬')">💬 Chat</span>
+      <span class="nav-chip" onclick="openDemoAction('Earn with Music', '', '$1.35', '🎵'); toggleMusicPlaylist();">🎵 Music</span>
+      <span class="nav-chip" onclick="openDemoAction('Color Challenge', '', '$3.24', '🎨'); toggleChallengeExplanation();">🎨 Challenge</span>
+    </div>
+    <div style="margin-top: 4px;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;"><span style="font-weight: 700; font-size: 15px; color: #0b1a2f;">Live Members</span><span style="color: #1a2f4a; font-weight: 600;">—</span></div><div class="profile-list"><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">— <small>~$4.60</small></div></div></div></div>
     <div class="footer-note">✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
   </div>
 </div>
@@ -1718,7 +1768,7 @@
     <h3 id="actionTitle">Earn with Music</h3>
     <p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p>
     <div class="earn-amount" id="actionAmount">—</div>
-    <p style="font-size:14px; color:#5a6f73; margin-bottom:10px;" id="actionUsd">≈ $1.35 per track</p>
+    <p style="font-size:12px; color:#5a6f73; margin-bottom:10px;" id="actionUsd">≈ $1.35 per track</p>
     <button class="btn-close-popup" onclick="closeDemoAction()">Got it!</button>
   </div>
 </div>
@@ -1747,7 +1797,7 @@
     <div class="info">
       <div class="title">Live Withdrawal</div>
       <div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div>
-      <div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:11px;">just now</span></div>
+      <div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block; width:5px; height:5px; background:#10b981; border-radius:50%;"></span> <span style="font-size:9px;">just now</span></div>
     </div>
     <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
   </div>
@@ -1759,6 +1809,44 @@
 </a>
 
 <script>
+  // Toggle Music Playlist in demo page
+  function toggleMusicPlaylist() {
+    const el = document.getElementById('musicPlaylist');
+    if (el) {
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+      // Hide challenge if showing
+      document.getElementById('challengeExplanation').style.display = 'none';
+    }
+  }
+
+  // Toggle Challenge Explanation in demo page
+  function toggleChallengeExplanation() {
+    const el = document.getElementById('challengeExplanation');
+    if (el) {
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+      // Hide music if showing
+      document.getElementById('musicPlaylist').style.display = 'none';
+    }
+  }
+
+  // Open demo page with music playlist visible
+  function openDemoPageWithMusic() {
+    openDemoPage();
+    setTimeout(() => {
+      document.getElementById('musicPlaylist').style.display = 'block';
+      document.getElementById('challengeExplanation').style.display = 'none';
+    }, 100);
+  }
+
+  // Open demo page with challenge explanation visible
+  function openDemoPageWithChallenge() {
+    openDemoPage();
+    setTimeout(() => {
+      document.getElementById('challengeExplanation').style.display = 'block';
+      document.getElementById('musicPlaylist').style.display = 'none';
+    }, 100);
+  }
+
   function openDemoPage() {
     document.getElementById('demoPage').classList.add('active');
     document.body.style.overflow = 'hidden';
