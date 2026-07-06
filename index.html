@@ -6,7 +6,7 @@
   <title>AfricaJob · Premium earnings</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <style>
     /* ---- ROOT & RESET (unchanged except body font-size bumped +1px) ---- */
     :root {
@@ -182,6 +182,111 @@
     .way-card .way-content .way-cta .cta-btn:hover { transform: scale(1.04); box-shadow: 0 4px 20px var(--primary-glow); }
     .way-card .way-content .way-cta .cta-btn.gold { background: linear-gradient(135deg, var(--gold-light), #e09d2e); box-shadow: 0 2px 10px rgba(201,168,67,.3); }
     .way-card .way-content .way-cta .cta-btn.gold:hover { box-shadow: 0 4px 20px rgba(201,168,67,.4); }
+
+    /* ---- VIDEO CONTAINER (NEW) ---- */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      border-radius: var(--radius-md);
+      box-shadow: 0 8px 32px rgba(0,0,0,.08);
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,.3);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .video-label .badge-video {
+      background: linear-gradient(135deg, #ff0000, #cc0000);
+      color: #fff;
+      padding: 2px 14px;
+      border-radius: 40px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    .video-label h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .video-explain {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.6;
+      background: rgba(255,255,255,.4);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--primary);
+    }
+    .video-explain strong { color: var(--primary); }
+
+    /* ---- LIVE FOREIGNERS SECTION (REDESIGNED) ---- */
+    .live-foreigners-section {
+      border: 2px solid rgba(59,130,246,.12);
+      background: linear-gradient(135deg, rgba(59,130,246,.02), rgba(31,187,122,.03));
+    }
+    .live-foreigners-section .section-header .icon {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+    }
+    .live-intro {
+      background: rgba(59,130,246,.04);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(59,130,246,.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .live-intro .live-count {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--text-primary);
+    }
+    .live-intro .live-count span {
+      color: #3b82f6;
+    }
+    .live-intro .live-tip {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: rgba(255,255,255,.5);
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+    .live-intro .live-tip .emoji { margin-right: 4px; }
+    .live-explain {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding: 10px 14px;
+      background: rgba(255,255,255,.5);
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+    .live-explain strong { color: var(--text-primary); }
+    .live-explain .highlight-green { color: var(--primary); font-weight: 700; }
+    .live-explain .highlight-blue { color: #3b82f6; font-weight: 700; }
 
     /* ---- USER CARDS: NICE SEPARATION BOXES (border + shadow + gap) ---- */
     .user-card {
@@ -584,9 +689,49 @@
       <div class="stat-item"><div class="stat-number" id="onlineNow">3,300</div><div class="stat-label">ONLINE NOW</div></div>
     </div>
   </div>
-  <div class="section" id="liveChatSection" style="border:2px solid rgba(59,130,246,.06);">
-    <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
-    <p class="section-subtitle"><span id="activeChatters">11</span> active members online — sending nice messages</p>
+
+  <!-- ===== VIDEO SECTION: placed exactly above Live Foreigners ===== -->
+  <div class="section" style="border:2px solid rgba(255,0,0,.08);">
+    <div class="video-label">
+      <span class="badge-video">▶️ WATCH</span>
+      <h3>Promo Video</h3>
+    </div>
+    <div class="video-explain">
+      📹 <strong>See how AfricaJob works</strong> — Watch this short video to understand how you can start earning <span class="highlight-green">$30–$150 daily</span> by chatting, watching videos, and completing simple tasks. Real members, real payments!
+    </div>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/D2fil3ejVaU" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ===== LIVE FOREIGNERS SECTION: redesigned with better explanations ===== -->
+  <div class="section live-foreigners-section" id="liveChatSection">
+    <div class="section-header">
+      <div class="icon">💬</div>
+      <h2>Live Foreigners Online</h2>
+      <span class="badge live">🔴 LIVE</span>
+    </div>
+
+    <!-- New intro strip with live count -->
+    <div class="live-intro">
+      <span class="live-count">👥 <span id="activeChatters">11</span> members online</span>
+      <span class="live-tip"><span class="emoji">💡</span> Chat & earn $4.60/person</span>
+    </div>
+
+    <!-- New explanation box -->
+    <div class="live-explain">
+      🌍 <strong>Connect with real people from the USA, UK, Canada, Australia & more!</strong><br>
+      Each conversation you start earns you <span class="highlight-green">real money</span> — just exchange 5+ messages and get paid. 
+      These members are <span class="highlight-blue">actively looking to chat</span> right now. Click <strong>"Chat"</strong> below to start earning instantly!
+      <span style="display:block;margin-top:6px;font-size:12px;color:var(--text-muted);">⏳ New members join every minute — be the first to connect!</span>
+    </div>
+
+    <!-- Existing user cards (unchanged) -->
     <div id="liveUserList">
       <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy"><div class="user-info"><div class="name">Emma S., 28 <span class="online-dot"></span></div><div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div><div class="bio">💕 Loves travel, dancing &amp; making new friends</div><div class="status typing-status">✍️ typing now...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">Watch</a></div></div>
       <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy"><div class="user-info"><div class="name">James M., 34 <span class="online-dot"></span></div><div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div><div class="bio">⚽ Football lover, gamer &amp; coffee addict</div><div class="status typing-status">💬 saying hello...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">Watch</a></div></div>
@@ -601,6 +746,8 @@
       <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy"><div class="user-info"><div class="name">Sarah M., 24 <span class="online-dot"></span></div><div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div><div class="bio">🐨 Wildlife lover, surfer &amp; beach girl</div><div class="status typing-status">✍️ typing a reply...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">Watch</a></div></div>
     </div>
   </div>
+
+  <!-- The rest of the page remains exactly as it was -->
   <div class="section" style="border:2px solid rgba(31,187,122,.06);">
     <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
     <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
