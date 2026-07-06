@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <style>
-    /* ---- ROOT & RESET (unchanged except body font-size bumped +1px) ---- */
+    /* ---- ROOT & RESET ---- */
     :root {
       --primary: #1fbb7a;
       --primary-dark: #0f7b5a;
@@ -234,7 +234,7 @@
     }
     .video-explain strong { color: var(--primary); }
 
-    /* ---- LIVE FOREIGNERS SECTION (REDESIGNED) ---- */
+    /* ---- LIVE FOREIGNERS SECTION (FIXED) ---- */
     .live-foreigners-section {
       border: 2px solid rgba(59,130,246,.12);
       background: linear-gradient(135deg, rgba(59,130,246,.02), rgba(31,187,122,.03));
@@ -245,47 +245,33 @@
     .live-intro {
       background: rgba(59,130,246,.04);
       border-radius: var(--radius-sm);
-      padding: 12px 16px;
-      margin-bottom: 16px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
       border: 1px solid rgba(59,130,246,.08);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
     }
     .live-intro .live-count {
       font-weight: 800;
-      font-size: 18px;
+      font-size: 16px;
       color: var(--text-primary);
     }
     .live-intro .live-count span {
       color: #3b82f6;
     }
     .live-intro .live-tip {
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-secondary);
       background: rgba(255,255,255,.5);
-      padding: 4px 14px;
+      padding: 3px 12px;
       border-radius: 40px;
       font-weight: 600;
     }
-    .live-intro .live-tip .emoji { margin-right: 4px; }
-    .live-explain {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      padding: 10px 14px;
-      background: rgba(255,255,255,.5);
-      border-radius: var(--radius-sm);
-      margin-bottom: 16px;
-      border: 1px solid rgba(255,255,255,.3);
-    }
-    .live-explain strong { color: var(--text-primary); }
-    .live-explain .highlight-green { color: var(--primary); font-weight: 700; }
-    .live-explain .highlight-blue { color: #3b82f6; font-weight: 700; }
 
-    /* ---- USER CARDS: NICELY DESIGNED ---- */
+    /* ---- USER CARDS: FIXED LAYOUT ---- */
     .user-card {
       background: rgba(255,255,255,.7);
       backdrop-filter: blur(8px);
@@ -293,9 +279,6 @@
       border-radius: var(--radius-md);
       padding: 14px 16px;
       margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
       transition: var(--transition);
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0,0,0,.02), 0 1px 3px rgba(0,0,0,.02);
@@ -322,6 +305,11 @@
       transform: translateX(6px) scale(1.005);
       border-color: rgba(31,187,122,.2);
     }
+    .user-card .user-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
     .user-card img {
       width: 52px;
       height: 52px;
@@ -342,7 +330,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-family: Inter, system-ui, -apple-system, sans-serif;
     }
     .user-card .user-info .name .online-dot {
       display: inline-block;
@@ -375,11 +362,9 @@
       color: var(--text-secondary);
       font-weight: 500;
       margin-top: 3px;
-      font-family: Inter, system-ui, -apple-system, sans-serif;
       opacity: 0.85;
       letter-spacing: 0.2px;
       line-height: 1.5;
-      padding-right: 4px;
     }
     .user-card .user-info .status {
       background: rgba(0,0,0,.03);
@@ -390,41 +375,8 @@
       display: inline-block;
       margin-top: 4px;
       color: var(--text-secondary);
-      font-family: Inter, system-ui, -apple-system, sans-serif;
       border: 1px solid rgba(0,0,0,.04);
     }
-    .user-card .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-    .user-card .actions a {
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 10px;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      transition: var(--transition);
-      text-align: center;
-      min-width: 60px;
-    }
-    .user-card .actions .chat {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.1);
-      box-shadow: 0 2px 10px var(--primary-glow);
-    }
-    .user-card .actions .chat:hover { transform: scale(1.05); box-shadow: 0 4px 20px var(--primary-glow); }
-    .user-card .actions .watch {
-      background: rgba(255,255,255,.6);
-      color: var(--text-secondary);
-      border: 1px solid rgba(255,255,255,.4);
-      font-size: 9px;
-    }
-    .user-card .actions .watch:hover { background: rgba(255,255,255,.9); transform: scale(1.05); }
     .user-card .new-badge {
       background: #dc2626;
       color: #fff;
@@ -434,10 +386,38 @@
       border-radius: 40px;
       animation: pulseBadge 1.5s ease-in-out infinite;
     }
-    .user-card .flag-large {
-      font-size: 20px;
-      line-height: 1;
+    /* Actions below the profile */
+    .user-card .user-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,.04);
     }
+    .user-card .user-actions a {
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 11px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .user-card .user-actions .chat {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 2px 10px var(--primary-glow);
+    }
+    .user-card .user-actions .chat:hover { transform: scale(1.05); box-shadow: 0 4px 20px var(--primary-glow); }
+    .user-card .user-actions .watch {
+      background: rgba(255,255,255,.6);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255,255,255,.4);
+    }
+    .user-card .user-actions .watch:hover { background: rgba(255,255,255,.9); transform: scale(1.05); }
 
     .withdraw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; max-width: 420px; margin: 0 auto; }
     .withdraw-grid .item { background: rgba(255,255,255,.5); backdrop-filter: blur(10px); padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,.3); text-align: center; font-size: 11px; font-weight: 600; color: var(--text-primary); transition: var(--transition); }
@@ -484,7 +464,7 @@
     .footer-bottom .copy a { color: rgba(255,255,255,.4); text-decoration: none; font-weight: 700; transition: var(--transition); }
     .footer-bottom .copy a:hover { color: var(--primary); }
 
-    /* ---- demos & overlays ---- */
+    /* ---- DEMO PAGE ---- */
     .demo-page { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(241,245,249,.95); backdrop-filter: blur(20px); z-index: 20000; display: none; flex-direction: column; overflow-y: auto; padding: 20px 16px 40px; }
     .demo-page.active { display: flex; }
     .demo-page .demo-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 0 16px; border-bottom: 1px solid rgba(0,0,0,.04); margin-bottom: 20px; flex-shrink: 0; }
@@ -505,6 +485,65 @@
     .demo-card .welcome-sub { margin-top: 12px; font-size: 13px; color: var(--navy-light); line-height: 1.5; background: rgba(255,255,255,.3); backdrop-filter: blur(4px); padding: 10px 16px; border-radius: 80px; border: 1px solid rgba(255,255,255,.4); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .demo-card .welcome-sub .badge-new { background: var(--gold-light); font-weight: 700; font-size: 10px; padding: 2px 14px; border-radius: 40px; color: var(--navy); letter-spacing: .3px; }
     .demo-card .welcome-sub strong { color: var(--text-primary); font-weight: 700; }
+
+    /* Graph chart section */
+    .demo-card .graph-section {
+      background: rgba(255,255,255,.5);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.4);
+      box-shadow: var(--shadow-sm);
+    }
+    .demo-card .graph-section .graph-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-card .graph-section .graph-title span {
+      font-size: 11px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .demo-card .graph-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 80px;
+      gap: 6px;
+      padding-top: 4px;
+    }
+    .demo-card .graph-bars .bar {
+      flex: 1;
+      border-radius: 4px 4px 0 0;
+      min-height: 8px;
+      transition: var(--transition);
+      position: relative;
+      background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+    }
+    .demo-card .graph-bars .bar:nth-child(2) { background: linear-gradient(180deg, #3b82f6, #2563eb); height: 45%; }
+    .demo-card .graph-bars .bar:nth-child(3) { background: linear-gradient(180deg, var(--gold-light), #e09d2e); height: 70%; }
+    .demo-card .graph-bars .bar:nth-child(4) { background: linear-gradient(180deg, #8b5cf6, #7c3aed); height: 30%; }
+    .demo-card .graph-bars .bar:nth-child(5) { background: linear-gradient(180deg, #ec4899, #db2777); height: 55%; }
+    .demo-card .graph-bars .bar:nth-child(6) { background: linear-gradient(180deg, #14b8a6, #0d9488); height: 85%; }
+    .demo-card .graph-bars .bar:nth-child(7) { background: linear-gradient(180deg, #f59e0b, #d97706); height: 40%; }
+    .demo-card .graph-bars .bar:hover { transform: scaleY(1.05); opacity: 0.9; }
+    .demo-card .graph-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-size: 9px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .demo-card .graph-labels span { flex: 1; text-align: center; }
+
     .demo-card .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 6px 0 16px; }
     .demo-card .stat-card { background: rgba(255,255,255,.5); backdrop-filter: blur(8px); border-radius: var(--radius-md); padding: 14px 8px 12px; border: 1px solid rgba(255,255,255,.4); box-shadow: var(--shadow-sm); text-align: center; transition: var(--transition); }
     .demo-card .stat-card:hover { background: rgba(255,255,255,.8); border-color: rgba(201,168,67,.1); transform: translateY(-3px); box-shadow: var(--shadow-md); }
@@ -536,6 +575,59 @@
     .demo-card .nav-chips { display: flex; gap: 10px; flex-wrap: wrap; margin: 6px 0 16px; }
     .demo-card .nav-chip { background: rgba(255,255,255,.4); backdrop-filter: blur(4px); padding: 8px 20px; border-radius: 60px; font-size: 13px; font-weight: 600; color: var(--text-primary); border: 1px solid rgba(255,255,255,.3); cursor: pointer; transition: var(--transition); }
     .demo-card .nav-chip:hover { background: rgba(255,255,255,.7); border-color: rgba(201,168,67,.1); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+    /* Music, TikTok, YouTube sections - each in its own place */
+    .demo-card .feature-section {
+      background: rgba(255,255,255,.4);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin: 12px 0 16px;
+      border: 1px solid rgba(255,255,255,.3);
+      display: none;
+    }
+    .demo-card .feature-section.active {
+      display: block;
+    }
+    .demo-card .feature-section .feature-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .demo-card .feature-section .feature-header h4 {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text-primary);
+    }
+    .demo-card .feature-section .feature-header span {
+      font-size: 11px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .music-playlist .track { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.03); }
+    .music-playlist .track:last-child { border-bottom: none; }
+    .music-playlist .track span { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+    .music-playlist .track .play-btn { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; transition: var(--transition); box-shadow: 0 2px 10px var(--primary-glow); }
+    .music-playlist .track .play-btn:hover { transform: scale(1.1); box-shadow: 0 4px 20px var(--primary-glow); }
+
+    .tiktok-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tiktok-grid .video-card { background: rgba(255,255,255,.6); border-radius: var(--radius-sm); padding: 8px; text-align: center; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); cursor: pointer; }
+    .tiktok-grid .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+    .tiktok-grid .video-card .thumb { width: 100%; aspect-ratio: 9/16; border-radius: var(--radius-sm); background-size: cover; background-position: center; position: relative; border-radius: 6px; }
+    .tiktok-grid .video-card .thumb .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 30px; opacity: 0; transition: var(--transition); color: #fff; }
+    .tiktok-grid .video-card:hover .thumb .play-overlay { opacity: 1; }
+    .tiktok-grid .video-card .video-title { font-size: 11px; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+
+    .youtube-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .youtube-grid .video-card { background: rgba(255,255,255,.6); border-radius: var(--radius-sm); padding: 8px; text-align: center; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); cursor: pointer; }
+    .youtube-grid .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: #ff0000; }
+    .youtube-grid .video-card .thumb { width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-sm); background-size: cover; background-position: center; position: relative; border-radius: 6px; }
+    .youtube-grid .video-card .thumb .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 30px; opacity: 0; transition: var(--transition); color: #fff; }
+    .youtube-grid .video-card:hover .thumb .play-overlay { opacity: 1; }
+    .youtube-grid .video-card .video-title { font-size: 11px; font-weight: 700; color: var(--text-primary); margin-top: 4px; }
+
     .demo-card .profile-list { margin: 10px 0 18px; }
     .demo-card .profile-item { background: rgba(255,255,255,.4); backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(255,255,255,.3); margin-bottom: 8px; transition: var(--transition); }
     .demo-card .profile-item:hover { background: rgba(255,255,255,.7); transform: translateX(4px); }
@@ -547,28 +639,7 @@
     .demo-card .profile-amount small { font-weight: 500; color: var(--text-secondary); font-size: 11px; display: block; }
     .demo-card .footer-note { margin-top: 24px; text-align: center; font-size: 13px; font-weight: 500; color: var(--navy-light); padding: 12px 8px 4px; border-top: 1px solid rgba(255,215,0,.04); background: rgba(255,255,255,.2); backdrop-filter: blur(4px); border-radius: 60px; border: 1px solid rgba(255,255,255,.2); }
     .demo-card .footer-note span { font-weight: 700; background: linear-gradient(135deg, var(--navy-light), #2f4170); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .music-playlist { background: rgba(255,255,255,.5); backdrop-filter: blur(10px); border-radius: var(--radius-md); padding: 14px 16px; margin: 10px 0 16px; border: 1px solid rgba(255,255,255,.3); }
-    .music-playlist .track { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.03); }
-    .music-playlist .track:last-child { border-bottom: none; }
-    .music-playlist .track span { font-size: 13px; font-weight: 500; color: var(--text-primary); }
-    .music-playlist .track .play-btn { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; transition: var(--transition); box-shadow: 0 2px 10px var(--primary-glow); }
-    .music-playlist .track .play-btn:hover { transform: scale(1.1); box-shadow: 0 4px 20px var(--primary-glow); }
-    .tiktok-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .tiktok-grid .video-card { background: rgba(255,255,255,.6); border-radius: var(--radius-md); padding: 10px; text-align: center; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); cursor: pointer; }
-    .tiktok-grid .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--primary); }
-    .tiktok-grid .video-card .thumb { width: 100%; aspect-ratio: 9/16; border-radius: var(--radius-sm); background: #1a1a2e; display: flex; align-items: center; justify-content: center; font-size: 36px; color: #fff; font-weight: 700; background-size: cover; background-position: center; position: relative; }
-    .tiktok-grid .video-card .thumb .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 40px; opacity: 0; transition: var(--transition); }
-    .tiktok-grid .video-card:hover .thumb .play-overlay { opacity: 1; }
-    .tiktok-grid .video-card .video-title { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-top: 6px; }
-    .tiktok-grid .video-card .video-earn { font-size: 11px; font-weight: 600; color: var(--primary); }
-    .youtube-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .youtube-grid .video-card { background: rgba(255,255,255,.6); border-radius: var(--radius-md); padding: 10px; text-align: center; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); cursor: pointer; }
-    .youtube-grid .video-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: #ff0000; }
-    .youtube-grid .video-card .thumb { width: 100%; aspect-ratio: 16/9; border-radius: var(--radius-sm); background: #1a1a2e; display: flex; align-items: center; justify-content: center; font-size: 36px; color: #fff; font-weight: 700; background-size: cover; background-position: center; position: relative; }
-    .youtube-grid .video-card .thumb .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 40px; opacity: 0; transition: var(--transition); }
-    .youtube-grid .video-card:hover .thumb .play-overlay { opacity: 1; }
-    .youtube-grid .video-card .video-title { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-top: 6px; }
-    .youtube-grid .video-card .video-earn { font-size: 11px; font-weight: 600; color: #ff0000; }
+
     .chat-page-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5); backdrop-filter: blur(20px); z-index: 10000; display: none; align-items: center; justify-content: center; padding: 16px; }
     .chat-page-overlay.active { display: flex; }
     .chat-page { background: rgba(255,255,255,.95); backdrop-filter: blur(20px); border-radius: var(--radius-lg); max-width: 420px; width: 100%; height: 580px; display: flex; flex-direction: column; box-shadow: var(--shadow-xl); animation: slideUpFast .4s cubic-bezier(.16,1,.3,1); overflow: hidden; border: 1px solid rgba(255,255,255,.2); }
@@ -648,15 +719,13 @@
       .user-card .user-info .name { font-size: 14px; }
       .user-card .user-info .bio { font-size: 11px; }
       .tiktok-grid, .youtube-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .user-card .actions { flex-direction: row; }
-      .user-card .actions a { min-width: 50px; padding: 4px 12px; font-size: 9px; }
+      .user-card .user-actions { flex-direction: row; }
+      .user-card .user-actions a { padding: 4px 14px; font-size: 10px; }
     }
     .green-highlight { color: var(--primary) !important; font-weight: 900; }
     .text-center { text-align: center; }
     .mt-8 { margin-top: 8px; }
     .mb-4 { margin-bottom: 4px; }
-    .skeleton { background: linear-gradient(90deg, rgba(0,0,0,.04) 25%, rgba(0,0,0,.08) 50%, rgba(0,0,0,.04) 75%); background-size: 200% 100%; animation: skeletonShimmer 1.5s ease-in-out infinite; border-radius: var(--radius-sm); }
-    @keyframes skeletonShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
   </style>
 </head>
 <body>
@@ -718,7 +787,7 @@
     </div>
   </div>
 
-  <!-- ===== VIDEO SECTION: placed exactly above Live Foreigners ===== -->
+  <!-- ===== VIDEO SECTION ===== -->
   <div class="section" style="border:2px solid rgba(255,0,0,.08);">
     <div class="video-label">
       <span class="badge-video">▶️ WATCH</span>
@@ -737,7 +806,7 @@
     </div>
   </div>
 
-  <!-- ===== LIVE FOREIGNERS SECTION: redesigned with better explanations & richer bios ===== -->
+  <!-- ===== LIVE FOREIGNERS SECTION (FIXED) ===== -->
   <div class="section live-foreigners-section" id="liveChatSection">
     <div class="section-header">
       <div class="icon">💬</div>
@@ -747,174 +816,200 @@
 
     <div class="live-intro">
       <span class="live-count">👥 <span id="activeChatters">11</span> members online</span>
-      <span class="live-tip"><span class="emoji">💡</span> Chat & earn</span>
-    </div>
-
-    <div class="live-explain">
-      🌍 <strong>Connect with real people from the USA, UK, Canada, Australia & more!</strong><br>
-      Each conversation you start earns you <span class="highlight-green">real money</span> — just exchange messages and get paid. 
-      These members are <span class="highlight-blue">actively looking to chat</span> right now. Click <strong>"Chat"</strong> below to start earning!
-      <span style="display:block;margin-top:6px;font-size:12px;color:var(--text-muted);">⏳ New members join every minute — be the first to connect!</span>
+      <span class="live-tip">💬 Chat & earn</span>
     </div>
 
     <div id="liveUserList">
+      <!-- Emma -->
       <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
-        <div class="user-info">
-          <div class="name">Emma S., 28 <span class="online-dot"></span></div>
-          <div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">💕 Loves travel, dancing &amp; making new friends from around the world. She enjoys exploring new cultures and learning about different lifestyles. Always up for a fun conversation!</div>
-          <div class="status typing-status">✍️ typing now...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
+          <div class="user-info">
+            <div class="name">Emma S., 28 <span class="online-dot"></span></div>
+            <div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">💕 Loves travel, dancing &amp; making new friends from around the world. Always up for a fun conversation!</div>
+            <div class="status typing-status">✍️ typing now...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- James -->
       <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy">
-        <div class="user-info">
-          <div class="name">James M., 34 <span class="online-dot"></span></div>
-          <div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">⚽ Passionate football lover, dedicated gamer &amp; a true coffee enthusiast. He enjoys discussing sports, gaming strategies, and discovering the best coffee spots around the globe.</div>
-          <div class="status typing-status">💬 saying hello...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy">
+          <div class="user-info">
+            <div class="name">James M., 34 <span class="online-dot"></span></div>
+            <div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">⚽ Passionate football lover, dedicated gamer &amp; a true coffee enthusiast. Loves discussing sports and gaming.</div>
+            <div class="status typing-status">💬 saying hello...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Sophie -->
       <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy">
-        <div class="user-info">
-          <div class="name">Sophie L., 26 <span class="online-dot"></span></div>
-          <div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🎨 Talented artist, passionate painter &amp; nature enthusiast who finds inspiration in the beauty of the outdoors. She loves creating meaningful conversations through her experiences.</div>
-          <div class="status typing-status">⌨️ writing a reply...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy">
+          <div class="user-info">
+            <div class="name">Sophie L., 26 <span class="online-dot"></span></div>
+            <div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🎨 Talented artist, passionate painter &amp; nature enthusiast who finds inspiration in the beauty of the outdoors.</div>
+            <div class="status typing-status">⌨️ writing a reply...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sophie\'s video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sophie\'s video')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- David -->
       <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia">
-        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy">
-        <div class="user-info">
-          <div class="name">David R., 41 <span class="online-dot"></span></div>
-          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🏄 Surfing lover, avid hiker &amp; adventure seeker who has explored some of the most breathtaking trails and waves across Australia. Always ready to share stories from the road.</div>
-          <div class="status typing-status">💬 sending a message...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy">
+          <div class="user-info">
+            <div class="name">David R., 41 <span class="online-dot"></span></div>
+            <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🏄 Surfing lover, avid hiker &amp; adventure seeker who has explored some of the most breathtaking trails and waves.</div>
+            <div class="status typing-status">💬 sending a message...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch David\'s content')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch David\'s content')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Maria -->
       <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain">
-        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy">
-        <div class="user-info">
-          <div class="name">Maria G., 29 <span class="online-dot"></span></div>
-          <div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">💃 Talented Flamenco dancer, passionate foodie &amp; avid traveler who has visited over 30 countries. She loves sharing stories about dance, cuisine, and cultural experiences from around the world.</div>
-          <div class="status typing-status">✍️ typing a long message...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy">
+          <div class="user-info">
+            <div class="name">Maria G., 29 <span class="online-dot"></span></div>
+            <div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">💃 Talented Flamenco dancer, passionate foodie &amp; avid traveler who has visited over 30 countries worldwide.</div>
+            <div class="status typing-status">✍️ typing a long message...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Maria\'s video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Maria\'s video')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Thomas -->
       <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany">
-        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy">
-        <div class="user-info">
-          <div class="name">Thomas K., 37 <span class="online-dot"></span></div>
-          <div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">📚 Avid bookworm, dedicated cyclist &amp; tech enthusiast who loves discussing the latest gadgets, eBooks, and sustainable living. A curious mind always looking for engaging conversations.</div>
-          <div class="status typing-status">💬 saying hi there!</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy">
+          <div class="user-info">
+            <div class="name">Thomas K., 37 <span class="online-dot"></span></div>
+            <div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">📚 Avid bookworm, dedicated cyclist &amp; tech enthusiast who loves discussing the latest gadgets and sustainable living.</div>
+            <div class="status typing-status">💬 saying hi there!</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Thomas\'s content')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Thomas\'s content')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Anna -->
       <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France">
-        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy">
-        <div class="user-info">
-          <div class="name">Anna P., 31 <span class="online-dot"></span></div>
-          <div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🥐 Skilled pastry chef, devoted cat lover &amp; fashionista with a passion for creating beautiful things. She enjoys chatting about fashion trends, delicious recipes, and Parisian lifestyle.</div>
-          <div class="status typing-status">✍️ writing something...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy">
+          <div class="user-info">
+            <div class="name">Anna P., 31 <span class="online-dot"></span></div>
+            <div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🥐 Skilled pastry chef, devoted cat lover &amp; fashionista with a passion for creating beautiful things and recipes.</div>
+            <div class="status typing-status">✍️ writing something...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Anna\'s video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Anna\'s video')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Michael -->
       <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland">
-        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy">
-        <div class="user-info">
-          <div class="name">Michael D., 45 <span class="online-dot"></span></div>
-          <div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🍺 Pub culture enthusiast, skilled fisherman &amp; born storyteller who loves sharing tales from the Irish countryside. He enjoys discussing history, travel, and the best fishing spots around.</div>
-          <div class="status typing-status">💬 sending greetings...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy">
+          <div class="user-info">
+            <div class="name">Michael D., 45 <span class="online-dot"></span></div>
+            <div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🍺 Pub culture enthusiast, skilled fisherman &amp; born storyteller who loves sharing tales from the Irish countryside.</div>
+            <div class="status typing-status">💬 sending greetings...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Michael\'s story')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Michael\'s story')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Laura -->
       <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy">
-        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy">
-        <div class="user-info">
-          <div class="name">Laura B., 27 <span class="online-dot"></span></div>
-          <div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🍕 Passionate pizza maker, talented singer &amp; romantic soul who believes in the power of art and music. She loves sharing Italian culture, food stories, and heartfelt conversations with new friends.</div>
-          <div class="status typing-status">⌨️ responding...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy">
+          <div class="user-info">
+            <div class="name">Laura B., 27 <span class="online-dot"></span></div>
+            <div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🍕 Passionate pizza maker, talented singer &amp; romantic soul who believes in the power of art, music, and good food.</div>
+            <div class="status typing-status">⌨️ responding...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Laura\'s video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Laura\'s video')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Robert -->
       <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand">
-        <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy">
-        <div class="user-info">
-          <div class="name">Robert S., 39 <span class="online-dot"></span></div>
-          <div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div>
-          <div class="bio">🌿 Nature lover, passionate photographer &amp; avid hiker who has captured some of the most stunning landscapes across New Zealand. He loves sharing travel tips and photography stories.</div>
-          <div class="status typing-status">💬 chatting away...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy">
+          <div class="user-info">
+            <div class="name">Robert S., 39 <span class="online-dot"></span></div>
+            <div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div>
+            <div class="bio">🌿 Nature lover, passionate photographer &amp; avid hiker who has captured stunning landscapes across New Zealand.</div>
+            <div class="status typing-status">💬 chatting away...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Robert\'s content')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Robert\'s content')">▶ Watch</a>
         </div>
       </div>
 
+      <!-- Sarah -->
       <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia">
-        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
-        <div class="user-info">
-          <div class="name">Sarah M., 24 <span class="online-dot"></span></div>
-          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div>
-          <div class="bio">🐨 Wildlife lover, passionate surfer &amp; beach girl who spends her days exploring the beautiful Australian coastline. She loves talking about marine life, surfing adventures, and beach culture.</div>
-          <div class="status typing-status">✍️ typing a reply...</div>
+        <div class="user-top">
+          <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
+          <div class="user-info">
+            <div class="name">Sarah M., 24 <span class="online-dot"></span></div>
+            <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div>
+            <div class="bio">🐨 Wildlife lover, passionate surfer &amp; beach girl who spends her days exploring the beautiful Australian coastline.</div>
+            <div class="status typing-status">✍️ typing a reply...</div>
+          </div>
         </div>
-        <div class="actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">Watch</a>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">▶ Watch</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- The rest of the page remains exactly as it was -->
+  <!-- ===== 7 WAYS TO EARN ===== -->
   <div class="section" style="border:2px solid rgba(31,187,122,.06);">
     <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
     <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
@@ -928,11 +1023,15 @@
       <div class="way-card"><img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Surveys" loading="lazy"><div class="way-content"><div class="way-name">Paid Surveys</div><div class="way-desc">Answer surveys from global brands. Share your opinion and earn real money instantly.</div><div class="way-earn"><span class="sub">per survey</span></div><div class="way-cta"><button class="cta-btn" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Surveys</button></div></div></div>
     </div>
   </div>
+
+  <!-- ===== WITHDRAWAL METHODS ===== -->
   <div class="section" style="border:2px solid rgba(201,168,67,.12);">
     <div class="section-header"><div class="icon" style="background:linear-gradient(135deg,var(--gold-light),#e09d2e);">🏦</div><h2>Withdrawal Methods</h2><span class="badge" style="background:var(--gold-light);color:var(--navy);border-color:var(--gold-light);">💸 FAST</span></div>
     <p class="section-subtitle">By country — instant payouts</p>
     <div style="background:rgba(255,255,255,.5);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius-md);padding:10px 8px;text-align:center;"><div class="withdraw-grid"><div class="item">🇰🇪 Kenya → M-Pesa</div><div class="item">🇨🇲 Cameroon → MoMo</div><div class="item">🇬🇭 Ghana → MoMo</div><div class="item">🇳🇬 Nigeria → MoMo</div><div class="item">🇺🇬 Uganda → Mobile Money</div><div class="item">🇷🇼 Rwanda → Mobile Wallet</div><div class="item">🇿🇦 South Africa → Bank Transfer</div><div class="item">🇧🇼 Botswana → Mobile Money</div></div></div>
   </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
   <div class="section" style="border:2px solid rgba(139,92,246,.08);">
     <div class="section-header"><div class="icon">🚀</div><h2>How It Works</h2><span class="badge">3 STEPS</span></div>
     <p class="section-subtitle">Start earning in 3 simple steps</p>
@@ -943,6 +1042,8 @@
     </div>
     <div style="text-align:center;margin-top:12px;"><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
   </div>
+
+  <!-- ===== SUCCESS STORIES ===== -->
   <div class="section" style="border:2px solid rgba(236,72,153,.08);">
     <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
     <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
@@ -953,9 +1054,13 @@
       <div class="story-card"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Peter" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala</div><div class="samount">$1,550 earned last month</div><div class="sdesc">"Best decision! I earn more than my regular job."</div></div></div>
     </div>
   </div>
+
+  <!-- ===== LIFETIME ACCESS ===== -->
   <div class="section lifetime-section">
     <div style="text-align:center;"><div style="font-size:24px;font-weight:900;color:var(--text-primary);letter-spacing:-.5px;">Lifetime Access</div><p style="font-size:13px;color:var(--text-secondary);max-width:380px;margin:6px auto 8px;line-height:1.5;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p><div class="price-wrap"><span class="price-old">$10</span><span class="price-new">$5</span><span class="price-badge">🎯 LIMITED OFFER</span></div><p style="font-size:12px;color:var(--text-secondary);margin-bottom:12px;">No monthly fees · Instant access</p><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a></div>
   </div>
+
+  <!-- ===== FAQ ===== -->
   <div class="section" style="border:2px solid rgba(20,184,166,.08);">
     <div class="section-header"><div class="icon">❓</div><h2>Frequent Questions</h2><span class="badge">FAQ</span></div>
     <details style="margin-bottom:6px;"><summary>How much can I earn per day? <span class="arrow">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
@@ -965,47 +1070,256 @@
     <details style="margin-bottom:6px;"><summary>How long does it take to get paid? <span class="arrow">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
     <details style="margin-bottom:6px;"><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
   </div>
+
+  <!-- ===== FOOTER ===== -->
   <div class="footer-section">
     <div class="footer-grid"><div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Earn with Music</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li><li>Affiliate Bonus</li></ul></div><div class="col"><h4>ACCOUNT</h4><ul><li><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Create Account</a></li><li><a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Sign In</a></li><li><a href="#" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'});return!1">Try Demo</a></li></ul></div><div class="col"><h4>COUNTRIES</h4><ul><li>Uganda</li><li>Kenya</li><li>Tanzania</li><li>Rwanda</li></ul></div></div>
     <div class="footer-bottom"><div class="brand-small">© 2026 Africa<span>Job</span>. All rights reserved.</div><div class="copy">Built for Africa · <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Login</a></div></div>
   </div>
 </div>
+
+<!-- ===== DEMO PAGE ===== -->
 <div class="demo-page" id="demoPage">
   <div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
   <div class="demo-card">
     <div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current">English</span></div>
-    <div class="welcome-section"><div class="welcome-row"><div class="greeting">Welcome: <span>africajobug</span></div><div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500;color:var(--navy-light);">dashboard</span></div></div><div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏</div></div>
-    <div id="musicPlaylist" style="display:none;" class="music-playlist"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:800;font-size:16px;color:var(--text-primary);">🎵 Trending Tracks</span><span style="font-size:11px;color:var(--text-secondary);font-weight:500;">Earn $0.15/track</span></div><div class="track"><span>Blinding Lights - The Weeknd</span><button class="play-btn" onclick="alert('▶️ Playing: Blinding Lights\nEarn $0.15')">▶</button></div><div class="track"><span>Watermelon Sugar - Harry Styles</span><button class="play-btn" onclick="alert('▶️ Playing: Watermelon Sugar\nEarn $0.15')">▶</button></div><div class="track"><span>Levitating - Dua Lipa</span><button class="play-btn" onclick="alert('▶️ Playing: Levitating\nEarn $0.15')">▶</button></div><div class="track"><span>Montero - Lil Nas X</span><button class="play-btn" onclick="alert('▶️ Playing: Montero\nEarn $0.15')">▶</button></div><div class="track"><span>Stay - The Kid LAROI</span><button class="play-btn" onclick="alert('▶️ Playing: Stay\nEarn $0.15')">▶</button></div><div class="track"><span>Good 4 U - Olivia Rodrigo</span><button class="play-btn" onclick="alert('▶️ Playing: Good 4 U\nEarn $0.15')">▶</button></div><div style="margin-top:8px;font-size:12px;color:var(--text-secondary);text-align:center;">🎧 Listen to all tracks and earn up to $1.05 daily</div></div>
-    <div id="tiktokSection" style="display:none;" class="challenge-explanation"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-weight:800;font-size:16px;color:var(--text-primary);">🎬 TikTok Videos</span><span style="font-size:11px;color:var(--text-secondary);font-weight:500;">Earn $0.20/video</span></div><div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Watch trending TikTok videos and earn real money! Each video you watch pays you instantly.</div><div class="tiktok-grid"><div class="video-card" onclick="alert('▶️ Playing: Dance Challenge\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>🎵</span><div class="play-overlay">▶</div></div><div class="video-title">✨ Dance Challenge</div><div class="video-earn">Earn $0.20</div></div><div class="video-card" onclick="alert('▶️ Playing: Comedy Skit\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>😂</span><div class="play-overlay">▶</div></div><div class="video-title">😂 Comedy Skit</div><div class="video-earn">Earn $0.20</div></div><div class="video-card" onclick="alert('▶️ Playing: Cooking Tutorial\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>🍳</span><div class="play-overlay">▶</div></div><div class="video-title">🍳 Cooking Tutorial</div><div class="video-earn">Earn $0.20</div></div><div class="video-card" onclick="alert('▶️ Playing: Fitness Tips\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>💪</span><div class="play-overlay">▶</div></div><div class="video-title">💪 Fitness Tips</div><div class="video-earn">Earn $0.20</div></div><div class="video-card" onclick="alert('▶️ Playing: Travel Vlog\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>✈️</span><div class="play-overlay">▶</div></div><div class="video-title">✈️ Travel Vlog</div><div class="video-earn">Earn $0.20</div></div><div class="video-card" onclick="alert('▶️ Playing: DIY Crafts\nEarn $0.20')"><div class="thumb" style="background:linear-gradient(135deg,#ff0050,#00f2ea);"><span>🎨</span><div class="play-overlay">▶</div></div><div class="video-title">🎨 DIY Crafts</div><div class="video-earn">Earn $0.20</div></div></div><div style="margin-top:10px;font-size:12px;color:var(--text-secondary);text-align:center;">🎬 Watch all videos and earn up to $1.20 daily</div></div>
-    <div id="youtubeSection" style="display:none;" class="challenge-explanation"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;"><span style="font-weight:800;font-size:16px;color:var(--text-primary);">📺 YouTube Videos</span><span style="font-size:11px;color:var(--text-secondary);font-weight:500;">Earn $0.25/video</span></div><div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Watch trending YouTube videos and earn daily rewards. Each video you watch adds to your earnings!</div><div class="youtube-grid"><div class="video-card" onclick="alert('▶️ Playing: Tech Review\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>📱</span><div class="play-overlay">▶</div></div><div class="video-title">📱 Tech Review</div><div class="video-earn">Earn $0.25</div></div><div class="video-card" onclick="alert('▶️ Playing: Music Video\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>🎵</span><div class="play-overlay">▶</div></div><div class="video-title">🎵 Music Video</div><div class="video-earn">Earn $0.25</div></div><div class="video-card" onclick="alert('▶️ Playing: Documentary\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>🎬</span><div class="play-overlay">▶</div></div><div class="video-title">🎬 Documentary</div><div class="video-earn">Earn $0.25</div></div><div class="video-card" onclick="alert('▶️ Playing: Gaming Stream\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>🎮</span><div class="play-overlay">▶</div></div><div class="video-title">🎮 Gaming Stream</div><div class="video-earn">Earn $0.25</div></div><div class="video-card" onclick="alert('▶️ Playing: Cooking Show\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>🍳</span><div class="play-overlay">▶</div></div><div class="video-title">🍳 Cooking Show</div><div class="video-earn">Earn $0.25</div></div><div class="video-card" onclick="alert('▶️ Playing: Fitness Workout\nEarn $0.25')"><div class="thumb" style="background:linear-gradient(135deg,#ff0000,#cc0000);"><span>💪</span><div class="play-overlay">▶</div></div><div class="video-title">💪 Fitness Workout</div><div class="video-earn">Earn $0.25</div></div></div><div style="margin-top:10px;font-size:12px;color:var(--text-secondary);text-align:center;">📺 Watch all videos and earn up to $1.50 daily</div></div>
-    <div class="stats-grid"><div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">19,500 <small>UGX</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">5,600,000 <small>UGX</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">3,000,000 <small>UGX</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>2,600,000 <small>UGX</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div></div>
+    
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+      <div class="welcome-row">
+        <div class="greeting">Welcome: <span>africajobug</span></div>
+        <div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500;color:var(--navy-light);">dashboard</span></div>
+      </div>
+      <div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏</div>
+    </div>
+
+    <!-- Graph Chart Section -->
+    <div class="graph-section">
+      <div class="graph-title">
+        <span>📈 Earnings Overview</span>
+        <span>Last 7 days</span>
+      </div>
+      <div class="graph-bars">
+        <div class="bar" style="height:60%;"></div>
+        <div class="bar" style="height:45%;"></div>
+        <div class="bar" style="height:70%;"></div>
+        <div class="bar" style="height:30%;"></div>
+        <div class="bar" style="height:55%;"></div>
+        <div class="bar" style="height:85%;"></div>
+        <div class="bar" style="height:40%;"></div>
+      </div>
+      <div class="graph-labels">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+      </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">19,500 <small>UGX</small></div><div class="stat-sub">• this month</div></div>
+      <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">5,600,000 <small>UGX</small></div><div class="stat-sub">• all time</div></div>
+      <div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">3,000,000 <small>UGX</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div>
+      <div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>2,600,000 <small>UGX</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>
+    </div>
+
     <div class="divider-light"></div>
-    <div class="earn-grid"><div class="earn-card" onclick="openDemoAction('Chat with Foreigners','','$4.60','💬')"><div class="earn-left"><span class="label">Chat with Foreigners</span><span class="amount"><span class="usd">≈ $4.60</span></span></div><div class="earn-right">Chat</div></div><div class="earn-card" onclick="openDemoAction('Earn with Music','','$1.35','🎵');toggleMusicPlaylist();"><div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div><div class="earn-right">Music</div></div><div class="earn-card" onclick="openDemoAction('Paid TikTok Videos','','$2.40','🎬');toggleTikTokSection();"><div class="earn-left"><span class="label">TikTok Videos</span><span class="amount"><span class="usd">≈ $2.40</span></span></div><div class="earn-right">Watch</div></div><div class="earn-card" onclick="openDemoAction('YouTube Earning','','$3.00','📺');toggleYouTubeSection();"><div class="earn-left"><span class="label">YouTube Videos</span><span class="amount"><span class="usd">≈ $3.00</span></span></div><div class="earn-right">Watch</div></div></div>
+
+    <!-- Earn Grid -->
+    <div class="earn-grid">
+      <div class="earn-card" onclick="openDemoAction('Chat with Foreigners','','$4.60','💬')">
+        <div class="earn-left"><span class="label">Chat with Foreigners</span><span class="amount"><span class="usd">≈ $4.60</span></span></div>
+        <div class="earn-right">Chat</div>
+      </div>
+      <div class="earn-card" onclick="openDemoAction('Earn with Music','','$1.35','🎵');toggleMusicPlaylist();">
+        <div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div>
+        <div class="earn-right">Music</div>
+      </div>
+      <div class="earn-card" onclick="openDemoAction('Paid TikTok Videos','','$2.40','🎬');toggleTikTokSection();">
+        <div class="earn-left"><span class="label">TikTok Videos</span><span class="amount"><span class="usd">≈ $2.40</span></span></div>
+        <div class="earn-right">Watch</div>
+      </div>
+      <div class="earn-card" onclick="openDemoAction('YouTube Earning','','$3.00','📺');toggleYouTubeSection();">
+        <div class="earn-left"><span class="label">YouTube Videos</span><span class="amount"><span class="usd">≈ $3.00</span></span></div>
+        <div class="earn-right">Watch</div>
+      </div>
+    </div>
+
+    <!-- Music Playlist -->
+    <div class="feature-section music-playlist" id="musicPlaylist">
+      <div class="feature-header">
+        <h4>🎵 Trending Tracks</h4>
+        <span>Earn $0.15/track</span>
+      </div>
+      <div class="track"><span>Blinding Lights - The Weeknd</span><button class="play-btn" onclick="alert('▶️ Playing: Blinding Lights\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Watermelon Sugar - Harry Styles</span><button class="play-btn" onclick="alert('▶️ Playing: Watermelon Sugar\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Levitating - Dua Lipa</span><button class="play-btn" onclick="alert('▶️ Playing: Levitating\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Montero - Lil Nas X</span><button class="play-btn" onclick="alert('▶️ Playing: Montero\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Stay - The Kid LAROI</span><button class="play-btn" onclick="alert('▶️ Playing: Stay\nEarn $0.15')">▶</button></div>
+      <div class="track"><span>Good 4 U - Olivia Rodrigo</span><button class="play-btn" onclick="alert('▶️ Playing: Good 4 U\nEarn $0.15')">▶</button></div>
+      <div style="margin-top:8px;font-size:12px;color:var(--text-secondary);text-align:center;">🎧 Listen to all tracks and earn up to $1.05 daily</div>
+    </div>
+
+    <!-- TikTok Section -->
+    <div class="feature-section" id="tiktokSection">
+      <div class="feature-header">
+        <h4>🎬 TikTok Videos</h4>
+        <span>Earn $0.20/video</span>
+      </div>
+      <div style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
+      <div class="tiktok-grid">
+        <div class="video-card" onclick="alert('▶️ Playing: Dance Challenge')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">✨ Dance Challenge</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Comedy Skit')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">😂 Comedy Skit</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Cooking Tutorial')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🍳 Cooking Tutorial</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Fitness Tips')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">💪 Fitness Tips</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Travel Vlog')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=5');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">✈️ Travel Vlog</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: DIY Crafts')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=6');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🎨 DIY Crafts</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-secondary);text-align:center;">🎬 Watch all videos and earn daily</div>
+    </div>
+
+    <!-- YouTube Section -->
+    <div class="feature-section" id="youtubeSection">
+      <div class="feature-header">
+        <h4>📺 YouTube Videos</h4>
+        <span>Earn $0.25/video</span>
+      </div>
+      <div style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
+      <div class="youtube-grid">
+        <div class="video-card" onclick="alert('▶️ Playing: Tech Review')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">📱 Tech Review</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Music Video')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🎵 Music Video</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Documentary')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🎬 Documentary</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Gaming Stream')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🎮 Gaming Stream</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Cooking Show')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=14');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">🍳 Cooking Show</div>
+        </div>
+        <div class="video-card" onclick="alert('▶️ Playing: Fitness Workout')">
+          <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=15');"><div class="play-overlay">▶</div></div>
+          <div class="video-title">💪 Fitness Workout</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text-secondary);text-align:center;">📺 Watch all videos and earn daily</div>
+    </div>
+
+    <!-- Activate Button -->
     <div class="activate-btn-wrapper"><a href="https://starhela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
-    <div class="nav-chips"><span class="nav-chip" onclick="openDemoAction('Chat with Foreigners','','$4.60','💬')">💬 Chat</span><span class="nav-chip" onclick="openDemoAction('Earn with Music','','$1.35','🎵');toggleMusicPlaylist();">🎵 Music</span><span class="nav-chip" onclick="openDemoAction('Paid TikTok Videos','','$2.40','🎬');toggleTikTokSection();">🎬 TikTok</span><span class="nav-chip" onclick="openDemoAction('YouTube Earning','','$3.00','📺');toggleYouTubeSection();">📺 YouTube</span></div>
-    <div style="margin-top:4px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:var(--text-primary);">Live Members</span><span style="color:var(--text-secondary);font-weight:600;">—</span></div><div class="profile-list"><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">— <small>~$4.60</small></div></div><div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">— <small>~$4.60</small></div></div></div></div>
+
+    <!-- Nav Chips -->
+    <div class="nav-chips">
+      <span class="nav-chip" onclick="openDemoAction('Chat with Foreigners','','$4.60','💬')">💬 Chat</span>
+      <span class="nav-chip" onclick="openDemoAction('Earn with Music','','$1.35','🎵');toggleMusicPlaylist();">🎵 Music</span>
+      <span class="nav-chip" onclick="openDemoAction('Paid TikTok Videos','','$2.40','🎬');toggleTikTokSection();">🎬 TikTok</span>
+      <span class="nav-chip" onclick="openDemoAction('YouTube Earning','','$3.00','📺');toggleYouTubeSection();">📺 YouTube</span>
+    </div>
+
+    <!-- Live Members -->
+    <div style="margin-top:4px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <span style="font-weight:700;font-size:15px;color:var(--text-primary);">Live Members</span>
+        <span style="color:var(--text-secondary);font-weight:600;">—</span>
+      </div>
+      <div class="profile-list">
+        <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">— <small>~$4.60</small></div></div>
+        <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">— <small>~$4.60</small></div></div>
+        <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">— <small>~$4.60</small></div></div>
+        <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">— <small>~$4.60</small></div></div>
+      </div>
+    </div>
+
     <div class="footer-note">✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
   </div>
 </div>
+
+<!-- ===== OVERLAYS ===== -->
 <div class="demo-action-popup" id="demoActionPopup"><div class="popup-content"><div class="icon" id="actionIcon">🎵</div><h3 id="actionTitle">Earn with Music</h3><p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p><div class="earn-amount" id="actionAmount">—</div><p style="font-size:12px;color:var(--text-secondary);margin-bottom:10px;" id="actionUsd">≈ $1.35 per track</p><button class="btn-close-popup" onclick="closeDemoAction()">Got it!</button></div></div>
+
 <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://starhela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
+
 <div id="withdrawalPopup"><div class="popup-card" id="popupCard"><img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy"><div class="info"><div class="title">💸 Live Withdrawal</div><div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div><div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block;width:5px;height:5px;background:#10b981;border-radius:50%;"></span> <span style="font-size:9px;">just now</span></div></div><button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button></div></div>
+
 <a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp"></a>
+
 <script>
 window.addEventListener('scroll',function(){const s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
-function toggleMusicPlaylist(){const e=document.getElementById('musicPlaylist');if(e){e.style.display=e.style.display==='none'?'block':'none';document.getElementById('tiktokSection').style.display='none';document.getElementById('youtubeSection').style.display='none'}}
-function toggleTikTokSection(){const e=document.getElementById('tiktokSection');if(e){e.style.display=e.style.display==='none'?'block':'none';document.getElementById('musicPlaylist').style.display='none';document.getElementById('youtubeSection').style.display='none'}}
-function toggleYouTubeSection(){const e=document.getElementById('youtubeSection');if(e){e.style.display=e.style.display==='none'?'block':'none';document.getElementById('musicPlaylist').style.display='none';document.getElementById('tiktokSection').style.display='none'}}
-function openDemoPageWithMusic(){openDemoPage();setTimeout(()=>{document.getElementById('musicPlaylist').style.display='block';document.getElementById('tiktokSection').style.display='none';document.getElementById('youtubeSection').style.display='none'},150)}
-function openDemoPageWithTikTok(){openDemoPage();setTimeout(()=>{document.getElementById('tiktokSection').style.display='block';document.getElementById('musicPlaylist').style.display='none';document.getElementById('youtubeSection').style.display='none'},150)}
-function openDemoPageWithYouTube(){openDemoPage();setTimeout(()=>{document.getElementById('youtubeSection').style.display='block';document.getElementById('musicPlaylist').style.display='none';document.getElementById('tiktokSection').style.display='none'},150)}
+
+function toggleMusicPlaylist(){
+  const el = document.getElementById('musicPlaylist');
+  if(el) {
+    el.classList.toggle('active');
+    document.getElementById('tiktokSection').classList.remove('active');
+    document.getElementById('youtubeSection').classList.remove('active');
+  }
+}
+function toggleTikTokSection(){
+  const el = document.getElementById('tiktokSection');
+  if(el) {
+    el.classList.toggle('active');
+    document.getElementById('musicPlaylist').classList.remove('active');
+    document.getElementById('youtubeSection').classList.remove('active');
+  }
+}
+function toggleYouTubeSection(){
+  const el = document.getElementById('youtubeSection');
+  if(el) {
+    el.classList.toggle('active');
+    document.getElementById('musicPlaylist').classList.remove('active');
+    document.getElementById('tiktokSection').classList.remove('active');
+  }
+}
+
+function openDemoPageWithMusic(){openDemoPage();setTimeout(()=>{document.getElementById('musicPlaylist').classList.add('active');document.getElementById('tiktokSection').classList.remove('active');document.getElementById('youtubeSection').classList.remove('active')},150)}
+function openDemoPageWithTikTok(){openDemoPage();setTimeout(()=>{document.getElementById('tiktokSection').classList.add('active');document.getElementById('musicPlaylist').classList.remove('active');document.getElementById('youtubeSection').classList.remove('active')},150)}
+function openDemoPageWithYouTube(){openDemoPage();setTimeout(()=>{document.getElementById('youtubeSection').classList.add('active');document.getElementById('musicPlaylist').classList.remove('active');document.getElementById('tiktokSection').classList.remove('active')},150)}
+
 function openDemoPage(){document.getElementById('demoPage').classList.add('active');document.body.style.overflow='hidden'}
 function closeDemoPage(){document.getElementById('demoPage').classList.remove('active');document.body.style.overflow=''}
+
 function openDemoAction(t,a,u,i){document.getElementById('actionIcon').textContent=i||'💰';document.getElementById('actionTitle').textContent=t;document.getElementById('actionAmount').textContent=a||'—';document.getElementById('actionUsd').textContent='≈ '+u+' per action';document.getElementById('demoActionPopup').classList.add('active')}
 function closeDemoAction(){document.getElementById('demoActionPopup').classList.remove('active')}
 document.getElementById('demoActionPopup').addEventListener('click',function(e){if(e.target===this)closeDemoAction()});
+
+// Live counters
 !function(){const c=document.getElementById('liveCounter'),o=document.getElementById('onlineNow');let n=3300;function u(v){const f=v.toLocaleString();c&&(c.textContent=f);o&&(o.textContent=f)}u(n);setInterval(()=>{let d=Math.floor(Math.random()*14)-3,g=n+d;g<3240&&(g=3240+Math.floor(Math.random()*30));g>3600&&(g=3600-Math.floor(Math.random()*30));n=g;u(n)},2800);let t=187432;const r=document.getElementById('trustCounter');setInterval(()=>{t+=Math.floor(Math.random()*5)+2;t>189500&&(t=187000);r&&(r.textContent=t.toLocaleString())},2500);let h=187450;const e=document.getElementById('heroCounter');setInterval(()=>{h+=Math.floor(Math.random()*3)+1;h>189500&&(h=187000);e&&(e.textContent=h.toLocaleString())},3000);let l=187432;const a=document.getElementById('liveUsers');setInterval(()=>{l+=Math.floor(Math.random()*6)+1;l>189500&&(l=187000);a.textContent=l.toLocaleString()},5000);const s=document.getElementById('activeChatters');setInterval(()=>{s&&(s.textContent=Math.floor(Math.random()*4)+8)},5000);const i=['✍️ typing now...','💬 saying hello...','⌨️ writing a reply...','💬 sending a message...','✍️ typing a long message...','💬 saying hi there!','✍️ writing something...','💬 sending greetings...','⌨️ responding...','💬 chatting away...'];setInterval(()=>{document.querySelectorAll('.typing-status').forEach(e=>{e.textContent=i[Math.floor(Math.random()*i.length)]})},4200)}();
+
+// Withdrawal popups
 !function(){const w=[{flag:'🇰🇪',name:'James K.',amount:'2,580',method:'M-Pesa',gender:'male'},{flag:'🇬🇭',name:'Maureen A.',amount:'3,870',method:'MoMo',gender:'female'},{flag:'🇺🇬',name:'Sarah N.',amount:'166,500',method:'Mobile Money',gender:'female'},{flag:'🇳🇬',name:'Chidi O.',amount:'70,950',method:'MoMo',gender:'male'},{flag:'🇿🇦',name:'Lindiwe M.',amount:'1,020',method:'Bank Transfer',gender:'female'},{flag:'🇰🇪',name:'Omar H.',amount:'4,193',method:'M-Pesa',gender:'male'},{flag:'🇷🇼',name:'Diane U.',amount:'28,000',method:'Mobile Wallet',gender:'female'},{flag:'🇨🇲',name:'Samuel B.',amount:'25,700',method:'MoMo',gender:'male'},{flag:'🇬🇭',name:'Kwame A.',amount:'4,500',method:'MoMo',gender:'male'},{flag:'🇺🇬',name:'Grace T.',amount:'189,000',method:'Mobile Money',gender:'female'},{flag:'🇳🇬',name:'Bola K.',amount:'56,200',method:'MoMo',gender:'female'},{flag:'🇰🇪',name:'Peter M.',amount:'3,200',method:'M-Pesa',gender:'male'},{flag:'🇿🇦',name:'Thabo N.',amount:'890',method:'Bank Transfer',gender:'male'},{flag:'🇷🇼',name:'Alice U.',amount:'35,500',method:'Mobile Wallet',gender:'female'}],c={'🇰🇪':'KSh ','🇬🇭':'GH₵ ','🇺🇬':'UGX ','🇳🇬':'₦ ','🇿🇦':'R ','🇷🇼':'RWF ','🇨🇲':'XAF '};function s(f){return c[f]||'$'}const m=['https://randomuser.me/api/portraits/women/1.jpg','https://randomuser.me/api/portraits/women/2.jpg','https://randomuser.me/api/portraits/women/3.jpg','https://randomuser.me/api/portraits/women/4.jpg','https://randomuser.me/api/portraits/women/5.jpg','https://randomuser.me/api/portraits/women/6.jpg','https://randomuser.me/api/portraits/women/7.jpg'],g=['https://randomuser.me/api/portraits/men/1.jpg','https://randomuser.me/api/portraits/men/2.jpg','https://randomuser.me/api/portraits/men/3.jpg','https://randomuser.me/api/portraits/men/4.jpg','https://randomuser.me/api/portraits/men/5.jpg','https://randomuser.me/api/portraits/men/6.jpg','https://randomuser.me/api/portraits/men/7.jpg'];const p=document.getElementById('popupCard'),i=document.getElementById('popupUserImage'),n=document.getElementById('popupUserName'),l=document.getElementById('popupMethod');let u=[],a=-1;function b(gender){const pool=gender==='female'?m:g;let idx;do{idx=Math.floor(Math.random()*pool.length)}while(idx===a&&pool.length>1);a=idx;return pool[idx]}function r(){if(u.length>=w.length)u=[];const avail=w.map((_,i)=>i).filter(i=>!u.includes(i));if(avail.length===0){u=[];return r()}const idx=avail[Math.floor(Math.random()*avail.length)];u.push(idx);const d=w[idx];i.src=b(d.gender);n.textContent=d.flag+' '+d.name+' withdrew '+s(d.flag)+d.amount;l.textContent='via '+d.method;p.style.display='flex';p.style.animation='none';p.offsetHeight;p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';clearTimeout(window.popupTimer);window.popupTimer=setTimeout(()=>{p.style.animation='slideDownFast 0.4s cubic-bezier(0.55,0,0.1,1) forwards';setTimeout(()=>{p.style.display='flex';p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'},400)},1600)}setTimeout(r,600);setInterval(r,2000)}();
+
+// Chat functions
 let chatLocked=!1,chatUser=null,chatDesperate='';
 function openChatPage(a){const c=a.closest('.user-card')||a.closest('.demo-user-card');if(!c)return;const name=c.dataset.user||'Friend',img=c.dataset.img||'https://randomuser.me/api/portraits/women/68.jpg',country=c.dataset.country||'🌍',greeting=c.dataset.greeting||'👋 Hi! Let\'s chat!';chatDesperate=c.dataset.desperate||'😍 I\'m so interested! Please upgrade to continue!';chatUser=name;chatLocked=!1;document.getElementById('chatPageAvatar').src=img;document.getElementById('chatPageName').textContent=name;document.getElementById('chatPageStatus').textContent=country+' · Online';const area=document.getElementById('chatMessagesArea');area.innerHTML='';const msg=document.createElement('div');msg.className='chat-msg received';msg.innerHTML='<div class="msg-name">'+name+'</div>'+greeting+'<span class="time">just now</span>';area.appendChild(msg);document.getElementById('chatUpgradeBanner').style.display='none';document.getElementById('chatPageSendBtn').disabled=!1;document.getElementById('chatPageInput').disabled=!1;document.getElementById('chatPageInput').value='';document.getElementById('chatOverlay').classList.add('active');area.scrollTop=area.scrollHeight}
 function closeChatPage(){document.getElementById('chatOverlay').classList.remove('active');chatUser=null;chatLocked=!1}
