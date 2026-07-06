@@ -34,7 +34,6 @@
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    /* ⬆️ GLOBAL TEXT INCREASE: body +1px (approx 1.0625rem) */
     body {
       background: #eef2f5;
       font-family: Inter, system-ui, -apple-system, sans-serif;
@@ -44,10 +43,9 @@
       flex-direction: column;
       align-items: center;
       overflow-x: hidden;
-      font-size: 1.0625rem; /* ≈17px instead of 16px */
+      font-size: 1.0625rem;
       line-height: 1.6;
     }
-    /* all other elements inherit the bumped size */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -127,7 +125,6 @@
     .trust-badge:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
     .trust-badge .green-highlight { color: var(--primary); font-weight: 900; }
 
-    /* ---- SECTIONS (unchanged layout) ---- */
     .section { padding: 20px 16px 22px; margin-bottom: 12px; position: relative; background: rgba(255,255,255,.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
     .section:hover { box-shadow: var(--shadow-md); border-color: rgba(31,187,122,.1); transform: translateY(-2px); }
     .section:not(:last-child)::after { content: ''; position: absolute; bottom: -6px; left: 30%; right: 30%; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); opacity: .15; border-radius: 4px; }
@@ -183,7 +180,7 @@
     .way-card .way-content .way-cta .cta-btn.gold { background: linear-gradient(135deg, var(--gold-light), #e09d2e); box-shadow: 0 2px 10px rgba(201,168,67,.3); }
     .way-card .way-content .way-cta .cta-btn.gold:hover { box-shadow: 0 4px 20px rgba(201,168,67,.4); }
 
-    /* ---- VIDEO CONTAINER (NEW) ---- */
+    /* ---- VIDEO CONTAINER ---- */
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
@@ -229,9 +226,9 @@
       font-size: 13px;
       color: var(--text-secondary);
       margin-bottom: 14px;
-      line-height: 1.6;
+      line-height: 1.5;
       background: rgba(255,255,255,.4);
-      padding: 12px 16px;
+      padding: 10px 14px;
       border-radius: var(--radius-sm);
       border-left: 4px solid var(--primary);
     }
@@ -288,35 +285,51 @@
     .live-explain .highlight-green { color: var(--primary); font-weight: 700; }
     .live-explain .highlight-blue { color: #3b82f6; font-weight: 700; }
 
-    /* ---- USER CARDS: NICE SEPARATION BOXES (border + shadow + gap) ---- */
+    /* ---- USER CARDS: NICELY DESIGNED ---- */
     .user-card {
-      background: rgba(255,255,255,.6);
+      background: rgba(255,255,255,.7);
       backdrop-filter: blur(8px);
       border: 2px solid rgba(255,255,255,.5);
       border-radius: var(--radius-md);
-      padding: 12px 14px;
-      margin-bottom: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       transition: var(--transition);
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0,0,0,.02), 0 1px 3px rgba(0,0,0,.02);
+      position: relative;
+      overflow: hidden;
+    }
+    .user-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), #3b82f6, var(--primary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .user-card:hover::before {
+      opacity: 1;
     }
     .user-card:hover {
-      background: rgba(255,255,255,.85);
-      box-shadow: 0 12px 32px rgba(0,0,0,.06), 0 4px 16px rgba(31,187,122,.06);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 12px 32px rgba(0,0,0,.06), 0 4px 16px rgba(31,187,122,.08);
       transform: translateX(6px) scale(1.005);
-      border-color: rgba(31,187,122,.25);
+      border-color: rgba(31,187,122,.2);
     }
     .user-card img {
-      width: 48px;
-      height: 48px;
+      width: 52px;
+      height: 52px;
       border-radius: 100%;
       object-fit: cover;
-      border: 2px solid var(--primary);
+      border: 3px solid var(--primary);
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(31,187,122,.12);
+      box-shadow: 0 2px 12px rgba(31,187,122,.15);
     }
     .user-card .user-info {
       flex: 1;
@@ -324,17 +337,17 @@
     }
     .user-card .user-info .name {
       font-weight: 800;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-primary);
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
       font-family: Inter, system-ui, -apple-system, sans-serif;
     }
     .user-card .user-info .name .online-dot {
       display: inline-block;
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       background: #10b981;
       border-radius: 50%;
       animation: pulse-dot 2s ease-in-out infinite;
@@ -345,7 +358,8 @@
       color: var(--text-secondary);
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      margin-top: 1px;
     }
     .user-card .user-info .country .live-label {
       background: #dc2626;
@@ -357,39 +371,45 @@
       animation: pulseBadge 1.5s ease-in-out infinite;
     }
     .user-card .user-info .bio {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-secondary);
       font-weight: 500;
-      margin-top: 2px;
+      margin-top: 3px;
       font-family: Inter, system-ui, -apple-system, sans-serif;
-      opacity: 0.8;
+      opacity: 0.85;
       letter-spacing: 0.2px;
+      line-height: 1.5;
+      padding-right: 4px;
     }
     .user-card .user-info .status {
       background: rgba(0,0,0,.03);
       border-radius: 50px;
-      padding: 2px 12px;
+      padding: 3px 14px;
       font-size: 10px;
       font-weight: 600;
       display: inline-block;
-      margin-top: 3px;
+      margin-top: 4px;
       color: var(--text-secondary);
       font-family: Inter, system-ui, -apple-system, sans-serif;
+      border: 1px solid rgba(0,0,0,.04);
     }
     .user-card .actions {
       display: flex;
+      flex-direction: column;
       gap: 6px;
       flex-shrink: 0;
     }
     .user-card .actions a {
-      padding: 5px 14px;
+      padding: 6px 16px;
       border-radius: 40px;
-      font-weight: 800;
-      font-size: 9px;
+      font-weight: 700;
+      font-size: 10px;
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
       transition: var(--transition);
+      text-align: center;
+      min-width: 60px;
     }
     .user-card .actions .chat {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -397,13 +417,14 @@
       border: 1px solid rgba(255,255,255,.1);
       box-shadow: 0 2px 10px var(--primary-glow);
     }
-    .user-card .actions .chat:hover { transform: scale(1.05); }
+    .user-card .actions .chat:hover { transform: scale(1.05); box-shadow: 0 4px 20px var(--primary-glow); }
     .user-card .actions .watch {
-      background: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.6);
       color: var(--text-secondary);
-      border: 1px solid rgba(255,255,255,.3);
+      border: 1px solid rgba(255,255,255,.4);
+      font-size: 9px;
     }
-    .user-card .actions .watch:hover { background: rgba(255,255,255,.8); }
+    .user-card .actions .watch:hover { background: rgba(255,255,255,.9); transform: scale(1.05); }
     .user-card .new-badge {
       background: #dc2626;
       color: #fff;
@@ -413,6 +434,11 @@
       border-radius: 40px;
       animation: pulseBadge 1.5s ease-in-out infinite;
     }
+    .user-card .flag-large {
+      font-size: 20px;
+      line-height: 1;
+    }
+
     .withdraw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; max-width: 420px; margin: 0 auto; }
     .withdraw-grid .item { background: rgba(255,255,255,.5); backdrop-filter: blur(10px); padding: 6px 10px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,.3); text-align: center; font-size: 11px; font-weight: 600; color: var(--text-primary); transition: var(--transition); }
     .withdraw-grid .item:hover { transform: translateY(-2px); border-color: var(--gold-light); box-shadow: var(--shadow-sm); }
@@ -620,8 +646,10 @@
       .section { padding: 14px 12px 16px; }
       .user-card img { width: 42px; height: 42px; }
       .user-card .user-info .name { font-size: 14px; }
-      .user-card .user-info .bio { font-size: 10px; }
+      .user-card .user-info .bio { font-size: 11px; }
       .tiktok-grid, .youtube-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .user-card .actions { flex-direction: row; }
+      .user-card .actions a { min-width: 50px; padding: 4px 12px; font-size: 9px; }
     }
     .green-highlight { color: var(--primary) !important; font-weight: 900; }
     .text-center { text-align: center; }
@@ -694,10 +722,10 @@
   <div class="section" style="border:2px solid rgba(255,0,0,.08);">
     <div class="video-label">
       <span class="badge-video">▶️ WATCH</span>
-      <h3>Promo Video</h3>
+      <h3>Explanation Video</h3>
     </div>
     <div class="video-explain">
-      📹 <strong>See how AfricaJob works</strong> — Watch this short video to understand how you can start earning <span class="highlight-green">$30–$150 daily</span> by chatting, watching videos, and completing simple tasks. Real members, real payments!
+      📹 <strong>Watch how AfricaJob works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!
     </div>
     <div class="video-container">
       <iframe 
@@ -709,7 +737,7 @@
     </div>
   </div>
 
-  <!-- ===== LIVE FOREIGNERS SECTION: redesigned with better explanations ===== -->
+  <!-- ===== LIVE FOREIGNERS SECTION: redesigned with better explanations & richer bios ===== -->
   <div class="section live-foreigners-section" id="liveChatSection">
     <div class="section-header">
       <div class="icon">💬</div>
@@ -717,33 +745,172 @@
       <span class="badge live">🔴 LIVE</span>
     </div>
 
-    <!-- New intro strip with live count -->
     <div class="live-intro">
       <span class="live-count">👥 <span id="activeChatters">11</span> members online</span>
-      <span class="live-tip"><span class="emoji">💡</span> Chat & earn $4.60/person</span>
+      <span class="live-tip"><span class="emoji">💡</span> Chat & earn</span>
     </div>
 
-    <!-- New explanation box -->
     <div class="live-explain">
       🌍 <strong>Connect with real people from the USA, UK, Canada, Australia & more!</strong><br>
-      Each conversation you start earns you <span class="highlight-green">real money</span> — just exchange 5+ messages and get paid. 
-      These members are <span class="highlight-blue">actively looking to chat</span> right now. Click <strong>"Chat"</strong> below to start earning instantly!
+      Each conversation you start earns you <span class="highlight-green">real money</span> — just exchange messages and get paid. 
+      These members are <span class="highlight-blue">actively looking to chat</span> right now. Click <strong>"Chat"</strong> below to start earning!
       <span style="display:block;margin-top:6px;font-size:12px;color:var(--text-muted);">⏳ New members join every minute — be the first to connect!</span>
     </div>
 
-    <!-- Existing user cards (unchanged) -->
     <div id="liveUserList">
-      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy"><div class="user-info"><div class="name">Emma S., 28 <span class="online-dot"></span></div><div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div><div class="bio">💕 Loves travel, dancing &amp; making new friends</div><div class="status typing-status">✍️ typing now...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">Watch</a></div></div>
-      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy"><div class="user-info"><div class="name">James M., 34 <span class="online-dot"></span></div><div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div><div class="bio">⚽ Football lover, gamer &amp; coffee addict</div><div class="status typing-status">💬 saying hello...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">Watch</a></div></div>
-      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy"><div class="user-info"><div class="name">Sophie L., 26 <span class="online-dot"></span></div><div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div><div class="bio">🎨 Art lover, painter &amp; nature enthusiast</div><div class="status typing-status">⌨️ writing a reply...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sophie\'s video')">Watch</a></div></div>
-      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia"><img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy"><div class="user-info"><div class="name">David R., 41 <span class="online-dot"></span></div><div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div><div class="bio">🏄 Surfing, hiking &amp; adventure seeker</div><div class="status typing-status">💬 sending a message...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch David\'s content')">Watch</a></div></div>
-      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy"><div class="user-info"><div class="name">Maria G., 29 <span class="online-dot"></span></div><div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div><div class="bio">💃 Flamenco dancer, foodie &amp; traveler</div><div class="status typing-status">✍️ typing a long message...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Maria\'s video')">Watch</a></div></div>
-      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany"><img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy"><div class="user-info"><div class="name">Thomas K., 37 <span class="online-dot"></span></div><div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div><div class="bio">📚 Bookworm, cyclist &amp; tech enthusiast</div><div class="status typing-status">💬 saying hi there!</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Thomas\'s content')">Watch</a></div></div>
-      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy"><div class="user-info"><div class="name">Anna P., 31 <span class="online-dot"></span></div><div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div><div class="bio">🥐 Pastry chef, cat lover &amp; fashionista</div><div class="status typing-status">✍️ writing something...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Anna\'s video')">Watch</a></div></div>
-      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland"><img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy"><div class="user-info"><div class="name">Michael D., 45 <span class="online-dot"></span></div><div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div><div class="bio">🍺 Pub lover, fisherman &amp; storyteller</div><div class="status typing-status">💬 sending greetings...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Michael\'s story')">Watch</a></div></div>
-      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy"><img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy"><div class="user-info"><div class="name">Laura B., 27 <span class="online-dot"></span></div><div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div><div class="bio">🍕 Pizza maker, singer &amp; romantic soul</div><div class="status typing-status">⌨️ responding...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Laura\'s video')">Watch</a></div></div>
-      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand"><img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy"><div class="user-info"><div class="name">Robert S., 39 <span class="online-dot"></span></div><div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div><div class="bio">🌿 Nature lover, photographer &amp; hiker</div><div class="status typing-status">💬 chatting away...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Robert\'s content')">Watch</a></div></div>
-      <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy"><div class="user-info"><div class="name">Sarah M., 24 <span class="online-dot"></span></div><div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div><div class="bio">🐨 Wildlife lover, surfer &amp; beach girl</div><div class="status typing-status">✍️ typing a reply...</div></div><div class="actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">Watch</a></div></div>
+      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
+        <div class="user-info">
+          <div class="name">Emma S., 28 <span class="online-dot"></span></div>
+          <div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">💕 Loves travel, dancing &amp; making new friends from around the world. She enjoys exploring new cultures and learning about different lifestyles. Always up for a fun conversation!</div>
+          <div class="status typing-status">✍️ typing now...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy">
+        <div class="user-info">
+          <div class="name">James M., 34 <span class="online-dot"></span></div>
+          <div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">⚽ Passionate football lover, dedicated gamer &amp; a true coffee enthusiast. He enjoys discussing sports, gaming strategies, and discovering the best coffee spots around the globe.</div>
+          <div class="status typing-status">💬 saying hello...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy">
+        <div class="user-info">
+          <div class="name">Sophie L., 26 <span class="online-dot"></span></div>
+          <div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🎨 Talented artist, passionate painter &amp; nature enthusiast who finds inspiration in the beauty of the outdoors. She loves creating meaningful conversations through her experiences.</div>
+          <div class="status typing-status">⌨️ writing a reply...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sophie\'s video')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy">
+        <div class="user-info">
+          <div class="name">David R., 41 <span class="online-dot"></span></div>
+          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🏄 Surfing lover, avid hiker &amp; adventure seeker who has explored some of the most breathtaking trails and waves across Australia. Always ready to share stories from the road.</div>
+          <div class="status typing-status">💬 sending a message...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch David\'s content')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy">
+        <div class="user-info">
+          <div class="name">Maria G., 29 <span class="online-dot"></span></div>
+          <div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">💃 Talented Flamenco dancer, passionate foodie &amp; avid traveler who has visited over 30 countries. She loves sharing stories about dance, cuisine, and cultural experiences from around the world.</div>
+          <div class="status typing-status">✍️ typing a long message...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Maria\'s video')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany">
+        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy">
+        <div class="user-info">
+          <div class="name">Thomas K., 37 <span class="online-dot"></span></div>
+          <div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">📚 Avid bookworm, dedicated cyclist &amp; tech enthusiast who loves discussing the latest gadgets, eBooks, and sustainable living. A curious mind always looking for engaging conversations.</div>
+          <div class="status typing-status">💬 saying hi there!</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Thomas\'s content')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France">
+        <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy">
+        <div class="user-info">
+          <div class="name">Anna P., 31 <span class="online-dot"></span></div>
+          <div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🥐 Skilled pastry chef, devoted cat lover &amp; fashionista with a passion for creating beautiful things. She enjoys chatting about fashion trends, delicious recipes, and Parisian lifestyle.</div>
+          <div class="status typing-status">✍️ writing something...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Anna\'s video')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland">
+        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy">
+        <div class="user-info">
+          <div class="name">Michael D., 45 <span class="online-dot"></span></div>
+          <div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🍺 Pub culture enthusiast, skilled fisherman &amp; born storyteller who loves sharing tales from the Irish countryside. He enjoys discussing history, travel, and the best fishing spots around.</div>
+          <div class="status typing-status">💬 sending greetings...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Michael\'s story')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy">
+        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy">
+        <div class="user-info">
+          <div class="name">Laura B., 27 <span class="online-dot"></span></div>
+          <div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🍕 Passionate pizza maker, talented singer &amp; romantic soul who believes in the power of art and music. She loves sharing Italian culture, food stories, and heartfelt conversations with new friends.</div>
+          <div class="status typing-status">⌨️ responding...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Laura\'s video')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand">
+        <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy">
+        <div class="user-info">
+          <div class="name">Robert S., 39 <span class="online-dot"></span></div>
+          <div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div>
+          <div class="bio">🌿 Nature lover, passionate photographer &amp; avid hiker who has captured some of the most stunning landscapes across New Zealand. He loves sharing travel tips and photography stories.</div>
+          <div class="status typing-status">💬 chatting away...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Robert\'s content')">Watch</a>
+        </div>
+      </div>
+
+      <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia">
+        <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
+        <div class="user-info">
+          <div class="name">Sarah M., 24 <span class="online-dot"></span></div>
+          <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div>
+          <div class="bio">🐨 Wildlife lover, passionate surfer &amp; beach girl who spends her days exploring the beautiful Australian coastline. She loves talking about marine life, surfing adventures, and beach culture.</div>
+          <div class="status typing-status">✍️ typing a reply...</div>
+        </div>
+        <div class="actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">Watch</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -754,10 +921,10 @@
     <div class="ways-grid">
       <div class="way-card"><img class="way-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy"><div class="way-content"><div class="way-name">Chat with Foreigners</div><div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div><div class="way-earn"><span class="sub">per person</span></div><div class="way-cta"><button class="cta-btn" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Chatting</button></div></div></div>
       <div class="way-card"><img class="way-icon" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&h=100&fit=crop&crop=center" alt="Music" loading="lazy"><div class="way-content"><div class="way-name">Earn with Music</div><div class="way-desc">Listen to 10 trending global tracks — The Weeknd, Harry Styles, Dua Lipa and more. Earn for every track you play.</div><div class="way-earn"><span class="sub">per month</span></div><div class="way-cta"><button class="cta-btn" onclick="openDemoPageWithMusic();return!1">Start Listening</button></div></div></div>
-      <div class="way-card"><img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" loading="lazy" style="background:#1a1a2e;padding:4px;"><div class="way-content"><div class="way-name">Paid TikTok Videos</div><div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div><div class="way-earn"><span class="sub">per video</span></div><div class="way-cta"><button class="cta-btn" onclick="openDemoPageWithTikTok();return!1">Watch Videos</button></div></div></div>
+      <div class="way-card"><img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" loading="lazy" style="background:#1a1a2e;padding:4px;"><div class="way-content"><div class="way-name">Paid TikTok Videos</div><div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div><div class="way-earn"><span class="sub">per video</span></div><div class="way-cta"><button class="cta-btn gold" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Watch Videos</button></div></div></div>
       <div class="way-card"><img class="way-icon" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Affiliate" loading="lazy"><div class="way-content"><div class="way-name">Affiliate Bonus</div><div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div><div class="way-earn">BONUS</div><div class="way-cta"><button class="cta-btn gold" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Referring</button></div></div></div>
       <div class="way-card"><img class="way-icon" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&crop=center" alt="WhatsApp" loading="lazy"><div class="way-content"><div class="way-name">WhatsApp Posting</div><div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div><div class="way-earn"><span class="sub">per post</span></div><div class="way-cta"><button class="cta-btn" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Posting</button></div></div></div>
-      <div class="way-card"><img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" loading="lazy" style="background:#1a1a2e;padding:4px;"><div class="way-content"><div class="way-name">YouTube Earning</div><div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div><div class="way-earn"><span class="sub">per day</span></div><div class="way-cta"><button class="cta-btn gold" onclick="openDemoPageWithYouTube();return!1">Start Watching</button></div></div></div>
+      <div class="way-card"><img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" loading="lazy" style="background:#1a1a2e;padding:4px;"><div class="way-content"><div class="way-name">YouTube Earning</div><div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div><div class="way-earn"><span class="sub">per day</span></div><div class="way-cta"><button class="cta-btn gold" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Watching</button></div></div></div>
       <div class="way-card"><img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Surveys" loading="lazy"><div class="way-content"><div class="way-name">Paid Surveys</div><div class="way-desc">Answer surveys from global brands. Share your opinion and earn real money instantly.</div><div class="way-earn"><span class="sub">per survey</span></div><div class="way-cta"><button class="cta-btn" onclick="window.open('https://starhela.com/register.php?ref=Myqashapp','_blank')">Start Surveys</button></div></div></div>
     </div>
   </div>
