@@ -987,8 +987,8 @@
     .chat-page-footer button:hover { transform: scale(1.04); box-shadow: 0 8px 24px var(--primary-glow); }
     .chat-page-footer button:disabled { opacity: .5; cursor: not-allowed; transform: none; }
 
-    /* ---- WITHDRAWAL POPUP - MOVED HIGHER SO IT DOESN'T COVER WHATSAPP BUTTON ---- */
-    #withdrawalPopup { position: fixed; bottom: 120px; right: 16px; z-index: 9999; max-width: 300px; width: 100%; pointer-events: none; display: flex; flex-direction: column; gap: 8px; }
+    /* ---- WITHDRAWAL POPUP - MOVED TO LEFT ---- */
+    #withdrawalPopup { position: fixed; bottom: 120px; left: 16px; z-index: 9999; max-width: 300px; width: 100%; pointer-events: none; display: flex; flex-direction: column; gap: 8px; }
     #withdrawalPopup .popup-card { background: rgba(11,26,47,.95); backdrop-filter: blur(20px); border: 2px solid rgba(31,187,122,.15); border-radius: var(--radius-md); padding: 10px 12px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; pointer-events: auto; animation: slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; }
     #withdrawalPopup .popup-card img { width: 40px; height: 40px; border-radius: 60px; object-fit: cover; border: 2px solid var(--primary); flex-shrink: 0; }
     #withdrawalPopup .popup-card .info { flex: 1; min-width: 0; }
@@ -998,10 +998,12 @@
     #withdrawalPopup .popup-card .close { background: rgba(255,255,255,.04); border: none; color: rgba(255,255,255,.5); width: 24px; height: 24px; border-radius: 40px; cursor: pointer; font-size: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; transition: var(--transition); }
     #withdrawalPopup .popup-card .close:hover { background: rgba(255,255,255,.08); }
 
-    /* ---- WHATSAPP BUTTON - REDUCED SIZE ---- */
-    .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 9998; width: 48px; height: 48px; border-radius: 50%; box-shadow: 0 8px 32px rgba(37,211,102,.3); transition: var(--transition); cursor: pointer; border: 2px solid #fff; background: linear-gradient(135deg, #25D366, #128C7E); display: flex; align-items: center; justify-content: center; }
-    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 12px 40px rgba(37,211,102,.4); }
-    .whatsapp-float img { width: 55%; height: 55%; object-fit: contain; display: block; filter: brightness(0) invert(1); }
+    /* ---- WHATSAPP BUTTON - REDUCED SIZE WITH TEXT ---- */
+    .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 9998; display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .whatsapp-float .whatsapp-icon { width: 48px; height: 48px; border-radius: 50%; box-shadow: 0 8px 32px rgba(37,211,102,.3); transition: var(--transition); border: 2px solid #fff; background: linear-gradient(135deg, #25D366, #128C7E); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .whatsapp-float .whatsapp-icon:hover { transform: scale(1.08); box-shadow: 0 12px 40px rgba(37,211,102,.4); }
+    .whatsapp-float .whatsapp-icon img { width: 55%; height: 55%; object-fit: contain; display: block; filter: brightness(0) invert(1); }
+    .whatsapp-float .whatsapp-text { background: rgba(11,26,47,.85); backdrop-filter: blur(12px); padding: 8px 16px; border-radius: 60px; border: 1px solid rgba(37,211,102,.3); font-weight: 800; font-size: 14px; color: #fff; letter-spacing: -.2px; white-space: nowrap; box-shadow: 0 8px 32px rgba(0,0,0,.3); }
 
     .demo-action-popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.7); backdrop-filter: blur(12px); z-index: 30000; display: none; align-items: center; justify-content: center; padding: 20px; }
     .demo-action-popup.active { display: flex; }
@@ -1036,8 +1038,9 @@
       .story-card img { width: 40px; height: 40px; }
       .way-card .way-icon { width: 38px; height: 38px; }
       .way-card { padding: 10px 12px; }
-      .whatsapp-float { width: 44px; height: 44px; bottom: 16px; right: 16px; }
-      #withdrawalPopup { bottom: 80px; right: 10px; max-width: 200px; }
+      .whatsapp-float .whatsapp-icon { width: 44px; height: 44px; }
+      .whatsapp-float .whatsapp-text { font-size: 12px; padding: 6px 12px; }
+      #withdrawalPopup { bottom: 80px; left: 10px; max-width: 200px; }
       .footer-section { margin-left: -10px; margin-right: -10px; padding-left: 10px; padding-right: 10px; }
       .section { padding: 14px 12px 16px; }
       .user-card img { width: 42px; height: 42px; }
@@ -1386,9 +1389,12 @@
 
 <div id="withdrawalPopup"><div class="popup-card" id="popupCard"><img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy"><div class="info"><div class="title">💸 Live Withdrawal</div><div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div><div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block;width:5px;height:5px;background:#10b981;border-radius:50%;"></span> <span style="font-size:9px;">just now</span></div></div><button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button></div></div>
 
-<!-- WhatsApp Float Button - REDUCED SIZE -->
+<!-- WhatsApp Float Button - REDUCED SIZE WITH TEXT -->
 <a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
-  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp">
+  <div class="whatsapp-icon">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp">
+  </div>
+  <span class="whatsapp-text">WhatsApp Group</span>
 </a>
 
 <script>
@@ -1457,9 +1463,9 @@ const countryData = {
     label: '🇰🇪 Kenya',
     stats: {
       expense: '550',
-      profits: '820,000',
-      balance: '440,000',
-      withdrawn: '380,000'
+      profits: '620,000',
+      balance: '270,000',
+      withdrawn: '350,000'
     },
     earnItems: [
       { label: 'Chat with Foreigners', amount: '2,200', usd: '$4.60' },
@@ -1474,9 +1480,9 @@ const countryData = {
     label: '🇬🇭 Ghana',
     stats: {
       expense: '95',
-      profits: '412,000',
-      balance: '220,000',
-      withdrawn: '190,000'
+      profits: '212,000',
+      balance: '92,000',
+      withdrawn: '120,000'
     },
     earnItems: [
       { label: 'Chat with Foreigners', amount: '1,120', usd: '$4.60' },
@@ -1524,7 +1530,7 @@ const countryData = {
     symbol: '$',
     label: '🇺🇸 USD',
     stats: {
-      expense: '150',
+      expense: '10',
       profits: '43,000',
       balance: '23,000',
       withdrawn: '20,000'
