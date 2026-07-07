@@ -865,6 +865,37 @@
     .demo-card .nav-chip { background: rgba(255,255,255,.04); backdrop-filter: blur(4px); padding: 8px 20px; border-radius: 60px; font-size: 13px; font-weight: 600; color: #fff; border: 1px solid rgba(255,255,255,.04); cursor: pointer; transition: var(--transition); }
     .demo-card .nav-chip:hover { background: rgba(255,255,255,.08); border-color: rgba(201,168,67,.06); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
 
+    /* Country Dashboard Switcher */
+    .country-dashboards {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 10px 0 14px;
+    }
+    .country-dashboards .country-btn {
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,.7);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    .country-dashboards .country-btn:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateY(-2px);
+    }
+    .country-dashboards .country-btn.active {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 12px var(--primary-glow);
+    }
+
     .demo-card .feature-section {
       background: rgba(255,255,255,.04);
       backdrop-filter: blur(8px);
@@ -1112,171 +1143,7 @@
       <span class="live-tip">💬 Chat & earn</span>
     </div>
     <div id="liveUserList">
-      <div class="user-card" data-user="Emma S." data-greeting="👋 Hi! I'm Emma, tell me about yourself!" data-desperate="😍 Emma: Oh my god, I'm so into you! Please upgrade so we can keep talking! 🔥" data-img="https://randomuser.me/api/portraits/women/68.jpg" data-country="🇺🇸 USA">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma S." loading="lazy">
-          <div class="user-info">
-            <div class="name">Emma S., 28 <span class="online-dot"></span></div>
-            <div class="country">🇺🇸 USA <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">💕 Loves travel, dancing &amp; making new friends from around the world. Always up for a fun conversation!</div>
-            <div class="status typing-status">✍️ typing now...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Emma\'s latest video')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="James M." data-greeting="👋 Hey, James here. You look interesting!" data-desperate="😘 James: I'm really desperate to chat with you! Upgrade now so we can talk more! ❤️" data-img="https://randomuser.me/api/portraits/men/32.jpg" data-country="🇬🇧 UK">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James M." loading="lazy">
-          <div class="user-info">
-            <div class="name">James M., 34 <span class="online-dot"></span></div>
-            <div class="country">🇬🇧 UK <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">⚽ Passionate football lover, dedicated gamer &amp; a true coffee enthusiast. Loves discussing sports and gaming.</div>
-            <div class="status typing-status">💬 saying hello...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch James\'s story')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Sophie L." data-greeting="👋 Sophie here! I'd love to know you!" data-desperate="💕 Sophie: You're so amazing! I want to chat more but you need to upgrade! Please! 😩" data-img="https://randomuser.me/api/portraits/women/44.jpg" data-country="🇨🇦 Canada">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie L." loading="lazy">
-          <div class="user-info">
-            <div class="name">Sophie L., 26 <span class="online-dot"></span></div>
-            <div class="country">🇨🇦 Canada <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🎨 Talented artist, passionate painter &amp; nature enthusiast who finds inspiration in the beauty of the outdoors.</div>
-            <div class="status typing-status">⌨️ writing a reply...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sophie\'s video')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="David R." data-greeting="👋 David here. Let's chat!" data-desperate="🔥 David: I'm so interested in you! Upgrade to keep this conversation going! 🙏" data-img="https://randomuser.me/api/portraits/men/55.jpg" data-country="🇦🇺 Australia">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David R." loading="lazy">
-          <div class="user-info">
-            <div class="name">David R., 41 <span class="online-dot"></span></div>
-            <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🏄 Surfing lover, avid hiker &amp; adventure seeker who has explored some of the most breathtaking trails and waves.</div>
-            <div class="status typing-status">💬 sending a message...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch David\'s content')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Maria G." data-greeting="👋 Maria! You seem so cool!" data-desperate="😍 Maria: I'm so desperate to chat with you! Upgrade now! ❤️" data-img="https://randomuser.me/api/portraits/women/33.jpg" data-country="🇪🇸 Spain">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Maria G." loading="lazy">
-          <div class="user-info">
-            <div class="name">Maria G., 29 <span class="online-dot"></span></div>
-            <div class="country">🇪🇸 Spain <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">💃 Talented Flamenco dancer, passionate foodie &amp; avid traveler who has visited over 30 countries worldwide.</div>
-            <div class="status typing-status">✍️ typing a long message...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Maria\'s video')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Thomas K." data-greeting="👋 Thomas here. Hi!" data-desperate="💬 Thomas: I'm really interested! Upgrade so we can chat more! 😍" data-img="https://randomuser.me/api/portraits/men/42.jpg" data-country="🇩🇪 Germany">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Thomas K." loading="lazy">
-          <div class="user-info">
-            <div class="name">Thomas K., 37 <span class="online-dot"></span></div>
-            <div class="country">🇩🇪 Germany <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">📚 Avid bookworm, dedicated cyclist &amp; tech enthusiast who loves discussing the latest gadgets and sustainable living.</div>
-            <div class="status typing-status">💬 saying hi there!</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Thomas\'s content')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Anna P." data-greeting="👋 Anna! You look nice!" data-desperate="❤️ Anna: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/55.jpg" data-country="🇫🇷 France">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Anna P." loading="lazy">
-          <div class="user-info">
-            <div class="name">Anna P., 31 <span class="online-dot"></span></div>
-            <div class="country">🇫🇷 France <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🥐 Skilled pastry chef, devoted cat lover &amp; fashionista with a passion for creating beautiful things and recipes.</div>
-            <div class="status typing-status">✍️ writing something...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Anna\'s video')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Michael D." data-greeting="👋 Michael here. What's up?" data-desperate="🍀 Michael: I'm very interested! Upgrade to chat more! 🍀" data-img="https://randomuser.me/api/portraits/men/67.jpg" data-country="🇮🇪 Ireland">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael D." loading="lazy">
-          <div class="user-info">
-            <div class="name">Michael D., 45 <span class="online-dot"></span></div>
-            <div class="country">🇮🇪 Ireland <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🍺 Pub culture enthusiast, skilled fisherman &amp; born storyteller who loves sharing tales from the Irish countryside.</div>
-            <div class="status typing-status">💬 sending greetings...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Michael\'s story')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Laura B." data-greeting="👋 Laura! You seem amazing!" data-desperate="❤️ Laura: I'm so interested! Please upgrade to keep chatting! ❤️" data-img="https://randomuser.me/api/portraits/women/63.jpg" data-country="🇮🇹 Italy">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Laura B." loading="lazy">
-          <div class="user-info">
-            <div class="name">Laura B., 27 <span class="online-dot"></span></div>
-            <div class="country">🇮🇹 Italy <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🍕 Passionate pizza maker, talented singer &amp; romantic soul who believes in the power of art, music, and good food.</div>
-            <div class="status typing-status">⌨️ responding...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Laura\'s video')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Robert S." data-greeting="👋 Robert here! Let's talk." data-desperate="😍 Robert: I'm desperate to chat with you! Upgrade now! 😍" data-img="https://randomuser.me/api/portraits/men/88.jpg" data-country="🇳🇿 New Zealand">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/men/88.jpg" alt="Robert S." loading="lazy">
-          <div class="user-info">
-            <div class="name">Robert S., 39 <span class="online-dot"></span></div>
-            <div class="country">🇳🇿 New Zealand <span class="live-label">🔴 LIVE</span></div>
-            <div class="bio">🌿 Nature lover, passionate photographer &amp; avid hiker who has captured stunning landscapes across New Zealand.</div>
-            <div class="status typing-status">💬 chatting away...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Robert\'s content')">▶ Watch</a>
-        </div>
-      </div>
-      <div class="user-card" data-user="Sarah M." data-greeting="👋 Hi! I'm Sarah, you seem so cute!" data-desperate="💕 Sarah: Omg I'm so into you! Please upgrade so we can keep talking! 😍" data-img="https://randomuser.me/api/portraits/women/90.jpg" data-country="🇦🇺 Australia">
-        <div class="user-top">
-          <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Sarah M." loading="lazy">
-          <div class="user-info">
-            <div class="name">Sarah M., 24 <span class="online-dot"></span></div>
-            <div class="country">🇦🇺 Australia <span class="live-label">🔴 LIVE</span> <span class="new-badge">NEW</span></div>
-            <div class="bio">🐨 Wildlife lover, passionate surfer &amp; beach girl who spends her days exploring the beautiful Australian coastline.</div>
-            <div class="status typing-status">✍️ typing a reply...</div>
-          </div>
-        </div>
-        <div class="user-actions">
-          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch Sarah\'s video')">▶ Watch</a>
-        </div>
-      </div>
+      <!-- Dynamic content will be inserted here -->
     </div>
   </div>
 
@@ -1353,7 +1220,17 @@
 <div class="demo-page" id="demoPage">
   <div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
   <div class="demo-card">
-    <div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current">English</span></div>
+    <div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current" id="currentCountryDisplay">🇺🇬 Uganda</span></div>
+    
+    <!-- Country Dashboard Switcher -->
+    <div class="country-dashboards" id="countryDashboards">
+      <button class="country-btn active" data-country="uganda" onclick="switchDashboard('uganda')">🇺🇬 Uganda</button>
+      <button class="country-btn" data-country="kenya" onclick="switchDashboard('kenya')">🇰🇪 Kenya</button>
+      <button class="country-btn" data-country="ghana" onclick="switchDashboard('ghana')">🇬🇭 Ghana</button>
+      <button class="country-btn" data-country="nigeria" onclick="switchDashboard('nigeria')">🇳🇬 Nigeria</button>
+      <button class="country-btn" data-country="usd" onclick="switchDashboard('usd')">🇺🇸 USD</button>
+    </div>
+
     <div class="welcome-section">
       <div class="welcome-row">
         <div class="greeting">Welcome: <span>africajobug</span></div>
@@ -1385,30 +1262,12 @@
         <span>Sun</span>
       </div>
     </div>
-    <div class="stats-grid">
-      <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">19,500 <small>UGX</small></div><div class="stat-sub">• this month</div></div>
-      <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">5,600,000 <small>UGX</small></div><div class="stat-sub">• all time</div></div>
-      <div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">3,000,000 <small>UGX</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div>
-      <div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>2,600,000 <small>UGX</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>
+    <div class="stats-grid" id="dashboardStats">
+      <!-- Dynamic stats will be updated by JavaScript -->
     </div>
     <div class="divider-light"></div>
-    <div class="earn-grid">
-      <div class="earn-card" onclick="openDemoAction('Chat with Foreigners','','$4.60','💬')">
-        <div class="earn-left"><span class="label">Chat with Foreigners</span><span class="amount"><span class="usd">≈ $4.60</span></span></div>
-        <div class="earn-right">Chat</div>
-      </div>
-      <div class="earn-card" onclick="openDemoAction('Earn with Music','','$1.35','🎵');toggleMusicPlaylist();">
-        <div class="earn-left"><span class="label">Per Music Track</span><span class="amount"><span class="usd">≈ $1.35</span></span></div>
-        <div class="earn-right">Music</div>
-      </div>
-      <div class="earn-card" onclick="openDemoAction('Paid TikTok Videos','','$2.40','🎬');toggleTikTokSection();">
-        <div class="earn-left"><span class="label">TikTok Videos</span><span class="amount"><span class="usd">≈ $2.40</span></span></div>
-        <div class="earn-right">Watch</div>
-      </div>
-      <div class="earn-card" onclick="openDemoAction('YouTube Earning','','$3.00','📺');toggleYouTubeSection();">
-        <div class="earn-left"><span class="label">YouTube Videos</span><span class="amount"><span class="usd">≈ $3.00</span></span></div>
-        <div class="earn-right">Watch</div>
-      </div>
+    <div class="earn-grid" id="earnGrid">
+      <!-- Dynamic earn items will be updated by JavaScript -->
     </div>
     <div class="feature-section music-playlist" id="musicPlaylist">
       <div class="feature-header">
@@ -1521,11 +1380,21 @@
 
 <div id="withdrawalPopup"><div class="popup-card" id="popupCard"><img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy"><div class="info"><div class="title">💸 Live Withdrawal</div><div class="name" id="popupUserName">🇰🇪 James K. withdrew KSh 2,580</div><div class="method"><span id="popupMethod">via M-Pesa</span> <span style="display:inline-block;width:5px;height:5px;background:#10b981;border-radius:50%;"></span> <span style="font-size:9px;">just now</span></div></div><button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button></div></div>
 
-<a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp"></a>
+<!-- WhatsApp Float Button with Text -->
+<a href="https://chat.whatsapp.com/JPIvJ4kchCPLHMbgJsUblI?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener noreferrer" style="position:fixed;bottom:24px;right:24px;z-index:9998;display:flex;align-items:center;gap:12px;text-decoration:none;">
+  <div style="display:flex;align-items:center;gap:10px;background:rgba(11,26,47,.85);backdrop-filter:blur(12px);padding:6px 16px 6px 6px;border-radius:60px;border:1px solid rgba(37,211,102,.3);box-shadow:0 8px 32px rgba(0,0,0,.3);">
+    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 4px 20px rgba(37,211,102,.3);flex-shrink:0;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" style="width:30px;height:30px;display:block;filter:brightness(0)invert(1);">
+    </div>
+    <span style="font-weight:800;font-size:15px;color:#fff;letter-spacing:-.2px;white-space:nowrap;">WhatsApp Group</span>
+  </div>
+</a>
 
 <script>
+// ===== SCROLL PROGRESS =====
 window.addEventListener('scroll',function(){const s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 
+// ===== DEMO PAGE FUNCTIONS =====
 function toggleMusicPlaylist(){
   const el = document.getElementById('musicPlaylist');
   if(el) {
@@ -1562,19 +1431,228 @@ function openDemoAction(t,a,u,i){document.getElementById('actionIcon').textConte
 function closeDemoAction(){document.getElementById('demoActionPopup').classList.remove('active')}
 document.getElementById('demoActionPopup').addEventListener('click',function(e){if(e.target===this)closeDemoAction()});
 
-// Live counters
-!function(){const c=document.getElementById('liveCounter'),o=document.getElementById('onlineNow');let n=3300;function u(v){const f=v.toLocaleString();c&&(c.textContent=f);o&&(o.textContent=f)}u(n);setInterval(()=>{let d=Math.floor(Math.random()*14)-3,g=n+d;g<3240&&(g=3240+Math.floor(Math.random()*30));g>3600&&(g=3600-Math.floor(Math.random()*30));n=g;u(n)},2800);let t=187432;const r=document.getElementById('trustCounter');setInterval(()=>{t+=Math.floor(Math.random()*5)+2;t>189500&&(t=187000);r&&(r.textContent=t.toLocaleString())},2500);let h=187450;const e=document.getElementById('heroCounter');setInterval(()=>{h+=Math.floor(Math.random()*3)+1;h>189500&&(h=187000);e&&(e.textContent=h.toLocaleString())},3000);let l=187432;const a=document.getElementById('liveUsers');setInterval(()=>{l+=Math.floor(Math.random()*6)+1;l>189500&&(l=187000);a.textContent=l.toLocaleString()},5000);const s=document.getElementById('activeChatters');setInterval(()=>{s&&(s.textContent=Math.floor(Math.random()*4)+8)},5000);const i=['✍️ typing now...','💬 saying hello...','⌨️ writing a reply...','💬 sending a message...','✍️ typing a long message...','💬 saying hi there!','✍️ writing something...','💬 sending greetings...','⌨️ responding...','💬 chatting away...'];setInterval(()=>{document.querySelectorAll('.typing-status').forEach(e=>{e.textContent=i[Math.floor(Math.random()*i.length)]})},4200)}();
+// ===== COUNTRY DASHBOARD =====
+const countryData = {
+  uganda: {
+    currency: 'UGX',
+    symbol: 'UGX',
+    label: '🇺🇬 Uganda',
+    stats: {
+      expense: '19,500',
+      profits: '5,600,000',
+      balance: '3,000,000',
+      withdrawn: '2,600,000'
+    },
+    earnItems: [
+      { label: 'Chat with Foreigners', amount: '15,200', usd: '$4.60' },
+      { label: 'Per Music Track', amount: '4,500', usd: '$1.35' },
+      { label: 'TikTok Videos', amount: '8,000', usd: '$2.40' },
+      { label: 'YouTube Videos', amount: '10,000', usd: '$3.00' }
+    ]
+  },
+  kenya: {
+    currency: 'KES',
+    symbol: 'KSh',
+    label: '🇰🇪 Kenya',
+    stats: {
+      expense: '2,850',
+      profits: '820,000',
+      balance: '440,000',
+      withdrawn: '380,000'
+    },
+    earnItems: [
+      { label: 'Chat with Foreigners', amount: '2,200', usd: '$4.60' },
+      { label: 'Per Music Track', amount: '650', usd: '$1.35' },
+      { label: 'TikTok Videos', amount: '1,150', usd: '$2.40' },
+      { label: 'YouTube Videos', amount: '1,440', usd: '$3.00' }
+    ]
+  },
+  ghana: {
+    currency: 'GHS',
+    symbol: 'GH₵',
+    label: '🇬🇭 Ghana',
+    stats: {
+      expense: '1,430',
+      profits: '412,000',
+      balance: '220,000',
+      withdrawn: '190,000'
+    },
+    earnItems: [
+      { label: 'Chat with Foreigners', amount: '1,120', usd: '$4.60' },
+      { label: 'Per Music Track', amount: '330', usd: '$1.35' },
+      { label: 'TikTok Videos', amount: '580', usd: '$2.40' },
+      { label: 'YouTube Videos', amount: '730', usd: '$3.00' }
+    ]
+  },
+  nigeria: {
+    currency: 'NGN',
+    symbol: '₦',
+    label: '🇳🇬 Nigeria',
+    stats: {
+      expense: '8,400',
+      profits: '2,420,000',
+      balance: '1,300,000',
+      withdrawn: '1,120,000'
+    },
+    earnItems: [
+      { label: 'Chat with Foreigners', amount: '6,500', usd: '$4.60' },
+      { label: 'Per Music Track', amount: '1,900', usd: '$1.35' },
+      { label: 'TikTok Videos', amount: '3,400', usd: '$2.40' },
+      { label: 'YouTube Videos', amount: '4,200', usd: '$3.00' }
+    ]
+  },
+  usd: {
+    currency: 'USD',
+    symbol: '$',
+    label: '🇺🇸 USD',
+    stats: {
+      expense: '150',
+      profits: '43,000',
+      balance: '23,000',
+      withdrawn: '20,000'
+    },
+    earnItems: [
+      { label: 'Chat with Foreigners', amount: '115', usd: '$4.60' },
+      { label: 'Per Music Track', amount: '34', usd: '$1.35' },
+      { label: 'TikTok Videos', amount: '60', usd: '$2.40' },
+      { label: 'YouTube Videos', amount: '75', usd: '$3.00' }
+    ]
+  }
+};
 
-// Withdrawal popups
+let currentCountry = 'uganda';
+
+function switchDashboard(country) {
+  currentCountry = country;
+  const data = countryData[country];
+  
+  // Update active button
+  document.querySelectorAll('.country-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.country === country);
+  });
+  
+  // Update country display
+  document.getElementById('currentCountryDisplay').textContent = data.label;
+  
+  // Update stats
+  const statsHtml = `
+    <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">${data.stats.expense} <small>${data.currency}</small></div><div class="stat-sub">• this month</div></div>
+    <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">${data.stats.profits} <small>${data.currency}</small></div><div class="stat-sub">• all time</div></div>
+    <div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">${data.stats.balance} <small>${data.currency}</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div>
+    <div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>${data.stats.withdrawn} <small>${data.currency}</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>
+  `;
+  document.getElementById('dashboardStats').innerHTML = statsHtml;
+  
+  // Update earn items
+  const earnHtml = data.earnItems.map(item => `
+    <div class="earn-card" onclick="openDemoAction('${item.label}','','${item.usd}','💬')">
+      <div class="earn-left"><span class="label">${item.label}</span><span class="amount"><span class="usd">${data.symbol} ${item.amount}</span></span></div>
+      <div class="earn-right">${item.usd}</div>
+    </div>
+  `).join('');
+  document.getElementById('earnGrid').innerHTML = earnHtml;
+}
+
+// ===== LIVE FOREIGNERS - DYNAMIC PROFILES EVERY 8 MINUTES =====
+const profilePool = [
+  { name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world. Always up for a fun conversation!', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' },
+  { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' },
+  { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg', bio: '🎨 Talented artist, passionate painter & nature enthusiast who finds inspiration in the beauty of the outdoors.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' },
+  { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg', bio: '🏄 Surfing lover, avid hiker & adventure seeker who has explored some of the most breathtaking trails.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' },
+  { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg', bio: '💃 Flamenco dancer, passionate foodie & avid traveler who has visited over 30 countries.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' },
+  { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast who loves discussing the latest gadgets.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' },
+  { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/55.jpg', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista with a passion for creating beautiful things.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' },
+  { name: 'Michael D.', age: 45, country: '🇮🇪 Ireland', flag: '🇮🇪', countryName: 'Ireland', img: 'https://randomuser.me/api/portraits/men/67.jpg', bio: '🍺 Pub culture enthusiast, skilled fisherman & born storyteller who loves sharing tales from the Irish countryside.', greeting: '👋 Michael here. What\'s up?', desperate: '🍀 Michael: I\'m very interested! Upgrade to chat more! 🍀' },
+  { name: 'Laura B.', age: 27, country: '🇮🇹 Italy', flag: '🇮🇹', countryName: 'Italy', img: 'https://randomuser.me/api/portraits/women/63.jpg', bio: '🍕 Passionate pizza maker, talented singer & romantic soul who believes in the power of art, music, and good food.', greeting: '👋 Laura! You seem amazing!', desperate: '❤️ Laura: I\'m so interested! Please upgrade to keep chatting! ❤️' },
+  { name: 'Robert S.', age: 39, country: '🇳🇿 New Zealand', flag: '🇳🇿', countryName: 'New Zealand', img: 'https://randomuser.me/api/portraits/men/88.jpg', bio: '🌿 Nature lover, passionate photographer & avid hiker who has captured stunning landscapes across New Zealand.', greeting: '👋 Robert here! Let\'s talk.', desperate: '😍 Robert: I\'m desperate to chat with you! Upgrade now! 😍' },
+  { name: 'Sarah M.', age: 24, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/women/90.jpg', bio: '🐨 Wildlife lover, passionate surfer & beach girl who spends her days exploring the beautiful Australian coastline.', greeting: '👋 Hi! I\'m Sarah, you seem so cute!', desperate: '💕 Sarah: Omg I\'m so into you! Please upgrade so we can keep talking! 😍' },
+  { name: 'Carlos R.', age: 33, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/men/75.jpg', bio: '⚽ Football fanatic, passionate cook & travel enthusiast who loves exploring new cultures and cuisines.', greeting: '👋 Carlos here! Let\'s have some fun!', desperate: '🔥 Carlos: You\'re amazing! Upgrade so we can chat more! ❤️' },
+  { name: 'Nina K.', age: 30, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/women/22.jpg', bio: '🎵 Music lover, talented pianist & nature enthusiast who finds peace in the beauty of the outdoors.', greeting: '👋 Nina! You seem wonderful!', desperate: '💕 Nina: I\'m so into you! Please upgrade to continue! 😍' },
+  { name: 'Patrick L.', age: 42, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/men/11.jpg', bio: '⛷️ Skiing enthusiast, avid hiker & adventure seeker who loves exploring the great outdoors.', greeting: '👋 Patrick here! Let\'s connect!', desperate: '🙏 Patrick: I\'m really interested! Upgrade to chat more!' },
+  { name: 'Isabella M.', age: 25, country: '🇮🇹 Italy', flag: '🇮🇹', countryName: 'Italy', img: 'https://randomuser.me/api/portraits/women/77.jpg', bio: '🎭 Theatre lover, passionate dancer & foodie who enjoys the finer things in life.', greeting: '👋 Isabella! You look amazing!', desperate: '❤️ Isabella: I\'m so interested! Please upgrade! ❤️' },
+  { name: 'Daniel O.', age: 36, country: '🇮🇪 Ireland', flag: '🇮🇪', countryName: 'Ireland', img: 'https://randomuser.me/api/portraits/men/44.jpg', bio: '🍀 Born storyteller, music lover & pub culture enthusiast who loves sharing Irish tales and traditions.', greeting: '👋 Daniel here! Fancy a chat?', desperate: '🍀 Daniel: I\'m very interested! Upgrade to chat more!' },
+  { name: 'Chloe W.', age: 28, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/50.jpg', bio: '🥐 Pastry chef, fashionista & art lover who finds inspiration in the beauty of Parisian life.', greeting: '👋 Chloe! You\'re so stylish!', desperate: '💕 Chloe: I\'m so into you! Please upgrade! 😍' },
+  { name: 'Marcus J.', age: 40, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/60.jpg', bio: '🎸 Guitarist, tech geek & sports fan who loves combining music and technology.', greeting: '👋 Marcus here! Let\'s talk!', desperate: '🔥 Marcus: I\'m really interested! Upgrade to keep chatting!' }
+];
+
+let currentProfileIndex = 0;
+const profilesPerPage = 8;
+
+function getRandomProfiles() {
+  const shuffled = [...profilePool];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, profilesPerPage);
+}
+
+function renderLiveUsers(profiles) {
+  const container = document.getElementById('liveUserList');
+  const statusMessages = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...', '✍️ typing a long message...', '💬 saying hi there!', '✍️ writing something...', '💬 sending greetings...', '⌨️ responding...', '💬 chatting away...'];
+  
+  let html = '';
+  profiles.forEach((user, index) => {
+    const status = statusMessages[index % statusMessages.length];
+    const isNew = index === 0 || index === 3 || index === 7;
+    html += `
+      <div class="user-card" data-user="${user.name}" data-greeting="${user.greeting}" data-desperate="${user.desperate}" data-img="${user.img}" data-country="${user.country}">
+        <div class="user-top">
+          <img src="${user.img}" alt="${user.name}" loading="lazy">
+          <div class="user-info">
+            <div class="name">${user.name}, ${user.age} <span class="online-dot"></span></div>
+            <div class="country">${user.country} <span class="live-label">🔴 LIVE</span>${isNew ? ' <span class="new-badge">NEW</span>' : ''}</div>
+            <div class="bio">${user.bio}</div>
+            <div class="status typing-status">${status}</div>
+          </div>
+        </div>
+        <div class="user-actions">
+          <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
+          <a href="#" class="watch" onclick="event.stopPropagation();alert('Watch ${user.name}\'s video')">▶ Watch</a>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+}
+
+let currentProfiles = [];
+
+function rotateProfiles() {
+  currentProfiles = getRandomProfiles();
+  renderLiveUsers(currentProfiles);
+  // Update active chatter count
+  document.getElementById('activeChatters').textContent = currentProfiles.length;
+}
+
+// Initial load and rotation every 8 minutes (480 seconds)
+rotateProfiles();
+setInterval(rotateProfiles, 480000);
+
+// Also rotate status messages every 4 seconds
+setInterval(() => {
+  const statuses = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...', '✍️ typing a long message...', '💬 saying hi there!', '✍️ writing something...', '💬 sending greetings...', '⌨️ responding...', '💬 chatting away...'];
+  document.querySelectorAll('.typing-status').forEach(el => {
+    el.textContent = statuses[Math.floor(Math.random() * statuses.length)];
+  });
+}, 4000);
+
+// ===== LIVE COUNTERS =====
+!function(){const c=document.getElementById('liveCounter'),o=document.getElementById('onlineNow');let n=3300;function u(v){const f=v.toLocaleString();c&&(c.textContent=f);o&&(o.textContent=f)}u(n);setInterval(()=>{let d=Math.floor(Math.random()*14)-3,g=n+d;g<3240&&(g=3240+Math.floor(Math.random()*30));g>3600&&(g=3600-Math.floor(Math.random()*30));n=g;u(n)},2800);let t=187432;const r=document.getElementById('trustCounter');setInterval(()=>{t+=Math.floor(Math.random()*5)+2;t>189500&&(t=187000);r&&(r.textContent=t.toLocaleString())},2500);let h=187450;const e=document.getElementById('heroCounter');setInterval(()=>{h+=Math.floor(Math.random()*3)+1;h>189500&&(h=187000);e&&(e.textContent=h.toLocaleString())},3000);let l=187432;const a=document.getElementById('liveUsers');setInterval(()=>{l+=Math.floor(Math.random()*6)+1;l>189500&&(l=187000);a.textContent=l.toLocaleString()},5000)}();
+
+// ===== WITHDRAWAL POPUPS =====
 !function(){const w=[{flag:'🇰🇪',name:'James K.',amount:'2,580',method:'M-Pesa',gender:'male'},{flag:'🇬🇭',name:'Maureen A.',amount:'3,870',method:'MoMo',gender:'female'},{flag:'🇺🇬',name:'Sarah N.',amount:'166,500',method:'Mobile Money',gender:'female'},{flag:'🇳🇬',name:'Chidi O.',amount:'70,950',method:'MoMo',gender:'male'},{flag:'🇿🇦',name:'Lindiwe M.',amount:'1,020',method:'Bank Transfer',gender:'female'},{flag:'🇰🇪',name:'Omar H.',amount:'4,193',method:'M-Pesa',gender:'male'},{flag:'🇷🇼',name:'Diane U.',amount:'28,000',method:'Mobile Wallet',gender:'female'},{flag:'🇨🇲',name:'Samuel B.',amount:'25,700',method:'MoMo',gender:'male'},{flag:'🇬🇭',name:'Kwame A.',amount:'4,500',method:'MoMo',gender:'male'},{flag:'🇺🇬',name:'Grace T.',amount:'189,000',method:'Mobile Money',gender:'female'},{flag:'🇳🇬',name:'Bola K.',amount:'56,200',method:'MoMo',gender:'female'},{flag:'🇰🇪',name:'Peter M.',amount:'3,200',method:'M-Pesa',gender:'male'},{flag:'🇿🇦',name:'Thabo N.',amount:'890',method:'Bank Transfer',gender:'male'},{flag:'🇷🇼',name:'Alice U.',amount:'35,500',method:'Mobile Wallet',gender:'female'}],c={'🇰🇪':'KSh ','🇬🇭':'GH₵ ','🇺🇬':'UGX ','🇳🇬':'₦ ','🇿🇦':'R ','🇷🇼':'RWF ','🇨🇲':'XAF '};function s(f){return c[f]||'$'}const m=['https://randomuser.me/api/portraits/women/1.jpg','https://randomuser.me/api/portraits/women/2.jpg','https://randomuser.me/api/portraits/women/3.jpg','https://randomuser.me/api/portraits/women/4.jpg','https://randomuser.me/api/portraits/women/5.jpg','https://randomuser.me/api/portraits/women/6.jpg','https://randomuser.me/api/portraits/women/7.jpg'],g=['https://randomuser.me/api/portraits/men/1.jpg','https://randomuser.me/api/portraits/men/2.jpg','https://randomuser.me/api/portraits/men/3.jpg','https://randomuser.me/api/portraits/men/4.jpg','https://randomuser.me/api/portraits/men/5.jpg','https://randomuser.me/api/portraits/men/6.jpg','https://randomuser.me/api/portraits/men/7.jpg'];const p=document.getElementById('popupCard'),i=document.getElementById('popupUserImage'),n=document.getElementById('popupUserName'),l=document.getElementById('popupMethod');let u=[],a=-1;function b(gender){const pool=gender==='female'?m:g;let idx;do{idx=Math.floor(Math.random()*pool.length)}while(idx===a&&pool.length>1);a=idx;return pool[idx]}function r(){if(u.length>=w.length)u=[];const avail=w.map((_,i)=>i).filter(i=>!u.includes(i));if(avail.length===0){u=[];return r()}const idx=avail[Math.floor(Math.random()*avail.length)];u.push(idx);const d=w[idx];i.src=b(d.gender);n.textContent=d.flag+' '+d.name+' withdrew '+s(d.flag)+d.amount;l.textContent='via '+d.method;p.style.display='flex';p.style.animation='none';p.offsetHeight;p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';clearTimeout(window.popupTimer);window.popupTimer=setTimeout(()=>{p.style.animation='slideDownFast 0.4s cubic-bezier(0.55,0,0.1,1) forwards';setTimeout(()=>{p.style.display='flex';p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'},400)},1600)}setTimeout(r,600);setInterval(r,2000)}();
 
-// Chat functions
+// ===== CHAT FUNCTIONS =====
 let chatLocked=!1,chatUser=null,chatDesperate='';
 function openChatPage(a){const c=a.closest('.user-card')||a.closest('.demo-user-card');if(!c)return;const name=c.dataset.user||'Friend',img=c.dataset.img||'https://randomuser.me/api/portraits/women/68.jpg',country=c.dataset.country||'🌍',greeting=c.dataset.greeting||'👋 Hi! Let\'s chat!';chatDesperate=c.dataset.desperate||'😍 I\'m so interested! Please upgrade to continue!';chatUser=name;chatLocked=!1;document.getElementById('chatPageAvatar').src=img;document.getElementById('chatPageName').textContent=name;document.getElementById('chatPageStatus').textContent=country+' · Online';const area=document.getElementById('chatMessagesArea');area.innerHTML='';const msg=document.createElement('div');msg.className='chat-msg received';msg.innerHTML='<div class="msg-name">'+name+'</div>'+greeting+'<span class="time">just now</span>';area.appendChild(msg);document.getElementById('chatUpgradeBanner').style.display='none';document.getElementById('chatPageSendBtn').disabled=!1;document.getElementById('chatPageInput').disabled=!1;document.getElementById('chatPageInput').value='';document.getElementById('chatOverlay').classList.add('active');area.scrollTop=area.scrollHeight}
 function closeChatPage(){document.getElementById('chatOverlay').classList.remove('active');chatUser=null;chatLocked=!1}
 function sendChatPageMessage(){if(chatLocked){alert('⛔ Chat is paused. Please upgrade to continue.');return}const input=document.getElementById('chatPageInput'),msg=input.value.trim();if(!msg||!chatUser)return;const area=document.getElementById('chatMessagesArea');const sent=document.createElement('div');sent.className='chat-msg sent';sent.textContent=msg;const time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});sent.innerHTML+='<span class="time">'+time+'</span>';area.appendChild(sent);input.value='';area.scrollTop=area.scrollHeight;setTimeout(()=>{const reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>'+chatDesperate+'<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;chatLocked=!0;document.getElementById('chatUpgradeBanner').style.display='block';document.getElementById('chatPageSendBtn').disabled=!0;document.getElementById('chatPageInput').disabled=!0},700)}
 document.getElementById('chatPageInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendChatPageMessage()});
 document.getElementById('chatOverlay').addEventListener('click',function(e){if(e.target===this)closeChatPage()});
+
+// Initialize default dashboard
+switchDashboard('uganda');
 </script>
 </body>
 </html>
