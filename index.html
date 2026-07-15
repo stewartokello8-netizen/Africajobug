@@ -535,13 +535,14 @@
             <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
             <div class="ways-grid">
-                <div class="way-card" onclick="handleEarning('Chat with Foreigners', '$4.60', '💬')">
+                <!-- CHAT WITH FOREIGNERS - Start Chatting opens StarHela link -->
+                <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
                     <img class="way-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat" loading="lazy">
                     <div class="way-content">
                         <div class="way-name">Chat with Foreigners</div>
                         <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
                         <div class="way-earn"><span class="sub">per person</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleEarning('Chat with Foreigners', '$4.60', '💬');return!1">Start Chatting</button></div>
+                        <div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleQuestionsPopup()">
@@ -766,7 +767,8 @@
                 <span class="nav-chip" onclick="document.getElementById('questionsSection').scrollIntoView({behavior:'smooth'});">❓ Questions</span>
                 <span class="nav-chip" onclick="toggleTikTokSection();">🎬 TikTok</span>
                 <span class="nav-chip" onclick="toggleYouTubeSection();">📺 YouTube</span>
-                <span class="nav-chip" onclick="openAffiliateBonus();">💰 Affiliate</span>
+                <!-- AFFILIATE REPLACED WITH WHATSAPP POSTING -->
+                <span class="nav-chip" onclick="handleWhatsAppPosting();">📱 WhatsApp</span>
             </div>
             <div style="margin-top:4px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#0b1a2f;">Live Members</span><span style="color:rgba(11,26,47,0.5);font-weight:600;">—</span></div>
