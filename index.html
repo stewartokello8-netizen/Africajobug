@@ -420,6 +420,33 @@
         .questions-list li:hover { background:rgba(11,26,47,.1); transform:translateX(4px) }
         .questions-list li strong { color:var(--primary-dark) }
         .profile-amount { color:rgba(11,26,47,.4) !important; font-weight:500 !important }
+
+        /* Spinning Wheel */
+        .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
+        .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
+        .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
+        .wheel-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; background:#0b1a2f; border-radius:50%; border:4px solid #f5d65a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#f5d65a; z-index:5; }
+        .spin-btn { background:linear-gradient(135deg,#f5d65a,#e09d2e); color:#0b1a2f; border:none; padding:12px 32px; border-radius:60px; font-weight:800; font-size:18px; cursor:pointer; box-shadow:0 4px 20px rgba(245,214,90,.3); transition:var(--transition); }
+        .spin-btn:hover { transform:scale(1.05); box-shadow:0 8px 32px rgba(245,214,90,.4); }
+        .spin-btn:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+        .spin-result { font-size:24px; font-weight:900; color:#f5d65a; margin-top:8px; min-height:40px; }
+        
+        /* WhatsApp Simulator */
+        .whatsapp-sim { background:#075e54; border-radius:16px; overflow:hidden; max-width:340px; margin:0 auto; }
+        .whatsapp-sim .header { background:#075e54; padding:12px 16px; color:#fff; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,.1); }
+        .whatsapp-sim .header .icon { font-size:20px; }
+        .whatsapp-sim .header .title { font-weight:700; font-size:15px; }
+        .whatsapp-sim .chat-area { background:#ece5dd; padding:12px; min-height:180px; max-height:220px; overflow-y:auto; }
+        .whatsapp-sim .chat-area .msg { background:#fff; padding:8px 14px; border-radius:12px; margin-bottom:8px; max-width:85%; font-size:13px; color:#0b1a2f; box-shadow:0 1px 2px rgba(0,0,0,.1); }
+        .whatsapp-sim .chat-area .msg .post-content { background:#f0f0f0; padding:8px 12px; border-radius:8px; margin-top:4px; font-size:12px; color:#333; border-left:3px solid #25d366; }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn { background:#25d366; color:#fff; border:none; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:700; cursor:pointer; margin-top:4px; transition:var(--transition); }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn:hover { transform:scale(1.05); }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn:disabled { opacity:.4; cursor:not-allowed; }
+        .whatsapp-sim .footer { background:#075e54; padding:8px 12px; display:flex; gap:8px; }
+        .whatsapp-sim .footer input { flex:1; padding:8px 14px; border-radius:30px; border:none; font-size:13px; outline:none; }
+        .whatsapp-sim .footer .send-btn { background:#25d366; color:#fff; border:none; padding:8px 20px; border-radius:30px; font-weight:700; cursor:pointer; }
+        .whatsapp-sim .footer .send-btn:hover { background:#1ebe5c; }
+        .wa-earned { font-size:18px; font-weight:800; color:#25d366; margin-top:6px; }
     </style>
 </head>
 <body>
@@ -510,13 +537,13 @@
                         <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleEarning('Chat with Foreigners', '$4.60', '💬');return!1">Start Chatting</button></div>
                     </div>
                 </div>
-                <div class="way-card" onclick="handleEarning('Answering Questions', '$2.50', '❓')">
+                <div class="way-card" onclick="handleQuestionsPopup()">
                     <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" loading="lazy" style="background:#1a1a2e;padding:8px;object-fit:contain;">
                     <div class="way-content">
                         <div class="way-name">Answering Questions</div>
                         <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
                         <div class="way-earn"><span class="sub">per question</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleEarning('Answering Questions', '$2.50', '❓');return!1">Start Answering</button></div>
+                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
@@ -537,13 +564,13 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleEarning('Affiliate Bonus', 'BONUS', '💰');return!1">Start Referring</button></div>
                     </div>
                 </div>
-                <div class="way-card" onclick="handleEarning('WhatsApp Posting', '$1.80', '📱')">
+                <div class="way-card" onclick="handleWhatsAppPosting()">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&crop=center" alt="WhatsApp" loading="lazy">
                     <div class="way-content">
                         <div class="way-name">WhatsApp Posting</div>
                         <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
                         <div class="way-earn"><span class="sub">per post</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleEarning('WhatsApp Posting', '$1.80', '📱');return!1">Start Posting</button></div>
+                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
@@ -555,13 +582,13 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
                     </div>
                 </div>
-                <div class="way-card" onclick="handleEarning('Paid Surveys', '$2.20', '📋')">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Surveys" loading="lazy">
+                <div class="way-card" onclick="handleSpinning()">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Spinning" loading="lazy">
                     <div class="way-content">
-                        <div class="way-name">Paid Surveys</div>
-                        <div class="way-desc">Answer surveys from global brands. Share your opinion and earn real money instantly.</div>
-                        <div class="way-earn"><span class="sub">per survey</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleEarning('Paid Surveys', '$2.20', '📋');return!1">Start Surveys</button></div>
+                        <div class="way-name">Paid Spinning</div>
+                        <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
+                        <div class="way-earn"><span class="sub">per spin</span></div>
+                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div>
                     </div>
                 </div>
             </div>
@@ -1091,6 +1118,373 @@
                 }
             });
         }
+
+        // ===== SPINNING WHEEL =====
+        function handleSpinning() {
+            const overlay = document.getElementById('demoActionPopup');
+            const content = overlay.querySelector('.popup-content');
+            
+            // Create spinning wheel HTML
+            content.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <span style="font-size:28px;">🎰</span>
+                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">Paid Spinning</h3>
+                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Spin the wheel and win cash!</p>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel" id="wheel">
+                        <div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$0.50</div>
+                        <div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$0.80</div>
+                        <div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$1.20</div>
+                        <div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$0.60</div>
+                        <div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$1.80</div>
+                        <div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$2.20</div>
+                        <div class="wheel-center">SPIN</div>
+                    </div>
+                </div>
+                <button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎡 SPIN</button>
+                <div class="spin-result" id="spinResult">Click SPIN to win!</div>
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:10px;background:rgba(255,255,255,0.1);color:#fff;padding:8px 24px;border-radius:40px;text-decoration:none;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.1);">💎 Claim Prize</a>
+                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
+            `;
+            
+            overlay.classList.add('active');
+            
+            // Reset wheel rotation
+            const wheel = document.getElementById('wheel');
+            if (wheel) {
+                wheel.style.transform = 'rotate(0deg)';
+            }
+            const result = document.getElementById('spinResult');
+            if (result) result.textContent = '🎡 Click SPIN to win!';
+            const spinBtn = document.getElementById('spinBtn');
+            if (spinBtn) spinBtn.disabled = false;
+        }
+
+        let isSpinning = false;
+        function spinWheel() {
+            if (isSpinning) return;
+            const wheel = document.getElementById('wheel');
+            const result = document.getElementById('spinResult');
+            const spinBtn = document.getElementById('spinBtn');
+            
+            if (!wheel || !result || !spinBtn) return;
+            
+            isSpinning = true;
+            spinBtn.disabled = true;
+            result.textContent = '🌀 Spinning...';
+            
+            // Random prize amounts
+            const prizes = ['$0.50', '$0.80', '$1.20', '$0.60', '$1.80', '$2.20'];
+            const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
+            
+            // Random spin angle (at least 5 full rotations + random segment)
+            const randomIndex = Math.floor(Math.random() * prizes.length);
+            const extraAngle = 360 - (randomIndex * 60 + 30); // Center on segment
+            const rotations = 5 + Math.floor(Math.random() * 3);
+            const totalAngle = rotations * 360 + extraAngle + Math.random() * 20;
+            
+            // Animate the wheel
+            wheel.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
+            wheel.style.transform = `rotate(${totalAngle}deg)`;
+            
+            // Show result after animation
+            setTimeout(() => {
+                const prize = prizes[randomIndex];
+                result.textContent = `🎉 You won ${prize}!`;
+                result.style.color = '#f5d65a';
+                spinBtn.disabled = false;
+                isSpinning = false;
+                
+                // Add earning message
+                const earnMsg = document.createElement('div');
+                earnMsg.style.cssText = 'margin-top:10px;font-size:14px;color:#2ecc71;font-weight:700;';
+                earnMsg.textContent = `💰 Earned ${prize}! Upgrade to claim!`;
+                result.parentNode.insertBefore(earnMsg, result.nextSibling);
+                
+                setTimeout(() => {
+                    const banner = document.getElementById('chatUpgradeBanner');
+                    if (banner) {
+                        banner.style.display = 'block';
+                        banner.innerHTML = `🎁 You won ${prize}! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>`;
+                    }
+                }, 500);
+            }, 4200);
+        }
+
+        // ===== WHATSAPP POSTING =====
+        function handleWhatsAppPosting() {
+            const overlay = document.getElementById('demoActionPopup');
+            const content = overlay.querySelector('.popup-content');
+            
+            const posts = [
+                { text: '🔥 Check out this amazing offer! Limited time only!', emoji: '💥' },
+                { text: '📱 New phone deals! Get 50% off on all smartphones today!', emoji: '📱' },
+                { text: '💰 Earn $100 daily working from home! Join now!', emoji: '💵' }
+            ];
+            
+            let sharedCount = 0;
+            let totalEarned = 0;
+            
+            content.innerHTML = `
+                <div style="margin-bottom:8px;">
+                    <span style="font-size:28px;">📱</span>
+                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">WhatsApp Posting</h3>
+                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Share posts and earn $0.60 per post!</p>
+                </div>
+                <div class="whatsapp-sim">
+                    <div class="header">
+                        <span class="icon">💬</span>
+                        <span class="title">WhatsApp Status</span>
+                        <span style="margin-left:auto;font-size:12px;opacity:0.7;">${sharedCount}/3 shared</span>
+                    </div>
+                    <div class="chat-area" id="waChatArea">
+                        <div class="msg" style="background:#dcf8c6;align-self:flex-end;margin-left:auto;">
+                            📢 <strong>AfricaJob</strong><br>
+                            <span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn!</span>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <input type="text" id="waInput" placeholder="Type a message..." value="Sharing sponsored content! 💰" style="flex:1;padding:8px 14px;border-radius:30px;border:none;font-size:13px;outline:none;">
+                        <button class="send-btn" id="waSendBtn" onclick="shareWhatsAppPost()">📤 Share</button>
+                    </div>
+                </div>
+                <div class="wa-earned" id="waEarned">💰 Earned: $0.00</div>
+                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
+            `;
+            
+            // Store posts in global for the share function
+            window._waPosts = posts;
+            window._waSharedCount = 0;
+            window._waTotalEarned = 0;
+            window._waCurrentPostIndex = 0;
+            
+            overlay.classList.add('active');
+        }
+
+        function shareWhatsAppPost() {
+            const chatArea = document.getElementById('waChatArea');
+            const earnDisplay = document.getElementById('waEarned');
+            const sendBtn = document.getElementById('waSendBtn');
+            const input = document.getElementById('waInput');
+            
+            if (!chatArea || !earnDisplay || !sendBtn) return;
+            
+            const posts = window._waPosts || [];
+            if (window._waSharedCount >= posts.length) {
+                const msg = document.createElement('div');
+                msg.className = 'msg';
+                msg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                msg.innerHTML = '✅ <strong>All posts shared!</strong> You earned $1.80! 🎉';
+                chatArea.appendChild(msg);
+                chatArea.scrollTop = chatArea.scrollHeight;
+                sendBtn.disabled = true;
+                sendBtn.textContent = '✓ Done';
+                
+                // Show upgrade banner
+                setTimeout(() => {
+                    const banner = document.getElementById('chatUpgradeBanner');
+                    if (banner) {
+                        banner.style.display = 'block';
+                        banner.innerHTML = '🎁 You earned $1.80! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>';
+                    }
+                }, 500);
+                return;
+            }
+            
+            const post = posts[window._waSharedCount];
+            if (!post) return;
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg';
+            userMsg.style.cssText = 'background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;margin-left:auto;align-self:flex-end;';
+            userMsg.innerHTML = `${post.emoji} <strong>${input.value || 'Sharing sponsored content!'}</strong><br><div class="post-content" style="background:#f0f0f0;padding:8px 12px;border-radius:8px;margin-top:4px;font-size:12px;color:#333;border-left:3px solid #25d366;">${post.text}</div>`;
+            chatArea.appendChild(userMsg);
+            
+            // Add system confirmation
+            setTimeout(() => {
+                const sysMsg = document.createElement('div');
+                sysMsg.className = 'msg';
+                sysMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                sysMsg.innerHTML = `✅ <strong>Post ${window._waSharedCount + 1}/${posts.length} shared!</strong> Earned $0.60`;
+                chatArea.appendChild(sysMsg);
+                chatArea.scrollTop = chatArea.scrollHeight;
+                
+                window._waSharedCount++;
+                window._waTotalEarned += 0.60;
+                earnDisplay.textContent = `💰 Earned: $${window._waTotalEarned.toFixed(2)}`;
+                
+                // Update header
+                const header = document.querySelector('.whatsapp-sim .header span:last-child');
+                if (header) {
+                    header.textContent = `${window._waSharedCount}/${posts.length} shared`;
+                }
+                
+                if (window._waSharedCount >= posts.length) {
+                    setTimeout(() => {
+                        const finalMsg = document.createElement('div');
+                        finalMsg.className = 'msg';
+                        finalMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                        finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $1.80! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Upgrade to claim your earnings!</span>';
+                        chatArea.appendChild(finalMsg);
+                        chatArea.scrollTop = chatArea.scrollHeight;
+                        sendBtn.disabled = true;
+                        sendBtn.textContent = '✓ Done';
+                    }, 800);
+                }
+            }, 600);
+        }
+
+        // ===== QUESTIONS POPUP =====
+        function handleQuestionsPopup() {
+            const overlay = document.getElementById('demoActionPopup');
+            const content = overlay.querySelector('.popup-content');
+            
+            const questions = [
+                { q: 'What is the capital of France?', options: ['London', 'Paris', 'Berlin', 'Madrid'], answer: 'Paris' },
+                { q: 'Which planet is known as the Red Planet?', options: ['Venus', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
+                { q: 'What is the largest ocean on Earth?', options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], answer: 'Pacific' },
+                { q: 'Who wrote Romeo and Juliet?', options: ['Charles Dickens', 'William Shakespeare', 'Mark Twain', 'Jane Austen'], answer: 'William Shakespeare' }
+            ];
+            
+            let currentQ = 0;
+            let score = 0;
+            
+            content.innerHTML = `
+                <div style="margin-bottom:10px;">
+                    <span style="font-size:28px;">❓</span>
+                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">Answer Questions</h3>
+                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Answer correctly to earn $0.50 per question!</p>
+                </div>
+                <div id="quizContainer">
+                    <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:16px;margin:8px 0;">
+                        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:10px;">
+                            <span>Question <span id="qNum">1</span>/<span id="qTotal">${questions.length}</span></span>
+                            <span>Score: <span id="qScore">0</span></span>
+                        </div>
+                        <div id="qText" style="font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;min-height:50px;">${questions[0].q}</div>
+                        <div id="qOptions" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
+                    </div>
+                </div>
+                <div id="qResult" style="font-size:16px;font-weight:700;min-height:30px;color:#f5d65a;margin:4px 0;"></div>
+                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
+            `;
+            
+            // Store quiz state
+            window._quizQuestions = questions;
+            window._quizCurrent = 0;
+            window._quizScore = 0;
+            
+            renderQuizQuestion();
+            overlay.classList.add('active');
+        }
+
+        function renderQuizQuestion() {
+            const questions = window._quizQuestions || [];
+            const current = window._quizCurrent || 0;
+            
+            if (current >= questions.length) {
+                const container = document.getElementById('quizContainer');
+                if (container) {
+                    container.innerHTML = `
+                        <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:20px;text-align:center;">
+                            <div style="font-size:48px;">🎉</div>
+                            <h3 style="color:#f5d65a;font-size:22px;margin:8px 0;">Quiz Complete!</h3>
+                            <p style="color:rgba(255,255,255,0.7);font-size:16px;">You scored <strong style="color:#f5d65a;font-size:24px;">${window._quizScore}</strong> out of ${questions.length}</p>
+                            <p style="color:#2ecc71;font-size:18px;font-weight:700;margin-top:8px;">💰 You earned $${(window._quizScore * 0.50).toFixed(2)}!</p>
+                            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#0b1a2f;padding:10px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:15px;">💎 Claim Prize</a>
+                        </div>
+                    `;
+                }
+                return;
+            }
+            
+            const q = questions[current];
+            if (!q) return;
+            
+            document.getElementById('qNum').textContent = current + 1;
+            document.getElementById('qTotal').textContent = questions.length;
+            document.getElementById('qScore').textContent = window._quizScore;
+            document.getElementById('qText').textContent = q.q;
+            document.getElementById('qResult').textContent = '';
+            
+            const optionsContainer = document.getElementById('qOptions');
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.style.cssText = `
+                    background:rgba(255,255,255,0.08);
+                    border:2px solid rgba(255,255,255,0.1);
+                    color:#fff;
+                    padding:10px;
+                    border-radius:10px;
+                    font-size:14px;
+                    font-weight:600;
+                    cursor:pointer;
+                    transition:all 0.3s;
+                    font-family:inherit;
+                `;
+                btn.onmouseover = () => { btn.style.background = 'rgba(31,187,122,0.2)'; btn.style.borderColor = '#1fbb7a'; };
+                btn.onmouseout = () => { 
+                    if (!btn.dataset.answered) {
+                        btn.style.background = 'rgba(255,255,255,0.08)';
+                        btn.style.borderColor = 'rgba(255,255,255,0.1)';
+                    }
+                };
+                btn.onclick = function() {
+                    if (this.dataset.answered) return;
+                    const isCorrect = opt === q.answer;
+                    if (isCorrect) {
+                        this.style.background = 'rgba(46,204,113,0.3)';
+                        this.style.borderColor = '#2ecc71';
+                        window._quizScore++;
+                        document.getElementById('qScore').textContent = window._quizScore;
+                        document.getElementById('qResult').textContent = '✅ Correct! +$0.50';
+                        document.getElementById('qResult').style.color = '#2ecc71';
+                    } else {
+                        this.style.background = 'rgba(231,76,60,0.3)';
+                        this.style.borderColor = '#e74c3c';
+                        document.getElementById('qResult').textContent = `❌ Incorrect. The answer was: ${q.answer}`;
+                        document.getElementById('qResult').style.color = '#e74c3c';
+                    }
+                    this.dataset.answered = 'true';
+                    
+                    // Disable all options
+                    document.querySelectorAll('#qOptions button').forEach(b => {
+                        b.style.cursor = 'default';
+                        if (!b.dataset.answered && b.textContent === q.answer) {
+                            b.style.background = 'rgba(46,204,113,0.2)';
+                            b.style.borderColor = '#2ecc71';
+                        }
+                    });
+                    
+                    // Next question after delay
+                    setTimeout(() => {
+                        window._quizCurrent++;
+                        renderQuizQuestion();
+                    }, 1500);
+                };
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        // Close popup cleanup
+        const origClose = closeDemoAction;
+        closeDemoAction = function() {
+            // Reset any spinning state
+            isSpinning = false;
+            // Reset quiz state
+            window._quizCurrent = 0;
+            window._quizScore = 0;
+            // Reset WhatsApp state
+            window._waSharedCount = 0;
+            window._waTotalEarned = 0;
+            window._waCurrentPostIndex = 0;
+            origClose();
+        };
     </script>
 </body>
 </html>
