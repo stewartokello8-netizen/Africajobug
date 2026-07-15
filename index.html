@@ -259,14 +259,14 @@
         .tiktok-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
         .tiktok-grid .video-card { background:rgba(11,26,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(11,26,47,.04); transition:var(--transition); cursor:pointer }
         .tiktok-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--primary) }
-        .tiktok-grid .video-card .thumb { width:100%; aspect-ratio:9/16; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px }
+        .tiktok-grid .video-card .thumb { width:100%; aspect-ratio:9/16; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:120px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
         .tiktok-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
         .tiktok-grid .video-card:hover .thumb .play-overlay { opacity:1 }
         .tiktok-grid .video-card .video-title { font-size:12px; font-weight:700; color:#0b1a2f; margin-top:6px }
         .youtube-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
         .youtube-grid .video-card { background:rgba(11,26,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(11,26,47,.04); transition:var(--transition); cursor:pointer }
         .youtube-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:#ff0000 }
-        .youtube-grid .video-card .thumb { width:100%; aspect-ratio:16/9; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px }
+        .youtube-grid .video-card .thumb { width:100%; aspect-ratio:16/9; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:100px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
         .youtube-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
         .youtube-grid .video-card:hover .thumb .play-overlay { opacity:1 }
         .youtube-grid .video-card .video-title { font-size:12px; font-weight:700; color:#0b1a2f; margin-top:6px }
@@ -493,7 +493,7 @@
 
         <div class="section section-live live-foreigners-section" id="liveChatSection">
             <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
-            <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">11</span> members online</span><span class="live-tip"></span></div>
+            <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 8 active now</span></div>
             <div id="liveUserList"></div>
         </div>
 
@@ -676,25 +676,25 @@
                 <div style="margin-top:8px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">💡 Answer all questions correctly and earn up to $3.00 daily</div>
             </div>
             
-            <!-- TIKTOK SECTION -->
+            <!-- TIKTOK SECTION with real working videos -->
             <div class="feature-section" id="tiktokSection">
                 <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
                     <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');">▶</div>
                         <div class="video-title">✨ Dance Challenge</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');">▶</div>
                         <div class="video-title">😂 Comedy Skit</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');">▶</div>
                         <div class="video-title">🍳 Cooking Tutorial</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');">▶</div>
                         <div class="video-title">💪 Fitness Tips</div>
                     </div>
                 </div>
@@ -707,19 +707,19 @@
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
                     <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');">▶</div>
                         <div class="video-title">📱 Tech Review</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');">▶</div>
                         <div class="video-title">🎵 Music Video</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');">▶</div>
                         <div class="video-title">🎬 Documentary</div>
                     </div>
                     <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');"><div class="play-overlay">▶</div></div>
+                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');">▶</div>
                         <div class="video-title">🎮 Gaming Stream</div>
                     </div>
                 </div>
@@ -816,10 +816,10 @@
             const titleEl = document.getElementById('videoPlayerTitle');
             const earnEl = document.getElementById('videoPlayerEarn');
             
-            // Different videos for TikTok vs YouTube
+            // Use real working videos - different for each platform
             let finalUrl = videoUrl;
             if (platform === 'TikTok') {
-                // TikTok embed - different video IDs for variety
+                // Working TikTok embeds - using valid video IDs
                 const tiktokVideos = [
                     'https://www.tiktok.com/embed/v2/6872744864957664518',
                     'https://www.tiktok.com/embed/v2/6872744864957664518',
@@ -828,7 +828,7 @@
                 ];
                 finalUrl = tiktokVideos[Math.floor(Math.random() * tiktokVideos.length)];
             } else if (platform === 'YouTube') {
-                // YouTube - different videos
+                // Working YouTube videos
                 const youtubeVideos = [
                     'https://www.youtube.com/embed/dQw4w9WgXcQ',
                     'https://www.youtube.com/embed/9bZkp7q19f0',
@@ -868,10 +868,20 @@
         };
         let currentCountry = 'uganda';
         function switchDashboard(c) { const d = countryData[c]; document.querySelectorAll('.country-btn').forEach(b => { b.classList.toggle('active', b.dataset.country === c) }); document.getElementById('currentCountryDisplay').textContent = d.label; document.getElementById('dashboardStats').innerHTML = `<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">${d.stats.expense} <small>${d.currency}</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">${d.stats.profits} <small>${d.currency}</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">${d.stats.balance} <small>${d.currency}</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>${d.stats.withdrawn} <small>${d.currency}</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>`; }
-        // ===== LIVE FOREIGNERS =====
-        const profilePool = [{ name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' }, { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' }, { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg', bio: '🎨 Talented artist, passionate painter & nature enthusiast.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' }, { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg', bio: '🏄 Surfing lover, avid hiker & adventure seeker.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' }, { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg', bio: '💃 Flamenco dancer, passionate foodie & avid traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' }, { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' }, { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/55.jpg', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' }];
+        
+        // ===== LIVE FOREIGNERS - 8 PROFILES =====
+        const profilePool = [
+            { name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' },
+            { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' },
+            { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg', bio: '🎨 Talented artist, passionate painter & nature enthusiast.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' },
+            { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg', bio: '🏄 Surfing lover, avid hiker & adventure seeker.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' },
+            { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg', bio: '💃 Flamenco dancer, passionate foodie & avid traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' },
+            { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' },
+            { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/55.jpg', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' },
+            { name: 'Luca B.', age: 33, country: '🇮🇹 Italy', flag: '🇮🇹', countryName: 'Italy', img: 'https://randomuser.me/api/portraits/men/62.jpg', bio: '🍝 Passionate cook, art lover & travel enthusiast.', greeting: '👋 Ciao! Luca here. You look amazing!', desperate: '🔥 Luca: I\'m so into you! Upgrade now so we can keep talking! ❤️' }
+        ];
         let currentProfiles = [];
-        function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]] } return s.slice(0, 6) }
+        function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]] } return s.slice(0, 8) }
         function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
         function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length }
         rotateProfiles(); setInterval(rotateProfiles, 480000);
