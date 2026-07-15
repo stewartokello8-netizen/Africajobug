@@ -509,8 +509,8 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleEarning('Answering Questions', '$2.50', '❓')">
-                    <!-- FIXED: Correct icon image for Answering Questions -->
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=100&h=100&fit=crop&crop=face" alt="Questions" loading="lazy">
+                    <!-- Correct icon for answering questions - question mark icon -->
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" loading="lazy" style="background:#1a1a2e;padding:8px;object-fit:contain;">
                     <div class="way-content">
                         <div class="way-name">Answering Questions</div>
                         <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
@@ -616,6 +616,7 @@
 
     <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+    <!-- DEMO PAGE -->
     <div class="demo-page" id="demoPage">
         <div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
         <div class="demo-card">
@@ -640,7 +641,7 @@
             <div class="stats-grid" id="dashboardStats"></div>
             <div class="divider-light"></div>
             
-            <!-- ANSWERING QUESTIONS SECTION - ONLY APPEARS WHEN CLICKED -->
+            <!-- ANSWERING QUESTIONS SECTION -->
             <div class="feature-section active" id="questionsSection" style="display:block;">
                 <div class="feature-header">
                     <h4>❓ Answer Questions & Earn</h4>
@@ -651,7 +652,6 @@
                 </div>
                 <div style="margin:10px 0;">
                     <div class="questions-list">
-                        <!-- Questions only appear when clicked - each has onclick handler -->
                         <li onclick="handleEarningWithQuestions('What is the capital of France?', ['London','Paris','Berlin','Madrid'], 'Paris')">
                             <strong>Q1:</strong> What is the capital of France?
                         </li>
@@ -675,52 +675,56 @@
                 <div style="margin-top:8px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">💡 Answer all questions correctly and earn up to $3.00 daily</div>
             </div>
             
+            <!-- TIKTOK SECTION -->
             <div class="feature-section" id="tiktokSection">
                 <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
-                    <div class="video-card" onclick="handleEarning('TikTok Dance Challenge', '$3.20', '🎬')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">✨ Dance Challenge</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('TikTok Comedy Skit', '$3.20', '🎬')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">😂 Comedy Skit</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('TikTok Cooking', '$3.20', '🎬')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🍳 Cooking Tutorial</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('TikTok Fitness', '$3.20', '🎬')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">💪 Fitness Tips</div>
                     </div>
                 </div>
                 <div style="margin-top:10px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">🎬 Watch all videos and earn daily</div>
             </div>
+            
+            <!-- YOUTUBE SECTION -->
             <div class="feature-section" id="youtubeSection">
                 <div class="feature-header"><h4>📺 YouTube Videos</h4><span>Earn $0.25/video</span></div>
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
-                    <div class="video-card" onclick="handleEarning('YouTube Tech Review', '$4.00', '📺')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">📱 Tech Review</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('YouTube Music Video', '$4.00', '📺')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎵 Music Video</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('YouTube Documentary', '$4.00', '📺')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎬 Documentary</div>
                     </div>
-                    <div class="video-card" onclick="handleEarning('YouTube Gaming', '$4.00', '📺')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎮 Gaming Stream</div>
                     </div>
                 </div>
                 <div style="margin-top:10px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">📺 Watch all videos and earn daily</div>
             </div>
+            
             <div class="activate-btn-wrapper"><a href="https://star-hela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
             <div class="nav-chips">
                 <span class="nav-chip" onclick="handleEarning('Chat with Foreigners', '$4.60', '💬')">💬 Chat</span>
@@ -731,7 +735,6 @@
             <div style="margin-top:4px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#0b1a2f;">Live Members</span><span style="color:rgba(11,26,47,0.5);font-weight:600;">—</span></div>
                 <div class="profile-list">
-                    <!-- FIXED: No earning amount shown, just "—" -->
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">—</div></div>
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">—</div></div>
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">—</div></div>
@@ -739,6 +742,20 @@
                 </div>
             </div>
             <div class="footer-note">✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
+        </div>
+    </div>
+
+    <!-- VIDEO PLAYER OVERLAY -->
+    <div class="demo-action-popup" id="videoPlayerOverlay">
+        <div class="popup-content" style="max-width:560px;padding:20px;">
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:10px 0;">
+                <iframe id="videoPlayerIframe" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+                <span style="font-size:16px;font-weight:700;color:#fff;" id="videoPlayerTitle">Now Playing</span>
+                <span style="font-size:14px;color:var(--primary);font-weight:700;" id="videoPlayerEarn">$0.00</span>
+            </div>
+            <button class="btn-close-popup" onclick="closeVideoPlayer()" style="margin-top:14px;width:100%;">Close Video</button>
         </div>
     </div>
 
@@ -756,7 +773,7 @@
     <div class="welcome-bonus-overlay" id="welcomeBonusOverlay">
         <div class="bonus-popup">
             <button class="close-btn" onclick="closeWelcomeBonus()">✕</button>
-            <div class="bonus-lady"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop&crop=face&auto=format" alt="Lady in red dress" loading="lazy"></div>
+            <div class="bonus-lady"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&h=400&fit=crop&crop=face&auto=format" alt="Lady" loading="lazy"></div>
             <div class="bonus-title">✨ Welcome Bonus</div>
             <div class="bonus-sub">select your country below</div>
             <div class="bonus-country-selector" id="bonusCountrySelector">
@@ -787,6 +804,33 @@
         function openDemoAction(t, a, u, i) { document.getElementById('actionIcon').textContent = i || '💰'; document.getElementById('actionTitle').textContent = t; document.getElementById('actionAmount').textContent = a || '—'; document.getElementById('actionUsd').textContent = '≈ ' + u + ' per action'; document.getElementById('demoActionPopup').classList.add('active') }
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
+
+        // ===== VIDEO PLAYER =====
+        function handleVideoPlay(title, amount, icon, videoUrl) {
+            const overlay = document.getElementById('videoPlayerOverlay');
+            const iframe = document.getElementById('videoPlayerIframe');
+            const titleEl = document.getElementById('videoPlayerTitle');
+            const earnEl = document.getElementById('videoPlayerEarn');
+            
+            iframe.src = videoUrl + '?autoplay=1&rel=0';
+            titleEl.textContent = '▶️ ' + title;
+            earnEl.textContent = amount;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoPlayer() {
+            const overlay = document.getElementById('videoPlayerOverlay');
+            const iframe = document.getElementById('videoPlayerIframe');
+            iframe.src = '';
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('videoPlayerOverlay').addEventListener('click', function(e) { 
+            if (e.target === this) closeVideoPlayer(); 
+        });
+
         // ===== COUNTRY DASHBOARD =====
         const countryData = {
             uganda: { currency: 'UGX', symbol: 'UGX', label: '🇺🇬 Uganda', stats: { expense: '19,500', profits: '5,600,000', balance: '3,000,000', withdrawn: '2,600,000' }, earnItems: [{ label: 'Chat with Foreigners', amount: '15,200', usd: '$4.60' }, { label: 'Answer Questions', amount: '8,500', usd: '$2.50' }, { label: 'TikTok Videos', amount: '10,800', usd: '$3.20' }, { label: 'YouTube Videos', amount: '13,500', usd: '$4.00' }] },
@@ -802,7 +846,7 @@
         const profilePool = [{ name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' }, { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' }, { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg', bio: '🎨 Talented artist, passionate painter & nature enthusiast.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' }, { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg', bio: '🏄 Surfing lover, avid hiker & adventure seeker.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' }, { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg', bio: '💃 Flamenco dancer, passionate foodie & avid traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' }, { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' }, { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/55.jpg', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' }];
         let currentProfiles = [];
         function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]] } return s.slice(0, 6) }
-        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleEarning('Watch ${u.name}\'s video', '$3.20', '▶️');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
+        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
         function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length }
         rotateProfiles(); setInterval(rotateProfiles, 480000);
         // ===== LIVE COUNTERS =====
@@ -830,9 +874,8 @@
         setTimeout(() => { showWelcomeBonus() }, 15000);
         switchDashboard('uganda');
 
-        // ===== HANDLE EARNING WITH CHAT, VIDEO, AND PREMIUM UPGRADE =====
+        // ===== HANDLE EARNING =====
         function handleEarning(taskName, amount, icon) {
-            // Show chat overlay with task flow
             const chatOverlay = document.getElementById('chatOverlay');
             const chatArea = document.getElementById('chatMessagesArea');
             const chatName = document.getElementById('chatPageName');
@@ -847,7 +890,6 @@
             document.getElementById('chatPageSendBtn').disabled = true;
             document.getElementById('chatPageInput').disabled = true;
             
-            // Sequence of messages - shows video playing on demo page
             const messages = [
                 { text: '🎯 Starting ' + taskName + ' task...', delay: 500 },
                 { text: '💬 Connecting to live chat...', delay: 800 },
@@ -862,7 +904,6 @@
             let msgIndex = 0;
             function showNextMessage() {
                 if (msgIndex >= messages.length) {
-                    // Show upgrade banner
                     const banner = document.getElementById('chatUpgradeBanner');
                     banner.style.display = 'block';
                     banner.innerHTML = '🎁 You earned ' + amount + '! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to Premium to claim</a>';
@@ -876,14 +917,12 @@
                 msg.className = 'chat-msg received';
                 const isVideo = messages[msgIndex].text.includes('watching') || messages[msgIndex].text.includes('Video playing');
                 const isEarn = messages[msgIndex].text.includes('earned');
-                const isUpgrade = messages[msgIndex].text.includes('upgrade');
                 
-                let icon = '';
-                if (isVideo) icon = '▶️ ';
-                else if (isEarn) icon = '💰 ';
-                else if (isUpgrade) icon = '⭐ ';
+                let iconChar = '';
+                if (isVideo) iconChar = '▶️ ';
+                else if (isEarn) iconChar = '💰 ';
                 
-                msg.innerHTML = '<div class="msg-name">🎯 System</div>' + icon + messages[msgIndex].text + '<span class="time">just now</span>';
+                msg.innerHTML = '<div class="msg-name">🎯 System</div>' + iconChar + messages[msgIndex].text + '<span class="time">just now</span>';
                 chatArea.appendChild(msg);
                 chatArea.scrollTop = chatArea.scrollHeight;
                 msgIndex++;
@@ -893,8 +932,8 @@
             chatOverlay.classList.add('active');
             setTimeout(showNextMessage, 500);
         }
-        
-        // ===== HANDLE EARNING WITH QUESTIONS (Shows alternatives, only when clicked) =====
+
+        // ===== HANDLE EARNING WITH QUESTIONS =====
         function handleEarningWithQuestions(question, options, correctAnswer) {
             const chatOverlay = document.getElementById('chatOverlay');
             const chatArea = document.getElementById('chatMessagesArea');
@@ -908,7 +947,6 @@
             chatArea.innerHTML = '';
             document.getElementById('chatUpgradeBanner').style.display = 'none';
             
-            // Show question flow with alternatives
             const messages = [
                 { text: '📝 New Question Ready!', delay: 500 },
                 { text: '💬 Chat with other participants...', delay: 800 },
@@ -924,7 +962,6 @@
             
             function showNextMessage() {
                 if (msgIndex >= messages.length) {
-                    // Enable input for answer
                     document.getElementById('chatPageSendBtn').disabled = false;
                     document.getElementById('chatPageInput').disabled = false;
                     document.getElementById('chatPageInput').placeholder = 'Type your answer here...';
@@ -944,11 +981,9 @@
             chatOverlay.classList.add('active');
             setTimeout(showNextMessage, 500);
             
-            // Handle answer
             const sendBtn = document.getElementById('chatPageSendBtn');
             const input = document.getElementById('chatPageInput');
             
-            // Remove old listeners
             const newSendBtn = sendBtn.cloneNode(true);
             sendBtn.parentNode.replaceChild(newSendBtn, sendBtn);
             
@@ -957,7 +992,6 @@
                 const userAnswer = input.value.trim();
                 if (!userAnswer) return;
                 
-                // Add user message
                 const userMsg = document.createElement('div');
                 userMsg.className = 'chat-msg sent';
                 userMsg.textContent = userAnswer;
@@ -969,7 +1003,6 @@
                 answered = true;
                 document.getElementById('chatPageSendBtn').disabled = true;
                 
-                // Check answer
                 const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
                 
                 setTimeout(() => {
@@ -1024,4 +1057,4 @@
         }
     </script>
 </body>
-                </html>
+</html>
