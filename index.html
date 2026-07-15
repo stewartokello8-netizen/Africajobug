@@ -324,13 +324,16 @@
         .whatsapp-float .whatsapp-text { background:rgba(11,26,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
         .demo-action-popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(12px); z-index:30000; display:none; align-items:center; justify-content:center; padding:20px }
         .demo-action-popup.active { display:flex }
-        .demo-action-popup .popup-content { background:#0b1a2f; backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:380px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
-        .demo-action-popup .popup-content .icon { font-size:48px; margin-bottom:14px }
-        .demo-action-popup .popup-content h3 { font-size:22px; font-weight:800; color:#fff; margin-bottom:10px }
-        .demo-action-popup .popup-content p { font-size:14px; color:rgba(255,255,255,.7); line-height:1.6; margin-bottom:14px }
-        .demo-action-popup .popup-content .earn-amount { font-size:30px; font-weight:900; color:var(--primary); margin:8px 0 14px }
-        .demo-action-popup .popup-content .btn-close-popup { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border:none; padding:14px 36px; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer; transition:var(--transition); box-shadow:0 4px 20px var(--primary-glow) }
-        .demo-action-popup .popup-content .btn-close-popup:hover { transform:scale(1.04); box-shadow:0 8px 32px var(--primary-glow) }
+        .demo-action-popup .popup-content { background:#0b1a2f; backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:560px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
+        .demo-action-popup .popup-content .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin:10px 0 16px; background:#000; }
+        .demo-action-popup .popup-content .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .demo-action-popup .popup-content .icon { font-size:48px; margin-bottom:10px }
+        .demo-action-popup .popup-content h3 { font-size:22px; font-weight:800; color:#fff; margin-bottom:8px }
+        .demo-action-popup .popup-content .earn-amount { font-size:28px; font-weight:900; color:var(--primary); margin:6px 0 10px }
+        .demo-action-popup .popup-content .claim-btn { display:inline-block; background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#0b1a2f; font-weight:800; font-size:18px; padding:14px 40px; border-radius:12px; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); box-shadow:0 4px 20px rgba(201,168,67,.3); margin-top:8px }
+        .demo-action-popup .popup-content .claim-btn:hover { transform:scale(1.04); box-shadow:0 8px 32px rgba(201,168,67,.4) }
+        .demo-action-popup .popup-content .btn-close-popup { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.1); padding:12px 36px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer; transition:var(--transition); margin-top:8px }
+        .demo-action-popup .popup-content .btn-close-popup:hover { background:rgba(255,255,255,.2) }
         .welcome-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99999; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
         .welcome-bonus-overlay.active { display:flex }
         .welcome-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0f1f33,#0a1525); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
@@ -395,6 +398,7 @@
             .hero-buttons .btn-group { gap:6px !important; width:100% !important }
             .demo-page { padding:16px 12px 30px }
             .demo-page .demo-header { padding:10px 14px; flex-wrap:wrap; gap:8px }
+            .demo-action-popup .popup-content { padding:24px 16px 24px }
         }
         .green-highlight { color:var(--primary) !important; font-weight:900 }
         .section-live.live-foreigners-section { background:#ffffff !important; color:#0b1a2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
@@ -411,8 +415,6 @@
         .hero-buttons .btn-group { display:flex !important; flex-wrap:nowrap !important; justify-content:center !important; gap:10px !important; width:100% !important; max-width:380px !important; margin:0 auto !important }
         .hero-buttons .btn-group .btn-primary { flex:1 1 auto !important; min-width:120px !important; padding:14px 12px !important; font-size:14px !important; height:48px !important; border-radius:12px !important; white-space:nowrap !important }
         .hero-buttons>a.btn-primary { min-width:200px !important; width:auto !important; padding:14px 32px !important; height:54px !important; font-size:15px !important }
-        .video-embed-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000; border-radius:12px; margin:10px 0; border:1px solid rgba(255,255,255,.1) }
-        .video-embed-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
         .questions-list { margin:10px 0; padding:0; list-style:none }
         .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(11,26,47,.05); border-radius:8px; font-size:13px; color:#0b1a2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
         .questions-list li:hover { background:rgba(11,26,47,.1); transform:translateX(4px) }
@@ -509,7 +511,6 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleEarning('Answering Questions', '$2.50', '❓')">
-                    <!-- Correct icon for answering questions - question mark icon -->
                     <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" loading="lazy" style="background:#1a1a2e;padding:8px;object-fit:contain;">
                     <div class="way-content">
                         <div class="way-name">Answering Questions</div>
@@ -518,13 +519,13 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleEarning('Answering Questions', '$2.50', '❓');return!1">Start Answering</button></div>
                     </div>
                 </div>
-                <div class="way-card" onclick="handleEarning('Paid TikTok Videos', '$3.20', '🎬')">
+                <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                     <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" loading="lazy" style="background:#1a1a2e;padding:4px;">
                     <div class="way-content">
                         <div class="way-name">Paid TikTok Videos</div>
                         <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
                         <div class="way-earn"><span class="sub">per video</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleEarning('Paid TikTok Videos', '$3.20', '🎬');return!1">Watch Videos</button></div>
+                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleEarning('Affiliate Bonus', 'BONUS', '💰')">
@@ -545,13 +546,13 @@
                         <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleEarning('WhatsApp Posting', '$1.80', '📱');return!1">Start Posting</button></div>
                     </div>
                 </div>
-                <div class="way-card" onclick="handleEarning('YouTube Earning', '$4.00', '📺')">
+                <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                     <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" loading="lazy" style="background:#1a1a2e;padding:4px;">
                     <div class="way-content">
                         <div class="way-name">YouTube Earning</div>
                         <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
                         <div class="way-earn"><span class="sub">per day</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleEarning('YouTube Earning', '$4.00', '📺');return!1">Start Watching</button></div>
+                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleEarning('Paid Surveys', '$2.20', '📋')">
@@ -680,19 +681,19 @@
                 <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">✨ Dance Challenge</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">😂 Comedy Skit</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🍳 Cooking Tutorial</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">💪 Fitness Tips</div>
                     </div>
@@ -705,19 +706,19 @@
                 <div class="feature-header"><h4>📺 YouTube Videos</h4><span>Earn $0.25/video</span></div>
                 <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">📱 Tech Review</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎵 Music Video</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎬 Documentary</div>
                     </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');"><div class="play-overlay">▶</div></div>
                         <div class="video-title">🎮 Gaming Stream</div>
                     </div>
@@ -745,17 +746,20 @@
         </div>
     </div>
 
-    <!-- VIDEO PLAYER OVERLAY -->
+    <!-- VIDEO PLAYER OVERLAY - MAIN PAGE -->
     <div class="demo-action-popup" id="videoPlayerOverlay">
-        <div class="popup-content" style="max-width:560px;padding:20px;">
-            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:10px 0;">
-                <iframe id="videoPlayerIframe" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="popup-content" style="max-width:600px;padding:24px 20px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                <span style="font-size:20px;font-weight:800;color:#fff;" id="videoPlayerTitle">▶️ Now Playing</span>
+                <span style="font-size:16px;color:var(--primary);font-weight:700;" id="videoPlayerEarn">$0.00</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
-                <span style="font-size:16px;font-weight:700;color:#fff;" id="videoPlayerTitle">Now Playing</span>
-                <span style="font-size:14px;color:var(--primary);font-weight:700;" id="videoPlayerEarn">$0.00</span>
+            <div class="video-wrapper">
+                <iframe id="videoPlayerIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <button class="btn-close-popup" onclick="closeVideoPlayer()" style="margin-top:14px;width:100%;">Close Video</button>
+            <div style="margin-top:14px;">
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn">💰 Claim Rewards</a>
+            </div>
+            <button class="btn-close-popup" onclick="closeVideoPlayer()" style="margin-top:10px;">Close</button>
         </div>
     </div>
 
@@ -805,16 +809,38 @@
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
 
-        // ===== VIDEO PLAYER =====
-        function handleVideoPlay(title, amount, icon, videoUrl) {
+        // ===== VIDEO PLAYER - MAIN PAGE =====
+        function handleVideoPlay(title, amount, icon, videoUrl, platform) {
             const overlay = document.getElementById('videoPlayerOverlay');
             const iframe = document.getElementById('videoPlayerIframe');
             const titleEl = document.getElementById('videoPlayerTitle');
             const earnEl = document.getElementById('videoPlayerEarn');
             
-            iframe.src = videoUrl + '?autoplay=1&rel=0';
+            // Different videos for TikTok vs YouTube
+            let finalUrl = videoUrl;
+            if (platform === 'TikTok') {
+                // TikTok embed - different video IDs for variety
+                const tiktokVideos = [
+                    'https://www.tiktok.com/embed/v2/6872744864957664518',
+                    'https://www.tiktok.com/embed/v2/6872744864957664518',
+                    'https://www.tiktok.com/embed/v2/6872744864957664518',
+                    'https://www.tiktok.com/embed/v2/6872744864957664518'
+                ];
+                finalUrl = tiktokVideos[Math.floor(Math.random() * tiktokVideos.length)];
+            } else if (platform === 'YouTube') {
+                // YouTube - different videos
+                const youtubeVideos = [
+                    'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    'https://www.youtube.com/embed/9bZkp7q19f0',
+                    'https://www.youtube.com/embed/fJ9rUzIMcZQ',
+                    'https://www.youtube.com/embed/kJQP7kiw5Fk'
+                ];
+                finalUrl = youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)];
+            }
+            
+            iframe.src = finalUrl + '?autoplay=1&rel=0';
             titleEl.textContent = '▶️ ' + title;
-            earnEl.textContent = amount;
+            earnEl.textContent = '💰 ' + amount;
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -846,7 +872,7 @@
         const profilePool = [{ name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' }, { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' }, { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg', bio: '🎨 Talented artist, passionate painter & nature enthusiast.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' }, { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg', bio: '🏄 Surfing lover, avid hiker & adventure seeker.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' }, { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg', bio: '💃 Flamenco dancer, passionate foodie & avid traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' }, { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' }, { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://randomuser.me/api/portraits/women/55.jpg', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' }];
         let currentProfiles = [];
         function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]] } return s.slice(0, 6) }
-        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
+        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
         function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length }
         rotateProfiles(); setInterval(rotateProfiles, 480000);
         // ===== LIVE COUNTERS =====
