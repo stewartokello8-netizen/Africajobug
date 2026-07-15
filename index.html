@@ -1435,7 +1435,7 @@
             }, 4200);
         }
 
-        // ===== WHATSAPP POSTING - UPDATED TO $10 =====
+        // ===== WHATSAPP POSTING - FIXED: SHARE → AfricaJob link | CLAIM → StarHela link =====
         function handleWhatsAppPosting() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -1470,6 +1470,8 @@
                     </div>
                 </div>
                 <div class="wa-earned" id="waEarned">💰 Earned: $0.00</div>
+                <!-- Claim button opens StarHela link -->
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--gold-light),#e09d2e);color:#0b1a2f;font-weight:800;font-size:16px;padding:12px 32px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 20px rgba(201,168,67,.3);">💰 Claim Rewards</a>
                 <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
             `;
 
@@ -1499,11 +1501,12 @@
                 sendBtn.disabled = true;
                 sendBtn.textContent = '✓ Done';
 
+                // Show claim button
                 setTimeout(() => {
                     const banner = document.getElementById('chatUpgradeBanner');
                     if (banner) {
                         banner.style.display = 'block';
-                        banner.innerHTML = '🎁 You earned $10! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>';
+                        banner.innerHTML = '🎁 You earned $10! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Claim Now</a>';
                     }
                 }, 500);
                 return;
@@ -1512,10 +1515,14 @@
             const post = posts[window._waSharedCount];
             if (!post) return;
 
+            // SHARE → Opens WhatsApp with AfricaJob link (NOT StarHela)
+            const shareMsg = encodeURIComponent(`${post.emoji} ${post.text}\n\n👉 Join AfricaJob and start earning! https://africajob.com`);
+            window.open(`https://wa.me/?text=${shareMsg}`, '_blank');
+
             const userMsg = document.createElement('div');
             userMsg.className = 'msg';
             userMsg.style.cssText = 'background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;margin-left:auto;align-self:flex-end;';
-            userMsg.innerHTML = `${post.emoji} <strong>${input.value || 'Sharing sponsored content!'}</strong><br><div class="post-content" style="background:#f0f0f0;padding:8px 12px;border-radius:8px;margin-top:4px;font-size:12px;color:#333;border-left:3px solid #25d366;">${post.text}</div>`;
+            userMsg.innerHTML = `${post.emoji} <strong>${input.value || 'Sharing sponsored content!'}</strong><br><div class="post-content" style="background:#f0f0f0;padding:8px 12px;border-radius:8px;margin-top:4px;font-size:12px;color:#333;border-left:3px solid #25d366;">${post.text}<br><span style="font-size:10px;color:#888;">✅ Shared via WhatsApp</span></div>`;
             chatArea.appendChild(userMsg);
 
             setTimeout(() => {
@@ -1540,7 +1547,7 @@
                         const finalMsg = document.createElement('div');
                         finalMsg.className = 'msg';
                         finalMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
-                        finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $10! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Upgrade to claim your earnings!</span>';
+                        finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $10! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Click "Claim Rewards" below to get your earnings!</span>';
                         chatArea.appendChild(finalMsg);
                         chatArea.scrollTop = chatArea.scrollHeight;
                         sendBtn.disabled = true;
