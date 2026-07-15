@@ -344,7 +344,6 @@
         .welcome-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .welcome-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .welcome-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
-        /* AFFILIATE BONUS POPUP - same style as welcome bonus */
         .affiliate-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99998; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
         .affiliate-bonus-overlay.active { display:flex }
         .affiliate-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0f1f33,#0a1525); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
@@ -569,7 +568,7 @@
                         <div class="way-name">Affiliate Bonus</div>
                         <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
                         <div class="way-earn">BONUS</div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Referring</button></div>
+                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div>
                     </div>
                 </div>
                 <div class="way-card" onclick="handleWhatsAppPosting()">
@@ -1018,64 +1017,41 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS - FIXED =====
+        // ===== WITHDRAWAL POPUPS - UPDATED =====
         ! function() { 
-            const w = [{
-                flag: '🇰🇪',
-                name: 'James K.',
-                amount: '2,580',
-                method: 'M-Pesa',
-                gender: 'male',
-                currency: 'KSh'
-            }, {
-                flag: '🇬🇭',
-                name: 'Maureen A.',
-                amount: '3,870',
-                method: 'MoMo',
-                gender: 'female',
-                currency: 'GH₵'
-            }, {
-                flag: '🇺🇬',
-                name: 'Sarah N.',
-                amount: '166,500',
-                method: 'Mobile Money',
-                gender: 'female',
-                currency: 'UGX'
-            }, {
-                flag: '🇳🇬',
-                name: 'Chidi O.',
-                amount: '70,950',
-                method: 'MoMo',
-                gender: 'male',
-                currency: '₦'
-            }, {
-                flag: '🇿🇦',
-                name: 'Lindiwe M.',
-                amount: '1,020',
-                method: 'Bank Transfer',
-                gender: 'female',
-                currency: 'R'
-            }, {
-                flag: '🇰🇪',
-                name: 'Omar H.',
-                amount: '4,193',
-                method: 'M-Pesa',
-                gender: 'male',
-                currency: 'KSh'
-            }, {
-                flag: '🇷🇼',
-                name: 'Diane U.',
-                amount: '28,000',
-                method: 'Mobile Wallet',
-                gender: 'female',
-                currency: 'RWF'
-            }];
-            const m = ['https://randomuser.me/api/portraits/women/1.jpg', 'https://randomuser.me/api/portraits/women/2.jpg', 'https://randomuser.me/api/portraits/women/3.jpg'];
-            const g = ['https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/men/2.jpg', 'https://randomuser.me/api/portraits/men/3.jpg'];
+            const w = [
+                { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
+                { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', gender: 'female', currency: 'GH₵' },
+                { flag: '🇺🇬', name: 'Sarah N.', amount: '2,400,000', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
+                { flag: '🇳🇬', name: 'Chidi O.', amount: '70,950', method: 'MoMo', gender: 'male', currency: '₦' },
+                { flag: '🇿🇦', name: 'Lindiwe M.', amount: '1,020', method: 'Bank Transfer', gender: 'female', currency: 'R' },
+                { flag: '🇰🇪', name: 'Omar H.', amount: '4,193', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
+                { flag: '🇷🇼', name: 'Diane U.', amount: '28,000', method: 'Mobile Wallet', gender: 'female', currency: 'RWF' },
+                { flag: '🇺🇬', name: 'Robert T.', amount: '500,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇬🇭', name: 'Akosua K.', amount: '2,150', method: 'MoMo', gender: 'female', currency: 'GH₵' },
+                { flag: '🇺🇬', name: 'Moses O.', amount: '3,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇳🇬', name: 'Amara E.', amount: '32,500', method: 'MoMo', gender: 'female', currency: '₦' },
+                { flag: '🇰🇪', name: 'Grace W.', amount: '1,445', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
+                { flag: '🇺🇬', name: 'Esther K.', amount: '1,200,000', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
+                { flag: '🇿🇦', name: 'Zanele D.', amount: '948', method: 'Bank Transfer', gender: 'female', currency: 'R' },
+                { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' }
+            ];
+            const m = ['https://randomuser.me/api/portraits/women/1.jpg', 'https://randomuser.me/api/portraits/women/2.jpg', 'https://randomuser.me/api/portraits/women/3.jpg', 'https://randomuser.me/api/portraits/women/4.jpg', 'https://randomuser.me/api/portraits/women/5.jpg', 'https://randomuser.me/api/portraits/women/6.jpg', 'https://randomuser.me/api/portraits/women/7.jpg', 'https://randomuser.me/api/portraits/women/8.jpg', 'https://randomuser.me/api/portraits/women/9.jpg', 'https://randomuser.me/api/portraits/women/10.jpg'];
+            const g = ['https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/men/2.jpg', 'https://randomuser.me/api/portraits/men/3.jpg', 'https://randomuser.me/api/portraits/men/4.jpg', 'https://randomuser.me/api/portraits/men/5.jpg', 'https://randomuser.me/api/portraits/men/6.jpg', 'https://randomuser.me/api/portraits/men/7.jpg', 'https://randomuser.me/api/portraits/men/8.jpg', 'https://randomuser.me/api/portraits/men/9.jpg', 'https://randomuser.me/api/portraits/men/10.jpg'];
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
             let u = [], idx = -1;
 
-            function b(gender) { const pool = gender === 'female' ? m : g; let idx2; do { idx2 = Math.floor(Math.random() * pool.length) } while (idx2 === idx && pool.length > 1); idx = idx2; return pool[idx2] }
+            function b(gender) { 
+                const pool = gender === 'female' ? m : g; 
+                let idx2; 
+                let attempts = 0;
+                do { 
+                    idx2 = Math.floor(Math.random() * pool.length); 
+                    attempts++;
+                } while ((idx2 === idx || (u.length > 0 && u.includes(idx2))) && attempts < 20); 
+                idx = idx2; 
+                return pool[idx2] 
+            }
 
             function r() {
                 if (u.length >= w.length) u = [];
@@ -1374,7 +1350,7 @@
             });
         }
 
-        // ===== SPINNING WHEEL =====
+        // ===== SPINNING WHEEL - UPDATED $3 TO $50 =====
         function handleSpinning() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -1383,21 +1359,21 @@
                 <div style="margin-bottom:6px;">
                     <span style="font-size:28px;">🎰</span>
                     <h3 style="color:#fff;font-size:20px;margin:4px 0;">Paid Spinning</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Spin the wheel and win cash!</p>
+                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Spin the wheel and win cash prizes up to $50!</p>
                 </div>
                 <div class="wheel-container">
                     <div class="wheel" id="wheel">
-                        <div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$0.50</div>
-                        <div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$0.80</div>
-                        <div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$1.20</div>
-                        <div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$0.60</div>
-                        <div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$1.80</div>
-                        <div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$2.20</div>
+                        <div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$3</div>
+                        <div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$8</div>
+                        <div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$15</div>
+                        <div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$25</div>
+                        <div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$35</div>
+                        <div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$50</div>
                         <div class="wheel-center">SPIN</div>
                     </div>
                 </div>
                 <button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎡 SPIN</button>
-                <div class="spin-result" id="spinResult">Click SPIN to win!</div>
+                <div class="spin-result" id="spinResult">Click SPIN to win up to $50!</div>
                 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:10px;background:rgba(255,255,255,0.1);color:#fff;padding:8px 24px;border-radius:40px;text-decoration:none;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.1);">💎 Claim Prize</a>
                 <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
             `;
@@ -1409,7 +1385,7 @@
                 wheel.style.transform = 'rotate(0deg)';
             }
             const result = document.getElementById('spinResult');
-            if (result) result.textContent = '🎡 Click SPIN to win!';
+            if (result) result.textContent = '🎡 Click SPIN to win up to $50!';
             const spinBtn = document.getElementById('spinBtn');
             if (spinBtn) spinBtn.disabled = false;
         }
@@ -1428,7 +1404,7 @@
             spinBtn.disabled = true;
             result.textContent = '🌀 Spinning...';
 
-            const prizes = ['$0.50', '$0.80', '$1.20', '$0.60', '$1.80', '$2.20'];
+            const prizes = ['$3', '$8', '$15', '$25', '$35', '$50'];
             const randomIndex = Math.floor(Math.random() * prizes.length);
             const extraAngle = 360 - (randomIndex * 60 + 30);
             const rotations = 5 + Math.floor(Math.random() * 3);
@@ -1459,7 +1435,7 @@
             }, 4200);
         }
 
-        // ===== WHATSAPP POSTING =====
+        // ===== WHATSAPP POSTING - UPDATED TO $10 =====
         function handleWhatsAppPosting() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -1474,7 +1450,7 @@
                 <div style="margin-bottom:8px;">
                     <span style="font-size:28px;">📱</span>
                     <h3 style="color:#fff;font-size:20px;margin:4px 0;">WhatsApp Posting</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Share posts and earn $0.60 per post!</p>
+                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Share posts and earn $3.33 per post!</p>
                 </div>
                 <div class="whatsapp-sim">
                     <div class="header">
@@ -1485,7 +1461,7 @@
                     <div class="chat-area" id="waChatArea">
                         <div class="msg" style="background:#dcf8c6;align-self:flex-end;margin-left:auto;">
                             📢 <strong>AfricaJob</strong><br>
-                            <span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn!</span>
+                            <span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn $10 total!</span>
                         </div>
                     </div>
                     <div class="footer">
@@ -1517,7 +1493,7 @@
                 const msg = document.createElement('div');
                 msg.className = 'msg';
                 msg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
-                msg.innerHTML = '✅ <strong>All posts shared!</strong> You earned $1.80! 🎉';
+                msg.innerHTML = '✅ <strong>All posts shared!</strong> You earned $10! 🎉';
                 chatArea.appendChild(msg);
                 chatArea.scrollTop = chatArea.scrollHeight;
                 sendBtn.disabled = true;
@@ -1527,7 +1503,7 @@
                     const banner = document.getElementById('chatUpgradeBanner');
                     if (banner) {
                         banner.style.display = 'block';
-                        banner.innerHTML = '🎁 You earned $1.80! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>';
+                        banner.innerHTML = '🎁 You earned $10! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>';
                     }
                 }, 500);
                 return;
@@ -1546,12 +1522,12 @@
                 const sysMsg = document.createElement('div');
                 sysMsg.className = 'msg';
                 sysMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
-                sysMsg.innerHTML = `✅ <strong>Post ${window._waSharedCount + 1}/${posts.length} shared!</strong> Earned $0.60`;
+                sysMsg.innerHTML = `✅ <strong>Post ${window._waSharedCount + 1}/${posts.length} shared!</strong> Earned $3.33`;
                 chatArea.appendChild(sysMsg);
                 chatArea.scrollTop = chatArea.scrollHeight;
 
                 window._waSharedCount++;
-                window._waTotalEarned += 0.60;
+                window._waTotalEarned += 3.33;
                 earnDisplay.textContent = `💰 Earned: $${window._waTotalEarned.toFixed(2)}`;
 
                 const header = document.querySelector('.whatsapp-sim .header span:last-child');
@@ -1564,7 +1540,7 @@
                         const finalMsg = document.createElement('div');
                         finalMsg.className = 'msg';
                         finalMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
-                        finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $1.80! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Upgrade to claim your earnings!</span>';
+                        finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $10! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Upgrade to claim your earnings!</span>';
                         chatArea.appendChild(finalMsg);
                         chatArea.scrollTop = chatArea.scrollHeight;
                         sendBtn.disabled = true;
