@@ -8,22 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
     <style>
-        :root {
-            --primary: #1fbb7a;
-            --primary-dark: #0f7b5a;
-            --primary-glow: rgba(31,187,122,.3);
-            --gold-light: #f5d65a;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,.02);
-            --shadow-md: 0 8px 32px rgba(0,0,0,.04);
-            --shadow-lg: 0 16px 48px rgba(0,0,0,.06);
-            --radius-sm: 12px;
-            --radius-md: 16px;
-            --radius-lg: 20px;
-            --radius-xl: 32px;
-            --transition: all .4s cubic-bezier(.16,1,.3,1);
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+        :root { --primary: #1fbb7a; --primary-dark: #0f7b5a; --primary-glow: rgba(31,187,122,.3); --gold-light: #f5d65a; --shadow-sm: 0 2px 8px rgba(0,0,0,.02); --shadow-md: 0 8px 32px rgba(0,0,0,.04); --shadow-lg: 0 16px 48px rgba(0,0,0,.06); --radius-sm: 12px; --radius-md: 16px; --radius-lg: 20px; --radius-xl: 32px; --transition: all .4s cubic-bezier(.16,1,.3,1); --font-title: 'Playfair Display', serif; --font-body: 'Inter', system-ui, -apple-system, sans-serif }
         * { margin:0; padding:0; box-sizing:border-box }
         body { background:#0b1a2f; font-family:var(--font-body); color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; overflow-x:hidden; font-size:1.0625rem; line-height:1.6 }
         .scroll-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--primary),var(--gold-light)); z-index:10001; width:0%; transition:width .1s; box-shadow:0 0 20px var(--primary-glow) }
@@ -420,8 +405,6 @@
         .questions-list li:hover { background:rgba(11,26,47,.1); transform:translateX(4px) }
         .questions-list li strong { color:var(--primary-dark) }
         .profile-amount { color:rgba(11,26,47,.4) !important; font-weight:500 !important }
-
-        /* Spinning Wheel */
         .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
         .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
         .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
@@ -430,8 +413,6 @@
         .spin-btn:hover { transform:scale(1.05); box-shadow:0 8px 32px rgba(245,214,90,.4); }
         .spin-btn:disabled { opacity:.5; cursor:not-allowed; transform:none; }
         .spin-result { font-size:24px; font-weight:900; color:#f5d65a; margin-top:8px; min-height:40px; }
-        
-        /* WhatsApp Simulator */
         .whatsapp-sim { background:#075e54; border-radius:16px; overflow:hidden; max-width:340px; margin:0 auto; }
         .whatsapp-sim .header { background:#075e54; padding:12px 16px; color:#fff; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,.1); }
         .whatsapp-sim .header .icon { font-size:20px; }
@@ -520,7 +501,7 @@
 
         <div class="section section-live live-foreigners-section" id="liveChatSection">
             <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
-            <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 8 active now</span></div>
+            <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 <span id="typingIndicator">Someone is typing...</span></span></div>
             <div id="liveUserList"></div>
         </div>
 
@@ -896,7 +877,7 @@
         let currentCountry = 'uganda';
         function switchDashboard(c) { const d = countryData[c]; document.querySelectorAll('.country-btn').forEach(b => { b.classList.toggle('active', b.dataset.country === c) }); document.getElementById('currentCountryDisplay').textContent = d.label; document.getElementById('dashboardStats').innerHTML = `<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">${d.stats.expense} <small>${d.currency}</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">${d.stats.profits} <small>${d.currency}</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">${d.stats.balance} <small>${d.currency}</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>${d.stats.withdrawn} <small>${d.currency}</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>`; }
         
-        // ===== LIVE FOREIGNERS - 8 PROFILES =====
+        // ===== LIVE FOREIGNERS - 8 PROFILES WITH TYPING =====
         const profilePool = [
             { name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' },
             { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://randomuser.me/api/portraits/men/32.jpg', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' },
@@ -908,14 +889,84 @@
             { name: 'Luca B.', age: 33, country: '🇮🇹 Italy', flag: '🇮🇹', countryName: 'Italy', img: 'https://randomuser.me/api/portraits/men/62.jpg', bio: '🍝 Passionate cook, art lover & travel enthusiast.', greeting: '👋 Ciao! Luca here. You look amazing!', desperate: '🔥 Luca: I\'m so into you! Upgrade now so we can keep talking! ❤️' }
         ];
         let currentProfiles = [];
-        function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]] } return s.slice(0, 8) }
-        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); const s = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...']; let h = ''; p.forEach((u, i) => { const r = s[i % s.length]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${r}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h }
-        function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length }
-        rotateProfiles(); setInterval(rotateProfiles, 480000);
+        const typingMessages = [
+            '✍️ typing now...',
+            '💬 saying hello...',
+            '⌨️ writing a reply...',
+            '💬 sending a message...',
+            '🤔 thinking...',
+            '📝 typing a long message...',
+            '💬 replying to you...',
+            '✍️ writing something special...'
+        ];
+        let typingInterval;
+        
+        function getRandomProfiles() { 
+            const s = [...profilePool]; 
+            for (let i = s.length - 1; i > 0; i--) { 
+                const j = Math.floor(Math.random() * (i + 1)); 
+                [s[i], s[j]] = [s[j], s[i]]; 
+            } 
+            return s.slice(0, 8); 
+        }
+        
+        function updateTypingStatus() {
+            const statusElements = document.querySelectorAll('.typing-status');
+            if (statusElements.length === 0) return;
+            
+            // Update each status with a random typing message
+            statusElements.forEach(el => {
+                const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
+                el.textContent = msg;
+                // Add a subtle animation effect
+                el.style.transition = 'opacity 0.3s';
+                el.style.opacity = '0.7';
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, 100);
+            });
+            
+            // Update the main typing indicator
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                const randomUser = currentProfiles[Math.floor(Math.random() * currentProfiles.length)];
+                const statuses = ['typing now...', 'saying hello...', 'writing a reply...', 'sending a message...', 'thinking...', 'replying...'];
+                const status = statuses[Math.floor(Math.random() * statuses.length)];
+                indicator.textContent = `${randomUser ? randomUser.name.split(' ')[0] : 'Someone'} is ${status}`;
+            }
+        }
+
+        function renderLiveUsers(p) { 
+            const c = document.getElementById('liveUserList'); 
+            let h = ''; 
+            p.forEach((u) => { 
+                const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
+                h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${msg}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); 
+            c.innerHTML = h;
+            
+            // Start typing interval if not already running
+            if (typingInterval) clearInterval(typingInterval);
+            typingInterval = setInterval(updateTypingStatus, 3000);
+        }
+        
+        function rotateProfiles() { 
+            currentProfiles = getRandomProfiles(); 
+            renderLiveUsers(currentProfiles); 
+            document.getElementById('activeChatters').textContent = currentProfiles.length;
+            
+            // Trigger an immediate typing update
+            setTimeout(updateTypingStatus, 500);
+        }
+        
+        rotateProfiles(); 
+        setInterval(rotateProfiles, 480000);
+        
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
+        
         // ===== WITHDRAWAL POPUPS =====
         ! function() { const w = [{ flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male' }, { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', gender: 'female' }, { flag: '🇺🇬', name: 'Sarah N.', amount: '166,500', method: 'Mobile Money', gender: 'female' }, { flag: '🇳🇬', name: 'Chidi O.', amount: '70,950', method: 'MoMo', gender: 'male' }, { flag: '🇿🇦', name: 'Lindiwe M.', amount: '1,020', method: 'Bank Transfer', gender: 'female' }, { flag: '🇰🇪', name: 'Omar H.', amount: '4,193', method: 'M-Pesa', gender: 'male' }, { flag: '🇷🇼', name: 'Diane U.', amount: '28,000', method: 'Mobile Wallet', gender: 'female' } ], c = { '🇰🇪': 'KSh ', '🇬🇭': 'GH₵ ', '🇺🇬': 'UGX ', '🇳🇬': '₦ ', '🇿🇦': 'R ', '🇷🇼': 'RWF ', '🇨🇲': 'XAF ' }; function s(f) { return c[f] || '$' } const m = ['https://randomuser.me/api/portraits/women/1.jpg', 'https://randomuser.me/api/portraits/women/2.jpg', 'https://randomuser.me/api/portraits/women/3.jpg'], g = ['https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/men/2.jpg', 'https://randomuser.me/api/portraits/men/3.jpg']; const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'); let u = [], a = -1; function b(gender) { const pool = gender === 'female' ? m : g; let idx; do { idx = Math.floor(Math.random() * pool.length) } while (idx === a && pool.length > 1); a = idx; return pool[idx] } function r() { if (u.length >= w.length) u = []; const avail = w.map((_, i) => i).filter(i => !u.includes(i)); if (avail.length === 0) { u = []; return r() } const idx = avail[Math.floor(Math.random() * avail.length)]; u.push(idx); const d = w[idx]; i.src = b(d.gender); n.textContent = d.flag + ' ' + d.name + ' withdrew ' + s(d.flag) + d.amount; l.textContent = 'via ' + d.method; p.style.display = 'flex'; p.style.animation = 'none'; p.offsetHeight; p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'; clearTimeout(window.popupTimer); window.popupTimer = setTimeout(() => { p.style.display = 'flex'; p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards' }, 2000) } setTimeout(r, 600); setInterval(r, 2000) }();
+        
         // ===== CHAT FUNCTIONS =====
         let chatLocked = !1, chatUser = null, chatDesperate = '';
         function openChatPage(a) { const c = a.closest('.user-card'); if (!c) return; const name = c.dataset.user || 'Friend', img = c.dataset.img || 'https://randomuser.me/api/portraits/women/68.jpg', country = c.dataset.country || '🌍', greeting = c.dataset.greeting || '👋 Hi! Let\'s chat!'; chatDesperate = c.dataset.desperate || '😍 I\'m so interested! Please upgrade to continue!'; chatUser = name; chatLocked = !1; document.getElementById('chatPageAvatar').src = img; document.getElementById('chatPageName').textContent = name; document.getElementById('chatPageStatus').textContent = country + ' · Online'; const area = document.getElementById('chatMessagesArea'); area.innerHTML = ''; const msg = document.createElement('div'); msg.className = 'chat-msg received'; msg.innerHTML = '<div class="msg-name">' + name + '</div>' + greeting + '<span class="time">just now</span>'; area.appendChild(msg); document.getElementById('chatUpgradeBanner').style.display = 'none'; document.getElementById('chatPageSendBtn').disabled = !1; document.getElementById('chatPageInput').disabled = !1; document.getElementById('chatPageInput').value = ''; document.getElementById('chatOverlay').classList.add('active'); area.scrollTop = area.scrollHeight }
@@ -923,6 +974,7 @@
         function sendChatPageMessage() { if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return } const input = document.getElementById('chatPageInput'), msg = input.value.trim(); if (!msg || !chatUser) return; const area = document.getElementById('chatMessagesArea'); const sent = document.createElement('div'); sent.className = 'chat-msg sent'; sent.textContent = msg; const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); sent.innerHTML += '<span class="time">' + time + '</span>'; area.appendChild(sent); input.value = ''; area.scrollTop = area.scrollHeight; setTimeout(() => { const reply = document.createElement('div'); reply.className = 'chat-msg received'; reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '</span>'; area.appendChild(reply); area.scrollTop = area.scrollHeight; chatLocked = !0; document.getElementById('chatUpgradeBanner').style.display = 'block'; document.getElementById('chatPageSendBtn').disabled = !0; document.getElementById('chatPageInput').disabled = !0 }, 700) }
         document.getElementById('chatPageInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') sendChatPageMessage() });
         document.getElementById('chatOverlay').addEventListener('click', function(e) { if (e.target === this) closeChatPage() });
+        
         // ===== WELCOME BONUS =====
         const BONUS_DATA = { uganda: { amount: '9,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' }, kenya: { amount: '300', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' }, nigeria: { amount: '5,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' }, ghana: { amount: '50', currency: 'GH₵', label: 'Ghana', flag: '🇬🇭' }, cameroon: { amount: '2,000', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' }, usd: { amount: '3', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
         let bonusCurrent = 'uganda'; let bonusSeconds = 86393; let bonusInterval = null;
